@@ -705,7 +705,7 @@ ul { list-style: none; }
     flex-shrink: 0;
 }
 
-/* --- WHY US --- */
+/* --- WHY US (ORIGINAL KEPT FOR REFERENCE) --- */
 .align-center { align-items: center; }
 .feature-list li { 
     margin-bottom: 20px; 
@@ -763,6 +763,217 @@ ul { list-style: none; }
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+/* ========================================
+   IMPROVED WHY US SECTION
+   ======================================== */
+
+.why-us-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.why-us-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(255, 180, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 180, 0, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.why-us-section .section-intro {
+    color: #d1d5db;
+}
+
+.why-us-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.why-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.4s ease;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.why-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.why-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: 0 20px 40px rgba(255, 180, 0, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.why-card:hover::before {
+    transform: scaleX(1);
+}
+
+.why-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--dark);
+    box-shadow: 0 10px 30px rgba(255, 180, 0, 0.3);
+    transition: all 0.4s ease;
+}
+
+.why-card:hover .why-icon {
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 15px 40px rgba(255, 180, 0, 0.4);
+}
+
+.why-card h3 {
+    color: white;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.why-card p {
+    color: #d1d5db;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+/* Stats Section */
+.stats-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+    padding-top: 60px;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-card {
+    text-align: center;
+    padding: 30px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--primary);
+    font-family: var(--font-head);
+    line-height: 1;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(255, 180, 0, 0.3);
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat-card p {
+    color: #9ca3af;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Trust Badge Large */
+.trust-section {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.trust-badge-large {
+    background: linear-gradient(135deg, rgba(255, 180, 0, 0.15), rgba(255, 180, 0, 0.05));
+    border: 3px solid var(--primary);
+    border-radius: 20px;
+    padding: 30px 50px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    max-width: 600px;
+    box-shadow: 0 10px 40px rgba(255, 180, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.trust-badge-large:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 50px rgba(255, 180, 0, 0.3);
+}
+
+.trust-badge-large i {
+    font-size: 3rem;
+    color: var(--primary);
+    animation: pulse-star 2s infinite;
+}
+
+@keyframes pulse-star {
+    0%, 100% { 
+        transform: scale(1); 
+        opacity: 1;
+    }
+    50% { 
+        transform: scale(1.1); 
+        opacity: 0.8;
+    }
+}
+
+.trust-badge-large div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.trust-badge-large strong {
+    font-size: 1.3rem;
+    color: white;
+    font-family: var(--font-head);
+    text-transform: uppercase;
+}
+
+.trust-badge-large span {
+    color: #d1d5db;
+    font-size: 0.95rem;
 }
 
 /* --- GALLERY --- */
@@ -1228,6 +1439,21 @@ footer {
     .section-header h2 {
         font-size: 2rem;
     }
+
+    /* Why Us Section Responsive */
+    .why-us-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .trust-badge-large {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 25px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1238,6 +1464,18 @@ footer {
     .btn-xl { padding: 16px 28px; font-size: 1rem; }
     .contact-box { padding: 30px 20px; }
     .cta-box { padding: 30px 20px; }
+    
+    .stats-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .why-card {
+        padding: 30px 20px;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
 }
 
 /* LAZY LOADING PLACEHOLDER */
