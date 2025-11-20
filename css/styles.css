@@ -393,7 +393,6 @@ ul { list-style: none; }
     overflow: hidden;
     line-height: 0; 
     pointer-events: none;
-    /* FIX CLS: Reserve exact space */
     contain: layout;
 }
 .wave-bottom svg {
@@ -401,7 +400,6 @@ ul { list-style: none; }
     display: block;
     width: calc(100% + 1.3px);
     height: 120px;
-    /* FIX CLS: Prevent layout shift */
     vertical-align: bottom;
 }
 
@@ -475,7 +473,6 @@ ul { list-style: none; }
     height: 100%; 
     object-fit: cover; 
     transition: transform 0.6s ease;
-    /* OPTIMIZED: Use will-change for smooth animation */
     will-change: transform;
 }
 .card:hover .card-img img { 
@@ -705,7 +702,7 @@ ul { list-style: none; }
     flex-shrink: 0;
 }
 
-/* --- WHY US (ORIGINAL KEPT FOR REFERENCE) --- */
+/* --- WHY US (ORIGINAL KEPT FOR COMPATIBILITY) --- */
 .align-center { align-items: center; }
 .feature-list li { 
     margin-bottom: 20px; 
@@ -766,12 +763,13 @@ ul { list-style: none; }
 }
 
 /* ========================================
-   IMPROVED WHY US SECTION
+   IMPROVED WHY US SECTION - FIXED CONTRAST
    ======================================== */
 
 .why-us-section {
     position: relative;
     overflow: hidden;
+    background: var(--dark);
 }
 
 .why-us-section::before {
@@ -785,6 +783,20 @@ ul { list-style: none; }
         radial-gradient(circle at 20% 50%, rgba(255, 180, 0, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, rgba(255, 180, 0, 0.08) 0%, transparent 50%);
     pointer-events: none;
+    z-index: 0;
+}
+
+.why-us-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.why-us-section .section-header h2 {
+    color: white !important;
+}
+
+.why-us-section .subtitle {
+    color: var(--primary);
 }
 
 .why-us-section .section-intro {
@@ -799,12 +811,12 @@ ul { list-style: none; }
 }
 
 .why-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.08);
     padding: 40px 30px;
     border-radius: 20px;
     text-align: center;
     transition: all 0.4s ease;
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     position: relative;
     overflow: hidden;
@@ -825,8 +837,8 @@ ul { list-style: none; }
 .why-card:hover {
     transform: translateY(-10px);
     border-color: var(--primary);
-    box-shadow: 0 20px 40px rgba(255, 180, 0, 0.2);
-    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 40px rgba(255, 180, 0, 0.3);
+    background: rgba(255, 255, 255, 0.12);
 }
 
 .why-card:hover::before {
@@ -844,24 +856,24 @@ ul { list-style: none; }
     justify-content: center;
     font-size: 2rem;
     color: var(--dark);
-    box-shadow: 0 10px 30px rgba(255, 180, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(255, 180, 0, 0.4);
     transition: all 0.4s ease;
 }
 
 .why-card:hover .why-icon {
     transform: scale(1.1) rotate(10deg);
-    box-shadow: 0 15px 40px rgba(255, 180, 0, 0.4);
+    box-shadow: 0 15px 40px rgba(255, 180, 0, 0.5);
 }
 
 .why-card h3 {
-    color: white;
+    color: white !important;
     font-size: 1.4rem;
     margin-bottom: 15px;
     font-weight: 700;
 }
 
 .why-card p {
-    color: #d1d5db;
+    color: #e5e7eb;
     line-height: 1.7;
     font-size: 1rem;
 }
@@ -873,22 +885,23 @@ ul { list-style: none; }
     gap: 30px;
     margin-top: 60px;
     padding-top: 60px;
-    border-top: 2px solid rgba(255, 255, 255, 0.1);
+    border-top: 2px solid rgba(255, 255, 255, 0.15);
 }
 
 .stat-card {
     text-align: center;
     padding: 30px 20px;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.08);
     border-radius: 15px;
     transition: all 0.3s ease;
-    border: 2px solid transparent;
+    border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .stat-card:hover {
     transform: translateY(-5px);
     border-color: var(--primary);
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 10px 30px rgba(255, 180, 0, 0.2);
 }
 
 .stat-number {
@@ -898,7 +911,7 @@ ul { list-style: none; }
     font-family: var(--font-head);
     line-height: 1;
     margin-bottom: 10px;
-    text-shadow: 0 0 20px rgba(255, 180, 0, 0.3);
+    text-shadow: 0 0 30px rgba(255, 180, 0, 0.5);
 }
 
 .stat-label {
@@ -911,7 +924,7 @@ ul { list-style: none; }
 }
 
 .stat-card p {
-    color: #9ca3af;
+    color: #d1d5db;
     font-size: 0.9rem;
     margin: 0;
 }
@@ -924,7 +937,7 @@ ul { list-style: none; }
 }
 
 .trust-badge-large {
-    background: linear-gradient(135deg, rgba(255, 180, 0, 0.15), rgba(255, 180, 0, 0.05));
+    background: linear-gradient(135deg, rgba(255, 180, 0, 0.2), rgba(255, 180, 0, 0.1));
     border: 3px solid var(--primary);
     border-radius: 20px;
     padding: 30px 50px;
@@ -932,13 +945,13 @@ ul { list-style: none; }
     align-items: center;
     gap: 25px;
     max-width: 600px;
-    box-shadow: 0 10px 40px rgba(255, 180, 0, 0.2);
+    box-shadow: 0 10px 40px rgba(255, 180, 0, 0.3);
     transition: all 0.3s ease;
 }
 
 .trust-badge-large:hover {
     transform: scale(1.05);
-    box-shadow: 0 15px 50px rgba(255, 180, 0, 0.3);
+    box-shadow: 0 15px 50px rgba(255, 180, 0, 0.4);
 }
 
 .trust-badge-large i {
@@ -954,7 +967,7 @@ ul { list-style: none; }
     }
     50% { 
         transform: scale(1.1); 
-        opacity: 0.8;
+        opacity: 0.9;
     }
 }
 
@@ -972,7 +985,7 @@ ul { list-style: none; }
 }
 
 .trust-badge-large span {
-    color: #d1d5db;
+    color: #e5e7eb;
     font-size: 0.95rem;
 }
 
@@ -995,7 +1008,6 @@ ul { list-style: none; }
     height: 100%; 
     object-fit: cover; 
     transition: transform 0.6s ease;
-    /* OPTIMIZED: Use will-change for smooth animation */
     will-change: transform;
 }
 .gallery-item:hover img { 
@@ -1344,7 +1356,6 @@ footer {
     box-shadow: 0 15px 25px rgba(37, 211, 102, 0.5);
 }
 
-/* OPTIMIZED: Use only transform and opacity for smooth animations */
 @keyframes pulse-wa {
     0%, 100% { 
         transform: scale(1);
@@ -1475,6 +1486,12 @@ footer {
     
     .stat-number {
         font-size: 2.5rem;
+    }
+    
+    .why-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
     }
 }
 
