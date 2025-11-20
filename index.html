@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-    <title>STP Terrassement | Expert VRD & Assainissement - 13320 Aix En Provence</title>
-    <meta name="description" content="Expert VRD à Aix En Provence. STP Terrassement réalise vos travaux de terrassement, raccordement réseaux, assainissement et démolition. Garantie Décennale.">
+    <title>STP Terrassement | Expert VRD & Assainissement - Aix-en-Provence</title>
+    <meta name="description" content="Expert VRD à Aix-en-Provence. STP Terrassement réalise vos travaux de terrassement, raccordement réseaux, assainissement et démolition. Garantie Décennale. Devis 24h.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -35,8 +35,9 @@
             <ul class="nav-links">
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#services">Prestations</a></li>
+                <li><a href="#problemes">Solutions</a></li>
                 <li><a href="#realisations">Chantiers</a></li>
-                <li><a href="#contact" class="btn-nav">Devis Gratuit</a></li>
+                <li><a href="#contact" class="btn-nav">Devis 24h</a></li>
             </ul>
 
             <!-- Mobile Toggle -->
@@ -49,6 +50,7 @@
         <div class="mobile-menu">
             <a href="#accueil">Accueil</a>
             <a href="#services">Prestations</a>
+            <a href="#problemes">Solutions</a>
             <a href="#realisations">Réalisations</a>
             <a href="#contact">Contact</a>
         </div>
@@ -59,34 +61,61 @@
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <div class="hero-text">
-                <div class="badge">Available 2025 • Intervention Rapide</div>
-                <h1>VOTRE PARTENAIRE <br><span class="highlight">VRD & TERRASSEMENT</span></h1>
-                <p>Spécialiste des travaux publics sur Aix En Provence et région PACA. Nous préparons le terrain de votre avenir avec <strong>Garantie Décennale</strong>.</p>
+                <div class="badge"><i class="fa-solid fa-bolt"></i> Intervention Rapide • Devis 24h</div>
+                <h1>TRANSFORMEZ VOTRE TERRAIN EN<br><span class="highlight">FONDATION SOLIDE</span></h1>
+                <p>Spécialiste des travaux publics sur <strong>Aix-en-Provence</strong> et région PACA. Des fondations fiables aux raccordements VRD : nous préparons le terrain de votre projet avec <strong>expertise et garantie décennale</strong>.</p>
                 
                 <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Estimation Gratuite <i class="fa-solid fa-arrow-right"></i></a>
-                    <a href="https://wa.me/33745142049" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                    <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-calculator"></i> Devis Gratuit</a>
+                    <a href="https://wa.me/33745142049" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp Direct</a>
+                </div>
+
+                <div class="trust-badges">
+                    <div class="trust-item">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Garantie<br>Décennale</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>Réponse<br>sous 24h</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fa-solid fa-trophy"></i>
+                        <span>15 ans<br>d'expérience</span>
+                    </div>
                 </div>
             </div>
 
             <!-- Lead Form -->
             <div class="hero-form">
-                <h3>Devis Express 24h</h3>
+                <div class="form-header">
+                    <i class="fa-solid fa-rocket"></i>
+                    <h3>Devis Express sous 24h</h3>
+                </div>
+                <p class="form-subtitle">Gratuit & sans engagement</p>
                 <form action="#" method="POST">
-                    <input type="text" placeholder="Votre Nom" required>
-                    <input type="tel" placeholder="Téléphone (06/07...)" required>
-                    <select>
-                        <option value="" disabled selected>Type de travaux</option>
-                        <option value="vrd">Raccordement VRD</option>
-                        <option value="terrassement">Terrassement</option>
-                        <option value="assainissement">Assainissement</option>
+                    <input type="text" placeholder="Votre Nom *" required>
+                    <input type="tel" placeholder="Téléphone (06/07...) *" pattern="[0-9]{10}" required>
+                    <input type="email" placeholder="Email" >
+                    <select required>
+                        <option value="" disabled selected>Type de travaux *</option>
+                        <option value="vrd">🔌 Raccordement VRD</option>
+                        <option value="terrassement">🚜 Terrassement & Fondations</option>
+                        <option value="assainissement">💧 Assainissement</option>
+                        <option value="demolition">🔨 Démolition</option>
+                        <option value="amenagement">🛣️ Aménagement extérieur</option>
+                        <option value="autre">❓ Autre projet</option>
                     </select>
-                    <button type="submit" class="btn btn-block">Être rappelé</button>
+                    <textarea placeholder="Décrivez votre projet en quelques mots..." rows="3"></textarea>
+                    <button type="submit" class="btn btn-block">
+                        <i class="fa-solid fa-paper-plane"></i> Recevoir mon devis
+                    </button>
+                    <p class="form-note"><i class="fa-solid fa-lock"></i> Vos données sont sécurisées</p>
                 </form>
             </div>
         </div>
         
-        <!-- FIXED WAVE DIVIDER -->
+        <!-- Fixed Wave Divider -->
         <div class="wave-bottom">
             <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
                 <path fill="#ffffff" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,261.3C960,256,1056,224,1152,213.3C1248,203,1344,213,1392,218.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
@@ -94,48 +123,224 @@
         </div>
     </header>
 
+    <!-- Pain Points Section - NEW -->
+    <section id="problemes" class="section problems-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">VOS DÉFIS, NOS SOLUTIONS</span>
+                <h2>VOUS RENCONTREZ CES PROBLÈMES ?</h2>
+                <p class="section-intro">Nous comprenons les difficultés des propriétaires et constructeurs. Voici comment nous les résolvons.</p>
+            </div>
+
+            <div class="problems-grid">
+                <!-- Problem 1 -->
+                <div class="problem-card">
+                    <div class="problem-icon red">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <h3>Terrain Complexe & Instable</h3>
+                    <p class="problem-text">Votre terrain est en pente, rocheux ou argileux ? Vous craignez des fondations instables ?</p>
+                    <div class="solution">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <p><strong>Notre Solution :</strong> Étude de sol, décaissement précis et stabilisation avec enrochement. Nous adaptons nos techniques à votre terrain.</p>
+                    </div>
+                </div>
+
+                <!-- Problem 2 -->
+                <div class="problem-card">
+                    <div class="problem-icon red">
+                        <i class="fa-solid fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Devis Flous & Dépassements</h3>
+                    <p class="problem-text">Vous avez peur des mauvaises surprises et des coûts cachés en cours de chantier ?</p>
+                    <div class="solution">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <p><strong>Notre Solution :</strong> Devis détaillé ligne par ligne avec visite technique préalable. Prix ferme et transparent dès le départ.</p>
+                    </div>
+                </div>
+
+                <!-- Problem 3 -->
+                <div class="problem-card">
+                    <div class="problem-icon red">
+                        <i class="fa-solid fa-hourglass-end"></i>
+                    </div>
+                    <h3>Retards & Manque de Fiabilité</h3>
+                    <p class="problem-text">Vous en avez marre des artisans qui ne viennent pas ou qui traînent pendant des semaines ?</p>
+                    <div class="solution">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <p><strong>Notre Solution :</strong> Planning précis respecté, équipe dédiée et suivi en temps réel. Nous tenons nos engagements.</p>
+                    </div>
+                </div>
+
+                <!-- Problem 4 -->
+                <div class="problem-card">
+                    <div class="problem-icon red">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3>Raccordements VRD Compliqués</h3>
+                    <p class="problem-text">Vous ne savez pas comment raccorder votre maison aux réseaux (eau, élec, égouts) ?</p>
+                    <div class="solution">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <p><strong>Notre Solution :</strong> Gestion complète de A à Z : tranchées, pose de canalisations, coordination avec les concessionnaires.</p>
+                    </div>
+                </div>
+
+                <!-- Problem 5 -->
+                <div class="problem-card">
+                    <div class="problem-icon red">
+                        <i class="fa-solid fa-hammer"></i>
+                    </div>
+                    <h3>Matériel Inadapté</h3>
+                    <p class="problem-text">Votre projet nécessite du gros matériel mais vous ne savez pas comment l'obtenir ?</p>
+                    <div class="solution">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <p><strong>Notre Solution :</strong> Parc machine complet : mini-pelles, pelles 20T, camions, compacteurs. Tout l'équipement nécessaire.</p>
+                    </div>
+                </div>
+
+                <!-- Problem 6 -->
+                <div class="problem-card">
+                    <div class="problem-icon red">
+                        <i class="fa-solid fa-file-contract"></i>
+                    </div>
+                    <h3>Peur de Mal Choisir</h3>
+                    <p class="problem-text">Vous hésitez entre plusieurs entreprises et craignez de tomber sur des amateurs ?</p>
+                    <div class="solution">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <p><strong>Notre Solution :</strong> 15 ans d'expérience, garantie décennale, assurances complètes et références clients vérifiables.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA After Problems -->
+            <div class="cta-box">
+                <div class="cta-content">
+                    <h3><i class="fa-solid fa-lightbulb"></i> Prêt à Démarrer Sereinement ?</h3>
+                    <p>Ne laissez pas ces problèmes retarder votre projet. Obtenez un devis clair et des conseils d'expert dès aujourd'hui.</p>
+                </div>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary btn-lg"><i class="fa-solid fa-phone"></i> Être Rappelé Gratuitement</a>
+                    <a href="https://wa.me/33745142049" class="btn btn-whatsapp btn-lg"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Services -->
     <section id="services" class="section bg-light">
         <div class="container">
             <div class="section-header">
-                <span class="subtitle">NOS COMPÉTENCES</span>
-                <h2>TOUT POUR VOS EXTÉRIEURS</h2>
+                <span class="subtitle">NOS EXPERTISES</span>
+                <h2>TOUS VOS TRAVAUX EXTÉRIEURS</h2>
+                <p class="section-intro">De la préparation du terrain à la finition, nous maîtrisons toutes les étapes de vos travaux publics.</p>
             </div>
 
             <div class="grid-3">
-                <!-- Card 1: Excavator -->
+                <!-- Card 1: Terrassement -->
                 <div class="card">
                     <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Terrassement Pelle">
+                        <img src="images/terrassement-pelle-mecanique.webp" alt="Terrassement Pelle">
                     </div>
                     <div class="card-body">
                         <i class="fa-solid fa-trowel-bricks card-icon"></i>
-                        <h3>Terrassement</h3>
-                        <p>Nivellement, fondations de maison, décaissement et évacuation des terres. Préparation parfaite pour construction ou piscine.</p>
+                        <h3>Terrassement & Fondations</h3>
+                        <p>Décaissement, nivellement, excavation et préparation du terrain. Fondations pour maisons, piscines et bâtiments. Évacuation et gestion des terres.</p>
+                        <ul class="service-list">
+                            <li><i class="fa-solid fa-caret-right"></i> Fondations de maison</li>
+                            <li><i class="fa-solid fa-caret-right"></i> Excavation pour piscine</li>
+                            <li><i class="fa-solid fa-caret-right"></i> Décaissement de terrain</li>
+                            <li><i class="fa-solid fa-caret-right"></i> Remblaiement</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Card 2: Pipes/VRD -->
+                <!-- Card 2: VRD -->
                 <div class="card">
                     <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=800&q=80" alt="VRD Canalisations">
+                        <img src="images/raccordement-vrd-assainissement.webp" alt="VRD Réseaux secs et tranchées">
                     </div>
                     <div class="card-body">
                         <i class="fa-solid fa-faucet-drip card-icon"></i>
                         <h3>VRD & Assainissement</h3>
-                        <p>Raccordement tout-à-l'égout, réseaux secs (élec/tel), tranchées techniques et pose de fosses septiques.</p>
+                        <p>Raccordement aux réseaux publics et privés. Tranchées techniques, pose de canalisations et branchements électriques, eau, télécoms.</p>
+                        <ul class="service-list">
+                            <li><i class="fa-solid fa-caret-right"></i> Raccordement tout-à-l'égout</li>
+                            <li><i class="fa-solid fa-caret-right"></i> Réseaux secs (élec/tel/fibre)</li>
+                            <li><i class="fa-solid fa-caret-right"></i> Fosse septique & micro-station</li>
+                            <li><i class="fa-solid fa-caret-right"></i> Drainage et EU/EP</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Card 3: Paving/Road -->
+                <!-- Card 3: Aménagement -->
                 <div class="card">
                     <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80" alt="Aménagement Extérieur">
+                        <img src="images/amenagement-exterieur-pave.webp" alt="Pose de pavés et allée carrossable">
                     </div>
                     <div class="card-body">
                         <i class="fa-solid fa-road card-icon"></i>
-                        <h3>Aménagements</h3>
-                        <p>Création de chemins d'accès, allées carrossables, enrochement, pose de bordures et préparation paysagère.</p>
+                        <h3>Aménagements Extérieurs</h3>
+                        <p>Création de chemins d'accès, allées carrossables, enrochement, murets de soutènement et préparation pour aménagement paysager.</p>
+                        <ul class="service-list">
+                            <li><i class="fa-solid fa-caret-right"></i> Chemins d'accès & allées</li>
+                            <li><i class="fa-solid fa-caret-right"></i> Enrochement & soutènement</li>
+                            <li><i class="fa-solid fa-caret-right"></i> Pose de bordures</li>
+                            <li><i class="fa-solid fa-caret-right"></i> Plateformes & cours</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 4: Démolition -->
+                <div class="card">
+                    <div class="card-img">
+                        <img src="images/chantier-nivellement-terrain.webp" alt="Démolition contrôlée">
+                    </div>
+                    <div class="card-body">
+                        <i class="fa-solid fa-hammer card-icon"></i>
+                        <h3>Démolition & Déconstruction</h3>
+                        <p>Démolition totale ou partielle de bâtiments, déconstruction sélective et évacuation des gravats. Respect des normes environnementales.</p>
+                        <ul class="service-list">
+                            <li><i class="fa-solid fa-caret-right"></i> Démolition de bâtiment</li>
+                            <li><i class="fa-solid fa-caret-right"></i> Casse de béton</li>
+                            <li><i class="fa-solid fa-caret-right"></i> Évacuation gravats</li>
+                            <li><i class="fa-solid fa-caret-right"></i> Désamiantage (sous-traitance)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 5: Location -->
+                <div class="card">
+                    <div class="card-img">
+                        <img src="images/equipe-stp-terrassement.webp" alt="Location matériel TP">
+                    </div>
+                    <div class="card-body">
+                        <i class="fa-solid fa-truck card-icon"></i>
+                        <h3>Location de Matériel</h3>
+                        <p>Mini-pelles, pelles hydrauliques, compacteurs et camions disponibles à la location avec ou sans chauffeur. Matériel récent et entretenu.</p>
+                        <ul class="service-list">
+                            <li><i class="fa-solid fa-caret-right"></i> Mini-pelles 1T à 5T</li>
+                            <li><i class="fa-solid fa-caret-right"></i> Pelles 15T à 20T</li>
+                            <li><i class="fa-solid fa-caret-right"></i> Compacteurs & rouleaux</li>
+                            <li><i class="fa-solid fa-caret-right"></i> Camions & bennes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 6: Conseil -->
+                <div class="card">
+                    <div class="card-img">
+                        <img src="images/entreprise-tp-confiance.webp" alt="Conseil technique chantier">
+                    </div>
+                    <div class="card-body">
+                        <i class="fa-solid fa-clipboard-check card-icon"></i>
+                        <h3>Conseil & Assistance</h3>
+                        <p>Étude de faisabilité, conseils techniques, coordination avec architectes et bureaux d'études. Nous vous accompagnons de A à Z.</p>
+                        <ul class="service-list">
+                            <li><i class="fa-solid fa-caret-right"></i> Visite technique gratuite</li>
+                            <li><i class="fa-solid fa-caret-right"></i> Étude de sol</li>
+                            <li><i class="fa-solid fa-caret-right"></i> Coordination des corps d'état</li>
+                            <li><i class="fa-solid fa-caret-right"></i> Suivi de chantier</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -143,65 +348,241 @@
     </section>
 
     <!-- Why Us (Trust) -->
-    <section class="section bg-dark text-white relative">
+    <section class="section bg-dark text-white">
         <div class="container grid-2 align-center">
             <div>
-                <h2>Pourquoi Choisir <span class="highlight">STP</span> ?</h2>
-                <p class="lead">Des travaux sérieux réalisés par des professionnels équipés.</p>
+                <span class="subtitle">NOTRE DIFFÉRENCE</span>
+                <h2>Pourquoi Choisir <span class="highlight">STP Terrassement</span> ?</h2>
+                <p class="lead">Plus qu'une entreprise de TP, un partenaire de confiance pour la réussite de votre projet.</p>
                 <ul class="feature-list">
-                    <li><i class="fa-solid fa-check-circle"></i> Parc machine complet (Mini-pelles à 20T)</li>
-                    <li><i class="fa-solid fa-check-circle"></i> Devis clair et transparent</li>
-                    <li><i class="fa-solid fa-check-circle"></i> Respect des normes de sécurité</li>
+                    <li><i class="fa-solid fa-shield-halved"></i> <strong>Garantie Décennale</strong> - Assurances complètes et protection totale</li>
+                    <li><i class="fa-solid fa-gears"></i> <strong>Parc Machine Complet</strong> - De la mini-pelle 1T à la pelle 20T</li>
+                    <li><i class="fa-solid fa-file-invoice-dollar"></i> <strong>Devis Transparent</strong> - Prix ferme, détaillé et sans surprise</li>
+                    <li><i class="fa-solid fa-people-group"></i> <strong>Équipe Qualifiée</strong> - Conducteurs d'engins expérimentés</li>
+                    <li><i class="fa-solid fa-calendar-check"></i> <strong>Respect des Délais</strong> - Planning précis et tenu</li>
+                    <li><i class="fa-solid fa-leaf"></i> <strong>Normes Environnementales</strong> - Tri et recyclage des déchets</li>
                 </ul>
                 <div class="stats-row">
                     <div class="stat">
                         <strong>100%</strong>
-                        <span>Décennale</span>
+                        <span>Assuré</span>
                     </div>
                     <div class="stat">
                         <strong>15+</strong>
                         <span>Années Exp.</span>
                     </div>
+                    <div class="stat">
+                        <strong>4.9/5</strong>
+                        <span>Clients Satisfaits</span>
+                    </div>
                 </div>
             </div>
             <div class="image-wrapper">
-                <!-- Image: Worker looking at plans -->
-                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" alt="Chef de chantier STP" class="rounded-img">
+                <img src="images/entreprise-tp-confiance.webp" alt="Chef de chantier STP Terrassement" class="rounded-img">
                 <div class="floating-badge">
-                    <i class="fa-solid fa-star text-yellow"></i> 4.9/5 Avis Clients
+                    <i class="fa-solid fa-star text-yellow"></i> Recommandé par nos Clients
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section - NEW -->
+    <section class="section process-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">COMMENT ÇA MARCHE ?</span>
+                <h2>VOTRE PROJET EN 4 ÉTAPES</h2>
+                <p class="section-intro">Un processus simple et transparent pour transformer votre projet en réalité.</p>
+            </div>
+
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon"><i class="fa-solid fa-phone"></i></div>
+                    <h3>Contact & Visite</h3>
+                    <p>Vous nous contactez, nous visitons votre terrain sous 48h pour comprendre vos besoins et contraintes.</p>
+                </div>
+
+                <div class="process-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon"><i class="fa-solid fa-calculator"></i></div>
+                    <h3>Devis Détaillé</h3>
+                    <p>Nous vous envoyons un devis clair et détaillé sous 24h avec plan d'exécution et planning prévisionnel.</p>
+                </div>
+
+                <div class="process-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon"><i class="fa-solid fa-hard-hat"></i></div>
+                    <h3>Réalisation</h3>
+                    <p>Notre équipe intervient avec le matériel adapté. Vous êtes informé en temps réel de l'avancement.</p>
+                </div>
+
+                <div class="process-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-icon"><i class="fa-solid fa-circle-check"></i></div>
+                    <h3>Livraison & Garantie</h3>
+                    <p>Réception des travaux, nettoyage du chantier et activation de votre garantie décennale.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Realisations Gallery -->
-    <section id="realisations" class="section">
+    <section id="realisations" class="section bg-light">
         <div class="container">
             <div class="section-header">
-                <h2>DERNIERS CHANTIERS</h2>
-                <p>Quelques exemples de nos travaux VRD et terrassement.</p>
+                <span class="subtitle">NOS RÉALISATIONS</span>
+                <h2>ILS NOUS ONT FAIT CONFIANCE</h2>
+                <p class="section-intro">Découvrez quelques-uns de nos chantiers récents à Aix-en-Provence et ses environs.</p>
             </div>
             <div class="gallery-grid">
-                <!-- Image 1: Pipes/Trench -->
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=600&q=80" alt="Tranchée Réseaux">
-                    <div class="gallery-caption">Réseaux Divers</div>
+                    <img src="images/chantier-reseaux-divers.webp" alt="Tranchée Réseaux VRD">
+                    <div class="gallery-caption">
+                        <strong>Raccordement VRD</strong>
+                        <span>Aix-en-Provence</span>
+                    </div>
                 </div>
-                <!-- Image 2: Foundation -->
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?auto=format&fit=crop&w=600&q=80" alt="Fondations Villa">
-                    <div class="gallery-caption">Fondations</div>
+                    <img src="images/chantier-fondations-maison.webp" alt="Fondations Villa Provence">
+                    <div class="gallery-caption">
+                        <strong>Fondations Villa</strong>
+                        <span>Meyreuil</span>
+                    </div>
                 </div>
-                <!-- Image 3: Heavy Machinery -->
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1574259392081-dbe3c19cd15e?auto=format&fit=crop&w=600&q=80" alt="Nivellement Terrain">
-                    <div class="gallery-caption">Nivellement</div>
+                    <img src="images/chantier-nivellement-terrain.webp" alt="Nivellement Terrain Constructible">
+                    <div class="gallery-caption">
+                        <strong>Nivellement Terrain</strong>
+                        <span>Gardanne</span>
+                    </div>
                 </div>
-                <!-- Image 4: Workers -->
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80" alt="Équipe sur chantier">
-                    <div class="gallery-caption">Équipe STP</div>
+                    <img src="images/equipe-stp-terrassement.webp" alt="Équipe STP sur chantier">
+                    <div class="gallery-caption">
+                        <strong>Notre Équipe</strong>
+                        <span>En Action</span>
+                    </div>
                 </div>
+                <div class="gallery-item">
+                    <img src="images/terrassement-pelle-mecanique.webp" alt="Pelle mécanique terrassement">
+                    <div class="gallery-caption">
+                        <strong>Excavation</strong>
+                        <span>Venelles</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/amenagement-exterieur-pave.webp" alt="Aménagement allée carrossable">
+                    <div class="gallery-caption">
+                        <strong>Allée Carrossable</strong>
+                        <span>Le Tholonet</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section - NEW -->
+    <section class="section testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">TÉMOIGNAGES</span>
+                <h2>CE QUE NOS CLIENTS DISENT</h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"Travail impeccable pour les fondations de notre maison. Équipe sérieuse, devis respecté et chantier propre. Je recommande vivement !"</p>
+                    <div class="testimonial-author">
+                        <strong>Jean-Marc D.</strong>
+                        <span>Aix-en-Provence</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"Réactifs et professionnels. Notre raccordement VRD a été réalisé en temps et en heure. Prix très correct pour la qualité du travail."</p>
+                    <div class="testimonial-author">
+                        <strong>Sophie L.</strong>
+                        <span>Meyreuil</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"Enfin des vrais pros ! Terrain difficile mais ils ont su gérer. Communication parfaite tout au long du chantier."</p>
+                    <div class="testimonial-author">
+                        <strong>Michel R.</strong>
+                        <span>Gardanne</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="section cta-final-section">
+        <div class="container">
+            <div class="cta-final-box">
+                <h2><i class="fa-solid fa-rocket"></i> Prêt à Lancer Votre Projet ?</h2>
+                <p class="cta-final-subtitle">Ne perdez plus de temps avec des artisans peu fiables. Obtenez un devis professionnel dès maintenant.</p>
+                
+                <div class="cta-benefits">
+                    <div class="benefit-item">
+                        <i class="fa-solid fa-bolt"></i>
+                        <span>Réponse en 24h</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fa-solid fa-euro-sign"></i>
+                        <span>Devis Gratuit</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fa-solid fa-handshake"></i>
+                        <span>Sans Engagement</span>
+                    </div>
+                </div>
+
+                <div class="cta-final-buttons">
+                    <a href="tel:+33745142049" class="btn btn-primary btn-xl">
+                        <i class="fa-solid fa-phone"></i> 07 45 14 20 49
+                    </a>
+                    <a href="https://wa.me/33745142049" class="btn btn-whatsapp btn-xl">
+                        <i class="fa-brands fa-whatsapp"></i> WhatsApp Direct
+                    </a>
+                </div>
+
+                <p class="cta-final-note"><i class="fa-solid fa-clock"></i> Disponible du Lundi au Samedi • Intervention sur toute la région d'Aix-en-Provence</p>
             </div>
         </div>
     </section>
@@ -211,8 +592,8 @@
         <div class="container">
             <div class="contact-box">
                 <div class="contact-text">
-                    <h2>Parlons de votre projet</h2>
-                    <p>Besoin d'un devis ou d'un conseil technique ?</p>
+                    <h2>Une Question ? Un Projet ?</h2>
+                    <p>Notre équipe est à votre écoute pour discuter de votre projet et vous conseiller.</p>
                     <div class="contact-infos">
                         <a href="tel:+33745142049" class="info-item">
                             <i class="fa-solid fa-phone"></i> 07 45 14 20 49
@@ -221,7 +602,10 @@
                             <i class="fa-solid fa-envelope"></i> stp13109@gmail.com
                         </a>
                         <div class="info-item">
-                            <i class="fa-solid fa-location-dot"></i> 13320 Aix En Provence
+                            <i class="fa-solid fa-location-dot"></i> Aix-en-Provence & Région PACA
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-clock"></i> Lun - Sam : 7h - 19h
                         </div>
                     </div>
                 </div>
@@ -234,32 +618,92 @@
         </div>
     </section>
 
+    <!-- Zone d'Intervention -->
+    <section class="section zone-section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">ZONE D'INTERVENTION</span>
+                <h2>NOUS INTERVENONS DANS TOUTE LA RÉGION</h2>
+            </div>
+            <div class="zone-content">
+                <div class="zone-map">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                </div>
+                <div class="zone-list">
+                    <h3><i class="fa-solid fa-location-dot text-yellow"></i> Aix-en-Provence et environs</h3>
+                    <div class="cities-grid">
+                        <div class="city-item"><i class="fa-solid fa-check"></i> Aix-en-Provence</div>
+                        <div class="city-item"><i class="fa-solid fa-check"></i> Bouc-Bel-Air</div>
+                        <div class="city-item"><i class="fa-solid fa-check"></i> Meyreuil</div>
+                        <div class="city-item"><i class="fa-solid fa-check"></i> Gardanne</div>
+                        <div class="city-item"><i class="fa-solid fa-check"></i> Venelles</div>
+                        <div class="city-item"><i class="fa-solid fa-check"></i> Le Tholonet</div>
+                        <div class="city-item"><i class="fa-solid fa-check"></i> Fuveau</div>
+                        <div class="city-item"><i class="fa-solid fa-check"></i> Peynier</div>
+                        <div class="city-item"><i class="fa-solid fa-check"></i> Trets</div>
+                        <div class="city-item"><i class="fa-solid fa-check"></i> Saint-Marc-Jaumegarde</div>
+                        <div class="city-item"><i class="fa-solid fa-check"></i> Beaurecueil</div>
+                        <div class="city-item"><i class="fa-solid fa-check"></i> Puyloubier</i>
+                    </div>
+                    <p class="zone-note"><strong>Votre ville n'est pas listée ?</strong> Contactez-nous ! Nous intervenons dans toute la région PACA.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container footer-content">
             <div class="footer-col">
                 <h4>STP TERRASSEMENT</h4>
-                <p>Entreprise de Travaux Publics et VRD intervenant à Aix En Provence et ses environs.</p>
+                <p>Entreprise spécialisée en Travaux Publics, VRD et Terrassement. Intervention sur Aix-en-Provence et toute la région PACA.</p>
+                <div class="footer-badges">
+                    <div class="footer-badge">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Garantie Décennale</span>
+                    </div>
+                    <div class="footer-badge">
+                        <i class="fa-solid fa-certificate"></i>
+                        <span>Certifié & Assuré</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Nos Services</h4>
+                <a href="#services">Terrassement & Fondations</a>
+                <a href="#services">VRD & Raccordements</a>
+                <a href="#services">Assainissement</a>
+                <a href="#services">Aménagement Extérieur</a>
+                <a href="#services">Démolition</a>
             </div>
             <div class="footer-col">
                 <h4>Liens Rapides</h4>
                 <a href="#accueil">Accueil</a>
                 <a href="#services">Prestations</a>
+                <a href="#problemes">Solutions</a>
                 <a href="#realisations">Réalisations</a>
+                <a href="#contact">Devis Gratuit</a>
             </div>
             <div class="footer-col">
                 <h4>Contact</h4>
-                <p>07 45 14 20 49</p>
-                <p>stp13109@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> 07 45 14 20 49</p>
+                <p><i class="fa-solid fa-envelope"></i> stp13109@gmail.com</p>
+                <p><i class="fa-solid fa-location-dot"></i> Aix-en-Provence (13)</p>
+                <p><i class="fa-solid fa-clock"></i> Lun-Sam: 7h-19h</p>
             </div>
         </div>
         <div class="copyright">
-            &copy; 2025 STP Terrassement. Tous droits réservés.
+            <p>&copy; 2025 STP Terrassement - Tous droits réservés | Expert VRD & Terrassement Aix-en-Provence</p>
+            <p class="legal-links">
+                <a href="#mentions">Mentions Légales</a> • 
+                <a href="#confidentialite">Politique de Confidentialité</a> • 
+                <a href="#cgv">CGV</a>
+            </p>
         </div>
     </footer>
 
     <!-- Floating WhatsApp -->
-    <a href="https://wa.me/33745142049" class="float-wa" target="_blank">
+    <a href="https://wa.me/33745142049" class="float-wa" target="_blank" aria-label="Contactez-nous sur WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
