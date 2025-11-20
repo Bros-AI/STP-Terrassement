@@ -47,12 +47,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ========================================
-    // NAVBAR SCROLL EFFECT
+    // NAVBAR SCROLL EFFECT (OPTIMIZED)
     // ========================================
     const navbar = document.getElementById('navbar');
     let lastScroll = 0;
+    let ticking = false;
 
-    window.addEventListener('scroll', () => {
+    // PERFORMANCE: Use requestAnimationFrame for smooth scrolling
+    const updateNavbar = () => {
         const currentScroll = window.pageYOffset;
 
         // Add shadow and shrink padding when scrolled
@@ -64,17 +66,16 @@ document.addEventListener('DOMContentLoaded', () => {
             navbar.style.padding = '15px 0';
         }
 
-        // Optional: Hide navbar on scroll down, show on scroll up
-        // Uncomment the following block to enable this feature
-        /*
-        if (currentScroll > lastScroll && currentScroll > 100) {
-            navbar.style.transform = 'translateY(-100%)';
-        } else {
-            navbar.style.transform = 'translateY(0)';
-        }
         lastScroll = currentScroll;
-        */
-    });
+        ticking = false;
+    };
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(updateNavbar);
+            ticking = true;
+        }
+    }, { passive: true }); // PERFORMANCE: Passive listener
 
     // ========================================
     // SMOOTH SCROLLING FOR ANCHOR LINKS
@@ -226,33 +227,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // Add animation keyframes
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes slideInRight {
-            from {
-                transform: translateX(400px);
-                opacity: 0;
+    if (!document.getElementById('notification-animations')) {
+        const style = document.createElement('style');
+        style.id = 'notification-animations';
+        style.textContent = `
+            @keyframes slideInRight {
+                from {
+                    transform: translateX(400px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
             }
-            to {
-                transform: translateX(0);
-                opacity: 1;
+            @keyframes slideOutRight {
+                from {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateX(400px);
+                    opacity: 0;
+                }
             }
-        }
-        @keyframes slideOutRight {
-            from {
-                transform: translateX(0);
-                opacity: 1;
-            }
-            to {
-                transform: translateX(400px);
-                opacity: 0;
-            }
-        }
-    `;
-    document.head.appendChild(style);
+        `;
+        document.head.appendChild(style);
+    }
 
     // ========================================
-    // SCROLL REVEAL ANIMATIONS
+    // SCROLL REVEAL ANIMATIONS (OPTIMIZED WITH INTERSECTION OBSERVER)
     // ========================================
     const observerOptions = {
         threshold: 0.1,
@@ -264,7 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
-                observer.unobserve(entry.target);
+                observer.unobserve(entry.target); // Stop observing after animation
             }
         });
     }, observerOptions);
@@ -281,12 +285,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ========================================
-    // ACTIVE NAV LINK ON SCROLL
+    // ACTIVE NAV LINK ON SCROLL (OPTIMIZED)
     // ========================================
     const sections = document.querySelectorAll('section[id]');
     const navItems = document.querySelectorAll('.nav-links a');
+    let navTicking = false;
 
-    window.addEventListener('scroll', () => {
+    const updateActiveNav = () => {
         let current = '';
         
         sections.forEach(section => {
@@ -304,29 +309,41 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.classList.add('active');
             }
         });
-    });
 
-    // Add active link styles
-    const activeStyle = document.createElement('style');
-    activeStyle.textContent = `
-        .nav-links a.active {
-            color: #FFB400;
-            position: relative;
+        navTicking = false;
+    };
+
+    window.addEventListener('scroll', () => {
+        if (!navTicking) {
+            window.requestAnimationFrame(updateActiveNav);
+            navTicking = true;
         }
-        .nav-links a.active::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: #FFB400;
-        }
-    `;
-    document.head.appendChild(activeStyle);
+    }, { passive: true }); // PERFORMANCE: Passive listener
+
+    // Add active link styles (only if not already added)
+    if (!document.getElementById('active-nav-styles')) {
+        const activeStyle = document.createElement('style');
+        activeStyle.id = 'active-nav-styles';
+        activeStyle.textContent = `
+            .nav-links a.active {
+                color: #FFB400;
+                position: relative;
+            }
+            .nav-links a.active::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background: #FFB400;
+            }
+        `;
+        document.head.appendChild(activeStyle);
+    }
 
     // ========================================
-    // GALLERY LIGHTBOX (OPTIONAL)
+    // GALLERY LIGHTBOX (OPTIMIZED)
     // ========================================
     const galleryItems = document.querySelectorAll('.gallery-item');
     
@@ -340,8 +357,8 @@ document.addEventListener('DOMContentLoaded', () => {
             lightbox.className = 'lightbox';
             lightbox.innerHTML = `
                 <div class="lightbox-content">
-                    <span class="lightbox-close">&times;</span>
-                    <img src="${img.src}" alt="${img.alt}">
+                    <span class="lightbox-close" aria-label="Fermer">&times;</span>
+                    <img src="${img.src}" alt="${img.alt}" loading="lazy">
                     <div class="lightbox-caption">${caption}</div>
                 </div>
             `;
@@ -367,98 +384,114 @@ document.addEventListener('DOMContentLoaded', () => {
             // Close lightbox
             const closeBtn = lightbox.querySelector('.lightbox-close');
             closeBtn.addEventListener('click', () => {
-                lightbox.style.animation = 'fadeOut 0.3s ease';
-                setTimeout(() => {
-                    lightbox.remove();
-                    document.body.style.overflow = '';
-                }, 300);
+                closeLightbox(lightbox);
             });
             
             // Close on background click
             lightbox.addEventListener('click', (e) => {
                 if (e.target === lightbox) {
-                    lightbox.style.animation = 'fadeOut 0.3s ease';
-                    setTimeout(() => {
-                        lightbox.remove();
-                        document.body.style.overflow = '';
-                    }, 300);
+                    closeLightbox(lightbox);
                 }
             });
+
+            // Close on ESC key
+            const escHandler = (e) => {
+                if (e.key === 'Escape') {
+                    closeLightbox(lightbox);
+                    document.removeEventListener('keydown', escHandler);
+                }
+            };
+            document.addEventListener('keydown', escHandler);
         });
     });
 
-    // Lightbox styles
-    const lightboxStyle = document.createElement('style');
-    lightboxStyle.textContent = `
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes fadeOut {
-            from { opacity: 1; }
-            to { opacity: 0; }
-        }
-        .lightbox-content {
-            position: relative;
-            max-width: 90%;
-            max-height: 90vh;
-            animation: zoomIn 0.3s ease;
-        }
-        @keyframes zoomIn {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-        .lightbox-content img {
-            max-width: 100%;
-            max-height: 80vh;
-            border-radius: 10px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-        }
-        .lightbox-close {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            color: white;
-            font-size: 40px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .lightbox-close:hover {
-            color: #FFB400;
-            transform: rotate(90deg);
-        }
-        .lightbox-caption {
-            color: white;
-            text-align: center;
-            margin-top: 20px;
-            font-size: 1.1rem;
-        }
-    `;
-    document.head.appendChild(lightboxStyle);
+    function closeLightbox(lightbox) {
+        lightbox.style.animation = 'fadeOut 0.3s ease';
+        setTimeout(() => {
+            lightbox.remove();
+            document.body.style.overflow = '';
+        }, 300);
+    }
+
+    // Lightbox styles (only if not already added)
+    if (!document.getElementById('lightbox-styles')) {
+        const lightboxStyle = document.createElement('style');
+        lightboxStyle.id = 'lightbox-styles';
+        lightboxStyle.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            @keyframes fadeOut {
+                from { opacity: 1; }
+                to { opacity: 0; }
+            }
+            .lightbox-content {
+                position: relative;
+                max-width: 90%;
+                max-height: 90vh;
+                animation: zoomIn 0.3s ease;
+            }
+            @keyframes zoomIn {
+                from { transform: scale(0.8); opacity: 0; }
+                to { transform: scale(1); opacity: 1; }
+            }
+            .lightbox-content img {
+                max-width: 100%;
+                max-height: 80vh;
+                border-radius: 10px;
+                box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            }
+            .lightbox-close {
+                position: absolute;
+                top: -40px;
+                right: 0;
+                color: white;
+                font-size: 40px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            .lightbox-close:hover {
+                color: #FFB400;
+                transform: rotate(90deg);
+            }
+            .lightbox-caption {
+                color: white;
+                text-align: center;
+                margin-top: 20px;
+                font-size: 1.1rem;
+            }
+        `;
+        document.head.appendChild(lightboxStyle);
+    }
 
     // ========================================
-    // COUNTER ANIMATION FOR STATS
+    // COUNTER ANIMATION FOR STATS (OPTIMIZED)
     // ========================================
     const stats = document.querySelectorAll('.stat strong');
     
     const animateCounter = (element) => {
         const target = element.textContent;
         const isPercentage = target.includes('%');
+        const hasPlus = target.includes('+');
         const number = parseInt(target);
         
         if (isNaN(number)) return;
         
         let current = 0;
         const increment = number / 50;
+        const duration = 1500; // 1.5 seconds
+        const stepTime = duration / 50;
+        
         const timer = setInterval(() => {
             current += increment;
             if (current >= number) {
-                element.textContent = isPercentage ? `${number}%` : number + (target.includes('+') ? '+' : '');
+                element.textContent = number + (isPercentage ? '%' : '') + (hasPlus ? '+' : '');
                 clearInterval(timer);
             } else {
-                element.textContent = Math.floor(current) + (isPercentage ? '%' : '');
+                element.textContent = Math.floor(current) + (isPercentage ? '%' : '') + (hasPlus ? '+' : '');
             }
-        }, 30);
+        }, stepTime);
     };
 
     const statsObserver = new IntersectionObserver((entries) => {
@@ -473,10 +506,73 @@ document.addEventListener('DOMContentLoaded', () => {
     stats.forEach(stat => statsObserver.observe(stat));
 
     // ========================================
+    // LAZY LOADING FOR IMAGES (NATIVE + FALLBACK)
+    // ========================================
+    // Modern browsers support native lazy loading via loading="lazy"
+    // This is a fallback for older browsers
+    if ('loading' in HTMLImageElement.prototype) {
+        // Browser supports native lazy loading
+        const images = document.querySelectorAll('img[loading="lazy"]');
+        images.forEach(img => {
+            img.src = img.src; // Trigger loading
+        });
+    } else {
+        // Fallback to Intersection Observer for older browsers
+        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+        
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src || img.src;
+                    img.classList.add('loaded');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+
+        lazyImages.forEach(img => imageObserver.observe(img));
+    }
+
+    // ========================================
+    // PERFORMANCE: DEBOUNCE UTILITY
+    // ========================================
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+
+    // ========================================
     // CONSOLE EASTER EGG
     // ========================================
     console.log('%cSTP TERRASSEMENT', 'font-size: 24px; font-weight: bold; color: #FFB400;');
     console.log('%cVous cherchez à améliorer votre site ? Contactez-nous !', 'font-size: 14px; color: #666;');
     console.log('%c📞 07 45 14 20 49', 'font-size: 16px; color: #25D366; font-weight: bold;');
+
+    // ========================================
+    // PERFORMANCE MONITORING (OPTIONAL - REMOVE IN PRODUCTION)
+    // ========================================
+    if (window.performance && window.performance.timing) {
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const perfData = window.performance.timing;
+                const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
+                const connectTime = perfData.responseEnd - perfData.requestStart;
+                const renderTime = perfData.domComplete - perfData.domLoading;
+                
+                console.log('%c⚡ Performance Metrics:', 'font-weight: bold; color: #FFB400;');
+                console.log(`Page Load Time: ${pageLoadTime}ms`);
+                console.log(`Connect Time: ${connectTime}ms`);
+                console.log(`Render Time: ${renderTime}ms`);
+            }, 0);
+        });
+    }
 
 });

@@ -8,23 +8,34 @@
     <title>STP Terrassement | Expert VRD & Assainissement - Aix-en-Provence</title>
     <meta name="description" content="Expert VRD à Aix-en-Provence. STP Terrassement réalise vos travaux de terrassement, raccordement réseaux, assainissement et démolition. Garantie Décennale. Devis 24h.">
     
-    <!-- Fonts -->
+    <!-- PERFORMANCE OPTIMIZATION: Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    
+    <!-- PERFORMANCE OPTIMIZATION: Preload critical assets -->
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Oswald:wght@500;700&display=swap" as="style">
+    
+    <!-- PERFORMANCE OPTIMIZATION: Fonts with font-display swap to prevent FOIT -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
     
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- PERFORMANCE OPTIMIZATION: Defer non-critical CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- CACHE SUGGESTION: Add meta tags (better done server-side) -->
+    <meta http-equiv="Cache-Control" content="public, max-age=31536000">
 </head>
 <body>
 
     <!-- Navigation -->
     <nav id="navbar" class="navbar">
         <div class="container nav-container">
-            <a href="#" class="logo">
+            <a href="#" class="logo" aria-label="STP Terrassement - Accueil">
                 <div class="logo-icon"><i class="fa-solid fa-excavator"></i></div>
                 <div class="logo-text">
                     <span class="brand-name">STP <span class="highlight">TERRASSEMENT</span></span>
@@ -41,7 +52,7 @@
             </ul>
 
             <!-- Mobile Toggle -->
-            <button class="mobile-toggle" aria-label="Menu">
+            <button class="mobile-toggle" aria-label="Menu de navigation mobile">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
@@ -67,7 +78,7 @@
                 
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-calculator"></i> Devis Gratuit</a>
-                    <a href="https://wa.me/33745142049" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp Direct</a>
+                    <a href="https://wa.me/33745142049" class="btn btn-whatsapp" rel="noopener" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Direct</a>
                 </div>
 
                 <div class="trust-badges">
@@ -94,10 +105,10 @@
                 </div>
                 <p class="form-subtitle">Gratuit & sans engagement</p>
                 <form action="#" method="POST">
-                    <input type="text" placeholder="Votre Nom *" required>
-                    <input type="tel" placeholder="Téléphone (06/07...) *" pattern="[0-9]{10}" required>
-                    <input type="email" placeholder="Email" >
-                    <select required>
+                    <input type="text" name="name" placeholder="Votre Nom *" required aria-label="Votre nom">
+                    <input type="tel" name="phone" placeholder="Téléphone (06/07...) *" pattern="[0-9]{10}" required aria-label="Votre téléphone">
+                    <input type="email" name="email" placeholder="Email" aria-label="Votre email">
+                    <select name="service" required aria-label="Type de travaux">
                         <option value="" disabled selected>Type de travaux *</option>
                         <option value="vrd">🔌 Raccordement VRD</option>
                         <option value="terrassement">🚜 Terrassement & Fondations</option>
@@ -106,7 +117,7 @@
                         <option value="amenagement">🛣️ Aménagement extérieur</option>
                         <option value="autre">❓ Autre projet</option>
                     </select>
-                    <textarea placeholder="Décrivez votre projet en quelques mots..." rows="3"></textarea>
+                    <textarea name="message" placeholder="Décrivez votre projet en quelques mots..." rows="3" aria-label="Description de votre projet"></textarea>
                     <button type="submit" class="btn btn-block">
                         <i class="fa-solid fa-paper-plane"></i> Recevoir mon devis
                     </button>
@@ -117,7 +128,7 @@
         
         <!-- Fixed Wave Divider -->
         <div class="wave-bottom">
-            <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <svg viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true">
                 <path fill="#ffffff" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,261.3C960,256,1056,224,1152,213.3C1248,203,1344,213,1392,218.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
             </svg>
         </div>
@@ -220,7 +231,7 @@
                 </div>
                 <div class="cta-buttons">
                     <a href="#contact" class="btn btn-primary btn-lg"><i class="fa-solid fa-phone"></i> Être Rappelé Gratuitement</a>
-                    <a href="https://wa.me/33745142049" class="btn btn-whatsapp btn-lg"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                    <a href="https://wa.me/33745142049" class="btn btn-whatsapp btn-lg" rel="noopener" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
                 </div>
             </div>
         </div>
@@ -239,17 +250,17 @@
                 <!-- Card 1: Terrassement -->
                 <div class="card">
                     <div class="card-img">
-                        <img src="images/terrassement-pelle-mecanique.webp" alt="Terrassement Pelle">
+                        <img src="images/terrassement-pelle-mecanique.webp" alt="Terrassement avec pelle mécanique" width="400" height="220" loading="lazy">
                     </div>
                     <div class="card-body">
-                        <i class="fa-solid fa-trowel-bricks card-icon"></i>
+                        <i class="fa-solid fa-trowel-bricks card-icon" aria-hidden="true"></i>
                         <h3>Terrassement & Fondations</h3>
                         <p>Décaissement, nivellement, excavation et préparation du terrain. Fondations pour maisons, piscines et bâtiments. Évacuation et gestion des terres.</p>
                         <ul class="service-list">
-                            <li><i class="fa-solid fa-caret-right"></i> Fondations de maison</li>
-                            <li><i class="fa-solid fa-caret-right"></i> Excavation pour piscine</li>
-                            <li><i class="fa-solid fa-caret-right"></i> Décaissement de terrain</li>
-                            <li><i class="fa-solid fa-caret-right"></i> Remblaiement</li>
+                            <li><i class="fa-solid fa-caret-right" aria-hidden="true"></i> Fondations de maison</li>
+                            <li><i class="fa-solid fa-caret-right" aria-hidden="true"></i> Excavation pour piscine</li>
+                            <li><i class="fa-solid fa-caret-right" aria-hidden="true"></i> Décaissement de terrain</li>
+                            <li><i class="fa-solid fa-caret-right" aria-hidden="true"></i> Remblaiement</li>
                         </ul>
                     </div>
                 </div>
@@ -257,17 +268,17 @@
                 <!-- Card 2: VRD -->
                 <div class="card">
                     <div class="card-img">
-                        <img src="images/raccordement-vrd-assainissement.webp" alt="VRD Réseaux secs et tranchées">
+                        <img src="images/raccordement-vrd-assainissement.webp" alt="VRD et raccordement aux réseaux" width="400" height="220" loading="lazy">
                     </div>
                     <div class="card-body">
-                        <i class="fa-solid fa-faucet-drip card-icon"></i>
+                        <i class="fa-solid fa-faucet-drip card-icon" aria-hidden="true"></i>
                         <h3>VRD & Assainissement</h3>
                         <p>Raccordement aux réseaux publics et privés. Tranchées techniques, pose de canalisations et branchements électriques, eau, télécoms.</p>
                         <ul class="service-list">
-                            <li><i class="fa-solid fa-caret-right"></i> Raccordement tout-à-l'égout</li>
-                            <li><i class="fa-solid fa-caret-right"></i> Réseaux secs (élec/tel/fibre)</li>
-                            <li><i class="fa-solid fa-caret-right"></i> Fosse septique & micro-station</li>
-                            <li><i class="fa-solid fa-caret-right"></i> Drainage et EU/EP</li>
+                            <li><i class="fa-solid fa-caret-right" aria-hidden="true"></i> Raccordement tout-à-l'égout</li>
+                            <li><i class="fa-solid fa-caret-right" aria-hidden="true"></i> Réseaux secs (élec/tel/fibre)</li>
+                            <li><i class="fa-solid fa-caret-right" aria-hidden="true"></i> Fosse septique & micro-station</li>
+                            <li><i class="fa-solid fa-caret-right" aria-hidden="true"></i> Drainage et EU/EP</li>
                         </ul>
                     </div>
                 </div>
@@ -275,17 +286,17 @@
                 <!-- Card 3: Aménagement -->
                 <div class="card">
                     <div class="card-img">
-                        <img src="images/amenagement-exterieur-pave.webp" alt="Pose de pavés et allée carrossable">
+                        <img src="images/amenagement-exterieur-pave.webp" alt="Aménagement extérieur et pose de pavés" width="400" height="220" loading="lazy">
                     </div>
                     <div class="card-body">
-                        <i class="fa-solid fa-road card-icon"></i>
+                        <i class="fa-solid fa-road card-icon" aria-hidden="true"></i>
                         <h3>Aménagements Extérieurs</h3>
                         <p>Création de chemins d'accès, allées carrossables, enrochement, murets de soutènement et préparation pour aménagement paysager.</p>
                         <ul class="service-list">
-                            <li><i class="fa-solid fa-caret-right"></i> Chemins d'accès & allées</li>
-                            <li><i class="fa-solid fa-caret-right"></i> Enrochement & soutènement</li>
-                            <li><i class="fa-solid fa-caret-right"></i> Pose de bordures</li>
-                            <li><i class="fa-solid fa-caret-right"></i> Plateformes & cours</li>
+                            <li><i class="fa-solid fa-caret-right" aria-hidden="true"></i> Chemins d'accès & allées</li>
+                            <li><i class="fa-solid fa-caret-right" aria-hidden="true"></i> Enrochement & soutènement</li>
+                            <li><i class="fa-solid fa-caret-right" aria-hidden="true"></i> Pose de bordures</li>
+                            <li><i class="fa-solid fa-caret-right" aria-hidden="true"></i> Plateformes & cours</li>
                         </ul>
                     </div>
                 </div>
@@ -293,17 +304,17 @@
                 <!-- Card 4: Démolition -->
                 <div class="card">
                     <div class="card-img">
-                        <img src="images/chantier-nivellement-terrain.webp" alt="Démolition contrôlée">
+                        <img src="images/chantier-nivellement-terrain.webp" alt="Démolition et nivellement de terrain" width="400" height="220" loading="lazy">
                     </div>
                     <div class="card-body">
-                        <i class="fa-solid fa-hammer card-icon"></i>
+                        <i class="fa-solid fa-hammer card-icon" aria-hidden="true"></i>
                         <h3>Démolition & Déconstruction</h3>
                         <p>Démolition totale ou partielle de bâtiments, déconstruction sélective et évacuation des gravats. Respect des normes environnementales.</p>
                         <ul class="service-list">
-                            <li><i class="fa-solid fa-caret-right"></i> Démolition de bâtiment</li>
-                            <li><i class="fa-solid fa-caret-right"></i> Casse de béton</li>
-                            <li><i class="fa-solid fa-caret-right"></i> Évacuation gravats</li>
-                            <li><i class="fa-solid fa-caret-right"></i> Désamiantage (sous-traitance)</li>
+                            <li><i class="fa-solid fa-caret-right" aria-hidden="true"></i> Démolition de bâtiment</li>
+                            <li><i class="fa-solid fa-caret-right" aria-hidden="true"></i> Casse de béton</li>
+                            <li><i class="fa-solid fa-caret-right" aria-hidden="true"></i> Évacuation gravats</li>
+                            <li><i class="fa-solid fa-caret-right" aria-hidden="true"></i> Désamiantage (sous-traitance)</li>
                         </ul>
                     </div>
                 </div>
@@ -311,17 +322,17 @@
                 <!-- Card 5: Location -->
                 <div class="card">
                     <div class="card-img">
-                        <img src="images/equipe-stp-terrassement.webp" alt="Location matériel TP">
+                        <img src="images/equipe-stp-terrassement.webp" alt="Équipe STP Terrassement et matériel" width="400" height="220" loading="lazy">
                     </div>
                     <div class="card-body">
-                        <i class="fa-solid fa-truck card-icon"></i>
+                        <i class="fa-solid fa-truck card-icon" aria-hidden="true"></i>
                         <h3>Location de Matériel</h3>
                         <p>Mini-pelles, pelles hydrauliques, compacteurs et camions disponibles à la location avec ou sans chauffeur. Matériel récent et entretenu.</p>
                         <ul class="service-list">
-                            <li><i class="fa-solid fa-caret-right"></i> Mini-pelles 1T à 5T</li>
-                            <li><i class="fa-solid fa-caret-right"></i> Pelles 15T à 20T</li>
-                            <li><i class="fa-solid fa-caret-right"></i> Compacteurs & rouleaux</li>
-                            <li><i class="fa-solid fa-caret-right"></i> Camions & bennes</li>
+                            <li><i class="fa-solid fa-caret-right" aria-hidden="true"></i> Mini-pelles 1T à 5T</li>
+                            <li><i class="fa-solid fa-caret-right" aria-hidden="true"></i> Pelles 15T à 20T</li>
+                            <li><i class="fa-solid fa-caret-right" aria-hidden="true"></i> Compacteurs & rouleaux</li>
+                            <li><i class="fa-solid fa-caret-right" aria-hidden="true"></i> Camions & bennes</li>
                         </ul>
                     </div>
                 </div>
@@ -329,17 +340,17 @@
                 <!-- Card 6: Conseil -->
                 <div class="card">
                     <div class="card-img">
-                        <img src="images/entreprise-tp-confiance.webp" alt="Conseil technique chantier">
+                        <img src="images/entreprise-tp-confiance.webp" alt="Conseil technique et expertise" width="400" height="220" loading="lazy">
                     </div>
                     <div class="card-body">
-                        <i class="fa-solid fa-clipboard-check card-icon"></i>
+                        <i class="fa-solid fa-clipboard-check card-icon" aria-hidden="true"></i>
                         <h3>Conseil & Assistance</h3>
                         <p>Étude de faisabilité, conseils techniques, coordination avec architectes et bureaux d'études. Nous vous accompagnons de A à Z.</p>
                         <ul class="service-list">
-                            <li><i class="fa-solid fa-caret-right"></i> Visite technique gratuite</li>
-                            <li><i class="fa-solid fa-caret-right"></i> Étude de sol</li>
-                            <li><i class="fa-solid fa-caret-right"></i> Coordination des corps d'état</li>
-                            <li><i class="fa-solid fa-caret-right"></i> Suivi de chantier</li>
+                            <li><i class="fa-solid fa-caret-right" aria-hidden="true"></i> Visite technique gratuite</li>
+                            <li><i class="fa-solid fa-caret-right" aria-hidden="true"></i> Étude de sol</li>
+                            <li><i class="fa-solid fa-caret-right" aria-hidden="true"></i> Coordination des corps d'état</li>
+                            <li><i class="fa-solid fa-caret-right" aria-hidden="true"></i> Suivi de chantier</li>
                         </ul>
                     </div>
                 </div>
@@ -355,12 +366,12 @@
                 <h2>Pourquoi Choisir <span class="highlight">STP Terrassement</span> ?</h2>
                 <p class="lead">Plus qu'une entreprise de TP, un partenaire de confiance pour la réussite de votre projet.</p>
                 <ul class="feature-list">
-                    <li><i class="fa-solid fa-shield-halved"></i> <strong>Garantie Décennale</strong> - Assurances complètes et protection totale</li>
-                    <li><i class="fa-solid fa-gears"></i> <strong>Parc Machine Complet</strong> - De la mini-pelle 1T à la pelle 20T</li>
-                    <li><i class="fa-solid fa-file-invoice-dollar"></i> <strong>Devis Transparent</strong> - Prix ferme, détaillé et sans surprise</li>
-                    <li><i class="fa-solid fa-people-group"></i> <strong>Équipe Qualifiée</strong> - Conducteurs d'engins expérimentés</li>
-                    <li><i class="fa-solid fa-calendar-check"></i> <strong>Respect des Délais</strong> - Planning précis et tenu</li>
-                    <li><i class="fa-solid fa-leaf"></i> <strong>Normes Environnementales</strong> - Tri et recyclage des déchets</li>
+                    <li><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> <strong>Garantie Décennale</strong> - Assurances complètes et protection totale</li>
+                    <li><i class="fa-solid fa-gears" aria-hidden="true"></i> <strong>Parc Machine Complet</strong> - De la mini-pelle 1T à la pelle 20T</li>
+                    <li><i class="fa-solid fa-file-invoice-dollar" aria-hidden="true"></i> <strong>Devis Transparent</strong> - Prix ferme, détaillé et sans surprise</li>
+                    <li><i class="fa-solid fa-people-group" aria-hidden="true"></i> <strong>Équipe Qualifiée</strong> - Conducteurs d'engins expérimentés</li>
+                    <li><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> <strong>Respect des Délais</strong> - Planning précis et tenu</li>
+                    <li><i class="fa-solid fa-leaf" aria-hidden="true"></i> <strong>Normes Environnementales</strong> - Tri et recyclage des déchets</li>
                 </ul>
                 <div class="stats-row">
                     <div class="stat">
@@ -378,9 +389,9 @@
                 </div>
             </div>
             <div class="image-wrapper">
-                <img src="images/entreprise-tp-confiance.webp" alt="Chef de chantier STP Terrassement" class="rounded-img">
+                <img src="images/entreprise-tp-confiance.webp" alt="Chef de chantier STP Terrassement" class="rounded-img" width="600" height="400" loading="lazy">
                 <div class="floating-badge">
-                    <i class="fa-solid fa-star text-yellow"></i> Recommandé par nos Clients
+                    <i class="fa-solid fa-star text-yellow" aria-hidden="true"></i> Recommandé par nos Clients
                 </div>
             </div>
         </div>
@@ -398,40 +409,40 @@
             <div class="process-timeline">
                 <div class="process-step">
                     <div class="step-number">1</div>
-                    <div class="step-icon"><i class="fa-solid fa-phone"></i></div>
+                    <div class="step-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
                     <h3>Contact & Visite</h3>
                     <p>Vous nous contactez, nous visitons votre terrain sous 48h pour comprendre vos besoins et contraintes.</p>
                 </div>
 
                 <div class="process-arrow">
-                    <i class="fa-solid fa-arrow-right"></i>
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                 </div>
 
                 <div class="process-step">
                     <div class="step-number">2</div>
-                    <div class="step-icon"><i class="fa-solid fa-calculator"></i></div>
+                    <div class="step-icon"><i class="fa-solid fa-calculator" aria-hidden="true"></i></div>
                     <h3>Devis Détaillé</h3>
                     <p>Nous vous envoyons un devis clair et détaillé sous 24h avec plan d'exécution et planning prévisionnel.</p>
                 </div>
 
                 <div class="process-arrow">
-                    <i class="fa-solid fa-arrow-right"></i>
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                 </div>
 
                 <div class="process-step">
                     <div class="step-number">3</div>
-                    <div class="step-icon"><i class="fa-solid fa-hard-hat"></i></div>
+                    <div class="step-icon"><i class="fa-solid fa-hard-hat" aria-hidden="true"></i></div>
                     <h3>Réalisation</h3>
                     <p>Notre équipe intervient avec le matériel adapté. Vous êtes informé en temps réel de l'avancement.</p>
                 </div>
 
                 <div class="process-arrow">
-                    <i class="fa-solid fa-arrow-right"></i>
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                 </div>
 
                 <div class="process-step">
                     <div class="step-number">4</div>
-                    <div class="step-icon"><i class="fa-solid fa-circle-check"></i></div>
+                    <div class="step-icon"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></div>
                     <h3>Livraison & Garantie</h3>
                     <p>Réception des travaux, nettoyage du chantier et activation de votre garantie décennale.</p>
                 </div>
@@ -449,42 +460,42 @@
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="images/chantier-reseaux-divers.webp" alt="Tranchée Réseaux VRD">
+                    <img src="images/chantier-reseaux-divers.webp" alt="Tranchée pour raccordement VRD" width="400" height="280" loading="lazy">
                     <div class="gallery-caption">
                         <strong>Raccordement VRD</strong>
                         <span>Aix-en-Provence</span>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/chantier-fondations-maison.webp" alt="Fondations Villa Provence">
+                    <img src="images/chantier-fondations-maison.webp" alt="Fondations d'une villa en Provence" width="400" height="280" loading="lazy">
                     <div class="gallery-caption">
                         <strong>Fondations Villa</strong>
                         <span>Meyreuil</span>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/chantier-nivellement-terrain.webp" alt="Nivellement Terrain Constructible">
+                    <img src="images/chantier-nivellement-terrain.webp" alt="Nivellement d'un terrain constructible" width="400" height="280" loading="lazy">
                     <div class="gallery-caption">
                         <strong>Nivellement Terrain</strong>
                         <span>Gardanne</span>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/equipe-stp-terrassement.webp" alt="Équipe STP sur chantier">
+                    <img src="images/equipe-stp-terrassement.webp" alt="Équipe STP Terrassement sur chantier" width="400" height="280" loading="lazy">
                     <div class="gallery-caption">
                         <strong>Notre Équipe</strong>
                         <span>En Action</span>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/terrassement-pelle-mecanique.webp" alt="Pelle mécanique terrassement">
+                    <img src="images/terrassement-pelle-mecanique.webp" alt="Excavation avec pelle mécanique" width="400" height="280" loading="lazy">
                     <div class="gallery-caption">
                         <strong>Excavation</strong>
                         <span>Venelles</span>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/amenagement-exterieur-pave.webp" alt="Aménagement allée carrossable">
+                    <img src="images/amenagement-exterieur-pave.webp" alt="Aménagement d'une allée carrossable" width="400" height="280" loading="lazy">
                     <div class="gallery-caption">
                         <strong>Allée Carrossable</strong>
                         <span>Le Tholonet</span>
@@ -505,11 +516,11 @@
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="stars">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
                     </div>
                     <p>"Travail impeccable pour les fondations de notre maison. Équipe sérieuse, devis respecté et chantier propre. Je recommande vivement !"</p>
                     <div class="testimonial-author">
@@ -520,11 +531,11 @@
 
                 <div class="testimonial-card">
                     <div class="stars">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
                     </div>
                     <p>"Réactifs et professionnels. Notre raccordement VRD a été réalisé en temps et en heure. Prix très correct pour la qualité du travail."</p>
                     <div class="testimonial-author">
@@ -535,11 +546,11 @@
 
                 <div class="testimonial-card">
                     <div class="stars">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
                     </div>
                     <p>"Enfin des vrais pros ! Terrain difficile mais ils ont su gérer. Communication parfaite tout au long du chantier."</p>
                     <div class="testimonial-author">
@@ -555,20 +566,20 @@
     <section class="section cta-final-section">
         <div class="container">
             <div class="cta-final-box">
-                <h2><i class="fa-solid fa-rocket"></i> Prêt à Lancer Votre Projet ?</h2>
+                <h2><i class="fa-solid fa-rocket" aria-hidden="true"></i> Prêt à Lancer Votre Projet ?</h2>
                 <p class="cta-final-subtitle">Ne perdez plus de temps avec des artisans peu fiables. Obtenez un devis professionnel dès maintenant.</p>
                 
                 <div class="cta-benefits">
                     <div class="benefit-item">
-                        <i class="fa-solid fa-bolt"></i>
+                        <i class="fa-solid fa-bolt" aria-hidden="true"></i>
                         <span>Réponse en 24h</span>
                     </div>
                     <div class="benefit-item">
-                        <i class="fa-solid fa-euro-sign"></i>
+                        <i class="fa-solid fa-euro-sign" aria-hidden="true"></i>
                         <span>Devis Gratuit</span>
                     </div>
                     <div class="benefit-item">
-                        <i class="fa-solid fa-handshake"></i>
+                        <i class="fa-solid fa-handshake" aria-hidden="true"></i>
                         <span>Sans Engagement</span>
                     </div>
                 </div>
@@ -577,7 +588,7 @@
                     <a href="tel:+33745142049" class="btn btn-primary btn-xl">
                         <i class="fa-solid fa-phone"></i> 07 45 14 20 49
                     </a>
-                    <a href="https://wa.me/33745142049" class="btn btn-whatsapp btn-xl">
+                    <a href="https://wa.me/33745142049" class="btn btn-whatsapp btn-xl" rel="noopener" target="_blank">
                         <i class="fa-brands fa-whatsapp"></i> WhatsApp Direct
                     </a>
                 </div>
@@ -596,21 +607,21 @@
                     <p>Notre équipe est à votre écoute pour discuter de votre projet et vous conseiller.</p>
                     <div class="contact-infos">
                         <a href="tel:+33745142049" class="info-item">
-                            <i class="fa-solid fa-phone"></i> 07 45 14 20 49
+                            <i class="fa-solid fa-phone" aria-hidden="true"></i> 07 45 14 20 49
                         </a>
                         <a href="mailto:stp13109@gmail.com" class="info-item">
-                            <i class="fa-solid fa-envelope"></i> stp13109@gmail.com
+                            <i class="fa-solid fa-envelope" aria-hidden="true"></i> stp13109@gmail.com
                         </a>
                         <div class="info-item">
-                            <i class="fa-solid fa-location-dot"></i> Aix-en-Provence & Région PACA
+                            <i class="fa-solid fa-location-dot" aria-hidden="true"></i> Aix-en-Provence & Région PACA
                         </div>
                         <div class="info-item">
-                            <i class="fa-solid fa-clock"></i> Lun - Sam : 7h - 19h
+                            <i class="fa-solid fa-clock" aria-hidden="true"></i> Lun - Sam : 7h - 19h
                         </div>
                     </div>
                 </div>
                 <div class="contact-actions">
-                    <a href="https://wa.me/33745142049" class="btn btn-whatsapp-white btn-lg">
+                    <a href="https://wa.me/33745142049" class="btn btn-whatsapp-white btn-lg" rel="noopener" target="_blank">
                         <i class="fa-brands fa-whatsapp"></i> Discuter sur WhatsApp
                     </a>
                 </div>
@@ -627,23 +638,23 @@
             </div>
             <div class="zone-content">
                 <div class="zone-map">
-                    <i class="fa-solid fa-map-location-dot"></i>
+                    <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
                 </div>
                 <div class="zone-list">
-                    <h3><i class="fa-solid fa-location-dot text-yellow"></i> Aix-en-Provence et environs</h3>
+                    <h3><i class="fa-solid fa-location-dot text-yellow" aria-hidden="true"></i> Aix-en-Provence et environs</h3>
                     <div class="cities-grid">
-                        <div class="city-item"><i class="fa-solid fa-check"></i> Aix-en-Provence</div>
-                        <div class="city-item"><i class="fa-solid fa-check"></i> Bouc-Bel-Air</div>
-                        <div class="city-item"><i class="fa-solid fa-check"></i> Meyreuil</div>
-                        <div class="city-item"><i class="fa-solid fa-check"></i> Gardanne</div>
-                        <div class="city-item"><i class="fa-solid fa-check"></i> Venelles</div>
-                        <div class="city-item"><i class="fa-solid fa-check"></i> Le Tholonet</div>
-                        <div class="city-item"><i class="fa-solid fa-check"></i> Fuveau</div>
-                        <div class="city-item"><i class="fa-solid fa-check"></i> Peynier</div>
-                        <div class="city-item"><i class="fa-solid fa-check"></i> Trets</div>
-                        <div class="city-item"><i class="fa-solid fa-check"></i> Saint-Marc-Jaumegarde</div>
-                        <div class="city-item"><i class="fa-solid fa-check"></i> Beaurecueil</div>
-                        <div class="city-item"><i class="fa-solid fa-check"></i> Puyloubier</i>
+                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Aix-en-Provence</div>
+                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Bouc-Bel-Air</div>
+                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Meyreuil</div>
+                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Gardanne</div>
+                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Venelles</div>
+                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Le Tholonet</div>
+                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Fuveau</div>
+                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Peynier</div>
+                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Trets</div>
+                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Saint-Marc-Jaumegarde</div>
+                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Beaurecueil</div>
+                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Puyloubier</div>
                     </div>
                     <p class="zone-note"><strong>Votre ville n'est pas listée ?</strong> Contactez-nous ! Nous intervenons dans toute la région PACA.</p>
                 </div>
@@ -659,11 +670,11 @@
                 <p>Entreprise spécialisée en Travaux Publics, VRD et Terrassement. Intervention sur Aix-en-Provence et toute la région PACA.</p>
                 <div class="footer-badges">
                     <div class="footer-badge">
-                        <i class="fa-solid fa-shield-halved"></i>
+                        <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
                         <span>Garantie Décennale</span>
                     </div>
                     <div class="footer-badge">
-                        <i class="fa-solid fa-certificate"></i>
+                        <i class="fa-solid fa-certificate" aria-hidden="true"></i>
                         <span>Certifié & Assuré</span>
                     </div>
                 </div>
@@ -686,10 +697,10 @@
             </div>
             <div class="footer-col">
                 <h4>Contact</h4>
-                <p><i class="fa-solid fa-phone"></i> 07 45 14 20 49</p>
-                <p><i class="fa-solid fa-envelope"></i> stp13109@gmail.com</p>
-                <p><i class="fa-solid fa-location-dot"></i> Aix-en-Provence (13)</p>
-                <p><i class="fa-solid fa-clock"></i> Lun-Sam: 7h-19h</p>
+                <p><i class="fa-solid fa-phone" aria-hidden="true"></i> 07 45 14 20 49</p>
+                <p><i class="fa-solid fa-envelope" aria-hidden="true"></i> stp13109@gmail.com</p>
+                <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Aix-en-Provence (13)</p>
+                <p><i class="fa-solid fa-clock" aria-hidden="true"></i> Lun-Sam: 7h-19h</p>
             </div>
         </div>
         <div class="copyright">
@@ -703,11 +714,11 @@
     </footer>
 
     <!-- Floating WhatsApp -->
-    <a href="https://wa.me/33745142049" class="float-wa" target="_blank" aria-label="Contactez-nous sur WhatsApp">
+    <a href="https://wa.me/33745142049" class="float-wa" target="_blank" rel="noopener" aria-label="Contactez-nous sur WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- Script -->
-    <script src="js/script.js"></script>
+    <!-- Script - DEFERRED for better performance -->
+    <script src="js/script.js" defer></script>
 </body>
 </html>
