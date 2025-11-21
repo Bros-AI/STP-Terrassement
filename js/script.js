@@ -15,11 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (mobileMenu.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-xmark');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+                document.body.style.overflow = 'hidden';
             } else {
                 icon.classList.remove('fa-xmark');
                 icon.classList.add('fa-bars');
-                document.body.style.overflow = ''; // Restore scrolling
+                document.body.style.overflow = '';
             }
         });
 
@@ -53,11 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let lastScroll = 0;
     let ticking = false;
 
-    // PERFORMANCE: Use requestAnimationFrame for smooth scrolling
     const updateNavbar = () => {
         const currentScroll = window.pageYOffset;
 
-        // Add shadow and shrink padding when scrolled
         if (currentScroll > 50) {
             navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
             navbar.style.padding = '10px 0';
@@ -70,12 +68,14 @@ document.addEventListener('DOMContentLoaded', () => {
         ticking = false;
     };
 
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            window.requestAnimationFrame(updateNavbar);
-            ticking = true;
-        }
-    }, { passive: true }); // PERFORMANCE: Passive listener
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(updateNavbar);
+                ticking = true;
+            }
+        }, { passive: true });
+    }
 
     // ========================================
     // SMOOTH SCROLLING FOR ANCHOR LINKS
@@ -84,7 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
             
-            // Skip if it's just a hash (#)
             if (targetId === '#') {
                 e.preventDefault();
                 return;
@@ -95,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (targetElement) {
                 e.preventDefault();
                 
-                const headerOffset = 80; // Height of fixed navbar
+                const headerOffset = 80;
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -116,7 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            // Get form data
             const formData = new FormData(form);
             const btn = form.querySelector('button[type="submit"]');
             const originalText = btn.innerHTML;
@@ -130,7 +128,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     isValid = false;
                     input.style.borderColor = '#ef4444';
                     
-                    // Reset border color after 2 seconds
                     setTimeout(() => {
                         input.style.borderColor = '#e5e7eb';
                     }, 2000);
@@ -138,9 +135,36 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             
             if (!isValid) {
-                // Show error message
                 showNotification('Veuillez remplir tous les champs obligatoires', 'error');
                 return;
+            }
+            
+            // Phone validation
+            const phoneInput = form.querySelector('input[type="tel"]');
+            if (phoneInput && phoneInput.value) {
+                const phoneRegex = /^[0-9]{10}$/;
+                if (!phoneRegex.test(phoneInput.value.replace(/\s/g, ''))) {
+                    showNotification('Numéro de téléphone invalide (10 chiffres requis)', 'error');
+                    phoneInput.style.borderColor = '#ef4444';
+                    setTimeout(() => {
+                        phoneInput.style.borderColor = '#e5e7eb';
+                    }, 2000);
+                    return;
+                }
+            }
+            
+            // Email validation
+            const emailInput = form.querySelector('input[type="email"]');
+            if (emailInput && emailInput.value) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(emailInput.value)) {
+                    showNotification('Adresse email invalide', 'error');
+                    emailInput.style.borderColor = '#ef4444';
+                    setTimeout(() => {
+                        emailInput.style.borderColor = '#e5e7eb';
+                    }, 2000);
+                    return;
+                }
             }
             
             // Simulate form submission
@@ -150,17 +174,18 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Simulate API call
             setTimeout(() => {
-                // Success
                 showNotification('Demande envoyée avec succès ! Nous vous contacterons sous 24h.', 'success');
                 form.reset();
                 btn.innerHTML = originalText;
                 btn.disabled = false;
                 btn.style.opacity = '1';
                 
-                // Optional: Redirect to WhatsApp after form submission
-                // setTimeout(() => {
-                //     window.open('https://wa.me/33745142049?text=Bonjour, je viens de remplir le formulaire sur votre site.', '_blank');
-                // }, 2000);
+                // Optional: Track conversion
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'conversion', {
+                        'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL'
+                    });
+                }
             }, 1500);
         });
         
@@ -181,13 +206,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // NOTIFICATION SYSTEM
     // ========================================
     function showNotification(message, type = 'success') {
-        // Remove existing notification if any
         const existingNotif = document.querySelector('.notification');
         if (existingNotif) {
             existingNotif.remove();
         }
         
-        // Create notification
         const notification = document.createElement('div');
         notification.className = `notification ${type}`;
         notification.innerHTML = `
@@ -195,7 +218,6 @@ document.addEventListener('DOMContentLoaded', () => {
             <span>${message}</span>
         `;
         
-        // Add styles
         Object.assign(notification.style, {
             position: 'fixed',
             top: '100px',
@@ -217,7 +239,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         document.body.appendChild(notification);
         
-        // Remove after 5 seconds
         setTimeout(() => {
             notification.style.animation = 'slideOutRight 0.4s ease';
             setTimeout(() => {
@@ -256,7 +277,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ========================================
-    // SCROLL REVEAL ANIMATIONS (OPTIMIZED WITH INTERSECTION OBSERVER)
+    // SCROLL REVEAL ANIMATIONS
     // ========================================
     const observerOptions = {
         threshold: 0.1,
@@ -268,13 +289,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
-                observer.unobserve(entry.target); // Stop observing after animation
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // Elements to animate on scroll
-    const animatedElements = document.querySelectorAll('.card, .problem-card, .process-step, .testimonial-card, .gallery-item');
+    const animatedElements = document.querySelectorAll('.card, .problem-card, .process-step, .testimonial-card, .gallery-item, .why-card');
     
     animatedElements.forEach((el, index) => {
         el.style.opacity = '0';
@@ -285,7 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ========================================
-    // ACTIVE NAV LINK ON SCROLL (OPTIMIZED)
+    // ACTIVE NAV LINK ON SCROLL
     // ========================================
     const sections = document.querySelectorAll('section[id]');
     const navItems = document.querySelectorAll('.nav-links a');
@@ -313,14 +333,16 @@ document.addEventListener('DOMContentLoaded', () => {
         navTicking = false;
     };
 
-    window.addEventListener('scroll', () => {
-        if (!navTicking) {
-            window.requestAnimationFrame(updateActiveNav);
-            navTicking = true;
-        }
-    }, { passive: true }); // PERFORMANCE: Passive listener
+    if (sections.length > 0) {
+        window.addEventListener('scroll', () => {
+            if (!navTicking) {
+                window.requestAnimationFrame(updateActiveNav);
+                navTicking = true;
+            }
+        }, { passive: true });
+    }
 
-    // Add active link styles (only if not already added)
+    // Add active link styles
     if (!document.getElementById('active-nav-styles')) {
         const activeStyle = document.createElement('style');
         activeStyle.id = 'active-nav-styles';
@@ -343,27 +365,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ========================================
-    // GALLERY LIGHTBOX (OPTIMIZED)
+    // GALLERY LIGHTBOX
     // ========================================
     const galleryItems = document.querySelectorAll('.gallery-item');
     
     galleryItems.forEach(item => {
         item.addEventListener('click', () => {
             const img = item.querySelector('img');
-            const caption = item.querySelector('.gallery-caption').innerHTML;
+            const caption = item.querySelector('.gallery-caption');
             
-            // Create lightbox
+            if (!img) return;
+            
             const lightbox = document.createElement('div');
             lightbox.className = 'lightbox';
             lightbox.innerHTML = `
                 <div class="lightbox-content">
                     <span class="lightbox-close" aria-label="Fermer">&times;</span>
                     <img src="${img.src}" alt="${img.alt}" loading="lazy">
-                    <div class="lightbox-caption">${caption}</div>
+                    ${caption ? `<div class="lightbox-caption">${caption.innerHTML}</div>` : ''}
                 </div>
             `;
             
-            // Lightbox styles
             Object.assign(lightbox.style, {
                 position: 'fixed',
                 top: '0',
@@ -381,20 +403,17 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.appendChild(lightbox);
             document.body.style.overflow = 'hidden';
             
-            // Close lightbox
             const closeBtn = lightbox.querySelector('.lightbox-close');
             closeBtn.addEventListener('click', () => {
                 closeLightbox(lightbox);
             });
             
-            // Close on background click
             lightbox.addEventListener('click', (e) => {
                 if (e.target === lightbox) {
                     closeLightbox(lightbox);
                 }
             });
 
-            // Close on ESC key
             const escHandler = (e) => {
                 if (e.key === 'Escape') {
                     closeLightbox(lightbox);
@@ -413,7 +432,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 300);
     }
 
-    // Lightbox styles (only if not already added)
+    // Lightbox styles
     if (!document.getElementById('lightbox-styles')) {
         const lightboxStyle = document.createElement('style');
         lightboxStyle.id = 'lightbox-styles';
@@ -466,30 +485,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ========================================
-    // COUNTER ANIMATION FOR STATS (OPTIMIZED)
+    // COUNTER ANIMATION FOR STATS
     // ========================================
-    const stats = document.querySelectorAll('.stat strong');
+    const stats = document.querySelectorAll('.stat-number, .stat strong');
     
     const animateCounter = (element) => {
-        const target = element.textContent;
+        const target = element.textContent.trim();
         const isPercentage = target.includes('%');
         const hasPlus = target.includes('+');
-        const number = parseInt(target);
+        const hasDivider = target.includes('/');
+        
+        let number = parseFloat(target.replace(/[^\d.]/g, ''));
         
         if (isNaN(number)) return;
         
         let current = 0;
         const increment = number / 50;
-        const duration = 1500; // 1.5 seconds
+        const duration = 1500;
         const stepTime = duration / 50;
         
         const timer = setInterval(() => {
             current += increment;
             if (current >= number) {
-                element.textContent = number + (isPercentage ? '%' : '') + (hasPlus ? '+' : '');
+                element.textContent = number + (hasDivider ? '/5' : '') + (isPercentage ? '%' : '') + (hasPlus ? '+' : '');
                 clearInterval(timer);
             } else {
-                element.textContent = Math.floor(current) + (isPercentage ? '%' : '') + (hasPlus ? '+' : '');
+                let displayValue = hasDivider && number < 5 ? current.toFixed(1) : Math.floor(current);
+                element.textContent = displayValue + (hasDivider ? '/5' : '') + (isPercentage ? '%' : '') + (hasPlus ? '+' : '');
             }
         }, stepTime);
     };
@@ -506,18 +528,14 @@ document.addEventListener('DOMContentLoaded', () => {
     stats.forEach(stat => statsObserver.observe(stat));
 
     // ========================================
-    // LAZY LOADING FOR IMAGES (NATIVE + FALLBACK)
+    // LAZY LOADING FOR IMAGES
     // ========================================
-    // Modern browsers support native lazy loading via loading="lazy"
-    // This is a fallback for older browsers
     if ('loading' in HTMLImageElement.prototype) {
-        // Browser supports native lazy loading
         const images = document.querySelectorAll('img[loading="lazy"]');
         images.forEach(img => {
-            img.src = img.src; // Trigger loading
+            img.src = img.src;
         });
     } else {
-        // Fallback to Intersection Observer for older browsers
         const lazyImages = document.querySelectorAll('img[loading="lazy"]');
         
         const imageObserver = new IntersectionObserver((entries) => {
@@ -535,29 +553,69 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ========================================
-    // PERFORMANCE: DEBOUNCE UTILITY
+    // PHONE NUMBER FORMATTING
     // ========================================
-    function debounce(func, wait) {
-        let timeout;
-        return function executedFunction(...args) {
-            const later = () => {
-                clearTimeout(timeout);
-                func(...args);
-            };
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-        };
+    const phoneInputs = document.querySelectorAll('input[type="tel"]');
+    phoneInputs.forEach(input => {
+        input.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 10) {
+                value = value.slice(0, 10);
+            }
+            e.target.value = value;
+        });
+    });
+
+    // ========================================
+    // COOKIE CONSENT (Optional)
+    // ========================================
+    function initCookieConsent() {
+        if (localStorage.getItem('cookieConsent')) return;
+        
+        const cookieBanner = document.createElement('div');
+        cookieBanner.innerHTML = `
+            <div style="position: fixed; bottom: 0; left: 0; right: 0; background: #111827; color: white; padding: 20px; z-index: 9999; box-shadow: 0 -4px 20px rgba(0,0,0,0.3);">
+                <div class="container" style="display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+                    <p style="margin: 0; flex: 1; min-width: 250px;">🍪 Nous utilisons des cookies pour améliorer votre expérience. En continuant, vous acceptez notre politique de confidentialité.</p>
+                    <div style="display: flex; gap: 10px;">
+                        <button id="acceptCookies" class="btn btn-primary">Accepter</button>
+                        <button id="refuseCookies" class="btn" style="background: #374151;">Refuser</button>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(cookieBanner);
+        
+        document.getElementById('acceptCookies').addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'true');
+            cookieBanner.remove();
+        });
+        
+        document.getElementById('refuseCookies').addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'false');
+            cookieBanner.remove();
+        });
+    }
+    
+    // Uncomment to enable cookie consent
+    // initCookieConsent();
+
+    // ========================================
+    // WHATSAPP BUTTON PULSE ANIMATION
+    // ========================================
+    const waButton = document.querySelector('.float-wa');
+    if (waButton) {
+        setInterval(() => {
+            waButton.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                waButton.style.transform = 'scale(1)';
+            }, 200);
+        }, 3000);
     }
 
     // ========================================
-    // CONSOLE EASTER EGG
-    // ========================================
-    console.log('%cSTP TERRASSEMENT', 'font-size: 24px; font-weight: bold; color: #FFB400;');
-    console.log('%cVous cherchez à améliorer votre site ? Contactez-nous !', 'font-size: 14px; color: #666;');
-    console.log('%c📞 07 45 14 20 49', 'font-size: 16px; color: #25D366; font-weight: bold;');
-
-    // ========================================
-    // PERFORMANCE MONITORING (OPTIONAL - REMOVE IN PRODUCTION)
+    // PERFORMANCE MONITORING
     // ========================================
     if (window.performance && window.performance.timing) {
         window.addEventListener('load', () => {
@@ -574,5 +632,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 0);
         });
     }
+
+    // ========================================
+    // CONSOLE EASTER EGG
+    // ========================================
+    console.log('%cSTP TERRASSEMENT', 'font-size: 24px; font-weight: bold; color: #FFB400;');
+    console.log('%cVous cherchez à améliorer votre site ? Contactez-nous !', 'font-size: 14px; color: #666;');
+    console.log('%c📞 07 45 14 20 49', 'font-size: 16px; color: #25D366; font-weight: bold;');
 
 });

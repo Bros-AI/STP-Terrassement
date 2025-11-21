@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://stp-terrassement.com/sitemap.xml
+Sitemap: https://www.stp-terrassement.com/sitemap.xml
