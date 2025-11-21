@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Blog Terrassement & VRD | Conseils & Guides Experts | STP Terrassement</title>
+    <meta name="description" content="Conseils d'experts en terrassement, VRD et assainissement. Guides pratiques, astuces et actualités pour réussir vos travaux à Aix-en-Provence.">
+    <link rel="canonical" href="https://www.stp-terrassement.com/blog.html" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🚜</text></svg>">
+    
+    <meta property="og:title" content="Blog Terrassement & VRD | STP Terrassement">
+    <meta property="og:description" content="Conseils d'experts, guides pratiques et actualités pour vos travaux de terrassement.">
+    <meta property="og:image" content="https://www.stp-terrassement.com/images/equipe-stp-terrassement.webp">
+    <meta property="og:url" content="https://www.stp-terrassement.com/blog.html">
+    <meta property="og:type" content="website">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        .blog-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        .blog-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        .blog-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .blog-card:hover .blog-img img {
+            transform: scale(1.1);
+        }
+        .blog-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .blog-tag {
+            display: inline-block;
+            background: rgba(255, 180, 0, 0.1);
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar" class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo" aria-label="STP Terrassement - Accueil">
+                <div class="logo-icon"><i class="fa-solid fa-excavator"></i></div>
+                <div class="logo-text">
+                    <span class="brand-name">STP <span class="highlight">TERRASSEMENT</span></span>
+                    <span class="brand-sub">Expert VRD & TP</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="terrassement.html">Terrassement</a></li>
+                <li><a href="vrd-assainissement.html">VRD</a></li>
+                <li><a href="amenagement-exterieur.html">Aménagement</a></li>
+                <li><a href="demolition.html">Démolition</a></li>
+                <li><a href="realisations.html">Réalisations</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="devis-gratuit.html" class="btn-nav">Devis Gratuit</a></li>
+            </ul>
+            <button class="mobile-toggle" aria-label="Menu de navigation mobile">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        <div class="mobile-menu">
+            <a href="index.html">Accueil</a>
+            <a href="terrassement.html">Terrassement</a>
+            <a href="vrd-assainissement.html">VRD</a>
+            <a href="amenagement-exterieur.html">Aménagement</a>
+            <a href="demolition.html">Démolition</a>
+            <a href="realisations.html">Réalisations</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+            <a href="devis-gratuit.html">Devis Gratuit</a>
+        </div>
+    </nav>
+
+    <main>
+        <header id="accueil" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <div class="badge"><i class="fa-solid fa-book"></i> Conseils & Expertise</div>
+                    <h1>BLOG TERRASSEMENT & VRD<br><span class="highlight">GUIDES & CONSEILS D'EXPERTS</span></h1>
+                    <p>Découvrez nos guides pratiques, conseils professionnels et actualités du secteur pour réussir vos travaux de terrassement, VRD et aménagement extérieur.</p>
+                    
+                    <div class="hero-buttons">
+                        <a href="#articles" class="btn btn-primary"><i class="fa-solid fa-arrow-down"></i> Lire Nos Articles</a>
+                        <a href="devis-gratuit.html" class="btn btn-whatsapp"><i class="fa-solid fa-calculator"></i> Devis Gratuit</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="wave-bottom">
+                <svg viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true">
+                    <path fill="#ffffff" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,261.3C960,256,1056,224,1152,213.3C1248,203,1344,213,1392,218.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                </svg>
+            </div>
+        </header>
+
+        <section id="articles" class="page-content section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="subtitle">ARTICLES RÉCENTS</span>
+                    <h2>Nos Derniers Articles & Guides Pratiques</h2>
+                    <p class="section-intro">Profitez de notre expertise de 15 ans pour mieux comprendre vos projets de terrassement et VRD.</p>
+                </div>
+
+                <div class="grid-3" style="margin-top: 60px;">
+                    <!-- Article 1 -->
+                    <article class="blog-card">
+                        <div class="blog-img">
+                            <img src="images/chantier-fondations-maison.webp" alt="Combien coûte un terrassement" loading="lazy" width="400" height="200">
+                        </div>
+                        <div class="card-body">
+                            <span class="blog-tag">Guide Pratique</span>
+                            <h3><a href="terrassement.html" style="color: inherit; text-decoration: none;">Combien Coûte un Terrassement en 2025 ?</a></h3>
+                            <div class="blog-meta">
+                                <span><i class="fa-solid fa-calendar"></i> 15 Nov 2025</span>
+                                <span><i class="fa-solid fa-clock"></i> 5 min</span>
+                            </div>
+                            <p>Prix moyens, facteurs qui influencent le coût, et conseils pour optimiser votre budget. Guide complet des tarifs de terrassement.</p>
+                            <a href="terrassement.html" class="btn btn-primary" style="margin-top: auto; width: 100%;"><i class="fa-solid fa-arrow-right"></i> Lire l'article</a>
+                        </div>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article class="blog-card">
+                        <div class="blog-img">
+                            <img src="images/raccordement-vrd-assainissement.webp" alt="Raccordement VRD guide complet" loading="lazy" width="400" height="200">
+                        </div>
+                        <div class="card-body">
+                            <span class="blog-tag">VRD & Réseaux</span>
+                            <h3><a href="vrd-assainissement.html" style="color: inherit; text-decoration: none;">Raccordement VRD : Les Étapes Clés</a></h3>
+                            <div class="blog-meta">
+                                <span><i class="fa-solid fa-calendar"></i> 10 Nov 2025</span>
+                                <span><i class="fa-solid fa-clock"></i> 7 min</span>
+                            </div>
+                            <p>De la demande d'autorisation aux branchements finaux : tout ce qu'il faut savoir pour viabiliser votre terrain correctement.</p>
+                            <a href="vrd-assainissement.html" class="btn btn-primary" style="margin-top: auto; width: 100%;"><i class="fa-solid fa-arrow-right"></i> Lire l'article</a>
+                        </div>
+                    </article>
+
+                    <!-- Article 3 -->
+                    <article class="blog-card">
+                        <div class="blog-img">
+                            <img src="images/chantier-nivellement-terrain.webp" alt="Préparer terrain pour construction" loading="lazy" width="400" height="200">
+                        </div>
+                        <div class="card-body">
+                            <span class="blog-tag">Conseils</span>
+                            <h3><a href="terrassement.html" style="color: inherit; text-decoration: none;">Comment Préparer un Terrain pour Construction ?</a></h3>
+                            <div class="blog-meta">
+                                <span><i class="fa-solid fa-calendar"></i> 5 Nov 2025</span>
+                                <span><i class="fa-solid fa-clock"></i> 6 min</span>
+                            </div>
+                            <p>Les étapes essentielles : étude de sol, décaissement, nivellement et drainage. Évitez les erreurs coûteuses !</p>
+                            <a href="terrassement.html" class="btn btn-primary" style="margin-top: auto; width: 100%;"><i class="fa-solid fa-arrow-right"></i> Lire l'article</a>
+                        </div>
+                    </article>
+
+                    <!-- Article 4 -->
+                    <article class="blog-card">
+                        <div class="blog-img">
+                            <img src="images/amenagement-exterieur-pave.webp" alt="Choisir enrobé ou pavés" loading="lazy" width="400" height="200">
+                        </div>
+                        <div class="card-body">
+                            <span class="blog-tag">Aménagement</span>
+                            <h3><a href="amenagement-exterieur.html" style="color: inherit; text-decoration: none;">Enrobé ou Pavés : Quel Revêtement Choisir ?</a></h3>
+                            <div class="blog-meta">
+                                <span><i class="fa-solid fa-calendar"></i> 1 Nov 2025</span>
+                                <span><i class="fa-solid fa-clock"></i> 4 min</span>
+                            </div>
+                            <p>Comparatif complet : prix, durabilité, entretien et esthétique. Trouvez le revêtement idéal pour votre allée.</p>
+                            <a href="amenagement-exterieur.html" class="btn btn-primary" style="margin-top: auto; width: 100%;"><i class="fa-solid fa-arrow-right"></i> Lire l'article</a>
+                        </div>
+                    </article>
+
+                    <!-- Article 5 -->
+                    <article class="blog-card">
+                        <div class="blog-img">
+                            <img src="images/chantier-reseaux-divers.webp" alt="Assainissement collectif ou individuel" loading="lazy" width="400" height="200">
+                        </div>
+                        <div class="card-body">
+                            <span class="blog-tag">Assainissement</span>
+                            <h3><a href="vrd-assainissement.html" style="color: inherit; text-decoration: none;">Assainissement : Collectif ou Autonome ?</a></h3>
+                            <div class="blog-meta">
+                                <span><i class="fa-solid fa-calendar"></i> 28 Oct 2025</span>
+                                <span><i class="fa-solid fa-clock"></i> 5 min</span>
+                            </div>
+                            <p>Tout-à-l'égout, fosse septique ou micro-station : avantages, inconvénients et réglementation à respecter.</p>
+                            <a href="vrd-assainissement.html" class="btn btn-primary" style="margin-top: auto; width: 100%;"><i class="fa-solid fa-arrow-right"></i> Lire l'article</a>
+                        </div>
+                    </article>
+
+                    <!-- Article 6 -->
+                    <article class="blog-card">
+                        <div class="blog-img">
+                            <img src="images/demolition-deconstruction-batiment.webp" alt="Réglementation démolition maison" loading="lazy" width="400" height="200">
+                        </div>
+                        <div class="card-body">
+                            <span class="blog-tag">Démolition</span>
+                            <h3><a href="demolition.html" style="color: inherit; text-decoration: none;">Démolition : Autorisations & Démarches</a></h3>
+                            <div class="blog-meta">
+                                <span><i class="fa-solid fa-calendar"></i> 20 Oct 2025</span>
+                                <span><i class="fa-solid fa-clock"></i> 6 min</span>
+                            </div>
+                            <p>Permis de démolir, déclaration préalable, diagnostics obligatoires : tout le cadre légal expliqué simplement.</p>
+                            <a href="demolition.html" class="btn btn-primary" style="margin-top: auto; width: 100%;"><i class="fa-solid fa-arrow-right"></i> Lire l'article</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="cta-box" style="margin-top: 80px;">
+                    <div class="cta-content">
+                        <h3><i class="fa-solid fa-lightbulb"></i> Besoin de Conseils Personnalisés ?</h3>
+                        <p>Notre équipe d'experts est à votre disposition pour répondre à toutes vos questions et vous accompagner dans votre projet.</p>
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="btn btn-primary btn-lg"><i class="fa-solid fa-phone"></i> Nous Contacter</a>
+                        <a href="devis-gratuit.html" class="btn btn-whatsapp btn-lg"><i class="fa-solid fa-calculator"></i> Devis Gratuit</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h4>STP TERRASSEMENT</h4>
+                <p>Entreprise spécialisée en Travaux Publics, VRD et Terrassement. Intervention sur Aix-en-Provence et toute la région PACA.</p>
+                <div class="footer-badges">
+                    <div class="footer-badge">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Garantie Décennale</span>
+                    </div>
+                    <div class="footer-badge">
+                        <i class="fa-solid fa-certificate"></i>
+                        <span>Certifié & Assuré</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Nos Services</h4>
+                <a href="terrassement.html">Terrassement & Fondations</a>
+                <a href="vrd-assainissement.html">VRD & Raccordements</a>
+                <a href="amenagement-exterieur.html">Aménagement Extérieur</a>
+                <a href="demolition.html">Démolition</a>
+                <a href="location-materiel.html">Location de matériel</a>
+            </div>
+            <div class="footer-col">
+                <h4>Liens Rapides</h4>
+                <a href="index.html">Accueil</a>
+                <a href="realisations.html">Réalisations</a>
+                <a href="blog.html">Blog</a>
+                <a href="zones-intervention.html">Zones d'intervention</a>
+                <a href="contact.html">Contact</a>
+                <a href="devis-gratuit.html">Devis Gratuit</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="fa-solid fa-phone"></i> 07 45 14 20 49</p>
+                <p><i class="fa-solid fa-envelope"></i> stp13109@gmail.com</p>
+                <p><i class="fa-solid fa-location-dot"></i> Aix-en-Provence (13)</p>
+                <p><i class="fa-solid fa-clock"></i> Lun-Sam: 7h-19h</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 STP Terrassement - Tous droits réservés | Expert VRD & Terrassement Aix-en-Provence</p>
+            <p class="legal-links"><a href="mentions-legales.html">Mentions Légales</a> • <a href="politique-confidentialite.html">Politique de Confidentialité</a></p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/33745142049" class="float-wa" target="_blank" rel="noopener" aria-label="Contactez-nous sur WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="js/script.js" defer></script>
+</body>
+</html>

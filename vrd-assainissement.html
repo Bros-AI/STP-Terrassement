@@ -5,23 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-    <title>VRD & Assainissement Aix-en-Provence | Raccordement Réseaux & Viabilisation</title>
-    <meta name="description" content="Expert VRD et assainissement à Aix-en-Provence. Raccordement tout-à-l'égout, viabilisation terrain, micro-station. Devis gratuit 24h.">
+    <title>VRD & Assainissement Aix-en-Provence | Raccordement Réseaux | Viabilisation Terrain | Devis 24h</title>
+    <meta name="description" content="✓ Expert VRD Aix-en-Provence ✓ Raccordement tout-à-l'égout ✓ Viabilisation terrain ✓ Micro-station ✓ Tranchées réseaux ✓ 15 ans d'expérience ✓ Devis gratuit 24h">
+    <meta name="keywords" content="vrd aix-en-provence, assainissement provence, raccordement tout-à-l'égout, viabilisation terrain, micro-station, tranchées réseaux, fosse septique, raccordement eau électricité">
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🚜</text></svg>">
     <link rel="canonical" href="https://www.stp-terrassement.com/vrd-assainissement.html" />
     
-    <meta property="og:title" content="VRD & Assainissement | STP Terrassement Aix">
+    <meta property="og:title" content="VRD & Assainissement Aix-en-Provence | STP Terrassement">
     <meta property="og:description" content="Expert VRD et assainissement. Raccordement réseaux, viabilisation terrain. Devis 24h.">
     <meta property="og:image" content="https://www.stp-terrassement.com/images/raccordement-vrd-assainissement.webp">
     <meta property="og:url" content="https://www.stp-terrassement.com/vrd-assainissement.html">
     <meta property="og:type" content="website">
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="VRD & Assainissement | STP Terrassement">
-    <meta name="twitter:description" content="Raccordement réseaux, viabilisation, assainissement. Expert Aix-en-Provence.">
-    <meta name="twitter:image" content="https://www.stp-terrassement.com/images/raccordement-vrd-assainissement.webp">
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Accueil",
+        "item": "https://www.stp-terrassement.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "VRD & Assainissement",
+        "item": "https://www.stp-terrassement.com/vrd-assainissement.html"
+      }]
+    }
+    </script>
 
+    <!-- Service Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -30,8 +46,49 @@
       "provider": {
         "@type": "LocalBusiness",
         "name": "STP Terrassement",
-        "telephone": "+33745142049"
-      }
+        "telephone": "+33745142049",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Aix-en-Provence",
+          "postalCode": "13090",
+          "addressCountry": "FR"
+        }
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Aix-en-Provence"
+      },
+      "description": "Services professionnels de VRD et assainissement : raccordement tout-à-l'égout, viabilisation terrain, micro-station, tranchées réseaux, coordination concessionnaires."
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Quel est le prix d'un raccordement VRD ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le prix d'un raccordement VRD complet varie entre 5000€ et 15000€ selon la distance aux réseaux, le nombre de réseaux à raccorder et la nature du sol. Ce tarif inclut les tranchées, la pose des canalisations et gaines, et la coordination avec les concessionnaires."
+        }
+      },{
+        "@type": "Question",
+        "name": "C'est quoi les travaux VRD ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "VRD signifie Voirie et Réseaux Divers. Ce sont les travaux de viabilisation d'un terrain : raccordement eau potable, électricité, téléphone/fibre, assainissement (eaux usées), gestion eaux pluviales, et création de voies d'accès."
+        }
+      },{
+        "@type": "Question",
+        "name": "Combien coûte une micro-station d'épuration ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Une micro-station d'épuration coûte entre 4000€ et 8000€ pose comprise, selon la capacité (3 à 10 EH) et le modèle. C'est plus cher qu'une fosse septique mais plus compact et plus performant en assainissement non collectif."
+        }
+      }]
     }
     </script>
 
@@ -45,7 +102,7 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <nav id="navbar" class="navbar">
+    <nav id="navbar" class="navbar" itemscope itemtype="https://schema.org/SiteNavigationElement">
         <div class="container nav-container">
             <a href="index.html" class="logo" aria-label="STP Terrassement - Accueil">
                 <div class="logo-icon"><i class="fa-solid fa-excavator"></i></div>
@@ -56,10 +113,11 @@
             </a>
             <ul class="nav-links">
                 <li><a href="terrassement.html">Terrassement</a></li>
-                <li><a href="vrd-assainissement.html">VRD</a></li>
+                <li><a href="vrd-assainissement.html" class="active">VRD</a></li>
                 <li><a href="amenagement-exterieur.html">Aménagement</a></li>
                 <li><a href="demolition.html">Démolition</a></li>
                 <li><a href="realisations.html">Réalisations</a></li>
+                <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="devis-gratuit.html" class="btn-nav">Devis Gratuit</a></li>
             </ul>
@@ -74,20 +132,40 @@
             <a href="amenagement-exterieur.html">Aménagement</a>
             <a href="demolition.html">Démolition</a>
             <a href="realisations.html">Réalisations</a>
+            <a href="blog.html">Blog</a>
             <a href="contact.html">Contact</a>
             <a href="devis-gratuit.html">Devis Gratuit</a>
         </div>
     </nav>
 
     <main>
-        <!-- HERO SECTION - EXACT SAME AS INDEX.HTML -->
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Fil d'Ariane" style="background: var(--gray); padding: 15px 0;">
+            <div class="container">
+                <ol style="display: flex; gap: 10px; list-style: none; padding: 0; margin: 0; font-size: 0.9rem;" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <a href="index.html" itemprop="item" style="color: var(--primary); text-decoration: none;">
+                            <span itemprop="name">Accueil</span>
+                        </a>
+                        <meta itemprop="position" content="1" />
+                    </li>
+                    <li style="color: var(--text-light);">/</li>
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <span itemprop="name" style="color: var(--text);">VRD & Assainissement</span>
+                        <meta itemprop="position" content="2" />
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
+        <!-- HERO SECTION -->
         <header id="accueil" class="hero">
             <div class="hero-overlay"></div>
             <div class="container hero-content">
                 <div class="hero-text">
                     <div class="badge"><i class="fa-solid fa-network-wired"></i> Spécialiste VRD & Réseaux</div>
-                    <h1>VRD & ASSAINISSEMENT<br><span class="highlight">RACCORDEZ VOTRE PROPRIÉTÉ</span></h1>
-                    <p>Viabilisation de terrain, raccordement aux réseaux publics, assainissement collectif et individuel. Nous connectons votre propriété aux réseaux essentiels.</p>
+                    <h1>VRD & ASSAINISSEMENT<br><span class="highlight">RACCORDEZ VOTRE PROPRIÉTÉ AUX RÉSEAUX</span></h1>
+                    <p><strong>Viabilisation de terrain</strong>, <strong>raccordement aux réseaux publics</strong>, <strong>assainissement collectif et individuel</strong>. Nous connectons votre propriété aux réseaux essentiels (eau, électricité, télécom, égouts) sur <strong>Aix-en-Provence</strong> et toute la <strong>région PACA</strong>.</p>
                     
                     <div class="hero-buttons">
                         <a href="devis-gratuit.html" class="btn btn-primary"><i class="fa-solid fa-calculator"></i> Devis Gratuit</a>
@@ -122,78 +200,84 @@
             <div class="container">
                 <div class="section-header">
                     <span class="subtitle">VOIRIE & RÉSEAUX DIVERS</span>
-                    <h2>Expertise Complète en VRD et Assainissement</h2>
-                    <p class="section-intro">Les travaux de VRD sont indispensables pour viabiliser un terrain et le raccorder aux différents réseaux. Nous assurons une installation conforme aux normes, garantissant la pérennité de vos installations.</p>
+                    <h2>Expertise Complète en VRD et Assainissement à Aix-en-Provence</h2>
+                    <p class="section-intro">Les travaux de <strong>VRD</strong> (Voirie et Réseaux Divers) sont indispensables pour viabiliser un terrain et le raccorder aux différents réseaux. Nous assurons une installation conforme aux normes, garantissant la pérennité de vos installations. Après le <a href="terrassement.html" style="color: var(--primary); text-decoration: underline;">terrassement de votre terrain</a>, nous gérons l'ensemble des raccordements.</p>
                 </div>
 
                 <div class="grid-2 align-center" style="margin-top: 60px;">
                     <div>
                         <h3><i class="fa-solid fa-droplet text-yellow"></i> Raccordement Tout-à-l'Égout</h3>
-                        <p>Connexion professionnelle de votre habitation au réseau d'assainissement collectif. Nous gérons l'intégralité du projet de A à Z.</p>
+                        <p>Connexion professionnelle de votre habitation au <strong>réseau d'assainissement collectif</strong>. Nous gérons l'intégralité du projet de A à Z : de la <strong>demande d'autorisation</strong> auprès de la commune jusqu'au <strong>branchement final</strong> sur le réseau public.</p>
                         <ul class="feature-list" style="margin-top: 20px;">
-                            <li><i class="fa-solid fa-check-circle"></i> Création de tranchées aux normes</li>
-                            <li><i class="fa-solid fa-check-circle"></i> Pose de canalisations PVC</li>
-                            <li><i class="fa-solid fa-check-circle"></i> Installation de regards de visite</li>
-                            <li><i class="fa-solid fa-check-circle"></i> Branchement au réseau public</li>
-                            <li><i class="fa-solid fa-check-circle"></i> Tests d'étanchéité obligatoires</li>
+                            <li><i class="fa-solid fa-check-circle"></i> Création de <strong>tranchées aux normes</strong> DTU 64.1</li>
+                            <li><i class="fa-solid fa-check-circle"></i> Pose de <strong>canalisations PVC</strong> Ø110 à Ø200</li>
+                            <li><i class="fa-solid fa-check-circle"></i> Installation de <strong>regards de visite</strong> étanches</li>
+                            <li><i class="fa-solid fa-check-circle"></i> <strong>Branchement au réseau public</strong> (coordination mairie)</li>
+                            <li><i class="fa-solid fa-check-circle"></i> <strong>Tests d'étanchéité</strong> obligatoires avant remblaiement</li>
                         </ul>
+                        <div style="margin-top: 25px; background: rgba(255, 180, 0, 0.1); padding: 20px; border-radius: 10px; border-left: 4px solid var(--primary);">
+                            <p style="margin: 0;"><strong>💡 Bon à savoir :</strong> Le raccordement au tout-à-l'égout est obligatoire si le réseau public passe à moins de 10 mètres de votre propriété. Nous gérons toutes les démarches administratives pour vous.</p>
+                        </div>
                     </div>
                     <div>
-                        <img src="images/chantier-reseaux-divers.webp" alt="Travaux VRD et réseaux" class="rounded-img" loading="lazy" width="600" height="400">
+                        <img src="images/chantier-reseaux-divers.webp" alt="Travaux VRD et tranchées pour réseaux à Aix-en-Provence" class="rounded-img" loading="lazy" width="600" height="400">
                     </div>
                 </div>
 
                 <div class="section" style="margin-top: 80px;">
-                    <h2 style="text-align: center; margin-bottom: 50px;">Nos Services VRD & Assainissement</h2>
+                    <h2 style="text-align: center; margin-bottom: 50px;">Nos Services VRD & Assainissement Complets</h2>
                     
                     <div class="grid-3">
                         <div class="card">
                             <div class="card-img">
-                                <img src="images/raccordement-vrd-assainissement.webp" alt="Assainissement non collectif" loading="lazy" width="400" height="220">
+                                <img src="images/raccordement-vrd-assainissement.webp" alt="Assainissement non collectif micro-station" loading="lazy" width="400" height="220">
                             </div>
                             <div class="card-body">
                                 <i class="fa-solid fa-filter-circle-xmark card-icon"></i>
                                 <h3>Assainissement Non Collectif (ANC)</h3>
-                                <p>Installation de solutions individuelles conformes aux normes SPANC et respectueuses de l'environnement.</p>
+                                <p>Installation de solutions individuelles conformes aux normes <strong>SPANC</strong> et respectueuses de l'environnement pour les zones non desservies par le tout-à-l'égout.</p>
                                 <ul class="service-list">
-                                    <li><i class="fa-solid fa-caret-right"></i> Fosses toutes eaux</li>
-                                    <li><i class="fa-solid fa-caret-right"></i> Micro-stations d'épuration</li>
-                                    <li><i class="fa-solid fa-caret-right"></i> Filières compactes</li>
-                                    <li><i class="fa-solid fa-caret-right"></i> Étude de sol préalable</li>
+                                    <li><i class="fa-solid fa-caret-right"></i> <strong>Fosses toutes eaux</strong> (3000L à 5000L)</li>
+                                    <li><i class="fa-solid fa-caret-right"></i> <strong>Micro-stations d'épuration</strong> agréées</li>
+                                    <li><i class="fa-solid fa-caret-right"></i> <strong>Filières compactes</strong> pour petits terrains</li>
+                                    <li><i class="fa-solid fa-caret-right"></i> <strong>Étude de sol</strong> préalable obligatoire</li>
+                                    <li><i class="fa-solid fa-caret-right"></i> Dossier complet pour <strong>SPANC</strong></li>
                                 </ul>
                             </div>
                         </div>
 
                         <div class="card">
                             <div class="card-img">
-                                <img src="images/chantier-nivellement-terrain.webp" alt="Gestion eaux pluviales" loading="lazy" width="400" height="220">
+                                <img src="images/chantier-nivellement-terrain.webp" alt="Gestion eaux pluviales drainage" loading="lazy" width="400" height="220">
                             </div>
                             <div class="card-body">
                                 <i class="fa-solid fa-cloud-showers-heavy card-icon"></i>
-                                <h3>Gestion Eaux Pluviales</h3>
-                                <p>Systèmes de drainage et récupération pour prévenir les inondations et valoriser cette ressource.</p>
+                                <h3>Gestion Eaux Pluviales (EP)</h3>
+                                <p>Systèmes de <strong>drainage</strong> et <strong>récupération</strong> pour prévenir les inondations et valoriser cette ressource. Obligatoire pour toute nouvelle construction.</p>
                                 <ul class="service-list">
-                                    <li><i class="fa-solid fa-caret-right"></i> Drains périphériques</li>
-                                    <li><i class="fa-solid fa-caret-right"></i> Puisards et caniveaux</li>
-                                    <li><i class="fa-solid fa-caret-right"></i> Cuves de récupération</li>
-                                    <li><i class="fa-solid fa-caret-right"></i> Bassins d'infiltration</li>
+                                    <li><i class="fa-solid fa-caret-right"></i> <strong>Drains périphériques</strong> de fondations</li>
+                                    <li><i class="fa-solid fa-caret-right"></i> <strong>Puisards et caniveaux</strong> de collecte</li>
+                                    <li><i class="fa-solid fa-caret-right"></i> <strong>Cuves de récupération</strong> 3000L à 10000L</li>
+                                    <li><i class="fa-solid fa-caret-right"></i> <strong>Bassins d'infiltration</strong> paysagers</li>
+                                    <li><i class="fa-solid fa-caret-right"></i> Séparation <strong>EU/EP</strong> obligatoire</li>
                                 </ul>
                             </div>
                         </div>
 
                         <div class="card">
                             <div class="card-img">
-                                <img src="images/chantier-reseaux-divers.webp" alt="Viabilisation complète" loading="lazy" width="400" height="220">
+                                <img src="images/chantier-reseaux-divers.webp" alt="Viabilisation complète terrain constructible" loading="lazy" width="400" height="220">
                             </div>
                             <div class="card-body">
                                 <i class="fa-solid fa-plug card-icon"></i>
                                 <h3>Viabilisation Complète</h3>
-                                <p>Création de toutes les tranchées et passage des gaines pour connecter votre terrain aux réseaux.</p>
+                                <p>Création de toutes les <strong>tranchées techniques</strong> et passage des gaines pour connecter votre terrain à tous les <strong>réseaux publics</strong>. Service clé en main.</p>
                                 <ul class="service-list">
-                                    <li><i class="fa-solid fa-caret-right"></i> Électricité (gaine rouge)</li>
-                                    <li><i class="fa-solid fa-caret-right"></i> Télécom & Fibre (gaine verte)</li>
-                                    <li><i class="fa-solid fa-caret-right"></i> Eau potable</li>
-                                    <li><i class="fa-solid fa-caret-right"></i> Coordination concessionnaires</li>
+                                    <li><i class="fa-solid fa-caret-right"></i> <strong>Électricité</strong> (gaine rouge PEHD Ø90)</li>
+                                    <li><i class="fa-solid fa-caret-right"></i> <strong>Télécom & Fibre</strong> (gaine verte TPC)</li>
+                                    <li><i class="fa-solid fa-caret-right"></i> <strong>Eau potable</strong> (PE Ø32 à Ø63)</li>
+                                    <li><i class="fa-solid fa-caret-right"></i> <strong>Coordination concessionnaires</strong> (Enedis, Orange)</li>
+                                    <li><i class="fa-solid fa-caret-right"></i> <strong>Grillage avertisseur</strong> réglementaire</li>
                                 </ul>
                             </div>
                         </div>
@@ -208,40 +292,128 @@
                             <div class="step-number">1</div>
                             <div class="step-icon"><i class="fa-solid fa-clipboard-list"></i></div>
                             <h3>Étude & Diagnostic</h3>
-                            <p>Visite technique, relevé du terrain, étude des réseaux disponibles et vérification de la faisabilité.</p>
+                            <p><strong>Visite technique</strong> gratuite, relevé du terrain, étude des <strong>réseaux disponibles</strong> et vérification de la faisabilité. Après le <a href="terrassement.html" style="color: inherit; text-decoration: underline;">terrassement</a>.</p>
                         </div>
                         <div class="process-arrow"><i class="fa-solid fa-arrow-right"></i></div>
                         <div class="process-step">
                             <div class="step-number">2</div>
                             <div class="step-icon"><i class="fa-solid fa-file-contract"></i></div>
                             <h3>Démarches Administratives</h3>
-                            <p>Constitution des dossiers, demandes d'autorisation auprès des concessionnaires (eau, élec, télécom).</p>
+                            <p>Constitution des <strong>dossiers</strong>, demandes d'<strong>autorisation</strong> auprès des concessionnaires (eau, élec, télécom). Nous gérons tout pour vous.</p>
                         </div>
                         <div class="process-arrow"><i class="fa-solid fa-arrow-right"></i></div>
                         <div class="process-step">
                             <div class="step-number">3</div>
                             <div class="step-icon"><i class="fa-solid fa-trowel-bricks"></i></div>
                             <h3>Travaux de Tranchées</h3>
-                            <p>Création des saignées, pose des canalisations et gaines, remblaiement et compactage soigné.</p>
+                            <p>Création des <strong>saignées techniques</strong>, pose des canalisations et gaines, <strong>remblaiement</strong> et compactage soigné par couches successives.</p>
                         </div>
                         <div class="process-arrow"><i class="fa-solid fa-arrow-right"></i></div>
                         <div class="process-step">
                             <div class="step-number">4</div>
                             <div class="step-icon"><i class="fa-solid fa-check-double"></i></div>
                             <h3>Tests & Réception</h3>
-                            <p>Contrôles d'étanchéité, tests de conformité, coordination avec les services techniques pour mise en service.</p>
+                            <p><strong>Contrôles d'étanchéité</strong>, tests de conformité, coordination avec les services techniques pour <strong>mise en service</strong> définitive.</p>
                         </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="section" style="margin-top: 80px; background: var(--gray); padding: 60px 40px; border-radius: 20px;">
+                    <h2 style="text-align: center; margin-bottom: 50px;"><i class="fa-solid fa-circle-question" style="color: var(--primary);"></i> Questions Fréquentes sur le VRD & Assainissement</h2>
+                    
+                    <div style="max-width: 900px; margin: 0 auto;">
+                        <details style="background: white; padding: 25px; border-radius: 10px; margin-bottom: 20px; cursor: pointer;">
+                            <summary style="font-weight: 700; font-size: 1.1rem; color: var(--dark);">
+                                <i class="fa-solid fa-euro-sign" style="color: var(--primary); margin-right: 10px;"></i>
+                                Quel est le prix d'un raccordement VRD complet ?
+                            </summary>
+                            <p style="margin-top: 20px; padding-left: 30px; line-height: 1.7;">
+                                Le prix d'un <strong>raccordement VRD complet</strong> varie entre <strong>5000€ et 15000€</strong> selon plusieurs critères : distance aux réseaux publics (10m à 50m+), nombre de réseaux à raccorder (eau, élec, tel, égouts), nature du sol (facile à creuser ou rocheux), et profondeur des tranchées. Ce tarif inclut les tranchées, la pose des canalisations et gaines, et la coordination avec les concessionnaires. <a href="devis-gratuit.html" style="color: var(--primary); text-decoration: underline;">Demandez votre devis gratuit personnalisé</a>.
+                            </p>
+                        </details>
+
+                        <details style="background: white; padding: 25px; border-radius: 10px; margin-bottom: 20px; cursor: pointer;">
+                            <summary style="font-weight: 700; font-size: 1.1rem; color: var(--dark);">
+                                <i class="fa-solid fa-question" style="color: var(--primary); margin-right: 10px;"></i>
+                                C'est quoi les travaux VRD ?
+                            </summary>
+                            <p style="margin-top: 20px; padding-left: 30px; line-height: 1.7;">
+                                <strong>VRD</strong> signifie <strong>Voirie et Réseaux Divers</strong>. Ce sont les travaux de <strong>viabilisation d'un terrain</strong> qui incluent : raccordement <strong>eau potable</strong>, <strong>électricité</strong>, <strong>téléphone/fibre optique</strong>, <strong>assainissement</strong> (eaux usées), gestion des <strong>eaux pluviales</strong>, et création de <strong>voies d'accès</strong>. Ces travaux sont indispensables après le <a href="terrassement.html" style="color: var(--primary); text-decoration: underline;">terrassement</a> et avant la construction.
+                            </p>
+                        </details>
+
+                        <details style="background: white; padding: 25px; border-radius: 10px; margin-bottom: 20px; cursor: pointer;">
+                            <summary style="font-weight: 700; font-size: 1.1rem; color: var(--dark);">
+                                <i class="fa-solid fa-water" style="color: var(--primary); margin-right: 10px;"></i>
+                                Combien coûte une micro-station d'épuration ?
+                            </summary>
+                            <p style="margin-top: 20px; padding-left: 30px; line-height: 1.7;">
+                                Une <strong>micro-station d'épuration</strong> coûte entre <strong>4000€ et 8000€ pose comprise</strong>, selon la capacité nécessaire (3 à 10 EH - Équivalent Habitant) et le modèle (aération, culture fixée, SBR). C'est plus cher qu'une fosse septique classique (2000-4000€) mais c'est plus <strong>compact</strong>, plus <strong>performant</strong> en assainissement non collectif, et nécessite moins de surface. Installation conforme aux normes SPANC. <a href="contact.html" style="color: var(--primary); text-decoration: underline;">Contactez-nous pour un conseil</a>.
+                            </p>
+                        </details>
+
+                        <details style="background: white; padding: 25px; border-radius: 10px; margin-bottom: 20px; cursor: pointer;">
+                            <summary style="font-weight: 700; font-size: 1.1rem; color: var(--dark);">
+                                <i class="fa-solid fa-clock" style="color: var(--primary); margin-right: 10px;"></i>
+                                Combien de temps pour un raccordement VRD ?
+                            </summary>
+                            <p style="margin-top: 20px; padding-left: 30px; line-height: 1.7;">
+                                Les <strong>travaux de tranchées et pose</strong> durent <strong>3 à 7 jours</strong> en moyenne. Mais il faut ajouter les <strong>délais administratifs</strong> : obtention des autorisations (2-6 semaines) et intervention des concessionnaires pour les branchements finaux (2-8 semaines selon Enedis, Veolia...). Au total, comptez <strong>2 à 4 mois</strong> entre le début du projet et la mise en service complète. Nous accélérons le processus en gérant toutes les démarches.
+                            </p>
+                        </details>
+
+                        <details style="background: white; padding: 25px; border-radius: 10px; cursor: pointer;">
+                            <summary style="font-weight: 700; font-size: 1.1rem; color: var(--dark);">
+                                <i class="fa-solid fa-triangle-exclamation" style="color: var(--primary); margin-right: 10px;"></i>
+                                Peut-on construire sans assainissement ?
+                            </summary>
+                            <p style="margin-top: 20px; padding-left: 30px; line-height: 1.7;">
+                                <strong>Non</strong>, il est impossible de construire sans <strong>système d'assainissement</strong> conforme. Vous devez obligatoirement vous raccorder au <strong>tout-à-l'égout</strong> si disponible (réseau à moins de 10m), ou installer un <strong>assainissement non collectif</strong> (fosse septique, micro-station) si non desservi. Un contrôle du SPANC (Service Public d'Assainissement Non Collectif) est obligatoire avant délivrance du certificat de conformité nécessaire pour habiter.
+                            </p>
+                        </details>
                     </div>
                 </div>
 
                 <div class="cta-box" style="margin-top: 80px;">
                     <div class="cta-content">
                         <h3><i class="fa-solid fa-lightbulb"></i> Projet de Viabilisation en Vue ?</h3>
-                        <p>Ne vous perdez pas dans les démarches administratives. Nous gérons tout : de l'étude à la réception des travaux, en coordination avec tous les intervenants.</p>
+                        <p>Ne vous perdez pas dans les <strong>démarches administratives</strong> complexes. Nous gérons tout de A à Z : de l'étude à la réception des travaux, en coordination avec tous les intervenants (mairie, Enedis, Veolia, Orange...). Plus de <a href="realisations.html" style="color: white; text-decoration: underline;">200 projets VRD réussis</a> sur <a href="zones-intervention.html" style="color: white; text-decoration: underline;">Aix-en-Provence et la PACA</a>.</p>
                     </div>
                     <div class="cta-buttons">
-                        <a href="devis-gratuit.html" class="btn btn-primary btn-lg"><i class="fa-solid fa-file-signature"></i> Devis Gratuit</a>
+                        <a href="devis-gratuit.html" class="btn btn-primary btn-lg"><i class="fa-solid fa-file-signature"></i> Devis Gratuit 24h</a>
                         <a href="https://wa.me/33745142049" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Related Services -->
+                <div class="section" style="margin-top: 80px;">
+                    <h2 style="text-align: center; margin-bottom: 50px;">Services Complémentaires</h2>
+                    <div class="grid-3">
+                        <div class="card">
+                            <div class="card-body" style="text-align: center;">
+                                <i class="fa-solid fa-trowel-bricks" style="font-size: 3rem; color: var(--primary); margin-bottom: 20px;"></i>
+                                <h3><a href="terrassement.html" style="color: inherit; text-decoration: none;">Terrassement</a></h3>
+                                <p>Avant le VRD, le terrassement prépare votre terrain pour les fondations et les réseaux.</p>
+                                <a href="terrassement.html" class="btn btn-primary" style="margin-top: 20px; width: 100%;"><i class="fa-solid fa-arrow-right"></i> Découvrir</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body" style="text-align: center;">
+                                <i class="fa-solid fa-road" style="font-size: 3rem; color: var(--primary); margin-bottom: 20px;"></i>
+                                <h3><a href="amenagement-exterieur.html" style="color: inherit; text-decoration: none;">Aménagement Extérieur</a></h3>
+                                <p>Après les réseaux, finalisez avec une allée en enrobé, une cour ou des bordures.</p>
+                                <a href="amenagement-exterieur.html" class="btn btn-primary" style="margin-top: 20px; width: 100%;"><i class="fa-solid fa-arrow-right"></i> Découvrir</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body" style="text-align: center;">
+                                <i class="fa-solid fa-truck" style="font-size: 3rem; color: var(--primary); margin-bottom: 20px;"></i>
+                                <h3><a href="location-materiel.html" style="color: inherit; text-decoration: none;">Location Matériel</a></h3>
+                                <p>Besoin d'une mini-pelle ou d'un camion ? Louez notre matériel avec chauffeur.</p>
+                                <a href="location-materiel.html" class="btn btn-primary" style="margin-top: 20px; width: 100%;"><i class="fa-solid fa-arrow-right"></i> Découvrir</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -252,7 +424,7 @@
         <div class="container footer-content">
             <div class="footer-col">
                 <h4>STP TERRASSEMENT</h4>
-                <p>Entreprise spécialisée en Travaux Publics, VRD et Terrassement. Intervention sur Aix-en-Provence et toute la région PACA.</p>
+                <p>Entreprise spécialisée en <strong>Travaux Publics</strong>, <strong>VRD</strong> et <strong>Terrassement</strong>. Intervention sur <a href="zones-intervention.html" style="color: #9ca3af; text-decoration: underline;">Aix-en-Provence et toute la région PACA</a>.</p>
                 <div class="footer-badges">
                     <div class="footer-badge">
                         <i class="fa-solid fa-shield-halved"></i>
@@ -276,14 +448,15 @@
                 <h4>Liens Rapides</h4>
                 <a href="index.html">Accueil</a>
                 <a href="realisations.html">Réalisations</a>
+                <a href="blog.html">Blog</a>
                 <a href="zones-intervention.html">Zones d'intervention</a>
                 <a href="contact.html">Contact</a>
                 <a href="devis-gratuit.html">Devis Gratuit</a>
             </div>
             <div class="footer-col">
                 <h4>Contact</h4>
-                <p><i class="fa-solid fa-phone"></i> 07 45 14 20 49</p>
-                <p><i class="fa-solid fa-envelope"></i> stp13109@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> <a href="tel:+33745142049" style="color: inherit;">07 45 14 20 49</a></p>
+                <p><i class="fa-solid fa-envelope"></i> <a href="mailto:stp13109@gmail.com" style="color: inherit;">stp13109@gmail.com</a></p>
                 <p><i class="fa-solid fa-location-dot"></i> Aix-en-Provence (13)</p>
                 <p><i class="fa-solid fa-clock"></i> Lun-Sam: 7h-19h</p>
             </div>

@@ -107,6 +107,127 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ========================================
+    // FAQ ACCORDION FUNCTIONALITY - ENHANCED
+    // ========================================
+    const faqItems = document.querySelectorAll('details');
+    
+    if (faqItems.length > 0) {
+        // Add CSS for smooth transitions
+        const style = document.createElement('style');
+        style.textContent = `
+            details summary {
+                cursor: pointer;
+                transition: all 0.3s ease;
+                user-select: none;
+                list-style: none;
+            }
+            details summary::-webkit-details-marker {
+                display: none;
+            }
+            details summary:hover {
+                background: rgba(255, 180, 0, 0.1) !important;
+                padding-left: 35px !important;
+            }
+            details[open] summary {
+                background: rgba(255, 180, 0, 0.15) !important;
+                color: var(--primary) !important;
+                padding-left: 35px !important;
+                border-bottom: 2px solid var(--primary);
+            }
+            details summary i {
+                transition: transform 0.3s ease;
+            }
+            details[open] > summary::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: -2px;
+                height: 2px;
+                background: var(--primary);
+            }
+        `;
+        document.head.appendChild(style);
+
+        faqItems.forEach((item, index) => {
+            const summary = item.querySelector('summary');
+            
+            if (summary) {
+                // Make summary position relative for after pseudo-element
+                summary.style.position = 'relative';
+                
+                // Add click animation
+                summary.addEventListener('click', (e) => {
+                    // Optional: Close other FAQ items (accordion behavior)
+                    // Uncomment below for one-at-a-time behavior
+                    /*
+                    faqItems.forEach((otherItem, otherIndex) => {
+                        if (otherIndex !== index && otherItem.open) {
+                            otherItem.open = false;
+                        }
+                    });
+                    */
+                    
+                    // Visual feedback on click
+                    summary.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        summary.style.transform = 'scale(1)';
+                    }, 150);
+                });
+                
+                // Handle open/close state with icon rotation
+                item.addEventListener('toggle', () => {
+                    const icon = summary.querySelector('i');
+                    
+                    if (item.open) {
+                        // Smooth scroll to element after opening
+                        setTimeout(() => {
+                            const yOffset = -100;
+                            const element = item;
+                            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                            
+                            window.scrollTo({ top: y, behavior: 'smooth' });
+                        }, 100);
+                        
+                        // Add open animation to content
+                        const content = item.querySelector('p');
+                        if (content) {
+                            content.style.animation = 'fadeInDown 0.3s ease';
+                        }
+                    }
+                });
+                
+                // Add keyboard accessibility
+                summary.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        summary.click();
+                    }
+                });
+            }
+        });
+        
+        // Add animation keyframes
+        if (!document.getElementById('faq-animations')) {
+            const animStyle = document.createElement('style');
+            animStyle.id = 'faq-animations';
+            animStyle.textContent = `
+                @keyframes fadeInDown {
+                    from {
+                        opacity: 0;
+                        transform: translateY(-10px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            `;
+            document.head.appendChild(animStyle);
+        }
+    }
+
+    // ========================================
     // FORM HANDLING WITH VALIDATION
     // ========================================
     const forms = document.querySelectorAll('form');
@@ -565,41 +686,6 @@ document.addEventListener('DOMContentLoaded', () => {
             e.target.value = value;
         });
     });
-
-    // ========================================
-    // COOKIE CONSENT (Optional)
-    // ========================================
-    function initCookieConsent() {
-        if (localStorage.getItem('cookieConsent')) return;
-        
-        const cookieBanner = document.createElement('div');
-        cookieBanner.innerHTML = `
-            <div style="position: fixed; bottom: 0; left: 0; right: 0; background: #111827; color: white; padding: 20px; z-index: 9999; box-shadow: 0 -4px 20px rgba(0,0,0,0.3);">
-                <div class="container" style="display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
-                    <p style="margin: 0; flex: 1; min-width: 250px;">🍪 Nous utilisons des cookies pour améliorer votre expérience. En continuant, vous acceptez notre politique de confidentialité.</p>
-                    <div style="display: flex; gap: 10px;">
-                        <button id="acceptCookies" class="btn btn-primary">Accepter</button>
-                        <button id="refuseCookies" class="btn" style="background: #374151;">Refuser</button>
-                    </div>
-                </div>
-            </div>
-        `;
-        
-        document.body.appendChild(cookieBanner);
-        
-        document.getElementById('acceptCookies').addEventListener('click', () => {
-            localStorage.setItem('cookieConsent', 'true');
-            cookieBanner.remove();
-        });
-        
-        document.getElementById('refuseCookies').addEventListener('click', () => {
-            localStorage.setItem('cookieConsent', 'false');
-            cookieBanner.remove();
-        });
-    }
-    
-    // Uncomment to enable cookie consent
-    // initCookieConsent();
 
     // ========================================
     // WHATSAPP BUTTON PULSE ANIMATION
