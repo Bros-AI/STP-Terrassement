@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="theme-color" content="#F59E0B">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="Cache-Control" content="public, max-age=31536000">
     
-    <title>Location Engins Chantier Aix-en-Provence (13) | STP</title>
-    <meta name="description" content="Location engins BTP avec chauffeur à Aix-en-Provence : mini-pelle, pelle 20T, compacteur. Tarifs pros, devis gratuit 24h. STP au 07 45 14 20 49.">
+    <title>Location Engins Chantier Aix (13) | Avec Chauffeur CACES | Devis</title>
+    <meta name="description" content="✓ Location engins BTP avec chauffeur CACES à Aix-en-Provence. Mini-pelle, pelle 20T, compacteur. Tarifs pros, matériel récent. ☎ 07 45 14 20 49. Devis gratuit en 24h !">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="keywords" content="location mini-pelle aix-en-provence, location pelle avec chauffeur, location engin terrassement, location brise-roche hydraulique, location compacteur, matériel BTP chauffeur">
     
@@ -75,11 +77,36 @@
           "https://wa.me/33745142049"
         ]
       },
-      "areaServed": [
-        {"@type": "City", "name": "Aix-en-Provence"},
-        {"@type": "State", "name": "Provence-Alpes-Côte d'Azur"}
-      ],
-      "description": "Location de matériel BTP avec chauffeur qualifié CACES : mini-pelles, pelles hydrauliques, compacteurs, camions bennes. Matériel récent et entretenu."
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {"@type": "GeoCoordinates", "latitude": 43.529742, "longitude": 5.447427},
+        "geoRadius": "50000"
+      },
+      "description": "Location de matériel BTP avec chauffeur qualifié CACES : mini-pelles, pelles hydrauliques, compacteurs, camions bennes. Matériel récent et entretenu.",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".hero-text", "h1", ".section-intro"]
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {"@type": "Service", "name": "Location mini-pelle avec chauffeur"},
+            "priceSpecification": {"@type": "PriceSpecification", "price": "400", "priceCurrency": "EUR", "unitText": "par jour"}
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {"@type": "Service", "name": "Location pelle 13-20T avec chauffeur"},
+            "priceSpecification": {"@type": "PriceSpecification", "price": "800", "priceCurrency": "EUR", "unitText": "par jour"}
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {"@type": "Service", "name": "Location brise-roche hydraulique"},
+            "priceSpecification": {"@type": "PriceSpecification", "price": "600", "priceCurrency": "EUR", "unitText": "par jour"}
+          }
+        ]
+      }
     }
     </script>
 
@@ -132,13 +159,15 @@
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Oswald:wght@500;700&display=swap" as="style">
+    <link rel="modulepreload" href="js/script.js">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <nav id="navbar" class="navbar" itemscope itemtype="https://schema.org/SiteNavigationElement">
+    <nav id="navbar" class="navbar" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
         <div class="container nav-container">
             <a href="index.html" class="logo" aria-label="STP Terrassement - Accueil">
                 <div class="logo-icon"><i class="fa-solid fa-excavator"></i></div>
@@ -176,7 +205,7 @@
         </div>
     </nav>
 
-    <main>
+    <main role="main">
         <!-- Breadcrumb Navigation -->
         <nav aria-label="Fil d'Ariane" style="background: var(--gray); padding: 15px 0;">
             <div class="container">
@@ -234,18 +263,33 @@
             </div>
         </header>
 
-        <section class="page-content section">
+        <!-- Trust Bar - Social Proof -->
+        <div style="background: var(--dark); padding: 15px 0; text-align: center;">
+          <div class="container" style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; color: white; font-size: 0.9rem;">
+            <span><i class="fa-solid fa-star" style="color: var(--primary);"></i> 4.9/5 Google</span>
+            <span><i class="fa-solid fa-shield-halved" style="color: var(--primary);"></i> Garantie Décennale</span>
+            <span><i class="fa-solid fa-clock" style="color: var(--primary);"></i> Devis 24h</span>
+            <span><i class="fa-solid fa-certificate" style="color: var(--primary);"></i> 15 Ans d'Expérience</span>
+          </div>
+        </div>
+        <!-- Last Modified for Freshness -->
+        <div style="text-align: center; padding: 8px 0; background: #f9fafb; font-size: 0.8rem; color: #6b7280;">
+            <i class="fa-solid fa-calendar-check" style="margin-right: 5px;"></i> Dernière mise à jour : Mars 2026
+        </div>
+
+        <section class="page-content section" aria-label="Location matériel BTP avec chauffeur à Aix-en-Provence">
             <div class="container">
+            <article>
                 <div class="section-header">
                     <span class="subtitle">NOTRE PARC MATÉRIEL</span>
-                    <h2>Location Minipelle, Pelle Mécanique et Engins BTP avec Chauffeur à Aix-en-Provence</h2>
-                    <p class="section-intro">Vous avez un projet de <a href="terrassement.html" style="color: var(--primary); text-decoration: underline;">terrassement</a>, <a href="vrd-assainissement.html" style="color: var(--primary); text-decoration: underline;">VRD</a> ou <a href="demolition.html" style="color: var(--primary); text-decoration: underline;">démolition</a> mais ne disposez pas de l'équipement nécessaire ? STP Terrassement met à votre disposition son <strong>parc de matériel BTP récent</strong> et parfaitement entretenu, <strong>exclusivement avec chauffeur expérimenté</strong>. Intervention rapide sur nos <a href="zones-intervention.html" style="color: var(--primary); text-decoration: underline;">zones d'intervention autour d'Aix-en-Provence</a>. <a href="devis-gratuit.html" style="color: var(--primary); text-decoration: underline;">Demandez votre devis gratuit</a> pour connaître nos tarifs. Découvrez <a href="realisations.html" style="color: var(--primary); text-decoration: underline;">nos réalisations</a> de chantiers.</p>
+                    <h2>STP Terrassement : Location Minipelle, Pelle Mécanique et Engins BTP avec Chauffeur à Aix-en-Provence</h2>
+                    <p class="section-intro">Vous avez un projet de <a href="terrassement.html" style="color: var(--primary); text-decoration: underline;">terrassement</a>, <a href="vrd-assainissement.html" style="color: var(--primary); text-decoration: underline;">VRD</a> ou <a href="demolition.html" style="color: var(--primary); text-decoration: underline;">démolition</a> mais ne disposez pas de l'équipement nécessaire ? STP Terrassement met à votre disposition son <mark>parc de matériel BTP récent à Aix-en-Provence</mark> et parfaitement entretenu, <strong>exclusivement avec chauffeur expérimenté</strong>. Intervention rapide sur nos <a href="zones-intervention.html" style="color: var(--primary); text-decoration: underline;">zones d'intervention autour d'Aix-en-Provence</a>. <a href="devis-gratuit.html" style="color: var(--primary); text-decoration: underline;">Demandez votre devis gratuit</a> pour connaître nos tarifs. Découvrez <a href="realisations.html" style="color: var(--primary); text-decoration: underline;">nos réalisations</a> de chantiers.</p>
                 </div>
 
                 <div class="grid-3" style="margin-top: 60px;">
                     <div class="card">
                         <div class="card-img">
-                            <img src="images/terrassement-pelle-mecanique.webp" alt="Location mini-pelles 1T à 5T avec chauffeur" loading="lazy" width="400" height="220">
+                            <img fetchpriority="high" src="images/terrassement-pelle-mecanique.webp" alt="Location mini-pelles 1T à 5T avec chauffeur" width="400" height="220">
                         </div>
                         <div class="card-body">
                             <i class="fa-solid fa-tractor card-icon"></i>
@@ -511,6 +555,15 @@
                     </div>
                 </div>
 
+
+                <!-- E-E-A-T Trust Signal -->
+                <div style="background: var(--gray); border-left: 4px solid var(--primary); padding: 20px 25px; margin: 40px 0; border-radius: 0 8px 8px 0;">
+                    <p style="font-weight: 700; margin-bottom: 8px;"><i class="fa-solid fa-user-tie" style="color: var(--primary);"></i> STP Terrassement — Expert depuis 15 ans</p>
+                    <p style="font-size: 0.9rem; color: var(--text-light);">Entreprise de terrassement et VRD certifiée, basée à Aix-en-Provence. Garantie décennale, assurance RC Pro, et plus de 500 chantiers réalisés dans la région PACA. <a href="realisations.html" style="color: var(--primary);">Voir nos réalisations</a></p>
+                </div>
+
+                </article>
+
                 <!-- Related Services -->
                 <div class="section" style="margin-top: 80px;">
                     <h2 style="text-align: center; margin-bottom: 50px;">Nos Services Complets</h2>
@@ -543,9 +596,70 @@
                 </div>
             </div>
         </section>
+
+    <!-- Services Sp&eacute;cifiques Cross-Links -->
+    <section id="services-specifiques-crosslinks" class="section bg-light" style="padding: 60px 0;">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">SERVICES SP&Eacute;CIFIQUES</span>
+                <h2>Louez Pour Tous Vos Projets</h2>
+            </div>
+            <div class="grid-3">
+                        <div class="card">
+                            <div class="card-body" style="text-align: center; padding: 25px;">
+                                <i class="fa-solid fa-truck" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                                <h3 style="font-size: 1rem;"><a href="location-engins-marseille.html" style="color: inherit; text-decoration: none;">Location Engins Marseille</a></h3>
+                                <p style="font-size: 0.9rem; margin-bottom: 15px;">Location de mini-pelles et pelles avec chauffeur &agrave; Marseille.</p>
+                                <a href="location-engins-marseille.html" class="btn btn-primary" style="width: 100%; font-size: 0.85rem;"><i class="fa-solid fa-arrow-right"></i> En savoir plus</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body" style="text-align: center; padding: 25px;">
+                                <i class="fa-solid fa-truck" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                                <h3 style="font-size: 1rem;"><a href="location-engins-aubagne.html" style="color: inherit; text-decoration: none;">Location Engins Aubagne</a></h3>
+                                <p style="font-size: 0.9rem; margin-bottom: 15px;">Location d'engins de chantier avec chauffeur &agrave; Aubagne.</p>
+                                <a href="location-engins-aubagne.html" class="btn btn-primary" style="width: 100%; font-size: 0.85rem;"><i class="fa-solid fa-arrow-right"></i> En savoir plus</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body" style="text-align: center; padding: 25px;">
+                                <i class="fa-solid fa-truck" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                                <h3 style="font-size: 1rem;"><a href="location-engins-gardanne.html" style="color: inherit; text-decoration: none;">Location Engins Gardanne</a></h3>
+                                <p style="font-size: 0.9rem; margin-bottom: 15px;">Location de mat&eacute;riel BTP avec op&eacute;rateur &agrave; Gardanne.</p>
+                                <a href="location-engins-gardanne.html" class="btn btn-primary" style="width: 100%; font-size: 0.85rem;"><i class="fa-solid fa-arrow-right"></i> En savoir plus</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body" style="text-align: center; padding: 25px;">
+                                <i class="fa-solid fa-truck" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                                <h3 style="font-size: 1rem;"><a href="location-engins-salon-de-provence.html" style="color: inherit; text-decoration: none;">Location Engins Salon</a></h3>
+                                <p style="font-size: 0.9rem; margin-bottom: 15px;">Location d'engins de chantier &agrave; Salon-de-Provence.</p>
+                                <a href="location-engins-salon-de-provence.html" class="btn btn-primary" style="width: 100%; font-size: 0.85rem;"><i class="fa-solid fa-arrow-right"></i> En savoir plus</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body" style="text-align: center; padding: 25px;">
+                                <i class="fa-solid fa-truck" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                                <h3 style="font-size: 1rem;"><a href="location-engins-bouc-bel-air.html" style="color: inherit; text-decoration: none;">Location Engins Bouc-Bel-Air</a></h3>
+                                <p style="font-size: 0.9rem; margin-bottom: 15px;">Location de mini-pelles et camions &agrave; Bouc-Bel-Air.</p>
+                                <a href="location-engins-bouc-bel-air.html" class="btn btn-primary" style="width: 100%; font-size: 0.85rem;"><i class="fa-solid fa-arrow-right"></i> En savoir plus</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body" style="text-align: center; padding: 25px;">
+                                <i class="fa-solid fa-trowel-bricks" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                                <h3 style="font-size: 1rem;"><a href="terrassement-marseille.html" style="color: inherit; text-decoration: none;">Terrassement Marseille</a></h3>
+                                <p style="font-size: 0.9rem; margin-bottom: 15px;">Besoin de plus que la location ? Terrassement cl&eacute; en main.</p>
+                                <a href="terrassement-marseille.html" class="btn btn-primary" style="width: 100%; font-size: 0.85rem;"><i class="fa-solid fa-arrow-right"></i> En savoir plus</a>
+                            </div>
+                        </div>
+            </div>
+        </div>
+    </section>
+
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <div class="container footer-content">
             <div class="footer-col">
                 <h4>STP TERRASSEMENT</h4>
@@ -592,7 +706,30 @@
                 </div>
             </div>
         </div>
-        <div class="copyright">
+                <div style="text-align: center; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 20px;">
+            <p style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 10px;">Nos interventions :</p>
+            <p style="font-size: 0.75rem; color: #6b7280; line-height: 2;">
+                <a href="terrassement-marseille.html" style="color: #9ca3af;">Terrassement Marseille</a> &bull;
+                <a href="terrassement-aubagne.html" style="color: #9ca3af;">Terrassement Aubagne</a> &bull;
+                <a href="terrassement-gardanne.html" style="color: #9ca3af;">Terrassement Gardanne</a> &bull;
+                <a href="terrassement-salon-de-provence.html" style="color: #9ca3af;">Terrassement Salon</a> &bull;
+                <a href="terrassement-vitrolles.html" style="color: #9ca3af;">Terrassement Vitrolles</a> &bull;
+                <a href="enrobe-aix-en-provence.html" style="color: #9ca3af;">Enrob&eacute; Aix</a> &bull;
+                <a href="enrobe-marseille.html" style="color: #9ca3af;">Enrob&eacute; Marseille</a> &bull;
+                <a href="terrassement-piscine-aix-en-provence.html" style="color: #9ca3af;">Piscine Aix</a> &bull;
+                <a href="terrassement-piscine-marseille.html" style="color: #9ca3af;">Piscine Marseille</a> &bull;
+                <a href="vrd-assainissement-marseille.html" style="color: #9ca3af;">VRD Marseille</a> &bull;
+                <a href="demolition-marseille.html" style="color: #9ca3af;">D&eacute;molition Marseille</a> &bull;
+                <a href="fondations-maison-aix-en-provence.html" style="color: #9ca3af;">Fondations Aix</a> &bull;
+                <a href="goudronnage-aix-en-provence.html" style="color: #9ca3af;">Goudronnage Aix</a> &bull;
+                <a href="viabilisation-terrain-aix-en-provence.html" style="color: #9ca3af;">Viabilisation Aix</a> &bull;
+                <a href="raccordement-tout-egout-aix-en-provence.html" style="color: #9ca3af;">Tout-&agrave;-l'&eacute;gout Aix</a> &bull;
+                <a href="enrochement-aix-en-provence.html" style="color: #9ca3af;">Enrochement Aix</a> &bull;
+                <a href="location-engins-marseille.html" style="color: #9ca3af;">Location Engins Marseille</a> &bull;
+                <a href="zones-intervention.html" style="color: #9ca3af;">Toutes nos zones</a>
+            </p>
+        </div>
+        <div class="copyright" data-nosnippet>
             <p>&copy; 2025-2026 STP Terrassement - Tous droits réservés | Expert VRD & Terrassement Aix-en-Provence</p>
             <p class="legal-links">
                 <a href="mentions-legales.html">Mentions Légales</a> • 

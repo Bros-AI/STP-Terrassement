@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="theme-color" content="#F59E0B">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="Cache-Control" content="public, max-age=31536000">
 
     <title>Terrassement Les Milles (13) | Fondations, Décaissement | Devis Gratuit - STP</title>
     <meta name="description" content="Terrassement aux Milles, Aix-en-Provence (13290) : fondations commerciales et résidentielles, décaissement, nivellement. Zone d'Activités. Devis gratuit 24h - STP.">
@@ -171,13 +173,15 @@
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Oswald:wght@500;700&display=swap" as="style">
+    <link rel="modulepreload" href="js/script.js">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <nav id="navbar" class="navbar" itemscope itemtype="https://schema.org/SiteNavigationElement">
+    <nav id="navbar" class="navbar" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
         <div class="container nav-container">
             <a href="index.html" class="logo" aria-label="STP Terrassement - Accueil">
                 <div class="logo-icon"><i class="fa-solid fa-excavator"></i></div>
@@ -201,7 +205,7 @@
         </div>
     </nav>
 
-    <main>
+    <main role="main">
         <nav aria-label="Fil d'Ariane" style="background: var(--gray); padding: 15px 0;">
             <div class="container">
                 <ol style="display: flex; gap: 10px; list-style: none; padding: 0; margin: 0; font-size: 0.9rem;" itemscope itemtype="https://schema.org/BreadcrumbList">
@@ -267,7 +271,7 @@
                         </div>
                     </div>
                     <div>
-                        <img src="images/chantier-fondations-maison.webp" alt="Terrassement plateforme commerciale aux Milles Aix-en-Provence" class="rounded-img" loading="lazy" width="600" height="400">
+                        <img fetchpriority="high" src="images/chantier-fondations-maison.webp" alt="Terrassement plateforme commerciale aux Milles Aix-en-Provence" class="rounded-img" width="600" height="400">
                     </div>
                 </div>
 
@@ -392,7 +396,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <div class="container footer-content">
             <div class="footer-col"><h4>STP TERRASSEMENT</h4><p>Entreprise spécialisée en <strong>Travaux Publics</strong>, <strong>VRD</strong> et <strong>Terrassement</strong>. Intervention sur <a href="zones-intervention.html" style="color: #9ca3af; text-decoration: underline;">Aix-en-Provence et toute la région PACA</a>.</p><div class="footer-badges"><div class="footer-badge"><i class="fa-solid fa-shield-halved"></i><span>Garantie Décennale</span></div><div class="footer-badge"><i class="fa-solid fa-certificate"></i><span>Certifié & Assuré</span></div></div></div>
             <div class="footer-col"><h4>Nos Services</h4><a href="terrassement.html">Terrassement & Fondations</a><a href="vrd-assainissement.html">VRD & Raccordements</a><a href="amenagement-exterieur.html">Aménagement Extérieur</a><a href="demolition.html">Démolition</a><a href="location-materiel.html">Location de matériel</a></div>
@@ -406,7 +410,7 @@
                 </div>
             </div>
         </div>
-        <div class="copyright"><p>&copy; 2025-2026 STP Terrassement - Tous droits réservés | Expert VRD & Terrassement Aix-en-Provence</p><p class="legal-links"><a href="mentions-legales.html">Mentions Légales</a> • <a href="politique-confidentialite.html">Politique de Confidentialité</a></p></div>
+        <div class="copyright" data-nosnippet><p>&copy; 2025-2026 STP Terrassement - Tous droits réservés | Expert VRD & Terrassement Aix-en-Provence</p><p class="legal-links"><a href="mentions-legales.html">Mentions Légales</a> • <a href="politique-confidentialite.html">Politique de Confidentialité</a></p></div>
     </footer>
 
     <a href="https://wa.me/33745142049" class="float-wa" target="_blank" rel="noopener" aria-label="Contactez-nous sur WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>

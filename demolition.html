@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="theme-color" content="#F59E0B">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="Cache-Control" content="public, max-age=31536000">
     
-    <title>Démolition Aix-en-Provence (13) | Devis Gratuit - STP</title>
-    <meta name="description" content="Démolition professionnelle à Aix-en-Provence : bâtiment, dalle béton, évacuation gravats. Garantie décennale, devis gratuit 24h. STP au 07 45 14 20 49.">
+    <title>Démolition Aix-en-Provence (13) | Expert Certifié | Devis Gratuit 24h</title>
+    <meta name="description" content="✓ Expert démolition à Aix-en-Provence depuis 15 ans. Bâtiment, dalle béton, évacuation gravats. Tri sélectif 90%. ☎ 07 45 14 20 49. Devis gratuit en 24h !">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="keywords" content="démolition aix-en-provence, déconstruction bâtiment provence, casse béton, évacuation gravats, démolition maison, curage bâtiment, brise-roche hydraulique, démolition dalles">
     
@@ -75,11 +77,79 @@
           "https://wa.me/33745142049"
         ]
       },
-      "areaServed": [
-        {"@type": "City", "name": "Aix-en-Provence"},
-        {"@type": "State", "name": "Provence-Alpes-Côte d'Azur"}
-      ],
-      "description": "Services professionnels de démolition : déconstruction totale ou partielle de bâtiments, casse de béton, curage, évacuation de gravats avec tri et recyclage."
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {"@type": "GeoCoordinates", "latitude": 43.529742, "longitude": 5.447427},
+        "geoRadius": "50000"
+      },
+      "description": "Services professionnels de démolition : déconstruction totale ou partielle de bâtiments, casse de béton, curage, évacuation de gravats avec tri et recyclage.",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".hero-text", "h1", ".section-intro"]
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {"@type": "Service", "name": "Démolition de maison"},
+            "priceSpecification": {"@type": "PriceSpecification", "price": "50", "priceCurrency": "EUR", "unitText": "par m²"}
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {"@type": "Service", "name": "Casse de dalle béton"},
+            "priceSpecification": {"@type": "PriceSpecification", "price": "30", "priceCurrency": "EUR", "unitText": "par m²"}
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {"@type": "Service", "name": "Évacuation gravats"},
+            "priceSpecification": {"@type": "PriceSpecification", "price": "250", "priceCurrency": "EUR", "unitText": "par benne"}
+          }
+        ]
+      }
+    }
+    </script>
+
+    <!-- HowTo Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Comment se déroule une démolition à Aix-en-Provence",
+      "description": "Les étapes d'un chantier de démolition professionnelle par STP Terrassement.",
+      "totalTime": "P5D",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Diagnostic et démarches administratives",
+          "text": "Réalisation du diagnostic amiante avant travaux (DAAT), dépôt du permis de démolir en mairie et obtention des autorisations nécessaires."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Curage et désamiantage",
+          "text": "Retrait des éléments intérieurs (menuiseries, cloisons, installations) et désamiantage si nécessaire par entreprise agréée."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Démolition mécanique",
+          "text": "Déconstruction du bâtiment à la pelle mécanique équipée d'un brise-roche hydraulique ou d'une pince de démolition."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Tri sélectif des matériaux",
+          "text": "Séparation sur site des matériaux : béton, métaux, bois, plastiques. Chaque matériau est orienté vers la filière de recyclage adaptée."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Évacuation et remise en état",
+          "text": "Chargement et évacuation des gravats vers des centres agréés. Nivellement du terrain et remise en état du site."
+        }
+      ]
     }
     </script>
 
@@ -123,6 +193,27 @@
           "@type": "Answer",
           "text": "Oui, STP Terrassement réalise des démolitions partielles : ouverture de murs porteurs (avec étude structure), suppression de cloisons, retrait de dalles béton. À Aix-en-Provence, un diagnostic amiante préalable est obligatoire pour les bâtiments construits avant 1997."
         }
+      },{
+        "@type": "Question",
+        "name": "Combien coûte la démolition d'un garage ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La démolition d'un garage coûte entre 1 500€ et 5 000€ selon la surface (15 à 40m²), le type de construction (parpaing, béton, métal) et l'accessibilité. Ce prix inclut la démolition, l'évacuation des gravats et le nettoyage du terrain. Comptez 2 000-3 000€ en moyenne pour un garage standard de 20m²."
+        }
+      },{
+        "@type": "Question",
+        "name": "Peut-on démolir sans permis ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pour les petites structures de moins de 20m² hors zone protégée, aucun permis n'est nécessaire. Au-delà ou en secteur protégé (PLU, monument historique à moins de 500m), un permis de démolir est obligatoire avec un délai d'instruction de 2 mois en mairie. STP Terrassement vous accompagne dans ces démarches."
+        }
+      },{
+        "@type": "Question",
+        "name": "Qui paie la démolition ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La démolition est à la charge du propriétaire du bien. En cas de vente avec clause de démolition, l'acheteur peut la prendre en charge. Pour une démolition ordonnée par la mairie (arrêté de péril), c'est le propriétaire qui paie, sauf cas de force majeure. Des aides existent pour les logements insalubres via l'ANAH."
+        }
       }]
     }
     </script>
@@ -132,13 +223,15 @@
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Oswald:wght@500;700&display=swap" as="style">
+    <link rel="modulepreload" href="js/script.js">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <nav id="navbar" class="navbar" itemscope itemtype="https://schema.org/SiteNavigationElement">
+    <nav id="navbar" class="navbar" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
         <div class="container nav-container">
             <a href="index.html" class="logo" aria-label="STP Terrassement - Accueil">
                 <div class="logo-icon"><i class="fa-solid fa-excavator"></i></div>
@@ -176,7 +269,7 @@
         </div>
     </nav>
 
-    <main>
+    <main role="main">
         <!-- Breadcrumb Navigation -->
         <nav aria-label="Fil d'Ariane" style="background: var(--gray); padding: 15px 0;">
             <div class="container">
@@ -234,18 +327,33 @@
             </div>
         </header>
 
-        <section class="page-content section">
+        <!-- Trust Bar - Social Proof -->
+        <div style="background: var(--dark); padding: 15px 0; text-align: center;">
+          <div class="container" style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; color: white; font-size: 0.9rem;">
+            <span><i class="fa-solid fa-star" style="color: var(--primary);"></i> 4.9/5 Google</span>
+            <span><i class="fa-solid fa-shield-halved" style="color: var(--primary);"></i> Garantie Décennale</span>
+            <span><i class="fa-solid fa-clock" style="color: var(--primary);"></i> Devis 24h</span>
+            <span><i class="fa-solid fa-certificate" style="color: var(--primary);"></i> 15 Ans d'Expérience</span>
+          </div>
+        </div>
+        <!-- Last Modified for Freshness -->
+        <div style="text-align: center; padding: 8px 0; background: #f9fafb; font-size: 0.8rem; color: #6b7280;">
+            <i class="fa-solid fa-calendar-check" style="margin-right: 5px;"></i> Dernière mise à jour : Mars 2026
+        </div>
+
+        <section class="page-content section" aria-label="Services de démolition professionnelle à Aix-en-Provence">
             <div class="container">
+            <article>
                 <div class="section-header">
                     <span class="subtitle">DÉMOLITION PROFESSIONNELLE</span>
-                    <h2>Expertise en Démolition et Déconstruction à Aix-en-Provence</h2>
-                    <p class="section-intro">Qu'il s'agisse de <strong>démolir une maison entière</strong>, une <strong>annexe</strong>, une <strong>dalle en béton</strong> ou de préparer un terrain pour une nouvelle construction, nos équipes interviennent avec la méthodologie et l'<a href="location-materiel.html" style="color: var(--primary); text-decoration: underline;">équipement adéquat</a>. Chaque projet débute par un <strong>diagnostic avant démolition</strong> complet et l'établissement d'un <strong>plan de retrait</strong>. Nous assurons le <strong>tri sélectif des déchets</strong> sur chantier, le <strong>recyclage matériaux</strong> et la traçabilité via les <strong>bordereaux de suivi des déchets (BSD)</strong>. Nous gérons aussi les démarches : <strong>permis de démolir</strong>, <strong>DICT</strong> et <strong>arrêté de voirie</strong>. Après démolition, nous assurons le <a href="terrassement.html" style="color: var(--primary); text-decoration: underline;">terrassement du terrain</a> pour préparer votre nouvelle construction. Découvrez <a href="realisations.html" style="color: var(--primary); text-decoration: underline;">nos réalisations</a> de démolition sur nos <a href="zones-intervention.html" style="color: var(--primary); text-decoration: underline;">zones d'intervention autour d'Aix-en-Provence</a>.</p>
+                    <h2>STP Terrassement : Expertise en Démolition et Déconstruction à Aix-en-Provence</h2>
+                    <p class="section-intro">STP Terrassement est votre <mark>entreprise de démolition à Aix-en-Provence</mark>. Qu'il s'agisse de <strong>démolir une maison entière</strong>, une <strong>annexe</strong>, une <strong>dalle en béton</strong> ou de préparer un terrain pour une nouvelle construction, nos équipes interviennent avec la méthodologie et l'<a href="location-materiel.html" style="color: var(--primary); text-decoration: underline;">équipement adéquat</a>. Chaque projet débute par un <strong>diagnostic avant démolition</strong> complet et l'établissement d'un <strong>plan de retrait</strong>. Nous assurons le <strong>tri sélectif des déchets</strong> sur chantier, le <strong>recyclage matériaux</strong> et la traçabilité via les <strong>bordereaux de suivi des déchets (BSD)</strong>. Nous gérons aussi les démarches : <strong>permis de démolir</strong>, <strong>DICT</strong> et <strong>arrêté de voirie</strong>. Après démolition, nous assurons le <a href="terrassement.html" style="color: var(--primary); text-decoration: underline;">terrassement du terrain</a> pour préparer votre nouvelle construction. Découvrez <a href="realisations.html" style="color: var(--primary); text-decoration: underline;">nos réalisations</a> de démolition sur nos <a href="zones-intervention.html" style="color: var(--primary); text-decoration: underline;">zones d'intervention autour d'Aix-en-Provence</a>.</p>
                 </div>
 
                 <div class="grid-3" style="margin-top: 60px;">
                     <div class="card">
                         <div class="card-img">
-                            <img src="images/demolition-deconstruction-batiment.webp" alt="Démolition de bâtiments à Aix-en-Provence" loading="lazy" width="400" height="220">
+                            <img fetchpriority="high" src="images/demolition-deconstruction-batiment.webp" alt="Démolition de bâtiments à Aix-en-Provence" width="400" height="220">
                         </div>
                         <div class="card-body">
                             <i class="fa-solid fa-building-circle-xmark card-icon"></i>
@@ -325,7 +433,7 @@
                         <div class="card-body">
                             <i class="fa-solid fa-broom card-icon"></i>
                             <h3>Curage de Bâtiments</h3>
-                            <p>Retrait des éléments non constructifs (cloisons, revêtements, isolants) avant une <strong>réhabilitation</strong> ou démolition totale.</p>
+                            <p>Retrait des éléments non constructifs (cloisons, revêtements, isolants) avant une <strong>réhabilitation</strong> ou démolition totale. Notre service de <strong>curage intérieur</strong> prépare le bâtiment pour la suite des travaux.</p>
                             <ul class="service-list">
                                 <li><i class="fa-solid fa-caret-right"></i> Retrait <strong>cloisons</strong> intérieures</li>
                                 <li><i class="fa-solid fa-caret-right"></i> Dépose <strong>revêtements</strong> sols/murs</li>
@@ -448,19 +556,58 @@
                                 Nous pratiquons <strong>tri sélectif rigoureux</strong> avec filières : <strong>béton/briques/pierres</strong> (60%) → ISDI pour recyclage en granulats ; <strong>bois</strong> (15%) → filière bois-énergie ou recyclage panneaux ; <strong>métaux</strong> (10%) → ferrailleur ; <strong>plâtre</strong> (5%) → recyclage plaques neuves ; <strong>déchets ultimes</strong> (10%) → ISDND. Notre <strong>taux de valorisation</strong> : <strong>85-90%</strong>. Nous fournissons <strong>bordereaux de suivi</strong> (BSD) pour traçabilité complète et conformité réglementaire totale.
                             </p>
                         </details>
+
+                        <details style="background: var(--gray); padding: 25px; border-radius: 10px; margin-bottom: 20px; cursor: pointer;">
+                            <summary style="font-weight: 700; font-size: 1.1rem; color: var(--dark);">
+                                <i class="fa-solid fa-warehouse" style="color: var(--primary); margin-right: 10px;"></i>
+                                Combien coûte la démolition d'un garage ?
+                            </summary>
+                            <p style="margin-top: 20px; padding-left: 30px; line-height: 1.7;">
+                                La <strong>démolition d'un garage</strong> coûte entre <strong>1 500€ et 5 000€</strong> selon la surface (15 à 40m²), le type de construction (parpaing, béton, métal) et l'accessibilité. Ce prix inclut la démolition, l'évacuation des gravats et le nettoyage du terrain. Comptez <strong>2 000-3 000€ en moyenne</strong> pour un garage standard de 20m². <a href="devis-gratuit.html" style="color: var(--primary); text-decoration: underline;">Devis gratuit sous 24h</a>.
+                            </p>
+                        </details>
+
+                        <details style="background: var(--gray); padding: 25px; border-radius: 10px; margin-bottom: 20px; cursor: pointer;">
+                            <summary style="font-weight: 700; font-size: 1.1rem; color: var(--dark);">
+                                <i class="fa-solid fa-gavel" style="color: var(--primary); margin-right: 10px;"></i>
+                                Peut-on démolir sans permis ?
+                            </summary>
+                            <p style="margin-top: 20px; padding-left: 30px; line-height: 1.7;">
+                                Pour les <strong>petites structures de moins de 20m²</strong> hors zone protégée, aucun permis n'est nécessaire. Au-delà ou en <strong>secteur protégé</strong> (PLU, monument historique à moins de 500m), un <strong>permis de démolir</strong> est obligatoire avec un délai d'instruction de <strong>2 mois</strong> en mairie. <a href="contact.html" style="color: var(--primary); text-decoration: underline;">Contactez-nous pour vérifier votre situation</a>.
+                            </p>
+                        </details>
+
+                        <details style="background: var(--gray); padding: 25px; border-radius: 10px; cursor: pointer;">
+                            <summary style="font-weight: 700; font-size: 1.1rem; color: var(--dark);">
+                                <i class="fa-solid fa-hand-holding-dollar" style="color: var(--primary); margin-right: 10px;"></i>
+                                Qui paie la démolition ?
+                            </summary>
+                            <p style="margin-top: 20px; padding-left: 30px; line-height: 1.7;">
+                                La démolition est à la charge du <strong>propriétaire du bien</strong>. En cas de vente avec clause de démolition, l'acheteur peut la prendre en charge. Pour une démolition ordonnée par la mairie (<strong>arrêté de péril</strong>), c'est le propriétaire qui paie. Des <strong>aides existent</strong> pour les logements insalubres via l'ANAH. <a href="devis-gratuit.html" style="color: var(--primary); text-decoration: underline;">Demandez un devis détaillé</a>.
+                            </p>
+                        </details>
                     </div>
                 </div>
 
                 <div class="cta-box" style="margin-top: 80px;">
                     <div class="cta-content">
                         <h3><i class="fa-solid fa-medal"></i> Pourquoi Choisir STP Terrassement pour Votre Démolition à Aix-en-Provence ?</h3>
-                        <p>Spécialiste de la <strong>démolition à Aix-en-Provence</strong> depuis <strong>15 ans</strong>, nous intervenons sur tout le département des <strong>Bouches-du-Rhône (13)</strong> et la <strong>région PACA</strong>. <strong>Garantie décennale</strong>, <strong>devis gratuit</strong> sous 24h, <strong>tri sélectif des déchets</strong> et <strong>recyclage matériaux</strong> vers des <strong>centres de tri agréés</strong>. Du <strong>diagnostic avant démolition</strong> au <strong>curage</strong>, en passant par le <strong>désamiantage</strong> et l'<strong>évacuation gravats</strong>, nous gérons tout. Après démolition, nous réalisons le <a href="terrassement.html" style="color: white; text-decoration: underline;">terrassement</a> et la <a href="vrd-assainissement.html" style="color: white; text-decoration: underline;">viabilisation</a>. Plus de <a href="realisations.html" style="color: white; text-decoration: underline;">50 démolitions réussies</a> sur le <a href="zones-intervention.html" style="color: white; text-decoration: underline;">Pays d'Aix et la PACA</a>.</p>
+                        <p>Spécialiste et <strong>démolisseur</strong> expert de la <mark>démolition à Aix-en-Provence</mark> depuis <strong>15 ans</strong>, nous intervenons sur tout le département des <strong>Bouches-du-Rhône (13)</strong> et la <strong>région PACA</strong>. <strong>Garantie décennale</strong>, <strong>devis gratuit</strong> sous 24h, <strong>tri sélectif des déchets</strong> et <strong>recyclage matériaux</strong> vers des <strong>centres de tri agréés</strong>. Du <strong>diagnostic avant démolition</strong> au <strong>curage</strong>, en passant par le <strong>désamiantage</strong> et l'<strong>évacuation gravats</strong>, nous gérons tout. Après démolition, nous réalisons le <a href="terrassement.html" style="color: white; text-decoration: underline;">terrassement</a> et la <a href="vrd-assainissement.html" style="color: white; text-decoration: underline;">viabilisation</a>. Plus de <a href="realisations.html" style="color: white; text-decoration: underline;">50 démolitions réussies</a> sur le <a href="zones-intervention.html" style="color: white; text-decoration: underline;">Pays d'Aix et la PACA</a>.</p>
                     </div>
                     <div class="cta-buttons">
                         <a href="devis-gratuit.html" class="btn btn-primary btn-lg"><i class="fa-solid fa-calendar-days"></i> Demandez votre devis gratuit</a>
                         <a href="https://wa.me/33745142049" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
                     </div>
                 </div>
+
+
+                <!-- E-E-A-T Trust Signal -->
+                <div style="background: var(--gray); border-left: 4px solid var(--primary); padding: 20px 25px; margin: 40px 0; border-radius: 0 8px 8px 0;">
+                    <p style="font-weight: 700; margin-bottom: 8px;"><i class="fa-solid fa-user-tie" style="color: var(--primary);"></i> STP Terrassement &#8212; Expert depuis 15 ans</p>
+                    <p style="font-size: 0.9rem; color: var(--text-light);">Entreprise de terrassement et VRD certifi&eacute;e, bas&eacute;e &agrave; Aix-en-Provence. Garantie d&eacute;cennale, assurance RC Pro, et plus de 500 chantiers r&eacute;alis&eacute;s dans la r&eacute;gion PACA. <a href="realisations.html" style="color: var(--primary);">Voir nos r&eacute;alisations</a></p>
+                </div>
+
+                </article>
 
                 <!-- Related Services -->
                 <div class="section" style="margin-top: 80px;">
@@ -494,9 +641,70 @@
                 </div>
             </div>
         </section>
+
+    <!-- Services Sp&eacute;cifiques Cross-Links -->
+    <section id="services-specifiques-crosslinks" class="section bg-light" style="padding: 60px 0;">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">SERVICES SP&Eacute;CIFIQUES</span>
+                <h2>Services de D&eacute;molition Sp&eacute;cialis&eacute;s</h2>
+            </div>
+            <div class="grid-3">
+                        <div class="card">
+                            <div class="card-body" style="text-align: center; padding: 25px;">
+                                <i class="fa-solid fa-house-crack" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                                <h3 style="font-size: 1rem;"><a href="demolition-maison-aix-en-provence.html" style="color: inherit; text-decoration: none;">D&eacute;molition Maison Aix</a></h3>
+                                <p style="font-size: 0.9rem; margin-bottom: 15px;">D&eacute;molition compl&egrave;te de maison &agrave; Aix-en-Provence.</p>
+                                <a href="demolition-maison-aix-en-provence.html" class="btn btn-primary" style="width: 100%; font-size: 0.85rem;"><i class="fa-solid fa-arrow-right"></i> En savoir plus</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body" style="text-align: center; padding: 25px;">
+                                <i class="fa-solid fa-city" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                                <h3 style="font-size: 1rem;"><a href="demolition-marseille.html" style="color: inherit; text-decoration: none;">D&eacute;molition Marseille</a></h3>
+                                <p style="font-size: 0.9rem; margin-bottom: 15px;">Services de d&eacute;molition professionnelle &agrave; Marseille.</p>
+                                <a href="demolition-marseille.html" class="btn btn-primary" style="width: 100%; font-size: 0.85rem;"><i class="fa-solid fa-arrow-right"></i> En savoir plus</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body" style="text-align: center; padding: 25px;">
+                                <i class="fa-solid fa-trowel-bricks" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                                <h3 style="font-size: 1rem;"><a href="terrassement-marseille.html" style="color: inherit; text-decoration: none;">Terrassement Marseille</a></h3>
+                                <p style="font-size: 0.9rem; margin-bottom: 15px;">Apr&egrave;s d&eacute;molition, terrassement de votre terrain &agrave; Marseille.</p>
+                                <a href="terrassement-marseille.html" class="btn btn-primary" style="width: 100%; font-size: 0.85rem;"><i class="fa-solid fa-arrow-right"></i> En savoir plus</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body" style="text-align: center; padding: 25px;">
+                                <i class="fa-solid fa-truck" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                                <h3 style="font-size: 1rem;"><a href="location-engins-marseille.html" style="color: inherit; text-decoration: none;">Location Engins Marseille</a></h3>
+                                <p style="font-size: 0.9rem; margin-bottom: 15px;">Location de pelle avec BRH pour vos travaux de d&eacute;molition.</p>
+                                <a href="location-engins-marseille.html" class="btn btn-primary" style="width: 100%; font-size: 0.85rem;"><i class="fa-solid fa-arrow-right"></i> En savoir plus</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body" style="text-align: center; padding: 25px;">
+                                <i class="fa-solid fa-arrows-down-to-line" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                                <h3 style="font-size: 1rem;"><a href="decaissement-terrain-marseille.html" style="color: inherit; text-decoration: none;">D&eacute;caissement Marseille</a></h3>
+                                <p style="font-size: 0.9rem; margin-bottom: 15px;">D&eacute;caissement de terrain apr&egrave;s d&eacute;molition.</p>
+                                <a href="decaissement-terrain-marseille.html" class="btn btn-primary" style="width: 100%; font-size: 0.85rem;"><i class="fa-solid fa-arrow-right"></i> En savoir plus</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body" style="text-align: center; padding: 25px;">
+                                <i class="fa-solid fa-droplet" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                                <h3 style="font-size: 1rem;"><a href="drainage-terrain-marseille.html" style="color: inherit; text-decoration: none;">Drainage Marseille</a></h3>
+                                <p style="font-size: 0.9rem; margin-bottom: 15px;">Drainage du terrain apr&egrave;s d&eacute;construction.</p>
+                                <a href="drainage-terrain-marseille.html" class="btn btn-primary" style="width: 100%; font-size: 0.85rem;"><i class="fa-solid fa-arrow-right"></i> En savoir plus</a>
+                            </div>
+                        </div>
+            </div>
+        </div>
+    </section>
+
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <div class="container footer-content">
             <div class="footer-col">
                 <h4>STP TERRASSEMENT</h4>
@@ -543,7 +751,30 @@
                 </div>
             </div>
         </div>
-        <div class="copyright">
+                <div style="text-align: center; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 20px;">
+            <p style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 10px;">Nos interventions :</p>
+            <p style="font-size: 0.75rem; color: #6b7280; line-height: 2;">
+                <a href="terrassement-marseille.html" style="color: #9ca3af;">Terrassement Marseille</a> &bull;
+                <a href="terrassement-aubagne.html" style="color: #9ca3af;">Terrassement Aubagne</a> &bull;
+                <a href="terrassement-gardanne.html" style="color: #9ca3af;">Terrassement Gardanne</a> &bull;
+                <a href="terrassement-salon-de-provence.html" style="color: #9ca3af;">Terrassement Salon</a> &bull;
+                <a href="terrassement-vitrolles.html" style="color: #9ca3af;">Terrassement Vitrolles</a> &bull;
+                <a href="enrobe-aix-en-provence.html" style="color: #9ca3af;">Enrob&eacute; Aix</a> &bull;
+                <a href="enrobe-marseille.html" style="color: #9ca3af;">Enrob&eacute; Marseille</a> &bull;
+                <a href="terrassement-piscine-aix-en-provence.html" style="color: #9ca3af;">Piscine Aix</a> &bull;
+                <a href="terrassement-piscine-marseille.html" style="color: #9ca3af;">Piscine Marseille</a> &bull;
+                <a href="vrd-assainissement-marseille.html" style="color: #9ca3af;">VRD Marseille</a> &bull;
+                <a href="demolition-marseille.html" style="color: #9ca3af;">D&eacute;molition Marseille</a> &bull;
+                <a href="fondations-maison-aix-en-provence.html" style="color: #9ca3af;">Fondations Aix</a> &bull;
+                <a href="goudronnage-aix-en-provence.html" style="color: #9ca3af;">Goudronnage Aix</a> &bull;
+                <a href="viabilisation-terrain-aix-en-provence.html" style="color: #9ca3af;">Viabilisation Aix</a> &bull;
+                <a href="raccordement-tout-egout-aix-en-provence.html" style="color: #9ca3af;">Tout-&agrave;-l'&eacute;gout Aix</a> &bull;
+                <a href="enrochement-aix-en-provence.html" style="color: #9ca3af;">Enrochement Aix</a> &bull;
+                <a href="location-engins-marseille.html" style="color: #9ca3af;">Location Engins Marseille</a> &bull;
+                <a href="zones-intervention.html" style="color: #9ca3af;">Toutes nos zones</a>
+            </p>
+        </div>
+        <div class="copyright" data-nosnippet>
             <p>&copy; 2025-2026 STP Terrassement - Tous droits réservés | Expert VRD & Terrassement Aix-en-Provence</p>
             <p class="legal-links">
                 <a href="mentions-legales.html">Mentions Légales</a> • 

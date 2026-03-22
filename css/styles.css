@@ -1520,6 +1520,9 @@ footer {
     }
 }
 
+/* NLP ENTITY HIGHLIGHT */
+mark { background: rgba(255,180,0,0.15); padding: 2px 4px; border-radius: 3px; }
+
 /* LAZY LOADING PLACEHOLDER */
 img[loading="lazy"] {
     background: var(--gray);

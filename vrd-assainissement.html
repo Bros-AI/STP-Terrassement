@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="theme-color" content="#F59E0B">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="Cache-Control" content="public, max-age=31536000">
     
-    <title>VRD & Assainissement Aix-en-Provence (13) | Devis STP</title>
-    <meta name="description" content="Expert VRD et assainissement à Aix-en-Provence : raccordement tout-à-l'égout, viabilisation, micro-station. Devis gratuit 24h. Appelez STP au 07 45 14 20 49.">
+    <title>VRD Assainissement Aix (13) | Raccordement Pro | Devis Gratuit 24h</title>
+    <meta name="description" content="✓ Expert VRD et assainissement à Aix-en-Provence depuis 15 ans. Raccordement tout-à-l'égout, viabilisation, micro-station. ☎ 07 45 14 20 49. Devis gratuit en 24h !">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="keywords" content="vrd aix-en-provence, assainissement provence, raccordement tout-à-l'égout, viabilisation terrain, micro-station, tranchées réseaux, fosse septique, raccordement eau électricité">
     
@@ -75,11 +77,79 @@
           "https://wa.me/33745142049"
         ]
       },
-      "areaServed": [
-        {"@type": "City", "name": "Aix-en-Provence"},
-        {"@type": "State", "name": "Provence-Alpes-Côte d'Azur"}
-      ],
-      "description": "Services professionnels de VRD et assainissement : raccordement tout-à-l'égout, viabilisation terrain, micro-station, tranchées réseaux, coordination concessionnaires."
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {"@type": "GeoCoordinates", "latitude": 43.529742, "longitude": 5.447427},
+        "geoRadius": "50000"
+      },
+      "description": "Services professionnels de VRD et assainissement : raccordement tout-à-l'égout, viabilisation terrain, micro-station, tranchées réseaux, coordination concessionnaires.",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".hero-text", "h1", ".section-intro"]
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {"@type": "Service", "name": "Raccordement VRD complet"},
+            "priceSpecification": {"@type": "PriceSpecification", "price": "5000", "priceCurrency": "EUR", "description": "à partir de 5000€"}
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {"@type": "Service", "name": "Raccordement tout-à-l'égout"},
+            "priceSpecification": {"@type": "PriceSpecification", "price": "3000", "priceCurrency": "EUR", "description": "à partir de 3000€"}
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {"@type": "Service", "name": "Tranchées réseaux"},
+            "priceSpecification": {"@type": "PriceSpecification", "price": "30", "priceCurrency": "EUR", "unitText": "par mètre linéaire"}
+          }
+        ]
+      }
+    }
+    </script>
+
+    <!-- HowTo Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Comment se déroule un raccordement VRD à Aix-en-Provence",
+      "description": "Les étapes d'un chantier de viabilisation et raccordement aux réseaux par STP Terrassement.",
+      "totalTime": "P7D",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Étude du projet et démarches administratives",
+          "text": "Analyse des plans, demande de DT/DICT auprès des concessionnaires, vérification des réseaux existants et obtention des autorisations."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Piquetage et traçage des tranchées",
+          "text": "Repérage et marquage au sol du tracé des tranchées pour chaque réseau : eau, électricité, gaz, télécoms, eaux usées."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Ouverture des tranchées",
+          "text": "Creusement des tranchées aux profondeurs réglementaires avec mini-pelle. Respect des distances de sécurité entre réseaux."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Pose des canalisations et gaines",
+          "text": "Installation des canalisations PVC, gaines TPC, fourreaux selon les normes en vigueur. Pose du lit de sable et grillage avertisseur."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Remblaiement et compactage",
+          "text": "Remblaiement par couches successives avec compactage au pilonneuse. Remise en état du terrain et des voiries."
+        }
+      ]
     }
     </script>
 
@@ -123,6 +193,27 @@
           "@type": "Answer",
           "text": "Oui, les travaux VRD nécessitent souvent une déclaration préalable ou un permis de construire selon l'ampleur du projet. À Aix-en-Provence, il faut aussi obtenir une autorisation de voirie si les travaux touchent le domaine public. STP Terrassement gère ces formalités pour vous."
         }
+      },{
+        "@type": "Question",
+        "name": "Combien coûte un raccordement tout-à-l'égout ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le raccordement au tout-à-l'égout coûte entre 3 000€ et 10 000€ selon la distance entre votre habitation et le réseau public (10m à 50m+), la profondeur de la tranchée et la nature du sol. À Aix-en-Provence, ajoutez la taxe de raccordement communale (500-2 000€). STP Terrassement gère les travaux et les démarches administratives."
+        }
+      },{
+        "@type": "Question",
+        "name": "Qui doit payer le raccordement ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le propriétaire du terrain paie les travaux de raccordement sur sa parcelle (partie privée). La commune finance les travaux sur le domaine public. Une taxe de raccordement à l'assainissement collectif est également due à la commune. En cas de lotissement, le promoteur intègre le coût dans le prix du terrain viabilisé."
+        }
+      },{
+        "@type": "Question",
+        "name": "Délai pour un raccordement VRD ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Comptez 2 à 4 mois au total : 2-6 semaines pour les autorisations administratives, 3-7 jours pour les travaux de tranchées et pose, puis 2-8 semaines pour les branchements finaux par les concessionnaires (Enedis, Veolia, Orange). STP Terrassement accélère le processus en coordonnant tous les intervenants."
+        }
       }]
     }
     </script>
@@ -132,13 +223,15 @@
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Oswald:wght@500;700&display=swap" as="style">
+    <link rel="modulepreload" href="js/script.js">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <nav id="navbar" class="navbar" itemscope itemtype="https://schema.org/SiteNavigationElement">
+    <nav id="navbar" class="navbar" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
         <div class="container nav-container">
             <a href="index.html" class="logo" aria-label="STP Terrassement - Accueil">
                 <div class="logo-icon"><i class="fa-solid fa-excavator"></i></div>
@@ -176,7 +269,7 @@
         </div>
     </nav>
 
-    <main>
+    <main role="main">
         <!-- Breadcrumb Navigation -->
         <nav aria-label="Fil d'Ariane" style="background: var(--gray); padding: 15px 0;">
             <div class="container">
@@ -234,12 +327,27 @@
             </div>
         </header>
 
-        <section class="page-content section">
+        <!-- Trust Bar - Social Proof -->
+        <div style="background: var(--dark); padding: 15px 0; text-align: center;">
+          <div class="container" style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; color: white; font-size: 0.9rem;">
+            <span><i class="fa-solid fa-star" style="color: var(--primary);"></i> 4.9/5 Google</span>
+            <span><i class="fa-solid fa-shield-halved" style="color: var(--primary);"></i> Garantie Décennale</span>
+            <span><i class="fa-solid fa-clock" style="color: var(--primary);"></i> Devis 24h</span>
+            <span><i class="fa-solid fa-certificate" style="color: var(--primary);"></i> 15 Ans d'Expérience</span>
+          </div>
+        </div>
+        <!-- Last Modified for Freshness -->
+        <div style="text-align: center; padding: 8px 0; background: #f9fafb; font-size: 0.8rem; color: #6b7280;">
+            <i class="fa-solid fa-calendar-check" style="margin-right: 5px;"></i> Dernière mise à jour : Mars 2026
+        </div>
+
+        <section class="page-content section" aria-label="Services VRD et assainissement professionnel à Aix-en-Provence">
             <div class="container">
+            <article>
                 <div class="section-header">
                     <span class="subtitle">VOIRIE & RÉSEAUX DIVERS</span>
-                    <h2>Expertise Complète en VRD et Assainissement à Aix-en-Provence et dans le 13</h2>
-                    <p class="section-intro">Les travaux de <strong>VRD</strong> (Voirie et Réseaux Divers) sont indispensables pour <strong>viabiliser un terrain</strong> et le raccorder aux différents réseaux. De la <strong>tranchée technique</strong> à la pose des <strong>fourreaux</strong> et <strong>canalisations PVC</strong>, nous assurons une installation conforme aux <strong>normes NF DTU</strong>, garantissant la pérennité de vos installations. Chaque <strong>raccordement tout-à-l'égout</strong> respecte la <strong>pente d'écoulement</strong> réglementaire et fait l'objet d'une <strong>attestation de conformité</strong>. Après le <a href="terrassement.html" style="color: var(--primary); text-decoration: underline;">terrassement de votre terrain</a>, nous gérons l'ensemble des raccordements avec <strong>conformité SPANC</strong> pour l'assainissement non collectif. Une fois les réseaux en place, nous réalisons également vos travaux d'<a href="amenagement-exterieur.html" style="color: var(--primary); text-decoration: underline;">aménagement extérieur et enrobé</a>. <a href="devis-gratuit.html" style="color: var(--primary); text-decoration: underline;">Demandez votre devis gratuit</a> pour votre projet VRD sur le <strong>Pays d'Aix</strong>.</p>
+                    <h2>STP Terrassement : Expertise Complète en VRD et Assainissement à Aix-en-Provence</h2>
+                    <p class="section-intro">STP Terrassement, votre <mark>entreprise VRD à Aix-en-Provence</mark>, réalise tous vos <strong>travaux VRD</strong> (<strong>voirie et réseaux divers</strong>). Les travaux de <strong>VRD</strong> sont indispensables pour <strong>viabiliser un terrain</strong> et le raccorder aux différents réseaux. De la <strong>tranchée technique</strong> à la pose des <strong>fourreaux</strong> et <strong>canalisations PVC</strong>, nous assurons une installation conforme aux <strong>normes NF DTU</strong>, garantissant la pérennité de vos installations. Chaque <strong>raccordement tout-à-l'égout</strong> respecte la <strong>pente d'écoulement</strong> réglementaire et fait l'objet d'une <strong>attestation de conformité</strong>. Après le <a href="terrassement.html" style="color: var(--primary); text-decoration: underline;">terrassement de votre terrain</a>, nous gérons l'ensemble des raccordements avec <strong>conformité SPANC</strong> pour l'assainissement non collectif. Une fois les réseaux en place, nous réalisons également vos travaux d'<a href="amenagement-exterieur.html" style="color: var(--primary); text-decoration: underline;">aménagement extérieur et enrobé</a>. <a href="devis-gratuit.html" style="color: var(--primary); text-decoration: underline;">Demandez votre devis gratuit</a> pour votre projet VRD sur le <strong>Pays d'Aix</strong>.</p>
                 </div>
 
                 <div class="grid-2 align-center" style="margin-top: 60px;">
@@ -258,7 +366,7 @@
                         </div>
                     </div>
                     <div>
-                        <img src="images/chantier-reseaux-divers.webp" alt="Travaux VRD et tranchées pour réseaux à Aix-en-Provence" class="rounded-img" loading="lazy" width="600" height="400">
+                        <img fetchpriority="high" src="images/chantier-reseaux-divers.webp" alt="Travaux VRD et tranchées pour réseaux à Aix-en-Provence" class="rounded-img" width="600" height="400">
                     </div>
                 </div>
 
@@ -309,7 +417,7 @@
                             <div class="card-body">
                                 <i class="fa-solid fa-plug card-icon"></i>
                                 <h3>Viabilisation Terrain à Aix-en-Provence</h3>
-                                <p>Création de toutes les <strong>tranchées techniques</strong> et passage des <strong>fourreaux</strong> et <strong>gaines TPC</strong> pour connecter votre terrain à tous les <strong>réseaux publics</strong>. <strong>Viabilisation terrain</strong> clé en main avec <strong>chambre de tirage</strong> et <strong>attestation de conformité</strong>.</p>
+                                <p>En tant qu’<strong>entreprise VRD</strong> spécialisée, nous assurons la création de toutes les <strong>tranchées techniques</strong> et passage des <strong>fourreaux</strong> et <strong>gaines TPC</strong> pour connecter votre terrain à tous les <strong>réseaux publics</strong>. <strong>Viabilisation terrain</strong> clé en main avec <strong>chambre de tirage</strong> et <strong>attestation de conformité</strong>.</p>
                                 <ul class="service-list">
                                     <li><i class="fa-solid fa-caret-right"></i> <strong>Réseau électrique enterré</strong> (gaine rouge PEHD Ø90)</li>
                                     <li><i class="fa-solid fa-caret-right"></i> <strong>Réseau telecom</strong> & Fibre (<strong>gaine TPC</strong> verte, <strong>chambre de tirage</strong>)</li>
@@ -410,19 +518,58 @@
                                 <strong>Non</strong>, il est impossible de construire sans <strong>système d'assainissement</strong> conforme. Vous devez obligatoirement vous raccorder au <strong>tout-à-l'égout</strong> si disponible (réseau à moins de 10m), ou installer un <strong>assainissement non collectif</strong> (fosse septique, micro-station) si non desservi. Un contrôle du SPANC (Service Public d'Assainissement Non Collectif) est obligatoire avant délivrance du certificat de conformité nécessaire pour habiter.
                             </p>
                         </details>
+
+                        <details style="background: white; padding: 25px; border-radius: 10px; margin-bottom: 20px; cursor: pointer;">
+                            <summary style="font-weight: 700; font-size: 1.1rem; color: var(--dark);">
+                                <i class="fa-solid fa-coins" style="color: var(--primary); margin-right: 10px;"></i>
+                                Combien coûte un raccordement tout-à-l'égout ?
+                            </summary>
+                            <p style="margin-top: 20px; padding-left: 30px; line-height: 1.7;">
+                                Le <strong>raccordement au tout-à-l'égout</strong> coûte entre <strong>3 000€ et 10 000€</strong> selon la distance entre votre habitation et le réseau public, la profondeur de la tranchée et la nature du sol. À <strong>Aix-en-Provence</strong>, ajoutez la taxe de raccordement communale (500-2 000€). <a href="devis-gratuit.html" style="color: var(--primary); text-decoration: underline;">Demandez un devis précis</a>.
+                            </p>
+                        </details>
+
+                        <details style="background: white; padding: 25px; border-radius: 10px; margin-bottom: 20px; cursor: pointer;">
+                            <summary style="font-weight: 700; font-size: 1.1rem; color: var(--dark);">
+                                <i class="fa-solid fa-hand-holding-dollar" style="color: var(--primary); margin-right: 10px;"></i>
+                                Qui doit payer le raccordement ?
+                            </summary>
+                            <p style="margin-top: 20px; padding-left: 30px; line-height: 1.7;">
+                                Le <strong>propriétaire du terrain</strong> paie les travaux de raccordement sur sa parcelle (partie privée). La <strong>commune</strong> finance les travaux sur le domaine public. Une <strong>taxe de raccordement</strong> à l'assainissement collectif est également due à la commune. En cas de <strong>lotissement</strong>, le promoteur intègre le coût dans le prix du terrain viabilisé.
+                            </p>
+                        </details>
+
+                        <details style="background: white; padding: 25px; border-radius: 10px; cursor: pointer;">
+                            <summary style="font-weight: 700; font-size: 1.1rem; color: var(--dark);">
+                                <i class="fa-solid fa-hourglass-half" style="color: var(--primary); margin-right: 10px;"></i>
+                                Délai pour un raccordement VRD ?
+                            </summary>
+                            <p style="margin-top: 20px; padding-left: 30px; line-height: 1.7;">
+                                Comptez <strong>2 à 4 mois</strong> au total : 2-6 semaines pour les <strong>autorisations administratives</strong>, 3-7 jours pour les <strong>travaux de tranchées</strong> et pose, puis 2-8 semaines pour les <strong>branchements finaux</strong> par les concessionnaires (Enedis, Veolia, Orange). STP Terrassement accélère le processus en coordonnant tous les intervenants. <a href="contact.html" style="color: var(--primary); text-decoration: underline;">Contactez-nous</a>.
+                            </p>
+                        </details>
                     </div>
                 </div>
 
                 <div class="cta-box" style="margin-top: 80px;">
                     <div class="cta-content">
                         <h3><i class="fa-solid fa-medal"></i> Pourquoi Choisir STP Terrassement pour Vos Travaux VRD à Aix-en-Provence ?</h3>
-                        <p>Spécialiste du <strong>VRD à Aix-en-Provence</strong> depuis <strong>15 ans</strong>, nous intervenons sur tout le <strong>bassin aixois</strong>, les <strong>Bouches-du-Rhône (13)</strong> et la <strong>région PACA</strong>. <strong>Garantie décennale</strong>, <strong>devis gratuit</strong> sous 24h, travaux conformes aux <strong>normes NF DTU</strong> avec <strong>attestation de conformité</strong>. Du <strong>raccordement tout-à-l'égout</strong> à la <strong>viabilisation terrain</strong> complète, en passant par l'installation de <strong>micro-station d'épuration</strong> avec <strong>conformité SPANC</strong>, nous gérons tout en coordination avec tous les intervenants (mairie, Enedis, Veolia, Orange...). Plus de <a href="realisations.html" style="color: white; text-decoration: underline;">200 projets VRD réussis</a> sur nos <a href="zones-intervention.html" style="color: white; text-decoration: underline;">zones d'intervention autour d'Aix-en-Provence</a>.</p>
+                        <p>Spécialiste du <mark>VRD à Aix-en-Provence</mark> depuis <strong>15 ans</strong>, nous intervenons sur tout le <strong>bassin aixois</strong>, les <strong>Bouches-du-Rhône (13)</strong> et la <strong>région PACA</strong>. <strong>Garantie décennale</strong>, <strong>devis gratuit</strong> sous 24h, travaux conformes aux <strong>normes NF DTU</strong> avec <strong>attestation de conformité</strong>. Du <strong>raccordement tout-à-l'égout</strong> à la <strong>viabilisation terrain</strong> complète, en passant par l'installation de <strong>micro-station d'épuration</strong> avec <strong>conformité SPANC</strong>, nous gérons tout en coordination avec tous les intervenants (mairie, Enedis, Veolia, Orange...). Plus de <a href="realisations.html" style="color: white; text-decoration: underline;">200 projets VRD réussis</a> sur nos <a href="zones-intervention.html" style="color: white; text-decoration: underline;">zones d'intervention autour d'Aix-en-Provence</a>.</p>
                     </div>
                     <div class="cta-buttons">
                         <a href="devis-gratuit.html" class="btn btn-primary btn-lg"><i class="fa-solid fa-file-signature"></i> Demandez votre devis gratuit</a>
                         <a href="https://wa.me/33745142049" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
                     </div>
                 </div>
+
+
+                <!-- E-E-A-T Trust Signal -->
+                <div style="background: var(--gray); border-left: 4px solid var(--primary); padding: 20px 25px; margin: 40px 0; border-radius: 0 8px 8px 0;">
+                    <p style="font-weight: 700; margin-bottom: 8px;"><i class="fa-solid fa-user-tie" style="color: var(--primary);"></i> STP Terrassement &#8212; Expert depuis 15 ans</p>
+                    <p style="font-size: 0.9rem; color: var(--text-light);">Entreprise de terrassement et VRD certifi&eacute;e, bas&eacute;e &agrave; Aix-en-Provence. Garantie d&eacute;cennale, assurance RC Pro, et plus de 500 chantiers r&eacute;alis&eacute;s dans la r&eacute;gion PACA. <a href="realisations.html" style="color: var(--primary);">Voir nos r&eacute;alisations</a></p>
+                </div>
+
+                </article>
 
                 <!-- Related Services -->
                 <div class="section" style="margin-top: 80px;">
@@ -456,9 +603,70 @@
                 </div>
             </div>
         </section>
+
+    <!-- Services Sp&eacute;cifiques Cross-Links -->
+    <section id="services-specifiques-crosslinks" class="section bg-light" style="padding: 60px 0;">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">SERVICES SP&Eacute;CIFIQUES</span>
+                <h2>Nos Services VRD Sp&eacute;cialis&eacute;s</h2>
+            </div>
+            <div class="grid-3">
+                        <div class="card">
+                            <div class="card-body" style="text-align: center; padding: 25px;">
+                                <i class="fa-solid fa-faucet" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                                <h3 style="font-size: 1rem;"><a href="raccordement-tout-egout-aix-en-provence.html" style="color: inherit; text-decoration: none;">Tout-&agrave;-l'&eacute;gout Aix</a></h3>
+                                <p style="font-size: 0.9rem; margin-bottom: 15px;">Raccordement au r&eacute;seau d'assainissement collectif &agrave; Aix-en-Provence.</p>
+                                <a href="raccordement-tout-egout-aix-en-provence.html" class="btn btn-primary" style="width: 100%; font-size: 0.85rem;"><i class="fa-solid fa-arrow-right"></i> En savoir plus</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body" style="text-align: center; padding: 25px;">
+                                <i class="fa-solid fa-building" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                                <h3 style="font-size: 1rem;"><a href="viabilisation-terrain-aix-en-provence.html" style="color: inherit; text-decoration: none;">Viabilisation Terrain Aix</a></h3>
+                                <p style="font-size: 0.9rem; margin-bottom: 15px;">Viabilisation compl&egrave;te de votre terrain constructible.</p>
+                                <a href="viabilisation-terrain-aix-en-provence.html" class="btn btn-primary" style="width: 100%; font-size: 0.85rem;"><i class="fa-solid fa-arrow-right"></i> En savoir plus</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body" style="text-align: center; padding: 25px;">
+                                <i class="fa-solid fa-droplet" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                                <h3 style="font-size: 1rem;"><a href="assainissement-individuel-aix-en-provence.html" style="color: inherit; text-decoration: none;">Assainissement Individuel</a></h3>
+                                <p style="font-size: 0.9rem; margin-bottom: 15px;">Installation de fosse septique et micro-station d'&eacute;puration.</p>
+                                <a href="assainissement-individuel-aix-en-provence.html" class="btn btn-primary" style="width: 100%; font-size: 0.85rem;"><i class="fa-solid fa-arrow-right"></i> En savoir plus</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body" style="text-align: center; padding: 25px;">
+                                <i class="fa-solid fa-water" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                                <h3 style="font-size: 1rem;"><a href="drainage-terrain-aix-en-provence.html" style="color: inherit; text-decoration: none;">Drainage Terrain Aix</a></h3>
+                                <p style="font-size: 0.9rem; margin-bottom: 15px;">Syst&egrave;me de drainage pour prot&eacute;ger vos fondations.</p>
+                                <a href="drainage-terrain-aix-en-provence.html" class="btn btn-primary" style="width: 100%; font-size: 0.85rem;"><i class="fa-solid fa-arrow-right"></i> En savoir plus</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body" style="text-align: center; padding: 25px;">
+                                <i class="fa-solid fa-road" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                                <h3 style="font-size: 1rem;"><a href="bordures-caniveaux-aix-en-provence.html" style="color: inherit; text-decoration: none;">Bordures &amp; Caniveaux</a></h3>
+                                <p style="font-size: 0.9rem; margin-bottom: 15px;">Pose de bordures et caniveaux pour vos am&eacute;nagements.</p>
+                                <a href="bordures-caniveaux-aix-en-provence.html" class="btn btn-primary" style="width: 100%; font-size: 0.85rem;"><i class="fa-solid fa-arrow-right"></i> En savoir plus</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body" style="text-align: center; padding: 25px;">
+                                <i class="fa-solid fa-house" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                                <h3 style="font-size: 1rem;"><a href="fondations-maison-aix-en-provence.html" style="color: inherit; text-decoration: none;">Fondations Maison</a></h3>
+                                <p style="font-size: 0.9rem; margin-bottom: 15px;">Apr&egrave;s le VRD, r&eacute;alisez vos fondations avec notre &eacute;quipe.</p>
+                                <a href="fondations-maison-aix-en-provence.html" class="btn btn-primary" style="width: 100%; font-size: 0.85rem;"><i class="fa-solid fa-arrow-right"></i> En savoir plus</a>
+                            </div>
+                        </div>
+            </div>
+        </div>
+    </section>
+
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <div class="container footer-content">
             <div class="footer-col">
                 <h4>STP TERRASSEMENT</h4>
@@ -505,7 +713,30 @@
                 </div>
             </div>
         </div>
-        <div class="copyright">
+                <div style="text-align: center; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 20px;">
+            <p style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 10px;">Nos interventions :</p>
+            <p style="font-size: 0.75rem; color: #6b7280; line-height: 2;">
+                <a href="terrassement-marseille.html" style="color: #9ca3af;">Terrassement Marseille</a> &bull;
+                <a href="terrassement-aubagne.html" style="color: #9ca3af;">Terrassement Aubagne</a> &bull;
+                <a href="terrassement-gardanne.html" style="color: #9ca3af;">Terrassement Gardanne</a> &bull;
+                <a href="terrassement-salon-de-provence.html" style="color: #9ca3af;">Terrassement Salon</a> &bull;
+                <a href="terrassement-vitrolles.html" style="color: #9ca3af;">Terrassement Vitrolles</a> &bull;
+                <a href="enrobe-aix-en-provence.html" style="color: #9ca3af;">Enrob&eacute; Aix</a> &bull;
+                <a href="enrobe-marseille.html" style="color: #9ca3af;">Enrob&eacute; Marseille</a> &bull;
+                <a href="terrassement-piscine-aix-en-provence.html" style="color: #9ca3af;">Piscine Aix</a> &bull;
+                <a href="terrassement-piscine-marseille.html" style="color: #9ca3af;">Piscine Marseille</a> &bull;
+                <a href="vrd-assainissement-marseille.html" style="color: #9ca3af;">VRD Marseille</a> &bull;
+                <a href="demolition-marseille.html" style="color: #9ca3af;">D&eacute;molition Marseille</a> &bull;
+                <a href="fondations-maison-aix-en-provence.html" style="color: #9ca3af;">Fondations Aix</a> &bull;
+                <a href="goudronnage-aix-en-provence.html" style="color: #9ca3af;">Goudronnage Aix</a> &bull;
+                <a href="viabilisation-terrain-aix-en-provence.html" style="color: #9ca3af;">Viabilisation Aix</a> &bull;
+                <a href="raccordement-tout-egout-aix-en-provence.html" style="color: #9ca3af;">Tout-&agrave;-l'&eacute;gout Aix</a> &bull;
+                <a href="enrochement-aix-en-provence.html" style="color: #9ca3af;">Enrochement Aix</a> &bull;
+                <a href="location-engins-marseille.html" style="color: #9ca3af;">Location Engins Marseille</a> &bull;
+                <a href="zones-intervention.html" style="color: #9ca3af;">Toutes nos zones</a>
+            </p>
+        </div>
+        <div class="copyright" data-nosnippet>
             <p>&copy; 2025-2026 STP Terrassement - Tous droits réservés | Expert VRD & Terrassement Aix-en-Provence</p>
             <p class="legal-links">
                 <a href="mentions-legales.html">Mentions Légales</a> • 

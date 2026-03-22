@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="theme-color" content="#F59E0B">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="Cache-Control" content="public, max-age=31536000">
     
-    <title>Contact Terrassement Aix-en-Provence (13) | Devis 24h</title>
-    <meta name="description" content="Contactez STP Terrassement à Aix-en-Provence pour un devis gratuit sous 24h. Visite technique offerte. Appelez le 07 45 14 20 49 ou écrivez-nous.">
+    <title>Contact STP Terrassement Aix (13) | Disponible 7j/7 | 07 45 14 20 49</title>
+    <meta name="description" content="✓ Contactez STP Terrassement à Aix-en-Provence. Disponible 7j/7, visite technique offerte, réponse garantie 24h. ☎ 07 45 14 20 49. Devis gratuit !">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="keywords" content="contact terrassement aix-en-provence, devis terrassement gratuit, visite technique, expert vrd provence, conseil terrassement, rendez-vous terrassier">
     
@@ -49,7 +51,7 @@
     }
     </script>
 
-    <!-- Organization Schema -->
+    <!-- Organization Schema with Enhanced ContactPoints -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -75,6 +77,37 @@
         "opens": "07:00",
         "closes": "19:00"
       },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+33745142049",
+          "contactType": "customer service",
+          "areaServed": "FR",
+          "availableLanguage": ["French", "Arabic"],
+          "hoursAvailable": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "07:00",
+            "closes": "19:00"
+          }
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "stp13109@gmail.com",
+          "contactType": "sales",
+          "areaServed": "FR",
+          "availableLanguage": ["French", "Arabic"],
+          "description": "Demande de devis gratuit par email"
+        },
+        {
+          "@type": "ContactPoint",
+          "url": "https://wa.me/33745142049",
+          "contactType": "customer service",
+          "areaServed": "FR",
+          "availableLanguage": ["French", "Arabic"],
+          "description": "Contact rapide via WhatsApp"
+        }
+      ],
       "sameAs": [
         "https://www.instagram.com/stp.terrassement/",
         "https://www.facebook.com/profile.php?id=61579528244326",
@@ -82,6 +115,11 @@
         "https://www.tiktok.com/@stp.terrassement",
         "https://wa.me/33745142049"
       ],
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {"@type": "GeoCoordinates", "latitude": 43.529742, "longitude": 5.447427},
+        "geoRadius": "50000"
+      },
       "priceRange": "€€"
     }
     </script>
@@ -90,13 +128,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Oswald:wght@500;700&display=swap" as="style">
+    <link rel="modulepreload" href="js/script.js">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <nav id="navbar" class="navbar">
+    <nav id="navbar" class="navbar" role="navigation">
         <div class="container nav-container">
             <a href="index.html" class="logo" aria-label="STP Terrassement - Accueil">
                 <div class="logo-icon"><i class="fa-solid fa-excavator"></i></div>
@@ -134,7 +174,7 @@
         </div>
     </nav>
 
-    <main>
+    <main role="main">
         <!-- Breadcrumb Navigation -->
         <nav aria-label="Fil d'Ariane" style="background: var(--gray); padding: 15px 0;">
             <div class="container">
@@ -192,7 +232,17 @@
             </div>
         </header>
 
-        <section class="page-content section">
+        <!-- Trust Bar - Social Proof -->
+        <div style="background: var(--dark); padding: 15px 0; text-align: center;">
+          <div class="container" style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; color: white; font-size: 0.9rem;">
+            <span><i class="fa-solid fa-star" style="color: var(--primary);"></i> 4.9/5 Google</span>
+            <span><i class="fa-solid fa-shield-halved" style="color: var(--primary);"></i> Garantie Décennale</span>
+            <span><i class="fa-solid fa-clock" style="color: var(--primary);"></i> Devis 24h</span>
+            <span><i class="fa-solid fa-certificate" style="color: var(--primary);"></i> 15 Ans d'Expérience</span>
+          </div>
+        </div>
+
+        <section class="page-content section" aria-label="Contactez STP Terrassement à Aix-en-Provence">
             <div class="container">
                 <div class="section-header">
                     <span class="subtitle">PLUSIEURS MOYENS DE NOUS CONTACTER</span>
@@ -452,7 +502,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <div class="container footer-content">
             <div class="footer-col">
                 <h4>STP TERRASSEMENT</h4>
@@ -499,7 +549,30 @@
                 </div>
             </div>
         </div>
-        <div class="copyright">
+                <div style="text-align: center; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 20px;">
+            <p style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 10px;">Nos interventions :</p>
+            <p style="font-size: 0.75rem; color: #6b7280; line-height: 2;">
+                <a href="terrassement-marseille.html" style="color: #9ca3af;">Terrassement Marseille</a> &bull;
+                <a href="terrassement-aubagne.html" style="color: #9ca3af;">Terrassement Aubagne</a> &bull;
+                <a href="terrassement-gardanne.html" style="color: #9ca3af;">Terrassement Gardanne</a> &bull;
+                <a href="terrassement-salon-de-provence.html" style="color: #9ca3af;">Terrassement Salon</a> &bull;
+                <a href="terrassement-vitrolles.html" style="color: #9ca3af;">Terrassement Vitrolles</a> &bull;
+                <a href="enrobe-aix-en-provence.html" style="color: #9ca3af;">Enrob&eacute; Aix</a> &bull;
+                <a href="enrobe-marseille.html" style="color: #9ca3af;">Enrob&eacute; Marseille</a> &bull;
+                <a href="terrassement-piscine-aix-en-provence.html" style="color: #9ca3af;">Piscine Aix</a> &bull;
+                <a href="terrassement-piscine-marseille.html" style="color: #9ca3af;">Piscine Marseille</a> &bull;
+                <a href="vrd-assainissement-marseille.html" style="color: #9ca3af;">VRD Marseille</a> &bull;
+                <a href="demolition-marseille.html" style="color: #9ca3af;">D&eacute;molition Marseille</a> &bull;
+                <a href="fondations-maison-aix-en-provence.html" style="color: #9ca3af;">Fondations Aix</a> &bull;
+                <a href="goudronnage-aix-en-provence.html" style="color: #9ca3af;">Goudronnage Aix</a> &bull;
+                <a href="viabilisation-terrain-aix-en-provence.html" style="color: #9ca3af;">Viabilisation Aix</a> &bull;
+                <a href="raccordement-tout-egout-aix-en-provence.html" style="color: #9ca3af;">Tout-&agrave;-l'&eacute;gout Aix</a> &bull;
+                <a href="enrochement-aix-en-provence.html" style="color: #9ca3af;">Enrochement Aix</a> &bull;
+                <a href="location-engins-marseille.html" style="color: #9ca3af;">Location Engins Marseille</a> &bull;
+                <a href="zones-intervention.html" style="color: #9ca3af;">Toutes nos zones</a>
+            </p>
+        </div>
+        <div class="copyright" data-nosnippet>
             <p>&copy; 2025-2026 STP Terrassement - Tous droits réservés | Expert VRD & Terrassement Aix-en-Provence</p>
             <p class="legal-links">
                 <a href="mentions-legales.html">Mentions Légales</a> • 

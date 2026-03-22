@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="theme-color" content="#F59E0B">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="Cache-Control" content="public, max-age=31536000">
 
     <title>Aménagement Extérieur Aubagne (13) | Enrobé, Allées | Devis Gratuit - STP</title>
     <meta name="description" content="Aménagement extérieur à Aubagne : pose enrobé, allées, pavés autobloquants, enrochement. Terrain mixte Garlaban. STP Terrassement, devis gratuit.">
@@ -133,13 +135,15 @@
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Oswald:wght@500;700&display=swap" as="style">
+    <link rel="modulepreload" href="js/script.js">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <nav id="navbar" class="navbar" itemscope itemtype="https://schema.org/SiteNavigationElement">
+    <nav id="navbar" class="navbar" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
         <div class="container nav-container">
             <a href="index.html" class="logo" aria-label="STP Terrassement - Accueil"><div class="logo-icon"><i class="fa-solid fa-excavator"></i></div><div class="logo-text"><span class="brand-name">STP <span class="highlight">TERRASSEMENT</span></span><span class="brand-sub">Expert VRD & TP</span></div></a>
             <ul class="nav-links">
@@ -150,7 +154,7 @@
         <div class="mobile-menu"><a href="index.html">Accueil</a><a href="terrassement.html">Terrassement</a><a href="vrd-assainissement.html">VRD</a><a href="amenagement-exterieur.html">Aménagement</a><a href="demolition.html">Démolition</a><a href="realisations.html">Réalisations</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a><a href="devis-gratuit.html">Devis Gratuit</a></div>
     </nav>
 
-    <main>
+    <main role="main">
         <nav aria-label="Fil d'Ariane" style="background: var(--gray); padding: 15px 0;">
             <div class="container">
                 <ol style="display: flex; gap: 10px; list-style: none; padding: 0; margin: 0; font-size: 0.9rem;" itemscope itemtype="https://schema.org/BreadcrumbList">
@@ -195,7 +199,7 @@
 
                 <div class="grid-3" style="margin-top: 60px;">
                     <div class="card">
-                        <div class="card-img"><img src="images/amenagement-exterieur-pave.webp" alt="Pose enrobé allée Aubagne" loading="lazy" width="400" height="220"></div>
+                        <div class="card-img"><img fetchpriority="high" src="images/amenagement-exterieur-pave.webp" alt="Pose enrobé allée Aubagne" width="400" height="220"></div>
                         <div class="card-body">
                             <i class="fa-solid fa-road card-icon"></i>
                             <h3>Pose d'Enrobé à Aubagne</h3>
@@ -327,14 +331,14 @@
         </section>
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <div class="container footer-content">
             <div class="footer-col"><h4>STP TERRASSEMENT</h4><p>Entreprise spécialisée en <strong>Travaux Publics</strong>, <strong>VRD</strong> et <strong>Terrassement</strong>. Intervention sur <a href="zones-intervention.html" style="color: #9ca3af; text-decoration: underline;">Aix-en-Provence et toute la région PACA</a>.</p><div class="footer-badges"><div class="footer-badge"><i class="fa-solid fa-shield-halved"></i><span>Garantie Décennale</span></div><div class="footer-badge"><i class="fa-solid fa-certificate"></i><span>Certifié & Assuré</span></div></div></div>
             <div class="footer-col"><h4>Nos Services</h4><a href="terrassement.html">Terrassement & Fondations</a><a href="vrd-assainissement.html">VRD & Raccordements</a><a href="amenagement-exterieur.html">Aménagement Extérieur</a><a href="demolition.html">Démolition</a><a href="location-materiel.html">Location de matériel</a></div>
             <div class="footer-col"><h4>Liens Rapides</h4><a href="index.html">Accueil</a><a href="realisations.html">Réalisations</a><a href="blog.html">Blog</a><a href="zones-intervention.html">Zones d'intervention</a><a href="contact.html">Contact</a><a href="devis-gratuit.html">Devis Gratuit</a></div>
             <div class="footer-col"><h4>Contact</h4><p><i class="fa-solid fa-phone"></i> <a href="tel:+33745142049" style="color: inherit;">07 45 14 20 49</a></p><p><i class="fa-solid fa-envelope"></i> <a href="mailto:stp13109@gmail.com" style="color: inherit;">stp13109@gmail.com</a></p><p><i class="fa-solid fa-location-dot"></i> Aix-en-Provence (13)</p><p><i class="fa-solid fa-clock"></i> Lun-Sam: 7h-19h</p><div class="footer-social"><a href="https://www.instagram.com/stp.terrassement/" target="_blank" rel="noopener noreferrer" aria-label="Suivez STP Terrassement sur Instagram" title="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a><a href="https://www.facebook.com/profile.php?id=61579528244326" target="_blank" rel="noopener noreferrer" aria-label="Suivez STP Terrassement sur Facebook" title="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a><a href="https://x.com/stpterrassement" target="_blank" rel="noopener noreferrer" aria-label="Suivez STP Terrassement sur X" title="X (Twitter)"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a><a href="https://www.tiktok.com/@stp.terrassement" target="_blank" rel="noopener noreferrer" aria-label="Suivez STP Terrassement sur TikTok" title="TikTok"><i class="fa-brands fa-tiktok" aria-hidden="true"></i></a></div></div>
         </div>
-        <div class="copyright"><p>&copy; 2025-2026 STP Terrassement - Tous droits réservés | Expert VRD & Terrassement Aix-en-Provence</p><p class="legal-links"><a href="mentions-legales.html">Mentions Légales</a> • <a href="politique-confidentialite.html">Politique de Confidentialité</a></p></div>
+        <div class="copyright" data-nosnippet><p>&copy; 2025-2026 STP Terrassement - Tous droits réservés | Expert VRD & Terrassement Aix-en-Provence</p><p class="legal-links"><a href="mentions-legales.html">Mentions Légales</a> • <a href="politique-confidentialite.html">Politique de Confidentialité</a></p></div>
     </footer>
 
     <a href="https://wa.me/33745142049" class="float-wa" target="_blank" rel="noopener" aria-label="Contactez-nous sur WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>

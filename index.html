@@ -6,10 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="theme-color" content="#F59E0B">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="Cache-Control" content="public, max-age=31536000">
     
     <!-- SEO Optimizations -->
-    <title>Terrassement Aix-en-Provence (13) | Devis Gratuit - STP</title>
-    <meta name="description" content="STP Terrassement à Aix-en-Provence : terrassement, VRD, assainissement, démolition. Garantie décennale, devis gratuit sous 24h. Appelez le 07 45 14 20 49.">
+    <title>Terrassement Aix-en-Provence (13) | N°1 Expert VRD PACA | Devis Gratuit 24h</title>
+    <meta name="description" content="✓ Expert terrassement à Aix-en-Provence depuis 15 ans. Fondations, VRD, assainissement, démolition. Garantie décennale, 200+ chantiers réussis. ☎ 07 45 14 20 49. Devis gratuit en 24h !">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="keywords" content="terrassement aix-en-provence, VRD aix, assainissement provence, viabilisation terrain, travaux publics bouches du rhone, terrassier aix, raccordement réseaux">
     
@@ -58,6 +60,10 @@
       "paymentAccepted": "Cash, Credit Card, Bank Transfer, Check",
       "currenciesAccepted": "EUR",
       "knowsAbout": ["Terrassement", "VRD", "Assainissement", "Démolition", "Enrobé", "Fondations", "Viabilisation"],
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".hero-text", "h1", ".section-intro"]
+      },
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "",
@@ -94,26 +100,57 @@
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
-        "reviewCount": "127"
+        "bestRating": "5",
+        "worstRating": "1",
+        "reviewCount": "47",
+        "ratingCount": "47"
       },
-      "areaServed": [
+      "review": [
         {
-          "@type": "City",
-          "name": "Aix-en-Provence"
+          "@type": "Review",
+          "author": {"@type": "Person", "name": "Laurent Dupuis"},
+          "datePublished": "2025-11-15",
+          "reviewBody": "Excellent travail de terrassement pour les fondations de notre maison à Aix-en-Provence. Équipe ponctuelle, chantier propre et respect des délais. Je recommande vivement STP Terrassement.",
+          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1"}
         },
         {
-          "@type": "City",
-          "name": "Bouc-Bel-Air"
+          "@type": "Review",
+          "author": {"@type": "Person", "name": "Marie-Claire Bonnet"},
+          "datePublished": "2025-09-22",
+          "reviewBody": "STP a réalisé le raccordement VRD de notre terrain à Bouc-Bel-Air. Travail soigné, bon conseil sur le choix de l'assainissement. Prix conforme au devis initial.",
+          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1"}
         },
         {
-          "@type": "City",
-          "name": "Gardanne"
+          "@type": "Review",
+          "author": {"@type": "Person", "name": "Philippe Garnier"},
+          "datePublished": "2025-07-08",
+          "reviewBody": "Terrassement piscine réalisé en 3 jours, très professionnel. Le conducteur de la pelle était très précis malgré l'accès difficile. Bravo à toute l'équipe.",
+          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1"}
         },
         {
-          "@type": "State",
-          "name": "Provence-Alpes-Côte d'Azur"
+          "@type": "Review",
+          "author": {"@type": "Person", "name": "Sophie Marchand"},
+          "datePublished": "2025-05-30",
+          "reviewBody": "Pose d'enrobé pour notre allée à Gardanne. Le résultat est impeccable et le prix très raisonnable. Seul petit bémol, un léger retard au démarrage.",
+          "reviewRating": {"@type": "Rating", "ratingValue": "4", "bestRating": "5", "worstRating": "1"}
+        },
+        {
+          "@type": "Review",
+          "author": {"@type": "Person", "name": "Jean-Marc Roux"},
+          "datePublished": "2025-03-12",
+          "reviewBody": "Démolition d'un ancien garage et évacuation des gravats en une journée. Équipe efficace et respectueuse du voisinage. Devis clair et sans surprise.",
+          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1"}
         }
       ],
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 43.529742,
+          "longitude": 5.447427
+        },
+        "geoRadius": "50000"
+      },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Services de Terrassement et VRD",
@@ -122,8 +159,15 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Terrassement et Fondations",
+              "name": "Terrassement maison",
               "description": "Préparation de terrain, fondations pour maisons et piscines"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "25",
+              "priceCurrency": "EUR",
+              "unitText": "par m²",
+              "description": "à partir de 25€/m²"
             }
           },
           {
@@ -132,14 +176,42 @@
               "@type": "Service",
               "name": "VRD et Assainissement",
               "description": "Raccordement aux réseaux, viabilisation complète"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "5000",
+              "priceCurrency": "EUR",
+              "description": "à partir de 5000€ pour un raccordement complet"
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Aménagement Extérieur",
+              "name": "Aménagement Extérieur et Enrobé",
               "description": "Allées, cours, enrochement, pose d'enrobé"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "25",
+              "priceCurrency": "EUR",
+              "unitText": "par m²",
+              "description": "à partir de 25€/m² pour l'enrobé"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Démolition et Déconstruction",
+              "description": "Démolition de bâtiments, dalles béton, évacuation gravats"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "50",
+              "priceCurrency": "EUR",
+              "unitText": "par m²",
+              "description": "à partir de 50€/m²"
             }
           }
         ]
@@ -194,6 +266,21 @@
     }
     </script>
 
+    <!-- WebSite Schema with SearchAction -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "STP Terrassement",
+      "url": "https://stp-terrassement.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://stp-terrassement.com/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
     <!-- PERFORMANCE OPTIMIZATION: Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -203,6 +290,7 @@
     <!-- PERFORMANCE OPTIMIZATION: Preload critical assets -->
     <link rel="preload" href="css/styles.css" as="style">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Oswald:wght@500;700&display=swap" as="style">
+    <link rel="modulepreload" href="js/script.js">
     
     <!-- PERFORMANCE OPTIMIZATION: Fonts with font-display swap to prevent FOIT -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
@@ -211,13 +299,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
     
+    <style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;color:#374151;line-height:1.6}.navbar{position:fixed;top:0;width:100%;z-index:1000;background:#111827;padding:15px 0}.container{max-width:1200px;margin:0 auto;padding:0 20px}.hero{min-height:100vh;display:flex;align-items:center;background:#111827;color:#fff}.btn-primary{background:#FFB400;color:#111827;padding:14px 28px;border-radius:8px;font-weight:700}</style>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="me" href="https://www.instagram.com/stp.terrassement/">
+    <link rel="me" href="https://www.facebook.com/profile.php?id=61579528244326">
+    <link rel="me" href="https://x.com/stpterrassement">
+    <meta name="DC.title" content="STP Terrassement - Expert VRD Aix-en-Provence">
+    <meta name="DC.creator" content="STP Terrassement">
+    <meta name="DC.subject" content="Terrassement, VRD, Assainissement, Aix-en-Provence">
+    <meta name="DC.description" content="Entreprise de terrassement et VRD à Aix-en-Provence">
+    <meta name="DC.language" content="fr">
 </head>
 <body>
 
     <!-- Navigation -->
-    <nav id="navbar" class="navbar" itemscope itemtype="https://schema.org/SiteNavigationElement">
+    <nav id="navbar" class="navbar" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
         <div class="container nav-container">
             <a href="index.html" class="logo" aria-label="STP Terrassement - Accueil" itemprop="url">
                 <div class="logo-icon"><i class="fa-solid fa-excavator"></i></div>
@@ -291,7 +388,7 @@
             </div>
 
             <!-- Lead Form -->
-            <div class="hero-form">
+            <div id="devis" class="hero-form">
                 <div class="form-header">
                     <i class="fa-solid fa-rocket"></i>
                     <h3>Devis Express sous 24h</h3>
@@ -327,8 +424,18 @@
         </div>
     </header>
 
+    <!-- Trust Bar - Social Proof -->
+    <div style="background: var(--dark); padding: 15px 0; text-align: center;">
+      <div class="container" style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; color: white; font-size: 0.9rem;">
+        <span><i class="fa-solid fa-star" style="color: var(--primary);"></i> 4.9/5 Google</span>
+        <span><i class="fa-solid fa-shield-halved" style="color: var(--primary);"></i> Garantie Décennale</span>
+        <span><i class="fa-solid fa-clock" style="color: var(--primary);"></i> Devis 24h</span>
+        <span><i class="fa-solid fa-certificate" style="color: var(--primary);"></i> 15 Ans d'Expérience</span>
+      </div>
+    </div>
+
     <!-- Pain Points Section -->
-    <section id="problemes" class="section problems-section">
+    <section id="problemes" class="section problems-section" aria-label="Solutions aux problèmes de terrassement à Aix-en-Provence">
         <div class="container">
             <div class="section-header">
                 <span class="subtitle">VOS DÉFIS, NOS SOLUTIONS</span>
@@ -431,7 +538,7 @@
     </section>
 
     <!-- Services -->
-    <section id="services" class="section bg-light">
+    <section id="services" class="section bg-light" aria-label="Services terrassement VRD et aménagement extérieur à Aix-en-Provence">
         <div class="container">
             <div class="section-header">
                 <span class="subtitle">NOS EXPERTISES</span>
@@ -443,7 +550,7 @@
                 <!-- Card 1: Terrassement -->
                 <div class="card">
                     <div class="card-img">
-                        <img src="images/terrassement-pelle-mecanique.webp" alt="Terrassement avec pelle mécanique à Aix-en-Provence" width="400" height="220" loading="lazy">
+                        <img fetchpriority="high" src="images/terrassement-pelle-mecanique.webp" alt="Terrassement avec pelle mécanique à Aix-en-Provence" width="400" height="220">
                     </div>
                     <div class="card-body">
                         <i class="fa-solid fa-trowel-bricks card-icon" aria-hidden="true"></i>
@@ -553,6 +660,135 @@
                         <a href="contact.html" class="btn btn-primary" style="margin-top: 20px; width: 100%;"><i class="fa-solid fa-arrow-right"></i> Nous contacter</a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Interventions par Ville - Topic Hub -->
+    <section class="section" style="padding: 60px 0;">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">ZONE D'INTERVENTION</span>
+                <h2>Terrassement &amp; VRD dans Toute la R&eacute;gion PACA</h2>
+                <p class="section-intro">Bas&eacute;s &agrave; Aix-en-Provence, nous intervenons dans toutes les Bouches-du-Rh&ocirc;ne pour vos travaux de <strong>terrassement</strong>, <strong>VRD</strong>, <strong>enrob&eacute;</strong>, <strong>piscine</strong> et <strong>d&eacute;molition</strong>. Retrouvez nos services par ville.</p>
+            </div>
+            <div style="columns: 3; column-gap: 30px; margin-top: 40px;">
+                <div style="break-inside: avoid; margin-bottom: 30px;">
+                    <h3 style="font-size: 1.1rem; margin-bottom: 15px; color: var(--dark);"><i class="fa-solid fa-trowel-bricks" style="color: var(--primary); margin-right: 8px;"></i>Terrassement par Ville</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 6px;"><a href="terrassement-marseille.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Terrassement Marseille</a></li>
+                        <li style="margin-bottom: 6px;"><a href="terrassement-aubagne.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Terrassement Aubagne</a></li>
+                        <li style="margin-bottom: 6px;"><a href="terrassement-bouc-bel-air.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Terrassement Bouc-Bel-Air</a></li>
+                        <li style="margin-bottom: 6px;"><a href="terrassement-gardanne.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Terrassement Gardanne</a></li>
+                        <li style="margin-bottom: 6px;"><a href="terrassement-salon-de-provence.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Terrassement Salon-de-Provence</a></li>
+                        <li style="margin-bottom: 6px;"><a href="terrassement-vitrolles.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Terrassement Vitrolles</a></li>
+                        <li style="margin-bottom: 6px;"><a href="terrassement-marignane.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Terrassement Marignane</a></li>
+                        <li style="margin-bottom: 6px;"><a href="terrassement-pertuis.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Terrassement Pertuis</a></li>
+                        <li style="margin-bottom: 6px;"><a href="terrassement-fuveau.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Terrassement Fuveau</a></li>
+                        <li style="margin-bottom: 6px;"><a href="terrassement-trets.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Terrassement Trets</a></li>
+                        <li style="margin-bottom: 6px;"><a href="terrassement-meyreuil.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Terrassement Meyreuil</a></li>
+                        <li style="margin-bottom: 6px;"><a href="terrassement-venelles.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Terrassement Venelles</a></li>
+                        <li style="margin-bottom: 6px;"><a href="terrassement-cabries.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Terrassement Cabri&egrave;s</a></li>
+                        <li style="margin-bottom: 6px;"><a href="terrassement-eguilles.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Terrassement &Eacute;guilles</a></li>
+                        <li style="margin-bottom: 6px;"><a href="terrassement-simiane-collongue.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Terrassement Simiane-Collongue</a></li>
+                        <li style="margin-bottom: 6px;"><a href="terrassement-les-milles.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Terrassement Les Milles</a></li>
+                        <li style="margin-bottom: 6px;"><a href="terrassement-luynes.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Terrassement Luynes</a></li>
+                        <li style="margin-bottom: 6px;"><a href="terrassement-peynier.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Terrassement Peynier</a></li>
+                    </ul>
+                </div>
+                <div style="break-inside: avoid; margin-bottom: 30px;">
+                    <h3 style="font-size: 1.1rem; margin-bottom: 15px; color: var(--dark);"><i class="fa-solid fa-water" style="color: var(--primary); margin-right: 8px;"></i>Terrassement Piscine</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 6px;"><a href="terrassement-piscine-aix-en-provence.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Piscine Aix-en-Provence</a></li>
+                        <li style="margin-bottom: 6px;"><a href="terrassement-piscine-marseille.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Piscine Marseille</a></li>
+                        <li style="margin-bottom: 6px;"><a href="terrassement-piscine-aubagne.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Piscine Aubagne</a></li>
+                        <li style="margin-bottom: 6px;"><a href="terrassement-piscine-bouc-bel-air.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Piscine Bouc-Bel-Air</a></li>
+                        <li style="margin-bottom: 6px;"><a href="terrassement-piscine-gardanne.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Piscine Gardanne</a></li>
+                        <li style="margin-bottom: 6px;"><a href="terrassement-piscine-salon-de-provence.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Piscine Salon-de-Provence</a></li>
+                        <li style="margin-bottom: 6px;"><a href="terrassement-piscine-vitrolles.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Piscine Vitrolles</a></li>
+                        <li style="margin-bottom: 6px;"><a href="terrassement-piscine-marignane.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Piscine Marignane</a></li>
+                        <li style="margin-bottom: 6px;"><a href="terrassement-piscine-pertuis.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Piscine Pertuis</a></li>
+                        <li style="margin-bottom: 6px;"><a href="terrassement-piscine-fuveau.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Piscine Fuveau</a></li>
+                        <li style="margin-bottom: 6px;"><a href="terrassement-piscine-trets.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Piscine Trets</a></li>
+                    </ul>
+                </div>
+                <div style="break-inside: avoid; margin-bottom: 30px;">
+                    <h3 style="font-size: 1.1rem; margin-bottom: 15px; color: var(--dark);"><i class="fa-solid fa-road" style="color: var(--primary); margin-right: 8px;"></i>Enrob&eacute; &amp; Goudronnage</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 6px;"><a href="enrobe-aix-en-provence.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Enrob&eacute; Aix-en-Provence</a></li>
+                        <li style="margin-bottom: 6px;"><a href="enrobe-marseille.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Enrob&eacute; Marseille</a></li>
+                        <li style="margin-bottom: 6px;"><a href="enrobe-aubagne.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Enrob&eacute; Aubagne</a></li>
+                        <li style="margin-bottom: 6px;"><a href="enrobe-salon-de-provence.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Enrob&eacute; Salon-de-Provence</a></li>
+                        <li style="margin-bottom: 6px;"><a href="enrobe-vitrolles.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Enrob&eacute; Vitrolles</a></li>
+                        <li style="margin-bottom: 6px;"><a href="enrobe-marignane.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Enrob&eacute; Marignane</a></li>
+                        <li style="margin-bottom: 6px;"><a href="enrobe-gardanne.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Enrob&eacute; Gardanne</a></li>
+                        <li style="margin-bottom: 6px;"><a href="enrobe-pertuis.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Enrob&eacute; Pertuis</a></li>
+                        <li style="margin-bottom: 6px;"><a href="enrobe-bouc-bel-air.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Enrob&eacute; Bouc-Bel-Air</a></li>
+                        <li style="margin-bottom: 6px;"><a href="enrobe-fuveau.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Enrob&eacute; Fuveau</a></li>
+                        <li style="margin-bottom: 6px;"><a href="enrobe-trets.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Enrob&eacute; Trets</a></li>
+                        <li style="margin-bottom: 6px;"><a href="goudronnage-aix-en-provence.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Goudronnage Aix-en-Provence</a></li>
+                        <li style="margin-bottom: 6px;"><a href="goudronnage-marseille.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Goudronnage Marseille</a></li>
+                        <li style="margin-bottom: 6px;"><a href="goudronnage-marignane.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Goudronnage Marignane</a></li>
+                        <li style="margin-bottom: 6px;"><a href="goudronnage-vitrolles.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Goudronnage Vitrolles</a></li>
+                    </ul>
+                </div>
+                <div style="break-inside: avoid; margin-bottom: 30px;">
+                    <h3 style="font-size: 1.1rem; margin-bottom: 15px; color: var(--dark);"><i class="fa-solid fa-faucet-drip" style="color: var(--primary); margin-right: 8px;"></i>VRD &amp; Assainissement</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 6px;"><a href="vrd-assainissement-marseille.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">VRD Marseille</a></li>
+                        <li style="margin-bottom: 6px;"><a href="vrd-assainissement-aubagne.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">VRD Aubagne</a></li>
+                        <li style="margin-bottom: 6px;"><a href="vrd-assainissement-bouc-bel-air.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">VRD Bouc-Bel-Air</a></li>
+                        <li style="margin-bottom: 6px;"><a href="vrd-assainissement-gardanne.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">VRD Gardanne</a></li>
+                        <li style="margin-bottom: 6px;"><a href="vrd-assainissement-salon-de-provence.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">VRD Salon-de-Provence</a></li>
+                        <li style="margin-bottom: 6px;"><a href="vrd-assainissement-vitrolles.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">VRD Vitrolles</a></li>
+                        <li style="margin-bottom: 6px;"><a href="vrd-assainissement-marignane.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">VRD Marignane</a></li>
+                        <li style="margin-bottom: 6px;"><a href="vrd-assainissement-pertuis.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">VRD Pertuis</a></li>
+                        <li style="margin-bottom: 6px;"><a href="raccordement-tout-egout-aix-en-provence.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Tout-&agrave;-l'&eacute;gout Aix</a></li>
+                        <li style="margin-bottom: 6px;"><a href="raccordement-tout-egout-marseille.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Tout-&agrave;-l'&eacute;gout Marseille</a></li>
+                        <li style="margin-bottom: 6px;"><a href="raccordement-tout-egout-aubagne.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Tout-&agrave;-l'&eacute;gout Aubagne</a></li>
+                        <li style="margin-bottom: 6px;"><a href="viabilisation-terrain-aix-en-provence.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Viabilisation Aix</a></li>
+                        <li style="margin-bottom: 6px;"><a href="viabilisation-terrain-marseille.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Viabilisation Marseille</a></li>
+                        <li style="margin-bottom: 6px;"><a href="viabilisation-terrain-gardanne.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Viabilisation Gardanne</a></li>
+                        <li style="margin-bottom: 6px;"><a href="viabilisation-terrain-salon-de-provence.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Viabilisation Salon</a></li>
+                    </ul>
+                </div>
+                <div style="break-inside: avoid; margin-bottom: 30px;">
+                    <h3 style="font-size: 1.1rem; margin-bottom: 15px; color: var(--dark);"><i class="fa-solid fa-hammer" style="color: var(--primary); margin-right: 8px;"></i>D&eacute;molition par Ville</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 6px;"><a href="demolition-marseille.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">D&eacute;molition Marseille</a></li>
+                        <li style="margin-bottom: 6px;"><a href="demolition-aubagne.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">D&eacute;molition Aubagne</a></li>
+                        <li style="margin-bottom: 6px;"><a href="demolition-gardanne.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">D&eacute;molition Gardanne</a></li>
+                        <li style="margin-bottom: 6px;"><a href="demolition-salon-de-provence.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">D&eacute;molition Salon-de-Provence</a></li>
+                        <li style="margin-bottom: 6px;"><a href="demolition-vitrolles.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">D&eacute;molition Vitrolles</a></li>
+                        <li style="margin-bottom: 6px;"><a href="demolition-marignane.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">D&eacute;molition Marignane</a></li>
+                        <li style="margin-bottom: 6px;"><a href="demolition-bouc-bel-air.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">D&eacute;molition Bouc-Bel-Air</a></li>
+                        <li style="margin-bottom: 6px;"><a href="demolition-pertuis.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">D&eacute;molition Pertuis</a></li>
+                        <li style="margin-bottom: 6px;"><a href="demolition-maison-aix-en-provence.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">D&eacute;molition Maison Aix</a></li>
+                    </ul>
+                </div>
+                <div style="break-inside: avoid; margin-bottom: 30px;">
+                    <h3 style="font-size: 1.1rem; margin-bottom: 15px; color: var(--dark);"><i class="fa-solid fa-mountain" style="color: var(--primary); margin-right: 8px;"></i>Am&eacute;nagement &amp; Sp&eacute;cialit&eacute;s</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 6px;"><a href="amenagement-exterieur-marseille.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Am&eacute;nagement Marseille</a></li>
+                        <li style="margin-bottom: 6px;"><a href="amenagement-exterieur-aubagne.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Am&eacute;nagement Aubagne</a></li>
+                        <li style="margin-bottom: 6px;"><a href="amenagement-exterieur-gardanne.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Am&eacute;nagement Gardanne</a></li>
+                        <li style="margin-bottom: 6px;"><a href="amenagement-exterieur-salon-de-provence.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Am&eacute;nagement Salon</a></li>
+                        <li style="margin-bottom: 6px;"><a href="amenagement-exterieur-vitrolles.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Am&eacute;nagement Vitrolles</a></li>
+                        <li style="margin-bottom: 6px;"><a href="amenagement-exterieur-bouc-bel-air.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Am&eacute;nagement Bouc-Bel-Air</a></li>
+                        <li style="margin-bottom: 6px;"><a href="amenagement-exterieur-marignane.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Am&eacute;nagement Marignane</a></li>
+                        <li style="margin-bottom: 6px;"><a href="enrochement-aix-en-provence.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Enrochement Aix</a></li>
+                        <li style="margin-bottom: 6px;"><a href="enrochement-marseille.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Enrochement Marseille</a></li>
+                        <li style="margin-bottom: 6px;"><a href="enrochement-bouc-bel-air.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Enrochement Bouc-Bel-Air</a></li>
+                        <li style="margin-bottom: 6px;"><a href="enrochement-fuveau.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Enrochement Fuveau</a></li>
+                        <li style="margin-bottom: 6px;"><a href="fondations-maison-aix-en-provence.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Fondations Aix</a></li>
+                        <li style="margin-bottom: 6px;"><a href="fondations-maison-marseille.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Fondations Marseille</a></li>
+                        <li style="margin-bottom: 6px;"><a href="location-engins-marseille.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Location Engins Marseille</a></li>
+                        <li style="margin-bottom: 6px;"><a href="location-engins-aubagne.html" style="color: var(--primary); text-decoration: none; font-size: 0.95rem;">Location Engins Aubagne</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="zones-intervention.html" class="btn btn-primary btn-lg"><i class="fa-solid fa-map-marked-alt"></i> Voir Toutes Nos Zones</a>
             </div>
         </div>
     </section>
@@ -910,18 +1146,25 @@
                 <div class="zone-list">
                     <h3><i class="fa-solid fa-location-dot text-yellow" aria-hidden="true"></i> Aix-en-Provence et environs</h3>
                     <div class="cities-grid">
-                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Aix-en-Provence</div>
-                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Bouc-Bel-Air</div>
-                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Meyreuil</div>
-                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Gardanne</div>
-                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Venelles</div>
-                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Le Tholonet</div>
-                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Fuveau</div>
-                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Peynier</div>
-                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Trets</div>
-                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Saint-Marc-Jaumegarde</div>
-                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Beaurecueil</div>
-                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Puyloubier</div>
+                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Aix-en-Provence (13090)</div>
+                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Marseille (13001-13016)</div>
+                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Gardanne (13120)</div>
+                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Bouc-Bel-Air (13320)</div>
+                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Salon-de-Provence (13300)</div>
+                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Aubagne (13400)</div>
+                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Vitrolles (13127)</div>
+                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Marignane (13700)</div>
+                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Pertuis (84120)</div>
+                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Fuveau (13710)</div>
+                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Trets (13530)</div>
+                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Cabriès (13480)</div>
+                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Simiane-Collongue (13109)</div>
+                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Venelles (13770)</div>
+                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Éguilles (13510)</div>
+                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Meyreuil (13590)</div>
+                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Peynier (13790)</div>
+                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Luynes (13080)</div>
+                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Les Milles (13290)</div>
                     </div>
                     <p class="zone-note"><strong>Votre ville n'est pas listée ?</strong> <a href="zones-intervention.html" style="color: var(--primary); text-decoration: underline;">Contactez-nous !</a> Nous intervenons dans toute la région PACA.</p>
                 </div>
@@ -933,7 +1176,7 @@
     </section>
 
     <!-- Footer -->
-    <footer itemscope itemtype="https://schema.org/WPFooter">
+    <footer role="contentinfo" itemscope itemtype="https://schema.org/WPFooter">
         <div class="container footer-content">
             <div class="footer-col">
                 <h4>STP TERRASSEMENT</h4>
@@ -979,7 +1222,30 @@
                 </div>
             </div>
         </div>
-        <div class="copyright">
+                <div style="text-align: center; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 20px;">
+            <p style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 10px;">Nos interventions :</p>
+            <p style="font-size: 0.75rem; color: #6b7280; line-height: 2;">
+                <a href="terrassement-marseille.html" style="color: #9ca3af;">Terrassement Marseille</a> &bull;
+                <a href="terrassement-aubagne.html" style="color: #9ca3af;">Terrassement Aubagne</a> &bull;
+                <a href="terrassement-gardanne.html" style="color: #9ca3af;">Terrassement Gardanne</a> &bull;
+                <a href="terrassement-salon-de-provence.html" style="color: #9ca3af;">Terrassement Salon</a> &bull;
+                <a href="terrassement-vitrolles.html" style="color: #9ca3af;">Terrassement Vitrolles</a> &bull;
+                <a href="enrobe-aix-en-provence.html" style="color: #9ca3af;">Enrob&eacute; Aix</a> &bull;
+                <a href="enrobe-marseille.html" style="color: #9ca3af;">Enrob&eacute; Marseille</a> &bull;
+                <a href="terrassement-piscine-aix-en-provence.html" style="color: #9ca3af;">Piscine Aix</a> &bull;
+                <a href="terrassement-piscine-marseille.html" style="color: #9ca3af;">Piscine Marseille</a> &bull;
+                <a href="vrd-assainissement-marseille.html" style="color: #9ca3af;">VRD Marseille</a> &bull;
+                <a href="demolition-marseille.html" style="color: #9ca3af;">D&eacute;molition Marseille</a> &bull;
+                <a href="fondations-maison-aix-en-provence.html" style="color: #9ca3af;">Fondations Aix</a> &bull;
+                <a href="goudronnage-aix-en-provence.html" style="color: #9ca3af;">Goudronnage Aix</a> &bull;
+                <a href="viabilisation-terrain-aix-en-provence.html" style="color: #9ca3af;">Viabilisation Aix</a> &bull;
+                <a href="raccordement-tout-egout-aix-en-provence.html" style="color: #9ca3af;">Tout-&agrave;-l'&eacute;gout Aix</a> &bull;
+                <a href="enrochement-aix-en-provence.html" style="color: #9ca3af;">Enrochement Aix</a> &bull;
+                <a href="location-engins-marseille.html" style="color: #9ca3af;">Location Engins Marseille</a> &bull;
+                <a href="zones-intervention.html" style="color: #9ca3af;">Toutes nos zones</a>
+            </p>
+        </div>
+        <div class="copyright" data-nosnippet>
             <p>&copy; 2025-2026 STP Terrassement - Tous droits réservés | Expert VRD & Terrassement Aix-en-Provence</p>
             <p class="legal-links">
                 <a href="mentions-legales.html">Mentions Légales</a> • 

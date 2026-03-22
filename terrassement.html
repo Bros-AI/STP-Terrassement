@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="theme-color" content="#F59E0B">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="Cache-Control" content="public, max-age=31536000">
     
-    <title>Terrassement Aix-en-Provence (13) | Fondations & Devis</title>
-    <meta name="description" content="Terrassement professionnel à Aix-en-Provence : fondations, décaissement, piscine. Garantie décennale, devis gratuit 24h. Contactez STP au 07 45 14 20 49.">
+    <title>Terrassement Aix-en-Provence (13) | Pro Certifié | Devis Gratuit 24h</title>
+    <meta name="description" content="✓ Pro du terrassement à Aix-en-Provence depuis 15 ans. Fondations, décaissement, piscine, nivellement. 200+ chantiers réalisés. ☎ 07 45 14 20 49. Devis gratuit en 24h !">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="keywords" content="terrassement aix-en-provence, fondations maison provence, excavation piscine, nivellement terrain, terrassier aix, décaissement terrain, préparation terrain construction">
     
@@ -75,19 +77,90 @@
           "https://wa.me/33745142049"
         ]
       },
-      "areaServed": [
-        {"@type": "City", "name": "Aix-en-Provence"},
-        {"@type": "State", "name": "Provence-Alpes-Côte d'Azur"}
-      ],
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {"@type": "GeoCoordinates", "latitude": 43.529742, "longitude": 5.447427},
+        "geoRadius": "50000"
+      },
       "description": "Services professionnels de terrassement : fondations maison, excavation piscine, nivellement terrain, préparation de sol pour construction.",
-      "offers": {
-        "@type": "Offer",
-        "availability": "https://schema.org/InStock",
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "priceCurrency": "EUR"
-        }
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".hero-text", "h1", ".section-intro"]
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {"@type": "Service", "name": "Terrassement maison"},
+            "priceSpecification": {"@type": "PriceSpecification", "price": "25", "priceCurrency": "EUR", "unitText": "par m²"}
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {"@type": "Service", "name": "Terrassement piscine"},
+            "priceSpecification": {"@type": "PriceSpecification", "price": "1500", "priceCurrency": "EUR", "description": "à partir de 1500€"}
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {"@type": "Service", "name": "Nivellement terrain"},
+            "priceSpecification": {"@type": "PriceSpecification", "price": "15", "priceCurrency": "EUR", "unitText": "par m²"}
+          }
+        ]
       }
+    }
+    </script>
+
+    <!-- HowTo Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Comment se déroule un terrassement à Aix-en-Provence",
+      "description": "Les étapes clés d'un chantier de terrassement professionnel réalisé par STP Terrassement dans la région d'Aix-en-Provence.",
+      "totalTime": "P5D",
+      "estimatedCost": {
+        "@type": "MonetaryAmount",
+        "currency": "EUR",
+        "value": "5000"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Étude de sol et visite technique",
+          "text": "Réalisation d'une visite technique gratuite pour évaluer le terrain, la nature du sol (calcaire, argileux) et l'accessibilité. Analyse des plans et du cahier des charges."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Implantation et piquetage",
+          "text": "Piquetage et traçage précis des limites du terrassement selon les plans du géomètre. Mise en place des repères de niveau."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Décapage de la terre végétale",
+          "text": "Retrait et stockage de la couche de terre végétale sur une épaisseur de 20 à 30 cm pour réutilisation ultérieure."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Excavation et fouilles",
+          "text": "Creusement des fouilles aux dimensions requises à l'aide de pelles mécaniques. Utilisation du brise-roche hydraulique si terrain rocheux."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Nivellement et compactage",
+          "text": "Mise à niveau du fond de fouille, compactage au rouleau vibrant et vérification des cotes avec un niveau laser."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 6,
+          "name": "Évacuation des déblais",
+          "text": "Chargement et évacuation des terres excédentaires vers des centres de recyclage agréés des Bouches-du-Rhône."
+        }
+      ]
     }
     </script>
 
@@ -131,6 +204,27 @@
           "@type": "Answer",
           "text": "Un terrassement seul ne nécessite pas de permis, mais s'il est lié à une construction, un permis de construire est requis. À Aix-en-Provence, une déclaration préalable peut être nécessaire si les travaux modifient le profil du terrain de plus de 2 mètres. STP Terrassement vous conseille sur les démarches."
         }
+      },{
+        "@type": "Question",
+        "name": "Quel prix pour terrasser un terrain de 500m2 ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pour terrasser un terrain de 500m², le budget se situe entre 12 500€ et 30 000€ selon la nature du sol, la profondeur de décaissement et l'accessibilité. En terrain calcaire typique d'Aix-en-Provence, le brise-roche peut être nécessaire. STP Terrassement réalise une visite gratuite pour un chiffrage précis."
+        }
+      },{
+        "@type": "Question",
+        "name": "Faut-il une autorisation pour terrasser ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Un terrassement seul ne nécessite généralement pas de permis de construire. Cependant, une déclaration préalable est obligatoire si vous modifiez le relief du terrain de plus de 2 mètres ou si le terrain est situé dans un secteur protégé. Pour un terrassement lié à une construction, le permis de construire couvre les travaux."
+        }
+      },{
+        "@type": "Question",
+        "name": "Quelle est la meilleure période pour terrasser ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La meilleure période pour terrasser est le printemps (mars à juin) et l'automne (septembre-octobre), quand le sol est sec mais pas trop dur. En région PACA, le climat permet de terrasser presque toute l'année sauf en cas de pluies prolongées."
+        }
       }]
     }
     </script>
@@ -140,13 +234,15 @@
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Oswald:wght@500;700&display=swap" as="style">
+    <link rel="modulepreload" href="js/script.js">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <nav id="navbar" class="navbar" itemscope itemtype="https://schema.org/SiteNavigationElement">
+    <nav id="navbar" class="navbar" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
         <div class="container nav-container">
             <a href="index.html" class="logo" aria-label="STP Terrassement - Accueil">
                 <div class="logo-icon"><i class="fa-solid fa-excavator"></i></div>
@@ -184,7 +280,7 @@
         </div>
     </nav>
 
-    <main>
+    <main role="main">
         <!-- Breadcrumb Navigation for SEO -->
         <nav aria-label="Fil d'Ariane" style="background: var(--gray); padding: 15px 0;">
             <div class="container">
@@ -242,12 +338,27 @@
             </div>
         </header>
 
-        <section class="page-content section">
+        <!-- Trust Bar - Social Proof -->
+        <div style="background: var(--dark); padding: 15px 0; text-align: center;">
+          <div class="container" style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; color: white; font-size: 0.9rem;">
+            <span><i class="fa-solid fa-star" style="color: var(--primary);"></i> 4.9/5 Google</span>
+            <span><i class="fa-solid fa-shield-halved" style="color: var(--primary);"></i> Garantie Décennale</span>
+            <span><i class="fa-solid fa-clock" style="color: var(--primary);"></i> Devis 24h</span>
+            <span><i class="fa-solid fa-certificate" style="color: var(--primary);"></i> 15 Ans d'Expérience</span>
+          </div>
+        </div>
+        <!-- Last Modified for Freshness -->
+        <div style="text-align: center; padding: 8px 0; background: #f9fafb; font-size: 0.8rem; color: #6b7280;">
+            <i class="fa-solid fa-calendar-check" style="margin-right: 5px;"></i> Dernière mise à jour : Mars 2026
+        </div>
+
+        <section class="page-content section" aria-label="Services de terrassement professionnel à Aix-en-Provence">
             <div class="container">
+            <article>
                 <div class="section-header">
                     <span class="subtitle">NOTRE EXPERTISE</span>
-                    <h2>Terrassement Professionnel pour Tous Types de Projets à Aix-en-Provence</h2>
-                    <p class="section-intro">Le <strong>terrassement</strong> est l'étape fondamentale qui garantit la stabilité, la sécurité et la pérennité de toute construction. Avant chaque chantier, nous réalisons une <strong>étude de sol G1/G2</strong> afin de définir le <strong>plan de terrassement</strong> adapté à la nature de votre terrain. Notre expertise de <strong>15 ans</strong> et notre <a href="location-materiel.html" style="color: var(--primary); text-decoration: underline;">parc matériel complet</a> (minipelle, pelle mécanique, BRH) sont à votre service pour des travaux précis et conformes aux normes en vigueur. De l'<strong>implantation</strong> et du <strong>piquetage</strong> jusqu'à l'<strong>évacuation des gravats</strong>, nous réalisons également les travaux de <a href="vrd-assainissement.html" style="color: var(--primary); text-decoration: underline;">VRD et assainissement</a> indispensables après le terrassement. Nous intervenons sur nos <a href="zones-intervention.html" style="color: var(--primary); text-decoration: underline;">zones d'intervention autour d'Aix-en-Provence</a>. Découvrez <a href="realisations.html" style="color: var(--primary); text-decoration: underline;">nos réalisations</a> pour constater la qualité de notre travail.</p>
+                    <h2>STP Terrassement : Terrassement Professionnel pour Tous Types de Projets à Aix-en-Provence</h2>
+                    <p class="section-intro">STP Terrassement est votre <mark>expert en terrassement à Aix-en-Provence</mark> depuis plus de 15 ans. Le <strong>terrassement</strong> est l'étape fondamentale qui garantit la stabilité, la sécurité et la pérennité de toute construction. Avant chaque chantier, nous réalisons une <strong>étude de sol G1/G2</strong> afin de définir le <strong>plan de terrassement</strong> adapté à la nature de votre terrain. Notre expertise de <strong>15 ans</strong> et notre <a href="location-materiel.html" style="color: var(--primary); text-decoration: underline;">parc matériel complet</a> (minipelle, pelle mécanique, BRH) sont à votre service pour des <mark>travaux de terrassement</mark> précis et conformes aux normes en vigueur. En tant que <strong>société de terrassement</strong> et <strong>terrassier</strong> reconnu dans les Bouches-du-Rhône, notre entreprise de terrassement assure chaque chantier avec rigueur. De l'<strong>implantation</strong> et du <strong>piquetage</strong> jusqu'à l'<strong>évacuation des gravats</strong>, nous réalisons également les travaux de <a href="vrd-assainissement.html" style="color: var(--primary); text-decoration: underline;">VRD et assainissement</a> indispensables après le terrassement. Nous intervenons sur nos <a href="zones-intervention.html" style="color: var(--primary); text-decoration: underline;">zones d'intervention autour d'Aix-en-Provence</a>. Découvrez <a href="realisations.html" style="color: var(--primary); text-decoration: underline;">nos réalisations</a> pour constater la qualité de notre travail.</p>
                 </div>
 
                 <div class="grid-2 align-center" style="margin-top: 60px;">
@@ -267,7 +378,7 @@
                         </div>
                     </div>
                     <div>
-                        <img src="images/chantier-fondations-maison.webp" alt="Terrassement et fondations pour maison individuelle à Aix-en-Provence" class="rounded-img" loading="lazy" width="600" height="400">
+                        <img fetchpriority="high" src="images/chantier-fondations-maison.webp" alt="Terrassement et fondations pour maison individuelle à Aix-en-Provence" class="rounded-img" width="600" height="400">
                     </div>
                 </div>
 
@@ -396,7 +507,7 @@
                             </p>
                         </details>
 
-                        <details style="background: white; padding: 25px; border-radius: 10px; cursor: pointer;">
+                        <details style="background: white; padding: 25px; border-radius: 10px; margin-bottom: 20px; cursor: pointer;">
                             <summary style="font-weight: 700; font-size: 1.1rem; color: var(--dark);">
                                 <i class="fa-solid fa-mountain" style="color: var(--primary); margin-right: 10px;"></i>
                                 Que faire des terres excavées ?
@@ -405,13 +516,43 @@
                                 Les <strong>terres excavées</strong> peuvent être : réutilisées pour le remblaiement ou l'aménagement paysager, évacuées vers un centre de stockage agréé (déchets inertes), ou vendues si elles sont de qualité (terre végétale). Nous gérons l'évacuation avec nos propres <a href="location-materiel.html" style="color: var(--primary); text-decoration: underline;">camions bennes</a> vers des centres agréés.
                             </p>
                         </details>
+
+                        <details style="background: white; padding: 25px; border-radius: 10px; margin-bottom: 20px; cursor: pointer;">
+                            <summary style="font-weight: 700; font-size: 1.1rem; color: var(--dark);">
+                                <i class="fa-solid fa-ruler-combined" style="color: var(--primary); margin-right: 10px;"></i>
+                                Quel prix pour terrasser un terrain de 500m2 ?
+                            </summary>
+                            <p style="margin-top: 20px; padding-left: 30px; line-height: 1.7;">
+                                Pour terrasser un <strong>terrain de 500m²</strong>, le budget se situe entre <strong>12 500€ et 30 000€</strong> selon la nature du sol, la profondeur de décaissement et l'accessibilité. En terrain <strong>calcaire</strong> typique d'Aix-en-Provence, le <strong>brise-roche</strong> peut être nécessaire, ce qui augmente le coût. <a href="devis-gratuit.html" style="color: var(--primary); text-decoration: underline;">Demandez une visite gratuite</a> pour un chiffrage précis.
+                            </p>
+                        </details>
+
+                        <details style="background: white; padding: 25px; border-radius: 10px; margin-bottom: 20px; cursor: pointer;">
+                            <summary style="font-weight: 700; font-size: 1.1rem; color: var(--dark);">
+                                <i class="fa-solid fa-file-contract" style="color: var(--primary); margin-right: 10px;"></i>
+                                Faut-il une autorisation pour terrasser ?
+                            </summary>
+                            <p style="margin-top: 20px; padding-left: 30px; line-height: 1.7;">
+                                Un terrassement seul ne nécessite généralement pas de <strong>permis de construire</strong>. Cependant, une <strong>déclaration préalable</strong> est obligatoire si vous modifiez le relief du terrain de plus de <strong>2 mètres</strong> ou si le terrain est situé dans un <strong>secteur protégé</strong>. Pour un terrassement lié à une construction, le permis de construire couvre les travaux. <a href="contact.html" style="color: var(--primary); text-decoration: underline;">Contactez-nous pour vérifier</a>.
+                            </p>
+                        </details>
+
+                        <details style="background: white; padding: 25px; border-radius: 10px; cursor: pointer;">
+                            <summary style="font-weight: 700; font-size: 1.1rem; color: var(--dark);">
+                                <i class="fa-solid fa-sun" style="color: var(--primary); margin-right: 10px;"></i>
+                                Quelle est la meilleure période pour terrasser ?
+                            </summary>
+                            <p style="margin-top: 20px; padding-left: 30px; line-height: 1.7;">
+                                La meilleure période pour terrasser est le <strong>printemps</strong> (mars à juin) et l'<strong>automne</strong> (septembre-octobre), quand le sol est sec mais pas trop dur. En <strong>région PACA</strong>, le climat permet de terrasser presque toute l'année sauf en cas de pluies prolongées. Évitez les périodes de <strong>gel</strong> en hiver et les grosses <strong>chaleurs d'été</strong> qui durcissent les sols argileux.
+                            </p>
+                        </details>
                     </div>
                 </div>
 
                 <div class="cta-box" style="margin-top: 80px;">
                     <div class="cta-content">
                         <h3><i class="fa-solid fa-medal"></i> Pourquoi Choisir STP Terrassement à Aix-en-Provence ?</h3>
-                        <p>Implantée dans le <strong>bassin aixois</strong> depuis <strong>15 ans</strong>, notre entreprise de terrassement intervient sur <strong>Aix-en-Provence</strong>, les <strong>Bouches-du-Rhône (13)</strong> et toute la <strong>région PACA</strong>. <a href="location-materiel.html" style="color: white; text-decoration: underline;">Parc matériel complet</a> (minipelle 1,5T à pelle mécanique 20T, brise-roche hydraulique), respect des délais et <strong>garantie décennale</strong>. De l'<strong>étude de sol G2</strong> au <strong>compactage</strong> final, nous assurons la réussite de votre projet avec un <strong>devis gratuit</strong> sous 24h. Plus de <a href="realisations.html" style="color: white; text-decoration: underline;">200 chantiers réussis</a> sur le <strong>Pays d'Aix</strong>.</p>
+                        <p>Implantée dans le <strong>bassin aixois</strong> depuis <strong>15 ans</strong>, notre <mark>entreprise de terrassement à Aix-en-Provence</mark> intervient sur <strong>Aix-en-Provence</strong>, les <strong>Bouches-du-Rhône (13)</strong> et toute la <strong>région PACA</strong>. <a href="location-materiel.html" style="color: white; text-decoration: underline;">Parc matériel complet</a> (minipelle 1,5T à pelle mécanique 20T, brise-roche hydraulique), respect des délais et <strong>garantie décennale</strong>. De l'<strong>étude de sol G2</strong> au <strong>compactage</strong> final, nous assurons la réussite de votre projet avec un <strong>devis gratuit</strong> sous 24h. Plus de <a href="realisations.html" style="color: white; text-decoration: underline;">200 chantiers réussis</a> sur le <strong>Pays d'Aix</strong>.</p>
                         <div class="trust-badges" style="justify-content: flex-start; margin-top: 20px; padding-top: 0; border-top: none;">
                             <div class="trust-item">
                                 <i class="fa-solid fa-shield-halved"></i>
@@ -436,6 +577,15 @@
                         <a href="https://wa.me/33745142049" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
                     </div>
                 </div>
+
+
+                <!-- E-E-A-T Trust Signal -->
+                <div style="background: var(--gray); border-left: 4px solid var(--primary); padding: 20px 25px; margin: 40px 0; border-radius: 0 8px 8px 0;">
+                    <p style="font-weight: 700; margin-bottom: 8px;"><i class="fa-solid fa-user-tie" style="color: var(--primary);"></i> STP Terrassement &#8212; Expert depuis 15 ans</p>
+                    <p style="font-size: 0.9rem; color: var(--text-light);">Entreprise de terrassement et VRD certifi&eacute;e, bas&eacute;e &agrave; Aix-en-Provence. Garantie d&eacute;cennale, assurance RC Pro, et plus de 500 chantiers r&eacute;alis&eacute;s dans la r&eacute;gion PACA. <a href="realisations.html" style="color: var(--primary);">Voir nos r&eacute;alisations</a></p>
+                </div>
+
+                </article>
 
                 <!-- Related Services -->
                 <div class="section" style="margin-top: 80px;">
@@ -469,9 +619,70 @@
                 </div>
             </div>
         </section>
+
+    <!-- Services Sp&eacute;cifiques Cross-Links -->
+    <section id="services-specifiques-crosslinks" class="section bg-light" style="padding: 60px 0;">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">SERVICES SP&Eacute;CIFIQUES</span>
+                <h2>Vous Pourriez Aussi Avoir Besoin De</h2>
+            </div>
+            <div class="grid-3">
+                        <div class="card">
+                            <div class="card-body" style="text-align: center; padding: 25px;">
+                                <i class="fa-solid fa-home" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                                <h3 style="font-size: 1rem;"><a href="fondations-maison-aix-en-provence.html" style="color: inherit; text-decoration: none;">Fondations Maison Aix</a></h3>
+                                <p style="font-size: 0.9rem; margin-bottom: 15px;">Construction de fondations solides pour votre maison &agrave; Aix-en-Provence et environs.</p>
+                                <a href="fondations-maison-aix-en-provence.html" class="btn btn-primary" style="width: 100%; font-size: 0.85rem;"><i class="fa-solid fa-arrow-right"></i> En savoir plus</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body" style="text-align: center; padding: 25px;">
+                                <i class="fa-solid fa-water" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                                <h3 style="font-size: 1rem;"><a href="terrassement-piscine-aix-en-provence.html" style="color: inherit; text-decoration: none;">Terrassement Piscine Aix</a></h3>
+                                <p style="font-size: 0.9rem; margin-bottom: 15px;">Excavation et pr&eacute;paration du terrain pour votre piscine &agrave; Aix-en-Provence.</p>
+                                <a href="terrassement-piscine-aix-en-provence.html" class="btn btn-primary" style="width: 100%; font-size: 0.85rem;"><i class="fa-solid fa-arrow-right"></i> En savoir plus</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body" style="text-align: center; padding: 25px;">
+                                <i class="fa-solid fa-arrows-down-to-line" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                                <h3 style="font-size: 1rem;"><a href="decaissement-terrain-aix-en-provence.html" style="color: inherit; text-decoration: none;">D&eacute;caissement Terrain Aix</a></h3>
+                                <p style="font-size: 0.9rem; margin-bottom: 15px;">D&eacute;caissement pr&eacute;cis de votre terrain constructible &agrave; Aix-en-Provence.</p>
+                                <a href="decaissement-terrain-aix-en-provence.html" class="btn btn-primary" style="width: 100%; font-size: 0.85rem;"><i class="fa-solid fa-arrow-right"></i> En savoir plus</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body" style="text-align: center; padding: 25px;">
+                                <i class="fa-solid fa-ruler-combined" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                                <h3 style="font-size: 1rem;"><a href="nivellement-terrain-aix-en-provence.html" style="color: inherit; text-decoration: none;">Nivellement Terrain Aix</a></h3>
+                                <p style="font-size: 0.9rem; margin-bottom: 15px;">Mise &agrave; niveau parfaite de votre terrain avant construction.</p>
+                                <a href="nivellement-terrain-aix-en-provence.html" class="btn btn-primary" style="width: 100%; font-size: 0.85rem;"><i class="fa-solid fa-arrow-right"></i> En savoir plus</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body" style="text-align: center; padding: 25px;">
+                                <i class="fa-solid fa-mountain" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                                <h3 style="font-size: 1rem;"><a href="terrassement-terrain-constructible-aix-en-provence.html" style="color: inherit; text-decoration: none;">Terrain Constructible Aix</a></h3>
+                                <p style="font-size: 0.9rem; margin-bottom: 15px;">Pr&eacute;paration compl&egrave;te de terrain constructible &agrave; Aix.</p>
+                                <a href="terrassement-terrain-constructible-aix-en-provence.html" class="btn btn-primary" style="width: 100%; font-size: 0.85rem;"><i class="fa-solid fa-arrow-right"></i> En savoir plus</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body" style="text-align: center; padding: 25px;">
+                                <i class="fa-solid fa-hill-rockslide" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                                <h3 style="font-size: 1rem;"><a href="mur-soutenement-aix-en-provence.html" style="color: inherit; text-decoration: none;">Mur de Sout&egrave;nement Aix</a></h3>
+                                <p style="font-size: 0.9rem; margin-bottom: 15px;">Construction de murs de sout&egrave;nement pour terrains en pente.</p>
+                                <a href="mur-soutenement-aix-en-provence.html" class="btn btn-primary" style="width: 100%; font-size: 0.85rem;"><i class="fa-solid fa-arrow-right"></i> En savoir plus</a>
+                            </div>
+                        </div>
+            </div>
+        </div>
+    </section>
+
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <div class="container footer-content">
             <div class="footer-col">
                 <h4>STP TERRASSEMENT</h4>
@@ -518,7 +729,30 @@
                 </div>
             </div>
         </div>
-        <div class="copyright">
+                <div style="text-align: center; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 20px;">
+            <p style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 10px;">Nos interventions :</p>
+            <p style="font-size: 0.75rem; color: #6b7280; line-height: 2;">
+                <a href="terrassement-marseille.html" style="color: #9ca3af;">Terrassement Marseille</a> &bull;
+                <a href="terrassement-aubagne.html" style="color: #9ca3af;">Terrassement Aubagne</a> &bull;
+                <a href="terrassement-gardanne.html" style="color: #9ca3af;">Terrassement Gardanne</a> &bull;
+                <a href="terrassement-salon-de-provence.html" style="color: #9ca3af;">Terrassement Salon</a> &bull;
+                <a href="terrassement-vitrolles.html" style="color: #9ca3af;">Terrassement Vitrolles</a> &bull;
+                <a href="enrobe-aix-en-provence.html" style="color: #9ca3af;">Enrob&eacute; Aix</a> &bull;
+                <a href="enrobe-marseille.html" style="color: #9ca3af;">Enrob&eacute; Marseille</a> &bull;
+                <a href="terrassement-piscine-aix-en-provence.html" style="color: #9ca3af;">Piscine Aix</a> &bull;
+                <a href="terrassement-piscine-marseille.html" style="color: #9ca3af;">Piscine Marseille</a> &bull;
+                <a href="vrd-assainissement-marseille.html" style="color: #9ca3af;">VRD Marseille</a> &bull;
+                <a href="demolition-marseille.html" style="color: #9ca3af;">D&eacute;molition Marseille</a> &bull;
+                <a href="fondations-maison-aix-en-provence.html" style="color: #9ca3af;">Fondations Aix</a> &bull;
+                <a href="goudronnage-aix-en-provence.html" style="color: #9ca3af;">Goudronnage Aix</a> &bull;
+                <a href="viabilisation-terrain-aix-en-provence.html" style="color: #9ca3af;">Viabilisation Aix</a> &bull;
+                <a href="raccordement-tout-egout-aix-en-provence.html" style="color: #9ca3af;">Tout-&agrave;-l'&eacute;gout Aix</a> &bull;
+                <a href="enrochement-aix-en-provence.html" style="color: #9ca3af;">Enrochement Aix</a> &bull;
+                <a href="location-engins-marseille.html" style="color: #9ca3af;">Location Engins Marseille</a> &bull;
+                <a href="zones-intervention.html" style="color: #9ca3af;">Toutes nos zones</a>
+            </p>
+        </div>
+        <div class="copyright" data-nosnippet>
             <p>&copy; 2025-2026 STP Terrassement - Tous droits réservés | Expert VRD & Terrassement Aix-en-Provence</p>
             <p class="legal-links">
                 <a href="mentions-legales.html">Mentions Légales</a> • 

@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="theme-color" content="#F59E0B">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="Cache-Control" content="public, max-age=31536000">
     <title>Viabilisation Terrain Constructible : &Eacute;tapes &amp; Co&ucirc;ts 2026</title>
     <meta name="description" content="Guide complet viabilisation terrain : &eacute;tapes, co&ucirc;ts par r&eacute;seau (eau, &eacute;lectricit&eacute;, assainissement, t&eacute;l&eacute;com), d&eacute;lais et permis. Expert VRD Aix-en-Provence.">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -28,6 +30,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Oswald:wght@500;700&display=swap" as="style">
+    <link rel="modulepreload" href="../js/script.js">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
@@ -83,7 +87,7 @@
     </script>
 </head>
 <body>
-    <nav id="navbar" class="navbar">
+    <nav id="navbar" class="navbar" role="navigation">
         <div class="container nav-container">
             <a href="../index.html" class="logo" aria-label="STP Terrassement - Accueil">
                 <div class="logo-icon"><i class="fa-solid fa-excavator"></i></div>
@@ -117,7 +121,7 @@
         </div>
     </nav>
 
-    <main>
+    <main role="main">
         <nav aria-label="Fil d'Ariane" style="background: var(--gray); padding: 15px 0;">
             <div class="container">
                 <ol style="display: flex; gap: 10px; list-style: none; padding: 0; margin: 0; font-size: 0.9rem;" itemscope itemtype="https://schema.org/BreadcrumbList">
@@ -279,7 +283,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <div class="container footer-content">
             <div class="footer-col">
                 <h4>STP TERRASSEMENT</h4>
@@ -320,7 +324,7 @@
                 </div>
             </div>
         </div>
-        <div class="copyright">
+        <div class="copyright" data-nosnippet>
             <p>&copy; 2025-2026 STP Terrassement - Tous droits réservés | Expert VRD & Terrassement Aix-en-Provence</p>
             <p class="legal-links"><a href="../mentions-legales.html">Mentions Légales</a> • <a href="../politique-confidentialite.html">Politique de Confidentialité</a></p>
         </div>
