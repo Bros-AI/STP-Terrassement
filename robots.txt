@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /v38cnl93ujw3zgpz916ykx807t2c3v.html
 
-Sitemap: https://www.stp-terrassement.com/sitemap.xml
+Sitemap: https://stp-terrassement.com/sitemap.xml

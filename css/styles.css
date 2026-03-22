@@ -1312,10 +1312,35 @@ footer {
     font-weight: 600;
     color: #d1d5db;
 }
-.copyright { 
-    text-align: center; 
-    border-top: 1px solid #1f2937; 
-    padding-top: 30px; 
+.footer-social {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 180, 0, 0.1);
+    border-radius: 50%;
+    color: #d1d5db;
+    font-size: 1.2rem;
+    transition: var(--transition);
+    margin-bottom: 0;
+    padding: 0;
+}
+.footer-social a:hover {
+    background: var(--primary);
+    color: #0f1523;
+    padding-left: 0;
+    transform: translateY(-3px);
+}
+.copyright {
+    text-align: center;
+    border-top: 1px solid #1f2937;
+    padding-top: 30px;
     font-size: 0.9rem;
 }
 .copyright p {

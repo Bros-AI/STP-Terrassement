@@ -1,82 +1,426 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- ===== PAGES PRINCIPALES ===== -->
   <url>
-    <loc>https://www.stp-terrassement.com/</loc>
-    <lastmod>2025-11-21</lastmod>
+    <loc>https://stp-terrassement.com/</loc>
+    <lastmod>2026-03-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://stp-terrassement.com/images/terrassement-pelle-mecanique.webp</image:loc>
+      <image:title>Terrassement avec pelle mécanique à Aix-en-Provence</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://stp-terrassement.com/images/chantier-reseaux-divers.webp</image:loc>
+      <image:title>Chantier VRD raccordement réseaux Aix-en-Provence</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://stp-terrassement.com/images/equipe-stp-terrassement.webp</image:loc>
+      <image:title>Équipe STP Terrassement sur chantier PACA</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.stp-terrassement.com/terrassement.html</loc>
-    <lastmod>2025-11-21</lastmod>
+    <loc>https://stp-terrassement.com/terrassement.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://stp-terrassement.com/images/terrassement-pelle-mecanique.webp</image:loc>
+      <image:title>Terrassement professionnel pelle mécanique Aix-en-Provence</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/vrd-assainissement.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://stp-terrassement.com/images/raccordement-vrd-assainissement.webp</image:loc>
+      <image:title>Raccordement VRD et assainissement Aix-en-Provence</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/amenagement-exterieur.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://stp-terrassement.com/images/amenagement-exterieur-pave.webp</image:loc>
+      <image:title>Aménagement extérieur pose pavés Provence</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/demolition.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://stp-terrassement.com/images/demolition-deconstruction-batiment.webp</image:loc>
+      <image:title>Démolition déconstruction bâtiment Aix-en-Provence</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/devis-gratuit.html</loc>
+    <lastmod>2026-03-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.stp-terrassement.com/vrd-assainissement.html</loc>
-    <lastmod>2025-11-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.stp-terrassement.com/amenagement-exterieur.html</loc>
-    <lastmod>2025-11-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.stp-terrassement.com/demolition.html</loc>
-    <lastmod>2025-11-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.stp-terrassement.com/location-materiel.html</loc>
-    <lastmod>2025-11-21</lastmod>
+    <loc>https://stp-terrassement.com/location-materiel.html</loc>
+    <lastmod>2026-03-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.stp-terrassement.com/blog.html</loc>
-    <lastmod>2025-11-21</lastmod>
+    <loc>https://stp-terrassement.com/realisations.html</loc>
+    <lastmod>2026-03-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.stp-terrassement.com/zones-intervention.html</loc>
-    <lastmod>2025-11-21</lastmod>
+    <loc>https://stp-terrassement.com/blog.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/zones-intervention.html</loc>
+    <lastmod>2026-03-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.stp-terrassement.com/realisations.html</loc>
-    <lastmod>2025-11-21</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.stp-terrassement.com/contact.html</loc>
-    <lastmod>2025-11-21</lastmod>
+    <loc>https://stp-terrassement.com/contact.html</loc>
+    <lastmod>2026-03-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.stp-terrassement.com/devis-gratuit.html</loc>
-    <lastmod>2025-11-21</lastmod>
+    <loc>https://stp-terrassement.com/mentions-legales.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/politique-confidentialite.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- ===== TERRASSEMENT - PAGES VILLES ===== -->
+  <url>
+    <loc>https://stp-terrassement.com/terrassement-marseille.html</loc>
+    <lastmod>2026-03-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.stp-terrassement.com/mentions-legales.html</loc>
-    <lastmod>2025-11-21</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://stp-terrassement.com/terrassement-gardanne.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.stp-terrassement.com/politique-confidentialite.html</loc>
-    <lastmod>2025-11-21</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://stp-terrassement.com/terrassement-bouc-bel-air.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/terrassement-salon-de-provence.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/terrassement-aubagne.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/terrassement-vitrolles.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/terrassement-marignane.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/terrassement-pertuis.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/terrassement-fuveau.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/terrassement-trets.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ===== DÉMOLITION - PAGES VILLES ===== -->
+  <url>
+    <loc>https://stp-terrassement.com/demolition-marseille.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/demolition-gardanne.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/demolition-bouc-bel-air.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/demolition-salon-de-provence.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/demolition-aubagne.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ===== VRD ASSAINISSEMENT - PAGES VILLES ===== -->
+  <url>
+    <loc>https://stp-terrassement.com/vrd-assainissement-marseille.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/vrd-assainissement-gardanne.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/vrd-assainissement-bouc-bel-air.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/vrd-assainissement-salon-de-provence.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/vrd-assainissement-aubagne.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ===== AMÉNAGEMENT EXTÉRIEUR - PAGES VILLES ===== -->
+  <url>
+    <loc>https://stp-terrassement.com/amenagement-exterieur-marseille.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/amenagement-exterieur-gardanne.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/amenagement-exterieur-bouc-bel-air.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/amenagement-exterieur-salon-de-provence.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/amenagement-exterieur-aubagne.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ===== LOCATION ENGINS - PAGES VILLES ===== -->
+  <url>
+    <loc>https://stp-terrassement.com/location-engins-marseille.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/location-engins-gardanne.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/location-engins-bouc-bel-air.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/location-engins-salon-de-provence.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/location-engins-aubagne.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ===== BLOG - ARTICLES PRIX & COÛTS ===== -->
+  <url>
+    <loc>https://stp-terrassement.com/blog/prix-terrassement-m2.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/blog/cout-demolition-maison.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/blog/epaisseur-enrobe-allee.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/blog/prix-demolition-dalle-beton.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/blog/raccordement-tout-egout-prix.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/blog/combien-coute-viabilisation-terrain.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/blog/prix-fondations-maison.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/blog/terrassement-piscine-guide.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/blog/enrobe-chaud-vs-froid.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/blog/prix-enrobe-m2.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ===== BLOG - GUIDES TECHNIQUES ===== -->
+  <url>
+    <loc>https://stp-terrassement.com/blog/mur-soutenement-guide.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/blog/etude-sol-g1-g2.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/blog/permis-demolir-guide.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/blog/micro-station-epuration-guide.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/blog/fosse-septique-vs-tout-egout.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/blog/terrassement-terrain-en-pente.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/blog/drainage-terrain-guide.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/blog/viabilisation-terrain-constructible.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/blog/amenagement-allee-carrossable.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/blog/location-minipelle-guide.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
