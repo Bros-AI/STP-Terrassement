@@ -68,6 +68,7 @@
         .price-table td { padding: 12px 18px; border-bottom: 1px solid #eee; }
         .price-table tr:nth-child(even) { background: #f8f9fa; }
         .price-table tr:hover { background: rgba(245, 158, 11, 0.07); }
+        @media (max-width: 768px) { .price-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; } }
         .cta-blog { background: linear-gradient(135deg, var(--dark), var(--primary-dark)); color: white; padding: 40px; border-radius: 15px; text-align: center; margin: 40px 0; }
         .cta-blog h3 { color: white; margin-bottom: 15px; }
         .cta-blog p { color: rgba(255,255,255,0.9); margin-bottom: 20px; }
