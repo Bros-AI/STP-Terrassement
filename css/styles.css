@@ -235,7 +235,7 @@ ul { list-style: none; }
 /* --- HERO (FIXED WAVE & PARALLAX) --- */
 .hero {
     position: relative;
-    min-height: 95vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     background: url('../images/hero-terrassement-bouc-bel-air.webp') no-repeat center/cover;
@@ -249,11 +249,12 @@ ul { list-style: none; }
     background: linear-gradient(135deg, rgba(17, 24, 39, 0.92), rgba(17, 24, 39, 0.85));
 }
 .hero-content {
-    position: relative; 
+    position: relative;
     z-index: 1;
-    display: grid; 
-    grid-template-columns: 1.3fr 0.7fr; 
-    gap: 60px; 
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 60px;
+    min-height: 500px; 
     align-items: center;
 }
 .hero-text { color: white; }
@@ -332,11 +333,12 @@ ul { list-style: none; }
 
 /* Hero Form */
 .hero-form {
-    background: white; 
-    padding: 35px; 
+    background: white;
+    padding: 35px;
     border-radius: 15px;
     box-shadow: var(--shadow-xl);
     border-top: 5px solid var(--primary);
+    min-height: 400px;
 }
 .form-header {
     display: flex;
