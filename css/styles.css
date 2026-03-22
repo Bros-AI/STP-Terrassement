@@ -1564,6 +1564,14 @@ footer {
     }
 }
 
+/* Zone Section City Cards Hover */
+.zone-section a[href*="terrassement-"]:hover,
+.zone-section a[href="terrassement.html"]:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary) !important;
+    box-shadow: 0 8px 25px rgba(255, 180, 0, 0.15);
+}
+
 /* NLP ENTITY HIGHLIGHT */
 mark { background: rgba(255,180,0,0.15); padding: 2px 4px; border-radius: 3px; }
 

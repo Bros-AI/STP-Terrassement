@@ -1132,45 +1132,134 @@
     </section>
 
     <!-- Zone d'Intervention -->
-    <section class="section zone-section bg-light">
+    <section class="section zone-section" style="background: var(--dark); color: white;">
         <div class="container">
-            <div class="section-header">
-                <span class="subtitle">ZONE D'INTERVENTION</span>
-                <h2>Terrassement VRD Aix-en-Provence et Environs : Nous Intervenons Partout</h2>
-                <p class="section-intro">Entreprise locale basée à <strong>Aix-en-Provence</strong>, nous intervenons dans toutes les <strong>Bouches-du-Rhône</strong> et la <strong>région PACA</strong> pour vos travaux de <strong>terrassement</strong>, <strong>VRD</strong>, <strong>assainissement</strong> et <strong>aménagement extérieur</strong>.</p>
+            <div class="section-header" style="color: white;">
+                <span class="subtitle" style="color: var(--primary);">ZONE D'INTERVENTION</span>
+                <h2 style="color: white;">Nous Intervenons Près de Chez Vous</h2>
+                <p style="color: #9ca3af; max-width: 700px; margin: 15px auto 0;">Cliquez sur votre ville pour découvrir nos services de terrassement, VRD, enrobé et démolition disponibles.</p>
             </div>
-            <div class="zone-content">
-                <div class="zone-map">
-                    <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
-                </div>
-                <div class="zone-list">
-                    <h3><i class="fa-solid fa-location-dot text-yellow" aria-hidden="true"></i> Aix-en-Provence et environs</h3>
-                    <div class="cities-grid">
-                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Aix-en-Provence (13090)</div>
-                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Marseille (13001-13016)</div>
-                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Gardanne (13120)</div>
-                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Bouc-Bel-Air (13320)</div>
-                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Salon-de-Provence (13300)</div>
-                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Aubagne (13400)</div>
-                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Vitrolles (13127)</div>
-                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Marignane (13700)</div>
-                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Pertuis (84120)</div>
-                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Fuveau (13710)</div>
-                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Trets (13530)</div>
-                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Cabriès (13480)</div>
-                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Simiane-Collongue (13109)</div>
-                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Venelles (13770)</div>
-                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Éguilles (13510)</div>
-                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Meyreuil (13590)</div>
-                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Peynier (13790)</div>
-                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Luynes (13080)</div>
-                        <div class="city-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Les Milles (13290)</div>
+
+            <!-- Main cities - large cards -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 50px;">
+                <a href="terrassement-marseille.html" style="background: linear-gradient(135deg, #1e293b, #334155); border: 1px solid #334155; border-radius: 16px; padding: 30px 25px; text-decoration: none; color: white; transition: all 0.3s ease; display: flex; flex-direction: column; gap: 12px;">
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <span style="font-family: var(--font-head); font-size: 1.3rem; font-weight: 700; text-transform: uppercase;">Marseille</span>
+                        <span style="background: var(--primary); color: var(--dark); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">13001</span>
                     </div>
-                    <p class="zone-note"><strong>Votre ville n'est pas listée ?</strong> <a href="zones-intervention.html" style="color: var(--primary); text-decoration: underline;">Contactez-nous !</a> Nous intervenons dans toute la région PACA.</p>
-                </div>
+                    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                        <span style="background: rgba(255,180,0,0.15); color: var(--primary); padding: 4px 10px; border-radius: 6px; font-size: 0.75rem;">Terrassement</span>
+                        <span style="background: rgba(255,180,0,0.15); color: var(--primary); padding: 4px 10px; border-radius: 6px; font-size: 0.75rem;">Enrobé</span>
+                        <span style="background: rgba(255,180,0,0.15); color: var(--primary); padding: 4px 10px; border-radius: 6px; font-size: 0.75rem;">VRD</span>
+                        <span style="background: rgba(255,180,0,0.15); color: var(--primary); padding: 4px 10px; border-radius: 6px; font-size: 0.75rem;">Démolition</span>
+                        <span style="background: rgba(255,180,0,0.15); color: var(--primary); padding: 4px 10px; border-radius: 6px; font-size: 0.75rem;">Piscine</span>
+                    </div>
+                    <span style="color: #9ca3af; font-size: 0.85rem;">Tous arrondissements <i class="fa-solid fa-arrow-right" style="color: var(--primary);"></i></span>
+                </a>
+                <a href="terrassement.html" style="background: linear-gradient(135deg, #92400e, #b45309); border: 2px solid var(--primary); border-radius: 16px; padding: 30px 25px; text-decoration: none; color: white; transition: all 0.3s ease; display: flex; flex-direction: column; gap: 12px; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 0; right: 0; background: var(--primary); color: var(--dark); padding: 4px 14px; border-radius: 0 14px 0 12px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase;">Siège</div>
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <span style="font-family: var(--font-head); font-size: 1.3rem; font-weight: 700; text-transform: uppercase;">Aix-en-Provence</span>
+                        <span style="background: var(--primary); color: var(--dark); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">13090</span>
+                    </div>
+                    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                        <span style="background: rgba(255,255,255,0.2); color: white; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem;">Tous services</span>
+                        <span style="background: rgba(255,255,255,0.2); color: white; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem;">Enrobé</span>
+                        <span style="background: rgba(255,255,255,0.2); color: white; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem;">Piscine</span>
+                        <span style="background: rgba(255,255,255,0.2); color: white; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem;">Fondations</span>
+                    </div>
+                    <span style="color: rgba(255,255,255,0.8); font-size: 0.85rem;">Notre zone principale <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a href="terrassement-aubagne.html" style="background: linear-gradient(135deg, #1e293b, #334155); border: 1px solid #334155; border-radius: 16px; padding: 30px 25px; text-decoration: none; color: white; transition: all 0.3s ease; display: flex; flex-direction: column; gap: 12px;">
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <span style="font-family: var(--font-head); font-size: 1.3rem; font-weight: 700; text-transform: uppercase;">Aubagne</span>
+                        <span style="background: var(--primary); color: var(--dark); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">13400</span>
+                    </div>
+                    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                        <span style="background: rgba(255,180,0,0.15); color: var(--primary); padding: 4px 10px; border-radius: 6px; font-size: 0.75rem;">Terrassement</span>
+                        <span style="background: rgba(255,180,0,0.15); color: var(--primary); padding: 4px 10px; border-radius: 6px; font-size: 0.75rem;">Enrobé</span>
+                        <span style="background: rgba(255,180,0,0.15); color: var(--primary); padding: 4px 10px; border-radius: 6px; font-size: 0.75rem;">VRD</span>
+                        <span style="background: rgba(255,180,0,0.15); color: var(--primary); padding: 4px 10px; border-radius: 6px; font-size: 0.75rem;">Piscine</span>
+                    </div>
+                    <span style="color: #9ca3af; font-size: 0.85rem;">Garlaban & alentours <i class="fa-solid fa-arrow-right" style="color: var(--primary);"></i></span>
+                </a>
             </div>
-            <div style="text-align: center; margin-top: 50px;">
-                <a href="zones-intervention.html" class="btn btn-primary btn-lg"><i class="fa-solid fa-map-marked-alt"></i> Voir Toutes Nos Zones d'Intervention</a>
+
+            <!-- Secondary cities - compact grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-top: 25px;">
+                <a href="terrassement-gardanne.html" style="background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 16px 18px; text-decoration: none; color: white; display: flex; align-items: center; justify-content: space-between; transition: all 0.3s ease;">
+                    <span style="font-weight: 600; font-size: 0.95rem;">Gardanne</span>
+                    <span style="color: #64748b; font-size: 0.8rem;">13120 <i class="fa-solid fa-chevron-right" style="color: var(--primary); font-size: 0.7rem; margin-left: 4px;"></i></span>
+                </a>
+                <a href="terrassement-bouc-bel-air.html" style="background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 16px 18px; text-decoration: none; color: white; display: flex; align-items: center; justify-content: space-between; transition: all 0.3s ease;">
+                    <span style="font-weight: 600; font-size: 0.95rem;">Bouc-Bel-Air</span>
+                    <span style="color: #64748b; font-size: 0.8rem;">13320 <i class="fa-solid fa-chevron-right" style="color: var(--primary); font-size: 0.7rem; margin-left: 4px;"></i></span>
+                </a>
+                <a href="terrassement-salon-de-provence.html" style="background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 16px 18px; text-decoration: none; color: white; display: flex; align-items: center; justify-content: space-between; transition: all 0.3s ease;">
+                    <span style="font-weight: 600; font-size: 0.95rem;">Salon-de-Provence</span>
+                    <span style="color: #64748b; font-size: 0.8rem;">13300 <i class="fa-solid fa-chevron-right" style="color: var(--primary); font-size: 0.7rem; margin-left: 4px;"></i></span>
+                </a>
+                <a href="terrassement-vitrolles.html" style="background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 16px 18px; text-decoration: none; color: white; display: flex; align-items: center; justify-content: space-between; transition: all 0.3s ease;">
+                    <span style="font-weight: 600; font-size: 0.95rem;">Vitrolles</span>
+                    <span style="color: #64748b; font-size: 0.8rem;">13127 <i class="fa-solid fa-chevron-right" style="color: var(--primary); font-size: 0.7rem; margin-left: 4px;"></i></span>
+                </a>
+                <a href="terrassement-marignane.html" style="background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 16px 18px; text-decoration: none; color: white; display: flex; align-items: center; justify-content: space-between; transition: all 0.3s ease;">
+                    <span style="font-weight: 600; font-size: 0.95rem;">Marignane</span>
+                    <span style="color: #64748b; font-size: 0.8rem;">13700 <i class="fa-solid fa-chevron-right" style="color: var(--primary); font-size: 0.7rem; margin-left: 4px;"></i></span>
+                </a>
+                <a href="terrassement-pertuis.html" style="background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 16px 18px; text-decoration: none; color: white; display: flex; align-items: center; justify-content: space-between; transition: all 0.3s ease;">
+                    <span style="font-weight: 600; font-size: 0.95rem;">Pertuis</span>
+                    <span style="color: #64748b; font-size: 0.8rem;">84120 <i class="fa-solid fa-chevron-right" style="color: var(--primary); font-size: 0.7rem; margin-left: 4px;"></i></span>
+                </a>
+                <a href="terrassement-fuveau.html" style="background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 16px 18px; text-decoration: none; color: white; display: flex; align-items: center; justify-content: space-between; transition: all 0.3s ease;">
+                    <span style="font-weight: 600; font-size: 0.95rem;">Fuveau</span>
+                    <span style="color: #64748b; font-size: 0.8rem;">13710 <i class="fa-solid fa-chevron-right" style="color: var(--primary); font-size: 0.7rem; margin-left: 4px;"></i></span>
+                </a>
+                <a href="terrassement-trets.html" style="background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 16px 18px; text-decoration: none; color: white; display: flex; align-items: center; justify-content: space-between; transition: all 0.3s ease;">
+                    <span style="font-weight: 600; font-size: 0.95rem;">Trets</span>
+                    <span style="color: #64748b; font-size: 0.8rem;">13530 <i class="fa-solid fa-chevron-right" style="color: var(--primary); font-size: 0.7rem; margin-left: 4px;"></i></span>
+                </a>
+                <a href="terrassement-cabries.html" style="background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 16px 18px; text-decoration: none; color: white; display: flex; align-items: center; justify-content: space-between; transition: all 0.3s ease;">
+                    <span style="font-weight: 600; font-size: 0.95rem;">Cabriès</span>
+                    <span style="color: #64748b; font-size: 0.8rem;">13480 <i class="fa-solid fa-chevron-right" style="color: var(--primary); font-size: 0.7rem; margin-left: 4px;"></i></span>
+                </a>
+                <a href="terrassement-venelles.html" style="background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 16px 18px; text-decoration: none; color: white; display: flex; align-items: center; justify-content: space-between; transition: all 0.3s ease;">
+                    <span style="font-weight: 600; font-size: 0.95rem;">Venelles</span>
+                    <span style="color: #64748b; font-size: 0.8rem;">13770 <i class="fa-solid fa-chevron-right" style="color: var(--primary); font-size: 0.7rem; margin-left: 4px;"></i></span>
+                </a>
+                <a href="terrassement-eguilles.html" style="background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 16px 18px; text-decoration: none; color: white; display: flex; align-items: center; justify-content: space-between; transition: all 0.3s ease;">
+                    <span style="font-weight: 600; font-size: 0.95rem;">Éguilles</span>
+                    <span style="color: #64748b; font-size: 0.8rem;">13510 <i class="fa-solid fa-chevron-right" style="color: var(--primary); font-size: 0.7rem; margin-left: 4px;"></i></span>
+                </a>
+                <a href="terrassement-luynes.html" style="background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 16px 18px; text-decoration: none; color: white; display: flex; align-items: center; justify-content: space-between; transition: all 0.3s ease;">
+                    <span style="font-weight: 600; font-size: 0.95rem;">Luynes</span>
+                    <span style="color: #64748b; font-size: 0.8rem;">13080 <i class="fa-solid fa-chevron-right" style="color: var(--primary); font-size: 0.7rem; margin-left: 4px;"></i></span>
+                </a>
+                <a href="terrassement-meyreuil.html" style="background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 16px 18px; text-decoration: none; color: white; display: flex; align-items: center; justify-content: space-between; transition: all 0.3s ease;">
+                    <span style="font-weight: 600; font-size: 0.95rem;">Meyreuil</span>
+                    <span style="color: #64748b; font-size: 0.8rem;">13590 <i class="fa-solid fa-chevron-right" style="color: var(--primary); font-size: 0.7rem; margin-left: 4px;"></i></span>
+                </a>
+                <a href="terrassement-simiane-collongue.html" style="background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 16px 18px; text-decoration: none; color: white; display: flex; align-items: center; justify-content: space-between; transition: all 0.3s ease;">
+                    <span style="font-weight: 600; font-size: 0.95rem;">Simiane-Collongue</span>
+                    <span style="color: #64748b; font-size: 0.8rem;">13109 <i class="fa-solid fa-chevron-right" style="color: var(--primary); font-size: 0.7rem; margin-left: 4px;"></i></span>
+                </a>
+                <a href="terrassement-peynier.html" style="background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 16px 18px; text-decoration: none; color: white; display: flex; align-items: center; justify-content: space-between; transition: all 0.3s ease;">
+                    <span style="font-weight: 600; font-size: 0.95rem;">Peynier</span>
+                    <span style="color: #64748b; font-size: 0.8rem;">13790 <i class="fa-solid fa-chevron-right" style="color: var(--primary); font-size: 0.7rem; margin-left: 4px;"></i></span>
+                </a>
+                <a href="terrassement-les-milles.html" style="background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 16px 18px; text-decoration: none; color: white; display: flex; align-items: center; justify-content: space-between; transition: all 0.3s ease;">
+                    <span style="font-weight: 600; font-size: 0.95rem;">Les Milles</span>
+                    <span style="color: #64748b; font-size: 0.8rem;">13290 <i class="fa-solid fa-chevron-right" style="color: var(--primary); font-size: 0.7rem; margin-left: 4px;"></i></span>
+                </a>
+            </div>
+
+            <!-- CTA -->
+            <div style="text-align: center; margin-top: 40px; padding: 30px; background: linear-gradient(135deg, #1e293b, #0f172a); border-radius: 16px; border: 1px solid #334155;">
+                <p style="color: #9ca3af; margin-bottom: 15px;">Votre ville n'est pas listée ? Nous intervenons dans toute la <strong style="color: white;">région PACA</strong></p>
+                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <a href="zones-intervention.html" class="btn btn-primary"><i class="fa-solid fa-map-marked-alt"></i> Toutes Nos Zones</a>
+                    <a href="devis-gratuit.html" class="btn btn-whatsapp"><i class="fa-solid fa-calculator"></i> Devis Gratuit</a>
+                </div>
             </div>
         </div>
     </section>
