@@ -3,3 +3,9 @@ Allow: /
 Disallow: /v38cnl93ujw3zgpz916ykx807t2c3v.html
 
 Sitemap: https://stp-terrassement.com/sitemap.xml
+
+# LLM context
+User-agent: ChatGPT-User
+User-agent: Claude-Web
+User-agent: Googlebot
+Allow: /llms.txt

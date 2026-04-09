@@ -401,8 +401,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // SCROLL REVEAL ANIMATIONS
     // ========================================
     const observerOptions = {
-        threshold: 0.05,
-        rootMargin: '0px 0px 50px 0px'
+        threshold: 0.02,
+        rootMargin: '0px 0px 100px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -417,24 +417,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const animatedElements = document.querySelectorAll('.card, .problem-card, .process-step, .testimonial-card, .gallery-item, .why-card');
 
-    // Group elements by their parent container so delay resets per section
-    const parentGroups = new Map();
-    animatedElements.forEach((el) => {
-        const parent = el.parentElement;
-        if (!parentGroups.has(parent)) {
-            parentGroups.set(parent, []);
-        }
-        parentGroups.get(parent).push(el);
-    });
-
-    parentGroups.forEach((elements) => {
-        elements.forEach((el, index) => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-            el.style.transitionDelay = `${Math.min(index * 0.08, 0.4)}s`;
-            observer.observe(el);
-        });
+    animatedElements.forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(15px)';
+        el.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        el.style.transitionDelay = '0s';
+        observer.observe(el);
     });
 
     // ========================================
