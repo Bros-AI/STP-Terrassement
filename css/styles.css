@@ -23,12 +23,13 @@
 /* --- RESET & BASE --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
-body { 
-    font-family: var(--font-main); 
-    color: var(--text); 
-    line-height: 1.6; 
+body {
+    font-family: var(--font-main);
+    color: var(--text);
+    line-height: 1.6;
     background: var(--white);
     overflow-x: hidden;
+    font-size-adjust: 0.5;
 }
 h1, h2, h3, h4 { 
     font-family: var(--font-head); 
@@ -124,15 +125,16 @@ ul { list-style: none; }
 
 /* --- NAVBAR --- */
 .navbar {
-    position: fixed; 
-    top: 0; 
-    width: 100%; 
+    position: fixed;
+    top: 0;
+    width: 100%;
     z-index: 1000;
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow);
     padding: 15px 0;
-    transition: var(--transition);
+    min-height: 70px;
+    transition: box-shadow 0.3s ease;
 }
 .nav-container { 
     display: flex; 
@@ -245,6 +247,7 @@ ul { list-style: none; }
     background-attachment: fixed;
     padding-top: 100px;
     padding-bottom: 100px;
+    contain: layout style;
 }
 .hero-overlay {
     position: absolute; 
@@ -458,7 +461,8 @@ ul { list-style: none; }
     box-shadow: var(--shadow);
     transition: var(--transition);
     border: 1px solid #f3f4f6;
-    will-change: transform;
+    will-change: opacity, transform;
+    contain: layout style;
 }
 .card:hover { 
     transform: translateY(-8px); 
@@ -552,6 +556,8 @@ ul { list-style: none; }
     box-shadow: var(--shadow);
     transition: var(--transition);
     border-left: 4px solid var(--danger);
+    will-change: opacity, transform;
+    contain: layout style;
 }
 .problem-card:hover {
     transform: translateY(-5px);
@@ -662,6 +668,8 @@ ul { list-style: none; }
     transition: var(--transition);
     position: relative;
     border: 2px solid var(--gray);
+    will-change: opacity, transform;
+    contain: layout style;
 }
 .process-step:hover {
     transform: translateY(-5px);
@@ -830,6 +838,8 @@ ul { list-style: none; }
     backdrop-filter: blur(10px);
     position: relative;
     overflow: hidden;
+    will-change: opacity, transform;
+    contain: layout style;
 }
 
 .why-card::before {
@@ -1005,13 +1015,15 @@ ul { list-style: none; }
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
     gap: 20px; 
 }
-.gallery-item { 
-    position: relative; 
-    height: 280px; 
-    border-radius: 15px; 
-    overflow: hidden; 
+.gallery-item {
+    position: relative;
+    height: 280px;
+    border-radius: 15px;
+    overflow: hidden;
     cursor: pointer;
     box-shadow: var(--shadow);
+    will-change: opacity, transform;
+    contain: layout style;
 }
 .gallery-item img {
     width: 100%;
@@ -1062,6 +1074,8 @@ ul { list-style: none; }
     box-shadow: var(--shadow);
     transition: var(--transition);
     border-top: 4px solid var(--primary);
+    will-change: opacity, transform;
+    contain: layout style;
 }
 .testimonial-card:hover {
     transform: translateY(-5px);
@@ -1433,7 +1447,7 @@ footer {
 @media (max-width: 768px) {
     .hero {
         background-attachment: scroll !important;
-        min-height: auto;
+        min-height: 500px;
         padding: 120px 0 60px;
     }
     .hero-content { 

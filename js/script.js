@@ -58,10 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (currentScroll > 50) {
             navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
-            navbar.style.padding = '10px 0';
         } else {
             navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
-            navbar.style.padding = '15px 0';
         }
 
         lastScroll = currentScroll;
@@ -725,5 +723,16 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('%cSTP TERRASSEMENT', 'font-size: 24px; font-weight: bold; color: #FFB400;');
     console.log('%cVous cherchez à améliorer votre site ? Contactez-nous !', 'font-size: 14px; color: #666;');
     console.log('%c📞 07 45 14 20 49', 'font-size: 16px; color: #25D366; font-weight: bold;');
+
+    // ========================================
+    // EMAIL PROTECTION
+    // ========================================
+    document.querySelectorAll('.email-protect').forEach(el => {
+        const u = el.dataset.user;
+        const d = el.dataset.domain;
+        el.textContent = u + '@' + d;
+        el.parentElement.href = 'mailto:' + u + '@' + d;
+        el.parentElement.removeAttribute('onclick');
+    });
 
 });
