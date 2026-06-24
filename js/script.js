@@ -286,7 +286,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
             
-            // Submit the form via the visitor's email client (mailto)
+            // Submit the form by opening Gmail web compose (works without a
+            // desktop mail app; falls back to mailto for non-Gmail users)
             btn.innerHTML = '<i class="fa-solid fa-envelope"></i> Ouverture de votre messagerie...';
             btn.disabled = true;
             btn.style.opacity = '0.7';
@@ -315,10 +316,21 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const subject = 'Demande de devis - STP Terrassement';
-            const mailUrl = 'mailto:' + mailTo +
-                '?subject=' + encodeURIComponent(subject) +
-                '&body=' + encodeURIComponent(lines.join('\n'));
-            window.location.href = mailUrl;
+            const body = lines.join('\n');
+
+            // Open Gmail compose in a new tab (no mail app required)
+            const gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1' +
+                '&to=' + encodeURIComponent(mailTo) +
+                '&su=' + encodeURIComponent(subject) +
+                '&body=' + encodeURIComponent(body);
+            const gmailWindow = window.open(gmailUrl, '_blank');
+
+            // Fallback to the default mail client if the popup was blocked
+            if (!gmailWindow) {
+                window.location.href = 'mailto:' + mailTo +
+                    '?subject=' + encodeURIComponent(subject) +
+                    '&body=' + encodeURIComponent(body);
+            }
 
             showNotification('Ouverture de votre messagerie pour envoyer la demande.', 'success');
             form.reset();
