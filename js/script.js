@@ -286,8 +286,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
             
-            // Submit the form
-            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Envoi en cours...';
+            // Submit the form via WhatsApp
+            btn.innerHTML = '<i class="fa-brands fa-whatsapp"></i> Ouverture de WhatsApp...';
             btn.disabled = true;
             btn.style.opacity = '0.7';
 
@@ -297,37 +297,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.style.opacity = '1';
             };
 
-            // Use FormSubmit's AJAX endpoint so fetch() gets a JSON/CORS response
-            const endpoint = form.action.replace(
-                /^(https?:\/\/formsubmit\.co\/)(?!ajax\/)/,
-                '$1ajax/'
-            );
+            // Build a WhatsApp message from the form fields
+            const waNumber = '33745142049';
+            const labels = {
+                name: 'Nom',
+                phone: 'Téléphone',
+                email: 'Email',
+                service: 'Type de travaux',
+                message: 'Projet'
+            };
 
-            // Actually send the data to the form's endpoint (FormSubmit)
-            fetch(endpoint, {
-                method: (form.method || 'POST').toUpperCase(),
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                showNotification('Demande envoyée avec succès ! Nous vous contacterons sous 24h.', 'success');
-                form.reset();
-                resetButton();
+            const lines = ['Bonjour STP Terrassement, voici ma demande de devis :', ''];
+            for (const [key, value] of formData.entries()) {
+                // Skip FormSubmit hidden fields (_subject, _next, ...) and empty values
+                if (key.charAt(0) === '_' || !String(value).trim()) continue;
+                lines.push((labels[key] || key) + ' : ' + value);
+            }
 
-                // Optional: Track conversion
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'conversion', {
-                        'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL'
-                    });
-                }
-            })
-            .catch(() => {
-                showNotification('Erreur lors de l\'envoi. Veuillez nous appeler au 07 45 14 20 49.', 'error');
-                resetButton();
-            });
+            const waUrl = 'https://wa.me/' + waNumber + '?text=' + encodeURIComponent(lines.join('\n'));
+            window.open(waUrl, '_blank');
+
+            showNotification('Redirection vers WhatsApp pour finaliser votre demande.', 'success');
+            form.reset();
+            resetButton();
+
+            // Optional: Track conversion
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL'
+                });
+            }
         });
         
         // Real-time validation on input
