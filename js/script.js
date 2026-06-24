@@ -286,10 +286,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
             
-            // Submit the form by opening the sender's webmail (Gmail, Outlook,
-            // Yahoo...) detected from the email they typed; fall back to the
-            // device's default mail app (mailto) for anything else.
-            btn.innerHTML = '<i class="fa-solid fa-envelope"></i> Ouverture de votre messagerie...';
+            // Send the form to Web3Forms (delivers the lead straight to the
+            // inbox, works for every visitor regardless of their email provider)
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Envoi en cours...';
             btn.disabled = true;
             btn.style.opacity = '0.7';
 
@@ -299,63 +298,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.style.opacity = '1';
             };
 
-            // Build an email from the form fields
-            const mailTo = 'stp13109@gmail.com';
-            const labels = {
-                name: 'Nom',
-                phone: 'Téléphone',
-                email: 'Email',
-                service: 'Type de travaux',
-                message: 'Projet'
-            };
+            fetch(form.action, {
+                method: (form.method || 'POST').toUpperCase(),
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (!data.success) {
+                    throw new Error(data.message || 'Submission failed');
+                }
+                showNotification('Demande envoyée avec succès ! Nous vous contacterons sous 24h.', 'success');
+                form.reset();
+                resetButton();
 
-            const lines = ['Bonjour STP Terrassement, voici ma demande de devis :', ''];
-            for (const [key, value] of formData.entries()) {
-                // Skip FormSubmit hidden fields (_subject, _next, ...) and empty values
-                if (key.charAt(0) === '_' || !String(value).trim()) continue;
-                lines.push((labels[key] || key) + ' : ' + value);
-            }
-
-            const subject = 'Demande de devis - STP Terrassement';
-            const body = lines.join('\n');
-            const eTo = encodeURIComponent(mailTo);
-            const eSu = encodeURIComponent(subject);
-            const eBody = encodeURIComponent(body);
-
-            // Pick the right webmail compose URL based on the sender's email domain
-            const senderDomain = ((formData.get('email') || '').split('@')[1] || '').toLowerCase();
-            let webmailUrl = null;
-            if (/(^|\.)gmail\.com$|googlemail\.com$/.test(senderDomain)) {
-                webmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + eTo + '&su=' + eSu + '&body=' + eBody;
-            } else if (/(outlook|hotmail|live|msn)\./.test(senderDomain)) {
-                webmailUrl = 'https://outlook.live.com/mail/0/deeplink/compose?to=' + eTo + '&subject=' + eSu + '&body=' + eBody;
-            } else if (/yahoo\./.test(senderDomain)) {
-                webmailUrl = 'https://compose.mail.yahoo.com/?to=' + eTo + '&subject=' + eSu + '&body=' + eBody;
-            } else if (/(laposte\.net|orange\.fr|wanadoo\.fr)$/.test(senderDomain)) {
-                webmailUrl = 'https://mail.laposte.net/';
-            }
-
-            const mailtoUrl = 'mailto:' + mailTo + '?subject=' + eSu + '&body=' + eBody;
-
-            if (webmailUrl) {
-                // Open the detected webmail in a new tab; fall back to mailto if blocked
-                const win = window.open(webmailUrl, '_blank');
-                if (!win) window.location.href = mailtoUrl;
-            } else {
-                // Unknown provider: use the device's default mail app
-                window.location.href = mailtoUrl;
-            }
-
-            showNotification('Ouverture de votre messagerie pour envoyer la demande.', 'success');
-            form.reset();
-            resetButton();
-
-            // Optional: Track conversion
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'conversion', {
-                    'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL'
-                });
-            }
+                // Optional: Track conversion
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'conversion', {
+                        'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL'
+                    });
+                }
+            })
+            .catch(() => {
+                showNotification('Erreur lors de l\'envoi. Veuillez nous appeler au 07 45 14 20 49.', 'error');
+                resetButton();
+            });
         });
         
         // Real-time validation on input

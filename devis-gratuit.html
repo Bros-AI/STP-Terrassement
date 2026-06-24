@@ -266,9 +266,10 @@
                             <h3>Devis Express sous 24h</h3>
                         </div>
                         <p class="form-subtitle">Décrivez votre projet ici</p>
-                        <form id="devis-form" action="https://formsubmit.co/70bf47207c3a0746f0b14eba6d95ab83" method="POST">
-                            <input type="hidden" name="_subject" value="Nouvelle demande de devis - STP Terrassement">
-                            <input type="hidden" name="_next" value="https://stp-terrassement.com/devis-gratuit.html">
+                        <form id="devis-form" action="https://api.web3forms.com/submit" method="POST">
+                            <input type="hidden" name="access_key" value="44d8e7c6-3aa9-443c-b1b2-a34e0765a1b8">
+                            <input type="hidden" name="subject" value="Nouvelle demande de devis - STP Terrassement">
+                            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
                             <input type="text" name="name" placeholder="Votre Nom *" required aria-label="Votre nom" autocomplete="name">
                             <input type="tel" name="phone" placeholder="Téléphone (06/07...) *" pattern="[0-9]{10}" required aria-label="Votre téléphone" autocomplete="tel">
                             <input type="email" name="email" placeholder="Email" aria-label="Votre email" autocomplete="email">
