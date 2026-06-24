@@ -286,26 +286,48 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
             
-            // Simulate form submission
+            // Submit the form
             btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Envoi en cours...';
             btn.disabled = true;
             btn.style.opacity = '0.7';
-            
-            // Simulate API call
-            setTimeout(() => {
-                showNotification('Demande envoyée avec succès ! Nous vous contacterons sous 24h.', 'success');
-                form.reset();
+
+            const resetButton = () => {
                 btn.innerHTML = originalText;
                 btn.disabled = false;
                 btn.style.opacity = '1';
-                
+            };
+
+            // Use FormSubmit's AJAX endpoint so fetch() gets a JSON/CORS response
+            const endpoint = form.action.replace(
+                /^(https?:\/\/formsubmit\.co\/)(?!ajax\/)/,
+                '$1ajax/'
+            );
+
+            // Actually send the data to the form's endpoint (FormSubmit)
+            fetch(endpoint, {
+                method: (form.method || 'POST').toUpperCase(),
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                showNotification('Demande envoyée avec succès ! Nous vous contacterons sous 24h.', 'success');
+                form.reset();
+                resetButton();
+
                 // Optional: Track conversion
                 if (typeof gtag !== 'undefined') {
                     gtag('event', 'conversion', {
                         'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL'
                     });
                 }
-            }, 1500);
+            })
+            .catch(() => {
+                showNotification('Erreur lors de l\'envoi. Veuillez nous appeler au 07 45 14 20 49.', 'error');
+                resetButton();
+            });
         });
         
         // Real-time validation on input
