@@ -931,4 +931,41 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+  <!-- ===== BLOG - NOUVEAUX ARTICLES JUIN 2026 ===== -->
+  <url>
+    <loc>https://stp-terrassement.com/blog/debroussaillement-obligatoire-paca.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/blog/prix-dalle-beton-m2.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/blog/prix-evacuation-gravats.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/blog/prix-tranchee-ml.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/blog/comment-calculer-volume-terrassement.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/blog/prix-vide-sanitaire.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
