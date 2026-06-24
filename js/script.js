@@ -286,8 +286,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
             
-            // Submit the form via WhatsApp
-            btn.innerHTML = '<i class="fa-brands fa-whatsapp"></i> Ouverture de WhatsApp...';
+            // Submit the form via the visitor's email client (mailto)
+            btn.innerHTML = '<i class="fa-solid fa-envelope"></i> Ouverture de votre messagerie...';
             btn.disabled = true;
             btn.style.opacity = '0.7';
 
@@ -297,8 +297,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.style.opacity = '1';
             };
 
-            // Build a WhatsApp message from the form fields
-            const waNumber = '33745142049';
+            // Build an email from the form fields
+            const mailTo = 'stp13109@gmail.com';
             const labels = {
                 name: 'Nom',
                 phone: 'Téléphone',
@@ -314,10 +314,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 lines.push((labels[key] || key) + ' : ' + value);
             }
 
-            const waUrl = 'https://wa.me/' + waNumber + '?text=' + encodeURIComponent(lines.join('\n'));
-            window.open(waUrl, '_blank');
+            const subject = 'Demande de devis - STP Terrassement';
+            const mailUrl = 'mailto:' + mailTo +
+                '?subject=' + encodeURIComponent(subject) +
+                '&body=' + encodeURIComponent(lines.join('\n'));
+            window.location.href = mailUrl;
 
-            showNotification('Redirection vers WhatsApp pour finaliser votre demande.', 'success');
+            showNotification('Ouverture de votre messagerie pour envoyer la demande.', 'success');
             form.reset();
             resetButton();
 
