@@ -286,8 +286,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
             
-            // Submit the form by opening Gmail web compose (works without a
-            // desktop mail app; falls back to mailto for non-Gmail users)
+            // Submit the form by opening the sender's webmail (Gmail, Outlook,
+            // Yahoo...) detected from the email they typed; fall back to the
+            // device's default mail app (mailto) for anything else.
             btn.innerHTML = '<i class="fa-solid fa-envelope"></i> Ouverture de votre messagerie...';
             btn.disabled = true;
             btn.style.opacity = '0.7';
@@ -317,19 +318,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const subject = 'Demande de devis - STP Terrassement';
             const body = lines.join('\n');
+            const eTo = encodeURIComponent(mailTo);
+            const eSu = encodeURIComponent(subject);
+            const eBody = encodeURIComponent(body);
 
-            // Open Gmail compose in a new tab (no mail app required)
-            const gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1' +
-                '&to=' + encodeURIComponent(mailTo) +
-                '&su=' + encodeURIComponent(subject) +
-                '&body=' + encodeURIComponent(body);
-            const gmailWindow = window.open(gmailUrl, '_blank');
+            // Pick the right webmail compose URL based on the sender's email domain
+            const senderDomain = ((formData.get('email') || '').split('@')[1] || '').toLowerCase();
+            let webmailUrl = null;
+            if (/(^|\.)gmail\.com$|googlemail\.com$/.test(senderDomain)) {
+                webmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + eTo + '&su=' + eSu + '&body=' + eBody;
+            } else if (/(outlook|hotmail|live|msn)\./.test(senderDomain)) {
+                webmailUrl = 'https://outlook.live.com/mail/0/deeplink/compose?to=' + eTo + '&subject=' + eSu + '&body=' + eBody;
+            } else if (/yahoo\./.test(senderDomain)) {
+                webmailUrl = 'https://compose.mail.yahoo.com/?to=' + eTo + '&subject=' + eSu + '&body=' + eBody;
+            } else if (/(laposte\.net|orange\.fr|wanadoo\.fr)$/.test(senderDomain)) {
+                webmailUrl = 'https://mail.laposte.net/';
+            }
 
-            // Fallback to the default mail client if the popup was blocked
-            if (!gmailWindow) {
-                window.location.href = 'mailto:' + mailTo +
-                    '?subject=' + encodeURIComponent(subject) +
-                    '&body=' + encodeURIComponent(body);
+            const mailtoUrl = 'mailto:' + mailTo + '?subject=' + eSu + '&body=' + eBody;
+
+            if (webmailUrl) {
+                // Open the detected webmail in a new tab; fall back to mailto if blocked
+                const win = window.open(webmailUrl, '_blank');
+                if (!win) window.location.href = mailtoUrl;
+            } else {
+                // Unknown provider: use the device's default mail app
+                window.location.href = mailtoUrl;
             }
 
             showNotification('Ouverture de votre messagerie pour envoyer la demande.', 'success');
