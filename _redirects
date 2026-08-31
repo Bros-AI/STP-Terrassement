@@ -1,0 +1,2 @@
+# Netlify redirects (inert on GitHub Pages). Canonical host: apex.
+https://www.stp-terrassement.com/* https://stp-terrassement.com/:splat 301!
