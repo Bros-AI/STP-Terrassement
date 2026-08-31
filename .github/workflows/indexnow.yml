@@ -1,0 +1,24 @@
+name: IndexNow on push
+on:
+  push:
+    branches: [main]
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 2 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Wait for Pages deploy to settle
+        run: sleep 90
+      - name: Submit changed pages to IndexNow
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: |
+          git diff --name-only HEAD^ HEAD -- '*.html' 'sitemap.xml' \
+            | grep -v -E '^(404|avis|v38)' \
+            | sed -E 's|^index\.html$||; s|^(.+\.html)$|https://stp-terrassement.com/\1|; s|^$|https://stp-terrassement.com/|; s|^sitemap\.xml$|https://stp-terrassement.com/sitemap.xml|' \
+            | sort -u \
+            | python scripts/submit-indexnow.py --stdin
