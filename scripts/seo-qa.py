@@ -181,11 +181,30 @@ def main():
             else:
                 err(f'{fn}: preloaded image not used by the page: {url}')
 
-        # css strategy: exactly one plain blocking styles.css link
-        n_block = len(re.findall(r'<link rel="stylesheet" href="(?:\.\./)?css/styles\.css">', t))
-        n_any = t.count('styles.css')
-        if n_block != 1 or n_any != 1:
-            err(f'{fn}: styles.css strategy wrong (blocking={n_block}, refs={n_any}; want 1/1)')
+        # css strategy — two sanctioned patterns:
+        #  root template pages: inline critical CSS + async styles.css
+        #    (preload+onload + noscript fallback, no plain blocking link)
+        #  blog articles: exactly one plain blocking stylesheet
+        n_noscript = len(re.findall(r'<noscript><link rel="stylesheet" href="(?:\.\./)?css/styles\.css">', t))
+        n_block = len(re.findall(r'<link rel="stylesheet" href="(?:\.\./)?css/styles\.css">', t)) - n_noscript
+        n_async = len(re.findall(r'<link rel="preload" href="(?:\.\./)?css/styles\.css" as="style" onload=', t))
+        has_critical = 'critical:start' in t
+        if fn.startswith('blog/'):
+            if n_block != 1 or n_async or has_critical:
+                err(f'{fn}: blog page must use one blocking styles.css '
+                    f'(blocking={n_block}, async={n_async}, critical={has_critical})')
+        elif 'class="navbar"' in t:
+            if not (has_critical and n_async == 1 and n_noscript == 1 and n_block == 0):
+                err(f'{fn}: root page must use critical CSS + async styles.css '
+                    f'(critical={has_critical}, async={n_async}, noscript={n_noscript}, blocking={n_block})')
+
+        # hreflang self + x-default (single-language site, documented intent)
+        if 'hreflang="fr"' not in t or 'hreflang="x-default"' not in t:
+            err(f'{fn}: missing hreflang fr/x-default pair')
+
+        # noindex is only allowed on the utility pages excluded above
+        if re.search(r'<meta name="robots" content="[^"]*noindex', t):
+            err(f'{fn}: unexpected noindex directive')
 
         # images: dimensions + files exist
         for tag in IMG_RE.findall(t):
