@@ -1,0 +1,6 @@
+# local tooling — never deploy
+.claude/
+__pycache__/
+*.pyc
+node_modules/
+.lighthouseci/

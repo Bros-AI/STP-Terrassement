@@ -77,6 +77,21 @@ Apple Business Connect, annuaire CCI Aix-Marseille, Batiactu. Lien vers la racin
 4. À J+21 : suivi CTR par page (objectifs : prix-enrobe-m2 ≥ 1,5 %, prix-goudronnage-allee ≥ 1,0 %).
    Rollback : si CTR d'une page chute > 30 %, restaurer l'ancien title de cette page uniquement.
 
+## Décisions spec v2 (31/08/2026)
+
+- **T-10** : preload de l'image hero supprimé partout. Mesuré au Lighthouse : le LCP est le
+  **texte** du hero, pas l'image de fond (couverte à 85-92 % par l'overlay) ; le preload coûtait
+  ~1 s de LCP. `styles.css` est repassé en feuille bloquante simple : le pattern preload+onload
+  faisait rendre la page sans styles puis reflow complet (CLS mesuré 0,311 → 0,06).
+- **T-11** : le schema FAQPage est désormais **généré** depuis le HTML visible par
+  `scripts/build-faq-schema.py` (à relancer après toute modification d'une FAQ visible,
+  puis re-passer `scripts/seo-qa.py`). Ne plus jamais éditer un bloc FAQPage à la main.
+- **T-12** : `v38cnl93ujw3zgpz916ykx807t2c3v.html` = fichier de vérification de plateforme
+  (contient uniquement son token, public par conception) → conservé, `Disallow` retiré de
+  robots.txt pour ne pas bloquer la vérification. Les 4 schemas HowTo des pages piliers ont été
+  supprimés : leurs étapes n'apparaissaient pas dans le texte visible (0-1 sur 5-6) et Google
+  n'affiche plus de résultats enrichis HowTo depuis 2023. `.claude/` retiré du repo (.gitignore).
+
 ### Validation métier
 Les fourchettes de prix (titles, FAQ, tableaux, devis types) reprennent celles du spec et des pages
 existantes — **à faire valider par le métier** avant/juste après mise en ligne.
