@@ -5,7 +5,7 @@
   <!-- ===== PAGES PRINCIPALES ===== -->
   <url>
     <loc>https://stp-terrassement.com/</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -69,7 +69,7 @@
   </url>
   <url>
     <loc>https://stp-terrassement.com/location-materiel.html</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -81,7 +81,7 @@
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog.html</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -93,27 +93,15 @@
   </url>
   <url>
     <loc>https://stp-terrassement.com/contact.html</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://stp-terrassement.com/mentions-legales.html</loc>
-    <lastmod>2026-01-15</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  <url>
-    <loc>https://stp-terrassement.com/politique-confidentialite.html</loc>
-    <lastmod>2026-01-15</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
   </url>
 
   <!-- ===== TERRASSEMENT - PAGES VILLES ===== -->
   <url>
     <loc>https://stp-terrassement.com/terrassement-marseille.html</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -303,31 +291,31 @@
   <!-- ===== BLOG - ARTICLES PRIX & COÛTS ===== -->
   <url>
     <loc>https://stp-terrassement.com/blog/prix-terrassement-m2.html</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/cout-demolition-maison.html</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/epaisseur-enrobe-allee.html</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/prix-demolition-dalle-beton.html</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/raccordement-tout-egout-prix.html</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -339,15 +327,21 @@
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/prix-fondations-maison.html</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/terrassement-piscine-guide.html</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://stp-terrassement.com/blog/prix-terrassement-piscine-dimensions.html</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/enrobe-chaud-vs-froid.html</loc>
@@ -357,7 +351,7 @@
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/prix-enrobe-m2.html</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -365,7 +359,7 @@
   <!-- ===== BLOG - GUIDES TECHNIQUES ===== -->
   <url>
     <loc>https://stp-terrassement.com/blog/mur-soutenement-guide.html</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -413,7 +407,7 @@
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/amenagement-allee-carrossable.html</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -891,7 +885,7 @@
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/prix-goudronnage-allee.html</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -903,7 +897,7 @@
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/prix-raccordement-eau-potable.html</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -915,7 +909,7 @@
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/enrochement-paysager-guide.html</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
