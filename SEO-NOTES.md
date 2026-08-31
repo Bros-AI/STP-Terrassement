@@ -104,10 +104,13 @@ index/404/avis qui n'avaient pas de `<main>`) ; propriété `image` ajoutée aux
 qui ne l'avaient pas ; `<title>` interne du SVG mur-soutènement remplacé par `aria-label`
 (les outils naïfs le comptaient comme un 2ᵉ title de page).
 
-**Intentionnel — ne pas « corriger »** : `noindex` sur mentions-légales et politique-confidentialité
-(pages légales volontairement hors index, cohérent avec leur exclusion du sitemap) ;
-CSS bloquante unique (décision mesurée au Lighthouse : le pattern async causait CLS 0,31) ;
-hreflang absent (site monolingue fr — l'outil le dit lui-même : rien à faire).
+**Révisé au 2e passage d'audit (commit 3af7629)** : le `noindex` hérité des pages légales a été
+retiré (le spec ne demandait que l'exclusion du sitemap, qui reste en place) + og:image ajouté.
+Le **CSS critique est désormais inliné** sur les 115 pages racine avec styles.css en async —
+pattern redevenu viable grâce au calibrage des polices (CLS mesuré 0,002–0,013) ; les articles
+de blog gardent la feuille bloquante. **Régénérer le bloc via `scripts/build-critical-css.py`
+après toute modification de styles.css.** hreflang fr + x-default auto-référencés ajoutés
+partout (site monolingue, documente l'intention de langue).
 
 **Limites plateforme GitHub Pages (pas de headers custom possibles)** : HSTS,
 X-Frame-Options/frame-ancestors (le CSP en meta ignore frame-ancestors par spec),
