@@ -150,6 +150,15 @@ mettre une redirection vers stp13109@gmail.com ; sinon rien. Web3Forms : activer
 de domaine de la clé d'accès dans le dashboard (la clé est publique par design, la restriction
 empêche son réemploi ailleurs).
 
+**« Inline CSS 34,4 Ko » (audit tiers, LOW) — décompte réel et position** : le bloc critique
+généré fait 10–11 Ko stables (≈2,6 Ko gzip) ; le reste = attributs `style=""` hérités du thème
+(jusqu'à 23 Ko sur l'accueil) + styles propres aux articles. Externaliser les attributs = refactor
+massif à risque visuel pour un LOW ; élaguer le bloc critique par page ferait ~−4 Ko sur les
+articles mais fragmenterait un pattern qui a déjà causé deux incidents CLS avant d'être stabilisé
+et vérifié pixel-perfect — refusé, la fiabilité prime sur le compteur. Prochain vrai levier perf
+mobile (score 0,79 accueil) si souhaité un jour : remplacer Font Awesome (CSS 19 Ko + woff2
+115/153 Ko) par des SVG inline — chantier visuel à part entière.
+
 **Limites plateforme GitHub Pages (pas de headers custom possibles)** : HSTS,
 X-Frame-Options/frame-ancestors (le CSP en meta ignore frame-ancestors par spec),
 Access-Control-Allow-Origin:* (posé par GitHub, sans risque pour un site statique public sans
