@@ -231,6 +231,16 @@ def main():
         # accessibility / audit invariants
         if '<main' not in t:
             err(f'{fn}: no <main> landmark')
+        prev = 0
+        for hm in re.finditer(r'<h([1-6])\b', t):
+            lvl = int(hm.group(1))
+            if prev and lvl > prev + 1:
+                err(f'{fn}: heading level skip h{prev}->h{lvl}')
+                break
+            prev = lvl
+        if 'href="index.html"' in t or 'href="../index.html"' in t:
+            err(f'{fn}: internal link to index.html (use href="/" - avoids the '
+                f'/ vs /index.html duplicate-URL surface)')
         if 'href="#"' in t:
             err(f'{fn}: placeholder href="#" link')
         if 'class="navbar"' in t:

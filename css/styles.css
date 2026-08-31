@@ -58,6 +58,7 @@
 :root {
     --primary: #FFB400;
     --primary-dark: #dba000;
+    --link: #B45309; /* amber link readable on white/gray: 5.0/4.6:1 (AA) */
     --primary-light: #ffc933;
     --dark: #111827;
     --gray: #f3f4f6;
@@ -438,7 +439,7 @@ ul { list-style: none; }
     font-size: 1.5rem;
     color: var(--primary);
 }
-.form-header h3 {
+.form-header h2, .form-header h3 {
     margin: 0;
     font-size: 1.6rem;
 }
@@ -1375,7 +1376,7 @@ footer {
     gap: 50px; 
     margin-bottom: 50px; 
 }
-.footer-col h4 { 
+.footer-col h2, .footer-col h4 { 
     color: white; 
     margin-bottom: 25px; 
     letter-spacing: 1px;
@@ -1712,7 +1713,7 @@ img[loading="lazy"] {
     margin: 30px 0;
 }
 .cta-local p { margin: 0 0 14px; line-height: 1.7; }
-.cta-local a { color: var(--primary-dark); font-weight: 600; }
+.cta-local a { color: var(--link); font-weight: 600; }
 .cta-local a.btn {
     display: inline-block;
     background: var(--primary);
