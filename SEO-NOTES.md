@@ -112,6 +112,16 @@ de blog gardent la feuille bloquante. **Régénérer le bloc via `scripts/build-
 après toute modification de styles.css.** hreflang fr + x-default auto-référencés ajoutés
 partout (site monolingue, documente l'intention de langue).
 
+**3e passage d'audit** : indicateurs de focus rendus réellement visibles (outline 3px sur
+:focus-visible et sur les champs du formulaire — l'ancien `outline:none` ne laissait qu'une
+ombre à 10 % d'opacité) ; pattern critical+async étendu aux 47 pages blog (CLS mesuré 0),
+plus aucune ressource bloquante nulle part ; schema WebSite ajouté sur les 162 pages templates
+(sans SearchAction : pas de vraie recherche avec paramètre d'URL — ne jamais en déclarer une
+fictive). Non-actionnable : le TTFB de 624 ms signalé sur une page est un cache-miss du CDN
+Fastly de GitHub Pages (hébergement statique, aucun travail serveur) ; les téléphones en clair
+sont volontaires (NAP visible = exigence du spec) ; fetchpriority sur les images de cartes
+refusé (le LCP est le texte du hero, une seule image prioritaire suffit).
+
 **Limites plateforme GitHub Pages (pas de headers custom possibles)** : HSTS,
 X-Frame-Options/frame-ancestors (le CSP en meta ignore frame-ancestors par spec),
 Access-Control-Allow-Origin:* (posé par GitHub, sans risque pour un site statique public sans

@@ -181,22 +181,19 @@ def main():
             else:
                 err(f'{fn}: preloaded image not used by the page: {url}')
 
-        # css strategy — two sanctioned patterns:
-        #  root template pages: inline critical CSS + async styles.css
-        #    (preload+onload + noscript fallback, no plain blocking link)
-        #  blog articles: exactly one plain blocking stylesheet
+        # css strategy — one pattern on every template page:
+        # inline critical CSS + async styles.css (preload+onload + noscript
+        # fallback, no plain blocking link)
         n_noscript = len(re.findall(r'<noscript><link rel="stylesheet" href="(?:\.\./)?css/styles\.css">', t))
         n_block = len(re.findall(r'<link rel="stylesheet" href="(?:\.\./)?css/styles\.css">', t)) - n_noscript
         n_async = len(re.findall(r'<link rel="preload" href="(?:\.\./)?css/styles\.css" as="style" onload=', t))
         has_critical = 'critical:start' in t
-        if fn.startswith('blog/'):
-            if n_block != 1 or n_async or has_critical:
-                err(f'{fn}: blog page must use one blocking styles.css '
-                    f'(blocking={n_block}, async={n_async}, critical={has_critical})')
-        elif 'class="navbar"' in t:
+        if 'class="navbar"' in t:
             if not (has_critical and n_async == 1 and n_noscript == 1 and n_block == 0):
-                err(f'{fn}: root page must use critical CSS + async styles.css '
+                err(f'{fn}: template page must use critical CSS + async styles.css '
                     f'(critical={has_critical}, async={n_async}, noscript={n_noscript}, blocking={n_block})')
+            if '"@type":"WebSite"' not in t:
+                err(f'{fn}: missing WebSite schema')
 
         # hreflang self + x-default (single-language site, documented intent)
         if 'hreflang="fr"' not in t or 'hreflang="x-default"' not in t:
@@ -255,6 +252,13 @@ def main():
         err(f'sitemap.xml: page on disk but not in sitemap: {missing}')
     for ghost in sorted(sm_paths - disk):
         err(f'sitemap.xml: entry without file (or excluded page): {ghost}')
+
+    # focus indicators must stay visible (a11y)
+    css = open('css/styles.css', encoding='utf-8').read()
+    if re.search(r'outline\s*:\s*(none|0)\b', css):
+        err('css/styles.css: outline removed without visible replacement')
+    if ':focus-visible' not in css:
+        err('css/styles.css: missing :focus-visible rules')
 
     # NAP constants in the org schema (homepage)
     home = open('index.html', encoding='utf-8').read()
