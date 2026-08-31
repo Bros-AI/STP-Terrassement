@@ -192,6 +192,15 @@ def main():
             if not (has_critical and n_async == 1 and n_noscript == 1 and n_block == 0):
                 err(f'{fn}: template page must use critical CSS + async styles.css '
                     f'(critical={has_critical}, async={n_async}, noscript={n_noscript}, blocking={n_block})')
+            elif has_critical:
+                # the critical block must carry the responsive breakpoints:
+                # a parser bug once dropped 5 of 6 @media rules and shipped a
+                # first-frame reflow (prod CLS 0.42-0.55 on hero pages)
+                cm = re.search(r'<!-- critical:start -->(.*?)<!-- critical:end -->', t, re.S)
+                cblock = cm.group(1) if cm else ''
+                if cblock.count('@media') < 4 or 'max-width:768px' not in cblock:
+                    err(f'{fn}: critical CSS block missing responsive breakpoints '
+                        f'(@media={cblock.count("@media")})')
             if '"@type":"WebSite"' not in t:
                 err(f'{fn}: missing WebSite schema')
 

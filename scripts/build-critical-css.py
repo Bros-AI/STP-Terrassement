@@ -31,10 +31,15 @@ END = '<!-- critical:end -->'
 
 
 def parse_rules(css):
-    """Yield (media_or_None, selector, body) for top-level and @media rules."""
+    """Yield (media_or_None, selector, body) for top-level and @media rules.
+
+    Every rule whose body contains nested blocks (@media, @supports,
+    @keyframes) is consumed with brace-depth tracking — closing a nested
+    at-rule at its first inner '}' would derail the parser for the rest of
+    the sheet (this exact bug once dropped 5 of 6 media queries from the
+    critical block and shipped a CLS regression).
+    """
     out = []
-    i = 0
-    n = len(css)
     css = re.sub(r'/\*.*?\*/', '', css, flags=re.S)
     n = len(css)
 
@@ -49,17 +54,19 @@ def parse_rules(css):
                     return k
         return n
 
+    i = 0
     while i < n:
         b = css.find('{', i)
         if b == -1:
             break
         sel = css[i:b].strip()
-        if sel.startswith('@media'):
+        if sel.startswith(('@media', '@supports')):
             e = read_block(b)
-            inner = css[b + 1:e]
-            for m, s, body in parse_rules(inner):
+            for _, s, body in parse_rules(css[b + 1:e]):
                 out.append((sel, s, body))
             i = e + 1
+        elif sel.startswith('@keyframes'):
+            i = read_block(b) + 1        # animations are never critical
         elif sel.startswith('@font-face'):
             e = css.find('}', b)
             out.append((None, '@font-face', css[b + 1:e]))
@@ -87,6 +94,8 @@ def build_block():
     css = open(os.path.join(ROOT, 'css', 'styles.css'), encoding='utf-8').read()
     plain, media = [], {}
     for m, sel, body in parse_rules(css):
+        if m and 'print' in m:
+            continue  # print styles are never render-critical
         if not wanted(sel):
             continue
         rule = minify(sel + '{' + body + '}')
