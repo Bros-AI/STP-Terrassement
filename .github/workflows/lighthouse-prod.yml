@@ -1,0 +1,39 @@
+name: Lighthouse prod budgets
+on:
+  schedule:
+    - cron: '17 6 * * 1'   # every Monday 06:17 UTC
+  workflow_dispatch:
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Lighthouse mobile (home, city page, article)
+        run: |
+          set -e
+          for page in "" "terrassement-marseille.html" "blog/prix-enrobe-m2.html"; do
+            name=$(echo "home_${page}" | tr '/.' '__')
+            npx --yes lighthouse "https://stp-terrassement.com/${page}" \
+              --output=json --output-path="./lh-${name}.json" \
+              --only-categories=performance --quiet \
+              --chrome-flags="--headless --no-sandbox"
+            node scripts/lighthouse-budget.mjs "./lh-${name}.json" mobile
+          done
+      - name: Lighthouse desktop (city page)
+        run: |
+          set -e
+          npx --yes lighthouse "https://stp-terrassement.com/terrassement-marseille.html" \
+            --preset=desktop --output=json --output-path=./lh-desktop.json \
+            --only-categories=performance --quiet \
+            --chrome-flags="--headless --no-sandbox"
+          node scripts/lighthouse-budget.mjs ./lh-desktop.json desktop
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-reports
+          path: ./lh-*.json
+          retention-days: 90

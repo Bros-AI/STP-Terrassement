@@ -136,6 +136,20 @@ sans proxy. L'avertissement « inline CSS > 10 Ko » de l'outil est assumé : ce
 gzip) sont précisément ce qui rend la première frame fidèle ; le TTFB « lent » signalé change
 de page à chaque crawl = cache-miss du CDN, pas un problème de page.
 
+**Audit approfondi (31/08 soir, commit 75a32bc)** : graphe de liens interne parfait
+(162/162 pages atteignables depuis l'accueil, profondeur max 2 clics, 0 page orpheline) ;
+vraie non-conformité WCAG trouvée et corrigée — les liens ambre #FFB400 sur blanc étaient à
+1,78:1 → nouveau token `--link: #B45309` (5,0:1) sur 1 254 liens texte ; hiérarchie de titres
+réparée sur 159 pages (footer h4→h2, cartes process h4→h3, 0 saut restant) ; 647 liens internes
+vers index.html consolidés vers `/`. CI : budgets Lighthouse hebdomadaires sur la prod
+(`.github/workflows/lighthouse-prod.yml`, lundi 06:17 UTC + déclenchement manuel).
+**IndexNow** configuré (clé `76d268c7…txt` à la racine) : re-crawl accéléré Bing/Seznam/Yandex —
+pour Google, seule l'inspection d'URL dans GSC fait foi (les 12 pages retitrées + sitemap, ~20 min,
+côté admin — cf. rapport dev #2 §4). Boîte `contact@stp-terrassement.com` : si elle a existé,
+mettre une redirection vers stp13109@gmail.com ; sinon rien. Web3Forms : activer la restriction
+de domaine de la clé d'accès dans le dashboard (la clé est publique par design, la restriction
+empêche son réemploi ailleurs).
+
 **Limites plateforme GitHub Pages (pas de headers custom possibles)** : HSTS,
 X-Frame-Options/frame-ancestors (le CSP en meta ignore frame-ancestors par spec),
 Access-Control-Allow-Origin:* (posé par GitHub, sans risque pour un site statique public sans
