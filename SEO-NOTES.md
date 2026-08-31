@@ -95,6 +95,22 @@ déploiement v2, T-52 citations + 3 partenariats de liens/trimestre. Audit axe-c
 (T-22) : les contrôles statiques (h1 unique, aria-labels, labels de formulaire) sont verts ;
 passer l'extension axe DevTools sur 3 gabarits pour la validation finale.
 
+## Mesures Lighthouse production (31/08/2026, après v2)
+
+| Gabarit | Mobile (simulé 4G lent) | Desktop |
+|---|---|---|
+| Accueil | 79 · LCP 4,0 s · CLS 0 · TBT 0 | — |
+| Page ville (terrassement-marseille) | 81 · LCP 3,8 s · CLS 0,001 · TBT 0 | **98 · LCP 0,9 s · CLS 0,004** |
+| Article (prix-enrobe-m2) | 84 · LCP 3,4 s · CLS 0 · TBT 0 | — |
+
+Baseline avant v2 (même gabarit ville, mobile) : 62 · LCP 3,1 s · **CLS 0,311** · TBT 660 ms.
+CLS et TBT sont à zéro partout ; le LCP mobile simulé reste au-dessus de 2,5 s à cause du
+chemin réseau simulé (HTML + CSS bloquante + polices sur 1,6 Mbps). Les 2 leviers restants,
+volontairement non appliqués (refactor lourd / coût de maintenance) :
+1. inliner le critical CSS sur les 165 pages (gain estimé ~0,5-1 s de FCP simulé) ;
+2. remplacer Font Awesome (CSS 19 Ko + woff2 115/153 Ko async) par des SVG inline.
+À réévaluer avec les données CrUX réelles dans GSC/PSI à J+28 avant d'engager ce chantier.
+
 ## Décisions spec v2 (31/08/2026)
 
 - **T-10** : preload de l'image hero supprimé partout. Mesuré au Lighthouse : le LCP est le
