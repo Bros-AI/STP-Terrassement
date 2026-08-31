@@ -8,3 +8,5 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: '3.12' }
       - run: python scripts/seo-qa.py --strict
+      - run: python scripts/build-feed.py --check
+      - run: python scripts/build-fresh-links.py --check
