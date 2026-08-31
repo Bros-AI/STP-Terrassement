@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page introuvable (404) — STP Terrassement</title>
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, 'Segoe UI', sans-serif; background: #111827; color: #fff; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
+        .wrap { max-width: 640px; width: 100%; text-align: center; }
+        .logo { width: 72px; height: 72px; border-radius: 12px; background: #FFB400; color: #111827; font-weight: 900; font-size: 1.6rem; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 24px; }
+        h1 { font-size: 2rem; margin-bottom: 10px; }
+        .code { color: #FFB400; font-weight: 900; }
+        p { color: #d1d5db; line-height: 1.7; margin-bottom: 10px; }
+        #suggestion { display: none; background: rgba(255, 180, 0, 0.12); border: 1px solid rgba(255, 180, 0, 0.4); border-radius: 10px; padding: 14px 18px; margin: 18px 0; }
+        #suggestion a { color: #FFB400; font-weight: 700; }
+        input[type="search"] { width: 100%; padding: 14px 18px; border-radius: 8px; border: 1px solid #374151; background: #1f2937; color: #fff; font-size: 1rem; margin: 18px 0 8px; }
+        input[type="search"]:focus { outline: 2px solid #FFB400; border-color: #FFB400; }
+        ul.results { list-style: none; text-align: left; margin-bottom: 10px; }
+        ul.results li { padding: 6px 4px; }
+        ul.results a { color: #FFB400; text-decoration: none; }
+        ul.results a:hover { text-decoration: underline; }
+        .links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 22px; }
+        .links a { color: #fff; background: #1f2937; border: 1px solid #374151; padding: 10px 18px; border-radius: 8px; text-decoration: none; font-size: 0.95rem; }
+        .links a:hover { border-color: #FFB400; }
+        .links a.primary { background: #FFB400; color: #111827; font-weight: 700; border-color: #FFB400; }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="logo">STP</div>
+        <h1><span class="code">404</span> — Cette page n'existe pas (ou plus)</h1>
+        <p>Pas de panique : même sur nos chantiers, il arrive qu'un chemin soit barré. Voici de quoi repartir dans la bonne direction.</p>
+
+        <div id="suggestion"><p style="margin: 0;">Cherchiez-vous : <a id="suggestion-link" href="/"></a> ?</p></div>
+
+        <input type="search" id="q" placeholder="Rechercher une page (ex. : enrobé, piscine, devis…)" aria-label="Rechercher une page du site">
+        <ul class="results" id="results"></ul>
+
+        <div class="links">
+            <a class="primary" href="/devis-gratuit.html">Devis gratuit 24 h</a>
+            <a href="/">Accueil</a>
+            <a href="/terrassement.html">Terrassement</a>
+            <a href="/vrd-assainissement.html">VRD &amp; Assainissement</a>
+            <a href="/amenagement-exterieur.html">Aménagement extérieur</a>
+            <a href="/demolition.html">Démolition</a>
+            <a href="/location-materiel.html">Location d'engins</a>
+            <a href="/blog.html">Blog &amp; guides prix</a>
+            <a href="/contact.html">Contact</a>
+        </div>
+        <p style="margin-top: 22px; font-size: 0.9rem;">Ou appelez-nous directement : <a href="tel:+33745142049" style="color: #FFB400; font-weight: 700;">07 45 14 20 49</a></p>
+    </div>
+
+    <script>
+    (function () {
+        var pages = [
+            ['Accueil', '/'],
+            ['Devis gratuit sous 24 h', '/devis-gratuit.html'],
+            ['Terrassement (pilier)', '/terrassement.html'],
+            ['Terrassement Marseille', '/terrassement-marseille.html'],
+            ['Terrassement piscine Aix-en-Provence', '/terrassement-piscine-aix-en-provence.html'],
+            ['VRD & assainissement', '/vrd-assainissement.html'],
+            ['Raccordement tout-à-l’égout Marseille', '/raccordement-tout-egout-marseille.html'],
+            ['Enrobé Aix-en-Provence', '/enrobe-aix-en-provence.html'],
+            ['Enrobé Marseille', '/enrobe-marseille.html'],
+            ['Goudronnage Aix-en-Provence', '/goudronnage-aix-en-provence.html'],
+            ['Enrochement Aix-en-Provence', '/enrochement-aix-en-provence.html'],
+            ['Mur de soutènement Aix-en-Provence', '/mur-soutenement-aix-en-provence.html'],
+            ['Fondations maison Marseille', '/fondations-maison-marseille.html'],
+            ['Démolition (pilier)', '/demolition.html'],
+            ['Démolition Marseille', '/demolition-marseille.html'],
+            ['Location d’engins avec chauffeur', '/location-materiel.html'],
+            ['Aménagement extérieur', '/amenagement-exterieur.html'],
+            ['Zones d’intervention', '/zones-intervention.html'],
+            ['Réalisations', '/realisations.html'],
+            ['Contact', '/contact.html'],
+            ['Blog : tous les guides', '/blog.html'],
+            ['Prix terrassement au m²', '/blog/prix-terrassement-m2.html'],
+            ['Prix enrobé au m²', '/blog/prix-enrobe-m2.html'],
+            ['Prix goudronnage allée', '/blog/prix-goudronnage-allee.html'],
+            ['Prix fondations maison', '/blog/prix-fondations-maison.html'],
+            ['Prix raccordement tout-à-l’égout', '/blog/raccordement-tout-egout-prix.html'],
+            ['Prix terrassement piscine 6x3, 8x4, 10x5', '/blog/prix-terrassement-piscine-dimensions.html'],
+            ['Coût démolition maison', '/blog/cout-demolition-maison.html'],
+            ['Mur de soutènement : guide', '/blog/mur-soutenement-guide.html'],
+            ['Enrochement paysager : guide', '/blog/enrochement-paysager-guide.html'],
+            ['Allée carrossable : guide', '/blog/amenagement-allee-carrossable.html']
+        ];
+        function norm(s) {
+            return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
+        }
+        function tokens(s) { return norm(s).split(' ').filter(Boolean); }
+        function score(query, page) {
+            var qt = tokens(query), target = norm(page[0] + ' ' + page[1]), sc = 0;
+            for (var i = 0; i < qt.length; i++) {
+                if (qt[i].length > 2 && target.indexOf(qt[i]) !== -1) sc++;
+            }
+            return sc;
+        }
+        // suggestion from the broken URL itself
+        var path = decodeURIComponent(location.pathname);
+        var best = null, bestScore = 0;
+        for (var i = 0; i < pages.length; i++) {
+            var sc = score(path.replace(/[-/._]/g, ' '), pages[i]);
+            if (sc > bestScore) { bestScore = sc; best = pages[i]; }
+        }
+        if (best && bestScore > 0) {
+            var box = document.getElementById('suggestion');
+            var link = document.getElementById('suggestion-link');
+            link.href = best[1];
+            link.textContent = best[0];
+            box.style.display = 'block';
+        }
+        // live search
+        var input = document.getElementById('q');
+        var out = document.getElementById('results');
+        input.addEventListener('input', function () {
+            out.innerHTML = '';
+            var q = input.value;
+            if (norm(q).length < 2) return;
+            var scored = pages.map(function (p) { return [score(q, p), p]; })
+                .filter(function (x) { return x[0] > 0; })
+                .sort(function (a, b) { return b[0] - a[0]; })
+                .slice(0, 6);
+            scored.forEach(function (x) {
+                var li = document.createElement('li');
+                var a = document.createElement('a');
+                a.href = x[1][1];
+                a.textContent = x[1][0];
+                li.appendChild(a);
+                out.appendChild(li);
+            });
+        });
+    })();
+    </script>
+</body>
+</html>
