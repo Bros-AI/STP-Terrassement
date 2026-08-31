@@ -161,67 +161,84 @@
 
         <!-- FAQ Schema -->
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [{
-        "@type": "Question",
-        "name": "Quel est le prix d'une démolition de maison ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Le prix d'une démolition de maison varie entre 50€ et 150€ par m² selon la surface, le type de construction (brique, parpaing, béton) et l'accessibilité. Pour une maison de 100m², comptez entre 8000€ et 20000€ tout compris avec évacuation."
-        }
-      },{
-        "@type": "Question",
-        "name": "Faut-il un permis pour démolir ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Oui, un permis de démolir est obligatoire pour toute démolition totale ou partielle d'un bâtiment situé dans un secteur protégé ou couvert par un PLU. À Aix-en-Provence, la demande se fait en mairie avec un délai d'instruction de 2 mois."
-        }
-      },{
-        "@type": "Question",
-        "name": "Le diagnostic amiante est-il obligatoire avant une démolition ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Oui, un diagnostic amiante avant travaux (DAAT) est obligatoire pour tout bâtiment dont le permis de construire a été délivré avant le 1er juillet 1997. C'est une étape indispensable avant toute démolition à Aix-en-Provence et en France."
-        }
-      },{
-        "@type": "Question",
-        "name": "Comment sont gérés les gravats après une démolition à Aix-en-Provence ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "STP Terrassement assure le tri sélectif et l'évacuation de tous les gravats vers des centres de recyclage agréés dans les Bouches-du-Rhône. Béton, métaux, bois sont séparés. Un bordereau de suivi des déchets (BSD) vous est remis conformément à la réglementation."
-        }
-      },{
-        "@type": "Question",
-        "name": "Peut-on démolir partiellement un bâtiment à Aix-en-Provence ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Oui, STP Terrassement réalise des démolitions partielles : ouverture de murs porteurs (avec étude structure), suppression de cloisons, retrait de dalles béton. À Aix-en-Provence, un diagnostic amiante préalable est obligatoire pour les bâtiments construits avant 1997."
-        }
-      },{
-        "@type": "Question",
-        "name": "Combien coûte la démolition d'un garage ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "La démolition d'un garage coûte entre 1 500€ et 5 000€ selon la surface (15 à 40m²), le type de construction (parpaing, béton, métal) et l'accessibilité. Ce prix inclut la démolition, l'évacuation des gravats et le nettoyage du terrain. Comptez 2 000-3 000€ en moyenne pour un garage standard de 20m²."
-        }
-      },{
-        "@type": "Question",
-        "name": "Peut-on démolir sans permis ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Pour les petites structures de moins de 20m² hors zone protégée, aucun permis n'est nécessaire. Au-delà ou en secteur protégé (PLU, monument historique à moins de 500m), un permis de démolir est obligatoire avec un délai d'instruction de 2 mois en mairie. STP Terrassement vous accompagne dans ces démarches."
-        }
-      },{
-        "@type": "Question",
-        "name": "Qui paie la démolition ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "La démolition est à la charge du propriétaire du bien. En cas de vente avec clause de démolition, l'acheteur peut la prendre en charge. Pour une démolition ordonnée par la mairie (arrêté de péril), c'est le propriétaire qui paie, sauf cas de force majeure. Des aides existent pour les logements insalubres via l'ANAH."
-        }
-      }]
+      "@type": "Question",
+      "name": "Quel est le prix d'une démolition de maison au m² ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le prix d'une démolition de maison varie entre 50€ et 150€ par m² selon : surface totale, type de construction (brique 50-80€/m², parpaing 60-90€/m², béton armé 100-150€/m²), accessibilité du chantier, présence d'amiante (+20-50€/m²), et contraintes mitoyenneté. Pour une maison de 100m², comptez 8000-20000€ tout compris avec évacuation. La déconstruction sélective coûte 20-30% plus cher mais permet meilleur recyclage. Devis gratuit sous 24h."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Faut-il un permis pour démolir une maison ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, un permis de démolir est obligatoire dans plusieurs cas : communes de plus de 10 000 habitants, zones protégées (secteurs sauvegardés, monuments historiques à moins de 500m), ou si surface dépasse 1000m². Délai d'instruction : 2 mois après dépôt en mairie. Pour petites annexes ("
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien de temps dure une démolition de maison ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Une démolition mécanique classique (100-150m²) dure 3 à 7 jours : 1 jour préparation/sécurisation, 2-4 jours démolition, 1-2 jours évacuation/nettoyage. Une déconstruction sélective (récupération matériaux) prend 2-3 semaines. Délais administratifs en amont : diagnostic amiante (1 semaine), permis démolir (2 mois). Total : 3-4 mois entre décision et terrain libre. Présence amiante rallonge de 1-2 semaines pour désamiantage certifié obligatoire."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Le diagnostic amiante est-il obligatoire avant démolition ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le diagnostic amiante avant démolition est OBLIGATOIRE pour tous les bâtiments dont le permis de construire a été délivré avant le 1er juillet 1997. Réalisé par diagnostiqueur certifié qui recherche amiante dans tous matériaux (toiture, cloisons, colles, dalles). Si amiante détecté, désamiantage certifié obligatoire AVANT démolition, par entreprise SS4. Coût diagnostic : 300-600€, désamiantage : 20-50€/m². Nous travaillons avec partenaires certifiés."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Que deviennent les gravats après démolition ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nous pratiquons tri sélectif rigoureux avec filières : béton/briques/pierres (60%) → ISDI pour recyclage en granulats ; bois (15%) → filière bois-énergie ou recyclage panneaux ; métaux (10%) → ferrailleur ; plâtre (5%) → recyclage plaques neuves ; déchets ultimes (10%) → ISDND. Notre taux de valorisation : 85-90%. Nous fournissons bordereaux de suivi (BSD) pour traçabilité complète et conformité réglementaire totale."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien coûte la démolition d'un garage ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La démolition d'un garage coûte entre 1 500€ et 5 000€ selon la surface (15 à 40m²), le type de construction (parpaing, béton, métal) et l'accessibilité. Ce prix inclut la démolition, l'évacuation des gravats et le nettoyage du terrain. Comptez 2 000-3 000€ en moyenne pour un garage standard de 20m². Devis gratuit sous 24h."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Peut-on démolir sans permis ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pour les petites structures de moins de 20m² hors zone protégée, aucun permis n'est nécessaire. Au-delà ou en secteur protégé (PLU, monument historique à moins de 500m), un permis de démolir est obligatoire avec un délai d'instruction de 2 mois en mairie. Contactez-nous pour vérifier votre situation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qui paie la démolition ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La démolition est à la charge du propriétaire du bien. En cas de vente avec clause de démolition, l'acheteur peut la prendre en charge. Pour une démolition ordonnée par la mairie (arrêté de péril), c'est le propriétaire qui paie. Des aides existent pour les logements insalubres via l'ANAH. Demandez un devis détaillé."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pourquoi Choisir STP Terrassement pour Votre Démolition à Aix-en-Provence ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Spécialiste et démolisseur expert de la démolition à Aix-en-Provence depuis 15 ans, nous intervenons sur tout le département des Bouches-du-Rhône (13) et la région PACA. Garantie décennale, devis gratuit sous 24h, tri sélectif des déchets et recyclage matériaux vers des centres de tri agréés. Du diagnostic avant démolition au curage, en passant par le désamiantage et l'évacuation gravats, nous gérons tout. Après démolition, nous réalisons le terrassement et la viabilisation. Plus de 50 démolitions réussies sur le Pays d'Aix et la PACA. STP Terrassement — Expert depuis 15 ans Entreprise de terrassement et VRD certifiée, basée à Aix-en-Provence. Garantie décennale, assurance RC Pro, et plus de 500 chantiers réalisés dans la région PACA. Voir nos réalisations"
+      }
     }
+  ]
+}
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">

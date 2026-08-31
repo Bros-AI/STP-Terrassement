@@ -33,13 +33,17 @@ SUMMARY_RE = re.compile(r'<summary\b[^>]*>(.*?)</summary>', re.S)
 H2_RE = re.compile(r'<h2\b[^>]*>(.*?)</h2>', re.S)
 FAQ_H2_RE = re.compile(r'(?:^|\b)(faq|questions?\s+fr[ée]quent)', re.I)
 H3_SPLIT_RE = re.compile(r'<h3\b[^>]*>(.*?)</h3>', re.S)
+INLINE_TAG_RE = re.compile(r'</?(?:strong|em|b|i|a|span|abbr|mark|sup|sub)\b[^>]*>')
 TAG_RE = re.compile(r'<[^>]+>')
 
 
 def clean(fragment: str) -> str:
     """Visible text of an HTML fragment: tags stripped, entities unescaped,
-    whitespace collapsed."""
-    text = TAG_RE.sub(' ', fragment)
+    whitespace collapsed. Inline formatting tags are removed without injecting
+    a space (so <strong> inside a word does not split it); block-level tags
+    become a space."""
+    text = INLINE_TAG_RE.sub('', fragment)
+    text = TAG_RE.sub(' ', text)
     text = htmllib.unescape(text)
     return re.sub(r'\s+', ' ', text).strip()
 

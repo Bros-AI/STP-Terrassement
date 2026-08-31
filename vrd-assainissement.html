@@ -161,67 +161,84 @@
 
         <!-- FAQ Schema -->
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [{
-        "@type": "Question",
-        "name": "Quel est le prix d'un raccordement VRD ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Le prix d'un raccordement VRD complet varie entre 5000€ et 15000€ selon la distance aux réseaux, le nombre de réseaux à raccorder et la nature du sol. Ce tarif inclut les tranchées, la pose des canalisations et gaines, et la coordination avec les concessionnaires."
-        }
-      },{
-        "@type": "Question",
-        "name": "C'est quoi les travaux VRD ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "VRD signifie Voirie et Réseaux Divers. Cela englobe tous les travaux de raccordement aux réseaux publics : eau potable, eaux usées (tout-à-l'égout), eaux pluviales, électricité, gaz et télécommunications, ainsi que la création de voiries et accès."
-        }
-      },{
-        "@type": "Question",
-        "name": "Quelle est la différence entre assainissement collectif et individuel ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "L'assainissement collectif consiste à raccorder votre habitation au tout-à-l'égout de la commune. L'assainissement individuel utilise une fosse septique ou une micro-station pour traiter les eaux usées sur place. À Aix-en-Provence, la majorité des zones sont en assainissement collectif."
-        }
-      },{
-        "@type": "Question",
-        "name": "Quels sont les délais pour un raccordement au tout-à-l'égout à Aix-en-Provence ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Le raccordement au tout-à-l'égout à Aix-en-Provence prend généralement 3 à 7 jours ouvrés pour les travaux, auxquels s'ajoutent les délais administratifs (2 à 4 semaines). STP Terrassement vous accompagne dans toutes les démarches."
-        }
-      },{
-        "@type": "Question",
-        "name": "Faut-il une autorisation pour des travaux VRD à Aix-en-Provence ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Oui, les travaux VRD nécessitent souvent une déclaration préalable ou un permis de construire selon l'ampleur du projet. À Aix-en-Provence, il faut aussi obtenir une autorisation de voirie si les travaux touchent le domaine public. STP Terrassement gère ces formalités pour vous."
-        }
-      },{
-        "@type": "Question",
-        "name": "Combien coûte un raccordement tout-à-l'égout ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Le raccordement au tout-à-l'égout coûte entre 3 000€ et 10 000€ selon la distance entre votre habitation et le réseau public (10m à 50m+), la profondeur de la tranchée et la nature du sol. À Aix-en-Provence, ajoutez la taxe de raccordement communale (500-2 000€). STP Terrassement gère les travaux et les démarches administratives."
-        }
-      },{
-        "@type": "Question",
-        "name": "Qui doit payer le raccordement ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Le propriétaire du terrain paie les travaux de raccordement sur sa parcelle (partie privée). La commune finance les travaux sur le domaine public. Une taxe de raccordement à l'assainissement collectif est également due à la commune. En cas de lotissement, le promoteur intègre le coût dans le prix du terrain viabilisé."
-        }
-      },{
-        "@type": "Question",
-        "name": "Délai pour un raccordement VRD ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Comptez 2 à 4 mois au total : 2-6 semaines pour les autorisations administratives, 3-7 jours pour les travaux de tranchées et pose, puis 2-8 semaines pour les branchements finaux par les concessionnaires (Enedis, Veolia, Orange). STP Terrassement accélère le processus en coordonnant tous les intervenants."
-        }
-      }]
+      "@type": "Question",
+      "name": "Quel est le prix d'un raccordement VRD complet ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le prix d'un raccordement VRD complet varie entre 5000€ et 15000€ selon plusieurs critères : distance aux réseaux publics (10m à 50m+), nombre de réseaux à raccorder (eau, élec, tel, égouts), nature du sol (facile à creuser ou rocheux), et profondeur des tranchées. Ce tarif inclut les tranchées, la pose des canalisations et gaines, et la coordination avec les concessionnaires. Demandez votre devis gratuit personnalisé."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "C'est quoi les travaux VRD ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VRD signifie Voirie et Réseaux Divers. Ce sont les travaux de viabilisation d'un terrain qui incluent : raccordement eau potable, électricité, téléphone/fibre optique, assainissement (eaux usées), gestion des eaux pluviales, et création de voies d'accès. Ces travaux sont indispensables après le terrassement et avant la construction."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien coûte une micro-station d'épuration ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Une micro-station d'épuration coûte entre 4000€ et 8000€ pose comprise, selon la capacité nécessaire (3 à 10 EH - Équivalent Habitant) et le modèle (aération, culture fixée, SBR). C'est plus cher qu'une fosse septique classique (2000-4000€) mais c'est plus compact, plus performant en assainissement non collectif, et nécessite moins de surface. Installation conforme aux normes SPANC. Contactez-nous pour un conseil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien de temps pour un raccordement VRD ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Les travaux de tranchées et pose durent 3 à 7 jours en moyenne. Mais il faut ajouter les délais administratifs : obtention des autorisations (2-6 semaines) et intervention des concessionnaires pour les branchements finaux (2-8 semaines selon Enedis, Veolia...). Au total, comptez 2 à 4 mois entre le début du projet et la mise en service complète. Nous accélérons le processus en gérant toutes les démarches."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Peut-on construire sans assainissement ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non, il est impossible de construire sans système d'assainissement conforme. Vous devez obligatoirement vous raccorder au tout-à-l'égout si disponible (réseau à moins de 10m), ou installer un assainissement non collectif (fosse septique, micro-station) si non desservi. Un contrôle du SPANC (Service Public d'Assainissement Non Collectif) est obligatoire avant délivrance du certificat de conformité nécessaire pour habiter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien coûte un raccordement tout-à-l'égout ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le raccordement au tout-à-l'égout coûte entre 3 000€ et 10 000€ selon la distance entre votre habitation et le réseau public, la profondeur de la tranchée et la nature du sol. À Aix-en-Provence, ajoutez la taxe de raccordement communale (500-2 000€). Demandez un devis précis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qui doit payer le raccordement ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le propriétaire du terrain paie les travaux de raccordement sur sa parcelle (partie privée). La commune finance les travaux sur le domaine public. Une taxe de raccordement à l'assainissement collectif est également due à la commune. En cas de lotissement, le promoteur intègre le coût dans le prix du terrain viabilisé."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Délai pour un raccordement VRD ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Comptez 2 à 4 mois au total : 2-6 semaines pour les autorisations administratives, 3-7 jours pour les travaux de tranchées et pose, puis 2-8 semaines pour les branchements finaux par les concessionnaires (Enedis, Veolia, Orange). STP Terrassement accélère le processus en coordonnant tous les intervenants. Contactez-nous."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pourquoi Choisir STP Terrassement pour Vos Travaux VRD à Aix-en-Provence ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Spécialiste du VRD à Aix-en-Provence depuis 15 ans, nous intervenons sur tout le bassin aixois, les Bouches-du-Rhône (13) et la région PACA. Garantie décennale, devis gratuit sous 24h, travaux conformes aux normes NF DTU avec attestation de conformité. Du raccordement tout-à-l'égout à la viabilisation terrain complète, en passant par l'installation de micro-station d'épuration avec conformité SPANC, nous gérons tout en coordination avec tous les intervenants (mairie, Enedis, Veolia, Orange...). Plus de 200 projets VRD réussis sur nos zones d'intervention autour d'Aix-en-Provence. STP Terrassement — Expert depuis 15 ans Entreprise de terrassement et VRD certifiée, basée à Aix-en-Provence. Garantie décennale, assurance RC Pro, et plus de 500 chantiers réalisés dans la région PACA. Voir nos réalisations"
+      }
     }
+  ]
+}
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
