@@ -24,7 +24,12 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TOKENS = ['skip-link', 'navbar', 'nav-container', 'logo', 'brand-', 'nav-links',
           'btn', 'mobile-toggle', 'mobile-menu', 'hero', 'badge', 'trust-',
           'wave-bottom', 'container', 'form', 'highlight']
-BARE = {':root', '*', 'html', 'body', 'h1, h2, h3, h4', 'a', 'img', 'ul'}
+BARE = {':root', '*', 'html', 'body', 'h1, h2, h3, h4', 'a', 'img', 'ul',
+        # .section provides the top offset under the fixed navbar on no-hero
+        # pages (articles, legal): without it the first frame renders the H1
+        # clipped under the menu, then shifts down when styles.css lands
+        # (measured CLS 0.092 on articles)
+        '.section', '.bg-light'}
 
 START = '<!-- critical:start -->'
 END = '<!-- critical:end -->'
