@@ -122,6 +122,20 @@ Fastly de GitHub Pages (hébergement statique, aucun travail serveur) ; les tél
 sont volontaires (NAP visible = exigence du spec) ; fetchpriority sur les images de cartes
 refusé (le LCP est le texte du hero, une seule image prioritaire suffit).
 
+**Incident CLS du 31/08 (résolu)** : la vérification Lighthouse post-déploiement a détecté un
+CLS de 0,42–0,55 sur les pages hero en production (articles à 0). Cause : le parseur de
+`build-critical-css.py` refermait les `@keyframes` à leur première `}` interne — 5 des 6
+`@media` de styles.css n'atteignaient jamais le bloc critique, la première frame rendait le
+hero en tailles desktop sur mobile puis refluait. Corrigé (parsing à profondeur d'accolades,
+keyframes exclus, print exclu), vérifié pixel-identique en rendu critique-seul à 412 px, et
+re-mesuré en prod : **CLS 0,002–0,01 partout, desktop 98/100**. Invariant CI ajouté (le bloc
+critique doit contenir ≥ 4 @media dont 768px). Leçon : toujours re-mesurer en production après
+un changement de stratégie CSS — les simulations locales masquent les timings réels.
+`Referrer-Policy` posée en meta (strict-origin-when-cross-origin) — seul « header » réalisable
+sans proxy. L'avertissement « inline CSS > 10 Ko » de l'outil est assumé : ces ~11 Ko (≈3 Ko
+gzip) sont précisément ce qui rend la première frame fidèle ; le TTFB « lent » signalé change
+de page à chaque crawl = cache-miss du CDN, pas un problème de page.
+
 **Limites plateforme GitHub Pages (pas de headers custom possibles)** : HSTS,
 X-Frame-Options/frame-ancestors (le CSP en meta ignore frame-ancestors par spec),
 Access-Control-Allow-Origin:* (posé par GitHub, sans risque pour un site statique public sans
