@@ -20,8 +20,8 @@
     <link rel="apple-touch-icon" href="/favicon.svg">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="modulepreload" href="js/script.min.js">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'" integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous"></noscript>
     <link rel="preload" href="/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/oswald-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/styles.css">
@@ -93,6 +93,7 @@
     </script>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Aller au contenu principal</a>
     <nav id="navbar" class="navbar" role="navigation">
         <div class="container nav-container">
             <a href="index.html" class="logo" aria-label="STP Terrassement - Accueil">
@@ -131,7 +132,7 @@
         </div>
     </nav>
 
-    <main role="main">
+    <main id="main-content" role="main">
         <!-- Simplified Hero for Legal Pages -->
         <section class="page-hero" style="background: linear-gradient(135deg, var(--dark) 0%, #1f2937 100%); min-height: 40vh;">
             <div class="hero-overlay" style="background: none;"></div>
@@ -162,7 +163,7 @@
                     <p><strong>Code NAF/APE :</strong> 4312A - Travaux de terrassement courants et travaux préparatoires</p>
                     <p><strong>Adresse :</strong> 798 C Chemin de la Roque, 13109 Simiane-Collongue, France</p>
                     <p><strong>Téléphone :</strong> <a href="tel:+33745142049">07 45 14 20 49</a></p>
-                    <p><strong>Email :</strong> <a href="#" onclick="window.location.href='mai'+'lto:'+'stp13'+'109@'+'gma'+'il.com';return false;" aria-label="Envoyer un email à STP Terrassement"><span class="email-protect" data-user="stp13109" data-domain="gmail.com">[email protégé]</span></a></p>
+                    <p><strong>Email :</strong> <a href="contact.html" onclick="window.location.href='mai'+'lto:'+'stp13'+'109@'+'gma'+'il.com';return false;" aria-label="Envoyer un email à STP Terrassement"><span class="email-protect" data-user="stp13109" data-domain="gmail.com">[email protégé]</span></a></p>
                     <p style="margin-bottom: 0;"><strong>Date de création :</strong> 4 décembre 2025</p>
                 </div>
 
@@ -231,7 +232,7 @@
             <div class="footer-col">
                 <h4>Contact</h4>
                 <p><i class="fa-solid fa-phone"></i> <a href="tel:+33745142049" style="color: inherit;">07 45 14 20 49</a></p>
-                <p><i class="fa-solid fa-envelope"></i> <a href="#" onclick="window.location.href='mai'+'lto:'+'stp13'+'109@'+'gma'+'il.com';return false;" aria-label="Envoyer un email à STP Terrassement"><span class="email-protect" data-user="stp13109" data-domain="gmail.com">[email protégé]</span></a></p>
+                <p><i class="fa-solid fa-envelope"></i> <a href="contact.html" onclick="window.location.href='mai'+'lto:'+'stp13'+'109@'+'gma'+'il.com';return false;" aria-label="Envoyer un email à STP Terrassement"><span class="email-protect" data-user="stp13109" data-domain="gmail.com">[email protégé]</span></a></p>
                 <p><i class="fa-solid fa-location-dot"></i> 798 C Chemin de la Roque, 13109 Simiane-Collongue</p>
                 <p><i class="fa-solid fa-clock"></i> Lun-Sam: 7h-19h</p>
                 <div class="footer-social">

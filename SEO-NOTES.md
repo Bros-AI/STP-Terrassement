@@ -95,6 +95,26 @@ déploiement v2, T-52 citations + 3 partenariats de liens/trimestre. Audit axe-c
 (T-22) : les contrôles statiques (h1 unique, aria-labels, labels de formulaire) sont verts ;
 passer l'extension axe DevTools sur 3 gabarits pour la validation finale.
 
+## Triage audit tiers (31/08/2026) — corrigé vs non-actionnable
+
+**Corrigé dans le code** : lien email `href="#"` → fallback réel vers contact.html (168 occurrences) ;
+SRI (`integrity` + `crossorigin`) sur le CSS Font Awesome (324 balises) ; lien d'évitement
+« Aller au contenu principal » + `<main id="main-content">` sur toutes les pages (y compris
+index/404/avis qui n'avaient pas de `<main>`) ; propriété `image` ajoutée aux 10 schemas Article
+qui ne l'avaient pas ; `<title>` interne du SVG mur-soutènement remplacé par `aria-label`
+(les outils naïfs le comptaient comme un 2ᵉ title de page).
+
+**Intentionnel — ne pas « corriger »** : `noindex` sur mentions-légales et politique-confidentialité
+(pages légales volontairement hors index, cohérent avec leur exclusion du sitemap) ;
+CSS bloquante unique (décision mesurée au Lighthouse : le pattern async causait CLS 0,31) ;
+hreflang absent (site monolingue fr — l'outil le dit lui-même : rien à faire).
+
+**Limites plateforme GitHub Pages (pas de headers custom possibles)** : HSTS,
+X-Frame-Options/frame-ancestors (le CSP en meta ignore frame-ancestors par spec),
+Access-Control-Allow-Origin:* (posé par GitHub, sans risque pour un site statique public sans
+credentials). **Seule vraie solution si exigé : passer le DNS derrière Cloudflare (gratuit) et
+poser HSTS + frame-ancestors + security headers au proxy.** Décision propriétaire.
+
 ## Mesures Lighthouse production (31/08/2026, après v2)
 
 | Gabarit | Mobile (simulé 4G lent) | Desktop |

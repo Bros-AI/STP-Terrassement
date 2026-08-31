@@ -76,6 +76,23 @@
     --transition: all 0.3s ease;
 }
 
+/* --- SKIP LINK (accessibilité clavier / lecteurs d'écran) --- */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 2000;
+    background: var(--primary);
+    color: var(--dark);
+    font-weight: 700;
+    padding: 12px 20px;
+    border-radius: 0 0 8px 0;
+    text-decoration: none;
+}
+.skip-link:focus {
+    left: 0;
+}
+
 /* --- RESET & BASE --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }

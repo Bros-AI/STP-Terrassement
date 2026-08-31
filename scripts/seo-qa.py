@@ -203,6 +203,27 @@ def main():
         if 'stp13109' not in t:
             warn(f'{fn}: contact email not referenced')
 
+        # accessibility / audit invariants
+        if '<main' not in t:
+            err(f'{fn}: no <main> landmark')
+        if 'href="#"' in t:
+            err(f'{fn}: placeholder href="#" link')
+        if 'class="navbar"' in t:
+            if 'skip-link' not in t:
+                err(f'{fn}: missing skip-to-content link')
+            if 'id="main-content"' not in t:
+                err(f'{fn}: missing id="main-content" skip target')
+        if 'font-awesome/6.5.1/css/all.min.css"' in t and 'integrity="sha384-' not in t:
+            err(f'{fn}: Font Awesome CSS without SRI integrity')
+        # Article schema must carry an image (rich results recommendation)
+        for m2 in LD_RE.finditer(t):
+            try:
+                d2 = json.loads(m2.group(1))
+            except Exception:
+                continue
+            if isinstance(d2, dict) and d2.get('@type') == 'Article' and 'image' not in d2:
+                err(f'{fn}: Article schema without image property')
+
     # sitemap parity
     sm = open('sitemap.xml', encoding='utf-8').read()
     locs = re.findall(r'<loc>([^<]+)</loc>', sm)
