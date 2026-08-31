@@ -77,6 +77,24 @@ Apple Business Connect, annuaire CCI Aix-Marseille, Batiactu. Lien vers la racin
 4. À J+21 : suivi CTR par page (objectifs : prix-enrobe-m2 ≥ 1,5 %, prix-goudronnage-allee ≥ 1,0 %).
    Rollback : si CTR d'une page chute > 30 %, restaurer l'ancien title de cette page uniquement.
 
+## Spec v2 « Perfection » — état (31/08/2026)
+
+**Fait dans le code** : T-10 (preload/CSS, mesuré au Lighthouse), T-11 (FAQ générées, parité
+exacte, 21 doublons fusionnés), T-12 (hygiène), T-20 (compression images −400 Ko, dimensions
+déjà complètes sur les 302 img), T-23 (llms.txt daté, 17 guides décrits), T-30 (photos sur les
+2 pages sans image, 13 titles formule T-3.2), T-40 (`scripts/seo-qa.py`, vert en --strict sur
+165 pages), T-41 (GitHub Action `seo-qa.yml`, testée contre des régressions volontaires).
+
+**Workflow permanent** : après toute modification d'une FAQ visible →
+`python scripts/build-faq-schema.py --write` puis `python scripts/seo-qa.py --strict`.
+La CI bloque tout push qui réintroduit un des bugs corrigés.
+
+**Reste côté admin (v2 partie D)** : T-50 fiche GBP + avis (inchangé), T-51 analytics avec
+4 événements (formulaire devis, clic tel:, WhatsApp, email) + annotation GSC de la date de
+déploiement v2, T-52 citations + 3 partenariats de liens/trimestre. Audit axe-core complet
+(T-22) : les contrôles statiques (h1 unique, aria-labels, labels de formulaire) sont verts ;
+passer l'extension axe DevTools sur 3 gabarits pour la validation finale.
+
 ## Décisions spec v2 (31/08/2026)
 
 - **T-10** : preload de l'image hero supprimé partout. Mesuré au Lighthouse : le LCP est le
