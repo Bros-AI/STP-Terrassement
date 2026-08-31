@@ -204,6 +204,12 @@ def main():
             if '"@type":"WebSite"' not in t:
                 err(f'{fn}: missing WebSite schema')
 
+        # GitHub-Pages-only hardening: full meta CSP + frame-buster
+        if 'content="default-src' not in t:
+            err(f'{fn}: missing full Content-Security-Policy meta')
+        if 'self!==top' not in t:
+            err(f'{fn}: missing frame-buster snippet')
+
         # hreflang self + x-default (single-language site, documented intent)
         if 'hreflang="fr"' not in t or 'hreflang="x-default"' not in t:
             err(f'{fn}: missing hreflang fr/x-default pair')

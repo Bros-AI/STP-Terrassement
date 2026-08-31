@@ -159,6 +159,17 @@ et vérifié pixel-perfect — refusé, la fiabilité prime sur le compteur. Pro
 mobile (score 0,79 accueil) si souhaité un jour : remplacer Font Awesome (CSS 19 Ko + woff2
 115/153 Ko) par des SVG inline — chantier visuel à part entière.
 
+**Durcissement « GitHub Pages only » (Cloudflare et Netlify écartés par le propriétaire)** :
+le plafond de la plateforme est atteint — **CSP complète en meta** sur les 161 pages
+(appliquée par les navigateurs : default-src/script/style/font/img/connect/form-action
+restreints à self + cdnjs + web3forms ; `frame-ancestors` volontairement omis car ignoré
+en meta par la spec) + **frame-buster JS inline** (seule mitigation clickjacking possible
+sans header ; contournable via sandbox, mais c'est le maximum atteignable). Vérifié :
+rendu intact icônes comprises, formulaire OK. **Les lignes « Security » de l'outil d'audit
+resteront rouges** : il teste les *headers HTTP*, que GitHub Pages ne peut pas émettre —
+la protection réelle côté navigateur, elle, est en place. Ce point est définitif tant que
+l'hébergement reste GitHub Pages seul.
+
 **Limites plateforme GitHub Pages (pas de headers custom possibles)** : HSTS,
 X-Frame-Options/frame-ancestors (le CSP en meta ignore frame-ancestors par spec),
 Access-Control-Allow-Origin:* (posé par GitHub, sans risque pour un site statique public sans
