@@ -1621,3 +1621,23 @@ img[loading="lazy"] {
     body { color: #000; }
     a { color: #000; text-decoration: underline; }
 }
+/* --- CTA LOCAL (maillage blog -> pages villes) --- */
+.cta-local {
+    background: rgba(255, 180, 0, 0.08);
+    border-left: 4px solid var(--primary);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 30px 0;
+}
+.cta-local p { margin: 0 0 14px; line-height: 1.7; }
+.cta-local a { color: var(--primary-dark); font-weight: 600; }
+.cta-local a.btn {
+    display: inline-block;
+    background: var(--primary);
+    color: var(--dark);
+    font-weight: 700;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+.cta-local a.btn:hover { background: var(--primary-dark); }
