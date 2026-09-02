@@ -298,6 +298,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.style.opacity = '1';
             };
 
+            // Mirror the enquiry into the ERP (admin.stp-terrassement.com) so it
+            // lands in "Demandes" as a lead, not just in the inbox.
+            // Deliberately fire-and-forget and never awaited: Web3Forms stays the
+            // path that guarantees delivery, so if the ERP is down or slow the
+            // visitor's submission is completely unaffected. The ERP also
+            // de-duplicates, so the copy Web3Forms emails cannot create a second
+            // lead.
+            try {
+                const lead = {};
+                formData.forEach((value, key) => { lead[key] = value; });
+                delete lead.access_key;
+                lead.page = window.location.pathname;
+                fetch('https://admin.stp-terrassement.com/api/public/leads', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(lead),
+                    keepalive: true
+                }).catch(() => { /* the inbox copy is the fallback */ });
+            } catch (_) { /* never let this break the real submission */ }
+
             fetch(form.action, {
                 method: (form.method || 'POST').toUpperCase(),
                 body: formData,
