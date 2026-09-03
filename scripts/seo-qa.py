@@ -38,9 +38,9 @@ faqlib = __import__('build-faq-schema')
 DOMAIN = 'https://stp-terrassement.com'
 EMAIL = 'stp13109@gmail.com'
 PHONE = '+33745142049'
-GEO = '43.4302;5.4341'
+GEO = '43.42634;5.45900'  # Google Business Profile pin (Plus code CFG5+GJ), read 2026-09-03
 NOINDEX_PAGES = {'404.html', 'avis.html', 'v38cnl93ujw3zgpz916ykx807t2c3v.html'}
-FORBIDDEN = ['43.529742', '5.447427', '127 avis', 'contact@stp-terrassement.com',
+FORBIDDEN = ['43.529742', '5.447427', '43.4302;5.4341', '127 avis', 'Notés 5/5', 'Lun-Sam: 7h-19h', 'contact@stp-terrassement.com',
              '4.9/5', '4,9/5', 'aggregateRating']
 
 LD_RE = re.compile(r'<script type="application/ld\+json">(.*?)</script>', re.S)

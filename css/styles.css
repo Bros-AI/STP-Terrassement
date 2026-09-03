@@ -1990,3 +1990,8 @@ a[style*="var(--link)"] { text-decoration: underline; }
 .post-figure { margin: 28px 0; }
 .post-figure img { width: 100%; height: auto; border-radius: 12px; display: block; }
 .post-figure figcaption { font-size: .875rem; color: var(--text-light); margin-top: 8px; line-height: 1.5; }
+
+/* --- GOOGLE PROOF (spec SEO-04): real rating + review count, linked to the listing; no self-declared rating markup --- */
+.proof-google { white-space: nowrap; }
+.proof-google__stars { color: var(--primary); letter-spacing: 1px; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

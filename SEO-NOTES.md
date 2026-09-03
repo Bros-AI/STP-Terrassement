@@ -307,3 +307,15 @@ Effet de bord corrigé au passage : dans 46 articles le bloc « Pour Aller Plus 
 - `sitemap.xml` : 69 entrées `<image:image>` supplémentaires.
 - Incident corrigé : 10 articles sans bloc `.article-meta` avaient reçu la photo d'illustration **avant `<head>`** (ancre introuvable → position 0). Déplacées dans l'article ; invariant seo-qa « le document commence par `<!DOCTYPE html>` ».
 - Clé API : utilisée depuis un fichier du scratchpad, jamais dans le dépôt ni dans une commande ; à révoquer côté propriétaire après lecture.
+
+## 2026-09-03 — Alignement sur la fiche Google (source de vérité NAP)
+
+Fiche publique lue en navigateur headless (consentement accepté, lecture seule) : STP Terrassement, catégorie « Entreprise de terrassement », 798 Chem. de la Roque 13109 Simiane-Collongue, **note 5,0 sur 3 avis**, **horaires lun-ven 08:00-19:30, sam 11:00-19:30, dim fermé**, repère Plus code CFG5+GJ ≈ **43,42634 ; 5,45900**, 3 photos (miniatures 533 px, originaux non accessibles).
+
+Écarts corrigés sur le site :
+- Horaires : « Lun-Sam 7h-19h » (footer des 165 pages + `openingHoursSpecification` de 173 nœuds) → horaires de la fiche.
+- Coordonnées : 43,4302 ; 5,4341 (≈ 2 km à l'ouest du repère de la fiche) → 43,42634 ; 5,45900 sur `geo.position`, `ICBM` et 189 nœuds `GeoCoordinates` ; constante `GEO` de seo-qa mise à jour, ancienne valeur ajoutée aux valeurs interdites.
+- Preuve (SEO-04) : les 11 mentions « Notés 5/5 sur Google » deviennent un bloc `.proof-google` lié à la fiche avec le nombre réel d'avis (`<span data-review-count>3</span>`), idem carte statistique de l'accueil et bloc contact ; aucun `aggregateRating` ajouté. **À chaque nouvel avis, mettre à jour les `data-review-count`** (recherche du motif dans le dépôt) ; l'ancienne formule « Notés 5/5 » est désormais interdite par seo-qa.
+- llms.txt : horaires et avis ajoutés.
+
+Reste côté propriétaire : collecter des avis (3 aujourd'hui ; avis.html + QR existent), envoyer les originaux des 3 photos de la fiche pour remplacer des illustrations, vérifier que le repère de la fiche est bien le bon (le site le suit désormais).
