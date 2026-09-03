@@ -24,7 +24,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TOKENS = ['skip-link', 'navbar', 'nav-container', 'logo', 'brand-', 'nav-links',
           'btn', 'mobile-toggle', 'mobile-menu', 'hero', 'badge', 'trust-',
           'wave-bottom', 'container', 'form', 'highlight',
-          'fa-', 'float-wa', 'grid-', 'align-center', 'rounded-img', 'feature-list', 'service-list', 'focus-visible', 'callbar', 'u-']  # self-hosted icon subset; float-wa is visible in the first frame: icons render at first paint
+          'fa-', 'float-wa', 'grid-', 'align-center', 'rounded-img', 'feature-list', 'service-list', 'focus-visible', 'callbar', 'u-', 'post-figure']  # figures can sit in the first viewport: their margin must not arrive late  # self-hosted icon subset; float-wa is visible in the first frame: icons render at first paint
 BARE = {':root', '*', 'html', 'body', 'h1, h2, h3, h4', 'a', 'img', 'ul',
         # .section provides the top offset under the fixed navbar on no-hero
         # pages (articles, legal): without it the first frame renders the H1
@@ -46,6 +46,61 @@ def page_block(block, html):
         keep = [s for s in m.group(1).split(',') if s.strip('.').replace('::before', '') in used]
         return (','.join(keep) + m.group(0)[m.end(1) - m.start():]) if keep else ''
     return FA_RULE_RE.sub(filt, block)
+
+
+# classes that JS adds at runtime (never in the HTML) - their rules must survive pruning
+DYNAMIC = {'active', 'scrolled', 'open', 'show', 'visible', 'hidden', 'loaded', 'revealed', 'is-visible', 'error',
+           'success', 'notification', 'lightbox', 'lightbox-close', 'lightbox-caption', 'lightbox-img', 'sticky', 'fixed'}
+CLASS_RE = re.compile(r'\.([A-Za-z_][\w-]*)')
+
+
+def prune_unused(block, html):
+    """Drop rules whose every selector group references a class absent from the page (the shared block carries the
+    union of all templates). Nested @media blocks are pruned the same way; @font-face and class-free rules are kept."""
+    body = re.sub(re.escape(START) + '.*?' + re.escape(END), '', html, flags=re.S)
+    present = set(re.findall(r'class="([^"]*)"', body))
+    classes = set()
+    for c in present:
+        classes.update(c.split())
+    classes |= DYNAMIC
+
+    def keep_group(sel):
+        names = CLASS_RE.findall(sel)
+        return all(nm in classes for nm in names)
+
+    def prune_rules(css):
+        out, i, n = [], 0, len(css)
+        while i < n:
+            b = css.find('{', i)
+            if b == -1:
+                break
+            sel = css[i:b].strip()
+            if sel.startswith('@media') or sel.startswith('@supports'):
+                depth, k = 0, b
+                while k < n:
+                    if css[k] == '{':
+                        depth += 1
+                    elif css[k] == '}':
+                        depth -= 1
+                        if depth == 0:
+                            break
+                    k += 1
+                inner = prune_rules(css[b + 1:k])
+                if inner:
+                    out.append(sel + '{' + inner + '}')
+                i = k + 1
+                continue
+            e = css.find('}', b)
+            rule_body = css[b + 1:e]
+            if sel.startswith('@') or any(keep_group(g) for g in sel.split(',')):
+                out.append(sel + '{' + rule_body + '}')
+            i = e + 1
+        return ''.join(out)
+
+    m = re.match(r'(\s*' + re.escape(START) + r'<style>)(.*)(</style>' + re.escape(END) + r'\s*)', block, re.S)
+    if not m:
+        return block
+    return m.group(1) + prune_rules(m.group(2)) + m.group(3)
 
 START = '<!-- critical:start -->'
 END = '<!-- critical:end -->'
@@ -145,7 +200,7 @@ def main():
         # refresh an existing block, or install the pattern
         if START in t:
             t = re.sub(re.escape(START) + '.*?' + re.escape(END),
-               lambda m: page_block(block, t).strip(), t, flags=re.S)  # lambda: block may contain backslashes (icon codepoints)
+               lambda m: prune_unused(page_block(block, t), t).strip(), t, flags=re.S)  # lambda: block may contain backslashes (icon codepoints)
         else:
             m = re.search(r'[ \t]*<link rel="stylesheet" href="(?:\.\./)?css/styles\.css">\n', t)
             if not m:

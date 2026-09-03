@@ -346,3 +346,14 @@ Corrigé :
 - Budgets Lighthouse de la CI hebdomadaire resserrés (desktop ≥ 95, mobile ≥ 88, LCP mobile ≤ 3,2 s).
 - Non modifié, assumé : 70 titres à deux séparateurs « | » (réécriture = décision CTR, la spec impose une attribution par commit) ; `images/logo-stp-terrassement.webp` n'est référencé que dans le JSON-LD (faux positif « orphelin »).
 - axe-core (second passage, avec délai de stabilisation) : 21 lignes d'en-tête de tableau en blanc sur ambre (1,78:1) passées en texte sombre (9,7:1), `tabindex="0"` sur les 115 tableaux `.price-table` à défilement propre, libellés de régions uniques (« Tableau : {légende} »). Résultat : 0 violation sur les 8 pages les plus concernées, 0 sur l'échantillon accueil / ville / contact.
+
+## 2026-09-03 (5e passe) — audit tiers n° 5 (re-check)
+
+- **Titres dupliqués (20 pages)** : trois causes. Cartes de maillage répétant une carte « service » déjà présente sur la même page (96 cartes retirées, aucune perte de lien entrant : même page, même cible) ; questions de FAQ reprenant un h2 du contenu ou présentes dans deux sections FAQ (7 reformulées « En résumé : … », schémas régénérés) ; trois doublons de contenu renommés. Résultat : 0 doublon sur 165 pages.
+- **Landmark `<header>` absent** : `<header class="article-header">` autour du h1 (+ méta) des 49 articles et du lexique ; `.page-hero` des pages légales devient un `<header>`.
+- **H1 trop longs** : 51 H1 raccourcis sous 70 caractères en tronquant la seconde ligne item par item (alt Open Graph mis à jour), un cas manuel.
+- **Balises sociales des pages légales** : og:title / description / url / type / locale, twitter:card / title / description ajoutés.
+- **Trop de liens (accueil 234, blog 217)** : liste « Nos interventions » du footer retirée (13 pages, doublon du bloc zones), colonne « Aménagement & Spécialités » retirée de l'accueil (pages toujours liées depuis les pages villes et services ; un lien compensatoire pour enrochement-fuveau), deux auto-liens « Accueil » retirés de l'accueil → 199 et 199.
+- **CSS inline 17,7 Ko** : le générateur élague désormais, page par page, les règles du bloc critique dont les classes n'apparaissent pas dans la page (classes ajoutées par JS en liste blanche) : articles ≈ 9,5 Ko, pages légales ≈ 10 Ko, pages hero ≈ 15-16 Ko (la barre des 10 Ko de l'outil n'est pas atteignable sur les pages hero sans dégrader le premier rendu). Les règles `.post-figure` sont ajoutées au bloc critique : la marge des figures arrivait avec la feuille et produisait le CLS 0,03 des articles.
+- Contrôles : premier rendu critique vs complet inchangé (différences = animations et bruit de dégradé, styles calculés identiques), 0 titre dupliqué, QA/validate/feed/FAQ verts.
+- Non modifiables : en-têtes HTTP (CSP, Referrer-Policy, Permissions-Policy, X-Content-Type-Options, Content-Language), extension `.html` des URL (changer les URL sans 301 est exclu), premier octet froid du CDN, DNS GoDaddy.
