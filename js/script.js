@@ -308,6 +308,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!data.success) {
                     throw new Error(data.message || 'Submission failed');
                 }
+                document.dispatchEvent(new CustomEvent('stp:lead', { detail: { service: (formData.get('service') || '') } }));
                 showNotification('Demande envoyée avec succès ! Nous vous contacterons sous 24h.', 'success');
                 form.reset();
                 resetButton();

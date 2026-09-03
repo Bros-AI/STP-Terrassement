@@ -58,7 +58,9 @@
 :root {
     --primary: #FFB400;
     --primary-dark: #dba000;
-    --link: #A64B07; /* amber link readable on white/gray: 5.0/4.6:1 (AA) */
+    --link: #A64B07;
+    --primary-ink-light: #A64B07; /* amber as TEXT on light backgrounds: 5.8:1 on white, 5.2:1 on the cta cream */
+    --primary-ink-dark: #FFB400;  /* amber as TEXT on dark backgrounds: 9.7:1 on #111827 */ /* amber link readable on white/gray: 5.0/4.6:1 (AA) */
     --primary-light: #ffc933;
     --dark: #111827;
     --gray: #f3f4f6;
@@ -112,7 +114,7 @@ body {
     color: var(--text);
     line-height: 1.6;
     background: var(--white);
-    overflow-x: hidden;
+
 }
 h1, h2, h3, h4 { 
     font-family: var(--font-head); 
@@ -254,7 +256,7 @@ ul { list-style: none; }
     color: var(--dark); 
 }
 .brand-sub { 
-    font-size: 11px; 
+    font-size: 12px; 
     letter-spacing: 1.5px; 
     font-weight: 700; 
     color: #666; 
@@ -1962,4 +1964,24 @@ a[style*="var(--link)"] { text-decoration: underline; }
 @media (prefers-reduced-motion: reduce) {
     * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
     *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+/* --- MOBILE CALL BAR (spec SEO-07): phone + WhatsApp, fixed at the bottom under 768px --- */
+.callbar { display: none; }
+@media (max-width: 767px) {
+    .callbar { position: fixed; inset: auto 0 0 0; z-index: 900; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 8px 12px calc(8px + env(safe-area-inset-bottom)); background: rgba(17, 24, 39, .96); border-top: 1px solid rgba(255, 180, 0, .35); }
+    .callbar__btn { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; border-radius: 10px; font-weight: 600; font-size: 16px; text-decoration: none; }
+    .callbar__btn--tel { background: #FFB400; color: #111827; }
+    .callbar__btn--wa { background: transparent; color: #FFE2A3; border: 1.5px solid rgba(255, 180, 0, .5); }
+    body { padding-bottom: 76px; }          /* the bar must never hide the end of the page */
+    .float-wa { display: none; }            /* no second WhatsApp button on mobile */
+}
+
+/* --- MOBILE DETAILS (spec SEO-08) --- */
+@media (max-width: 1024px) {
+    .hero { background-attachment: scroll; }   /* parallax stutters on iOS and costs paint */
+}
+@media (max-width: 767px) {
+    .article-content p, .article-content li, .page-content p, .section-intro { font-size: 1rem; }   /* 16px floor for read text */
+    small, .meta, figcaption, .article-meta { font-size: .875rem; }                                  /* 14px floor */
 }

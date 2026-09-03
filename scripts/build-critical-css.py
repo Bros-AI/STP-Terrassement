@@ -24,7 +24,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TOKENS = ['skip-link', 'navbar', 'nav-container', 'logo', 'brand-', 'nav-links',
           'btn', 'mobile-toggle', 'mobile-menu', 'hero', 'badge', 'trust-',
           'wave-bottom', 'container', 'form', 'highlight',
-          'fa-', 'float-wa', 'grid-', 'align-center', 'rounded-img', 'feature-list', 'service-list', 'focus-visible']  # self-hosted icon subset; float-wa is visible in the first frame: icons render at first paint
+          'fa-', 'float-wa', 'grid-', 'align-center', 'rounded-img', 'feature-list', 'service-list', 'focus-visible', 'callbar']  # self-hosted icon subset; float-wa is visible in the first frame: icons render at first paint
 BARE = {':root', '*', 'html', 'body', 'h1, h2, h3, h4', 'a', 'img', 'ul',
         # .section provides the top offset under the fixed navbar on no-hero
         # pages (articles, legal): without it the first frame renders the H1

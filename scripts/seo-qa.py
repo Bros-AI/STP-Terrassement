@@ -261,6 +261,12 @@ def main():
         if 'font-display:block' in t:
             err(f'{fn}: font-display:block found (use fallback/swap)')
 
+        # spec SEO-07 / SEO-01: mobile call bar and conversion tracking on every template page
+        if 'class="callbar"' not in t:
+            err(f'{fn}: mobile call bar (.callbar) missing')
+        if 'js/track.js' not in t:
+            err(f'{fn}: js/track.js not loaded')
+
         # GitHub-Pages-only hardening: full meta CSP + frame-buster
         if 'content="default-src' not in t:
             err(f'{fn}: missing full Content-Security-Policy meta')
@@ -332,8 +338,7 @@ def main():
     if len(locs) != len(set(locs)):
         err('sitemap.xml: duplicate <loc> entries')
     sm_paths = {(u.replace(DOMAIN + '/', '') or 'index.html') for u in locs}
-    disk = {f.replace('\\', '/') for f in files} - {
-        'mentions-legales.html', 'politique-confidentialite.html'} - NOINDEX_PAGES
+    disk = {f.replace('\\', '/') for f in files} - NOINDEX_PAGES
     for missing in sorted(disk - sm_paths):
         err(f'sitemap.xml: page on disk but not in sitemap: {missing}')
     for ghost in sorted(sm_paths - disk):
