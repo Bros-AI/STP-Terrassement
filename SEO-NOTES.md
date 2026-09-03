@@ -237,3 +237,11 @@ Audit lecture seule (11 catégories) puis corrections, puis 3 passes de vérific
 ### Piège rencontré
 Insertion d'un lien dans un footer sur une seule ligne : calculer l'indentation avec `rfind('
 ')` duplique le préfixe de ligne (29 pages avec un `<div` orphelin, détecté par validate.py avant push). Toujours re-valider l'équilibre des balises après une insertion générique.
+
+### Vérification finale 2026-09-03 (3 passes)
+1. Locale : seo-qa --strict (168 pages), validate.py, deep_audit (165/165 atteignables, profondeur max 2, 0 id dupliqué, 0 saut de titre, 0 référence @id non résolue), check_dates (0 désync), feed/fresh-links --check.
+2. Live : 3 nouvelles URL en 200 avec schémas, sitemap 163 URL, feed 48 entrées, robots IA, 404 ; CI SEO QA + IndexNow + Pages verts sur f6ab27a, f1d44ee, 5c5e1d0.
+3. Lighthouse production : SEO 100, bonnes pratiques 100, TBT 0 partout ; accessibilité 96 → 100 après correction des 3 contrastes (h3 d'article ambre 1,78:1 → `--link` 5,0:1 ; marque navbar ; WhatsApp `#25D366` → `#075E54`, 7,7:1) ; perf mobile 74-95, desktop 98.
+
+### CLS : lire les bons chiffres
+En mode `simulate` (défaut), Lighthouse a attribué un CLS de 0,181 à l'image lazy de l'article sol rocheux sur une mesure sur deux, alors que la même page donnait 0,009 juste avant. Reproduit en local avec `--throttling-method=devtools` sur quatre variantes (témoin, `aspect-ratio` explicite, sans image, sans lazy) : CLS strictement identique (0,046 / 0,016) dans les quatre cas, uniquement dû aux permutations de polices (h1 Oswald 0,03, paragraphes Inter 0,016). L'image est hors de cause ; le 0,181 est un artefact d'attribution du mode simulé (image lazy chargée pendant la capture pleine page). Règle : pour diagnostiquer un CLS, mesurer avec `--throttling-method=devtools` et faire un A/B local sur une copie servie par `python -m http.server`, jamais conclure sur une seule mesure simulée.
