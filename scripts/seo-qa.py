@@ -130,8 +130,8 @@ def main():
             err(f'{fn}: missing meta description')
         else:
             d = md.group(1)
-            if not (120 <= len(d) <= 165):
-                err(f'{fn}: meta description length {len(d)} (want 120-165)')
+            if not (120 <= len(d) <= 160):
+                err(f'{fn}: meta description length {len(d)} (want 120-160)')
             if d in descs:
                 err(f'{fn}: duplicate meta description (also on {descs[d]})')
             descs[d] = fn
@@ -251,6 +251,15 @@ def main():
                 a = ent.get('acceptedAnswer', {}).get('text', '')
                 if 'Devis gratuit sous 24 h' in a or 'Faire analyser mon devis' in a:
                     err(f'{fn}: FAQ answer polluted by cta-local text: "{ent.get("name", "")[:50]}"')
+
+        # first-frame accessibility: focus ring + reduced-motion must ship inline (audit tools only
+        # read inline CSS; keyboard users and vestibular users must not wait for styles.css)
+        if 'focus-visible' not in t:
+            err(f'{fn}: :focus-visible rule missing from the inline critical block')
+        if 'prefers-reduced-motion' not in t:
+            err(f'{fn}: prefers-reduced-motion block missing from the inline critical block')
+        if 'font-display:block' in t:
+            err(f'{fn}: font-display:block found (use fallback/swap)')
 
         # GitHub-Pages-only hardening: full meta CSP + frame-buster
         if 'content="default-src' not in t:

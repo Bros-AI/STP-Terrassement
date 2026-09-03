@@ -1740,8 +1740,8 @@ footer p, .copyright p { color: #9ca3af; }
 
 /* --- ICONS: self-hosted Font Awesome subset (see fonts/FONT-AWESOME-LICENSE.txt) --- */
 /*! Font Awesome Free 6.5.1 (subset) - https://fontawesome.com | Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License (https://fontawesome.com/license/free) - Copyright 2023 Fonticons, Inc. Subset generated from the official free webfonts; only the glyphs used on stp-terrassement.com are kept. */
-@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:900;font-display:block;src:url(../fonts/fa-solid-subset.woff2) format("woff2")}
-@font-face{font-family:"Font Awesome 6 Brands";font-style:normal;font-weight:400;font-display:block;src:url(../fonts/fa-brands-subset.woff2) format("woff2")}
+@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:900;font-display:fallback;src:url(../fonts/fa-solid-subset.woff2) format("woff2")}
+@font-face{font-family:"Font Awesome 6 Brands";font-style:normal;font-weight:400;font-display:fallback;src:url(../fonts/fa-brands-subset.woff2) format("woff2")}
 .fa,.fa-solid,.fa-brands{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-style:normal;font-variant:normal;line-height:1;text-rendering:auto}
 .fa-solid{font-family:"Font Awesome 6 Free";font-weight:900}
 .fa-brands{font-family:"Font Awesome 6 Brands";font-weight:400}
@@ -1958,3 +1958,8 @@ footer p, .copyright p { color: #9ca3af; }
 .contact-box .contact-infos .info-item, .contact-box .contact-infos .info-item a { color: #d1d5db; }
 /* a11y (link-in-text-block): a link whose colour is close to the surrounding text must be underlined */
 a[style*="var(--link)"] { text-decoration: underline; }
+/* a11y: users who ask for reduced motion get no animations/transitions (WCAG 2.3.3) */
+@media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+    *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}

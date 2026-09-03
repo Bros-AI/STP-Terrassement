@@ -24,13 +24,28 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TOKENS = ['skip-link', 'navbar', 'nav-container', 'logo', 'brand-', 'nav-links',
           'btn', 'mobile-toggle', 'mobile-menu', 'hero', 'badge', 'trust-',
           'wave-bottom', 'container', 'form', 'highlight',
-          'fa-', 'float-wa', 'grid-', 'align-center', 'rounded-img', 'feature-list', 'service-list']  # self-hosted icon subset; float-wa is visible in the first frame: icons render at first paint
+          'fa-', 'float-wa', 'grid-', 'align-center', 'rounded-img', 'feature-list', 'service-list', 'focus-visible']  # self-hosted icon subset; float-wa is visible in the first frame: icons render at first paint
 BARE = {':root', '*', 'html', 'body', 'h1, h2, h3, h4', 'a', 'img', 'ul',
         # .section provides the top offset under the fixed navbar on no-hero
         # pages (articles, legal): without it the first frame renders the H1
         # clipped under the menu, then shifts down when styles.css lands
         # (measured CLS 0.092 on articles)
-        '.section', '.bg-light'}
+        '.section', '.bg-light', '*::before, *::after'}
+
+
+FA_RULE_RE = re.compile(r'((?:\.fa-[a-z0-9-]+::before,?)+)\{content:"[^"]*"\}')
+
+
+def page_block(block, html):
+    """Keep only the icon glyph rules whose class is used on this page (the shared block
+    carries every icon of the site; a page uses 20-40 of them)."""
+    html = re.sub(re.escape(START) + '.*?' + re.escape(END), '', html, flags=re.S)  # ignore the previous block itself
+    used = set(re.findall(r'\bfa-[a-z0-9-]+', html))
+
+    def filt(m):
+        keep = [s for s in m.group(1).split(',') if s.strip('.').replace('::before', '') in used]
+        return (','.join(keep) + m.group(0)[m.end(1) - m.start():]) if keep else ''
+    return FA_RULE_RE.sub(filt, block)
 
 START = '<!-- critical:start -->'
 END = '<!-- critical:end -->'
@@ -130,7 +145,7 @@ def main():
         # refresh an existing block, or install the pattern
         if START in t:
             t = re.sub(re.escape(START) + '.*?' + re.escape(END),
-               lambda m: block.strip(), t, flags=re.S)  # lambda: block may contain backslashes (icon codepoints)
+               lambda m: page_block(block, t).strip(), t, flags=re.S)  # lambda: block may contain backslashes (icon codepoints)
         else:
             m = re.search(r'[ \t]*<link rel="stylesheet" href="(?:\.\./)?css/styles\.css">\n', t)
             if not m:
