@@ -66,7 +66,7 @@
     --text: #374151;
     --text-light: #6b7280;
     --white: #ffffff;
-    --whatsapp: #25D366;
+    --whatsapp: #075E54; /* WhatsApp dark teal: 7.7:1 with white text (was #25D366, 1.98:1) */
     --success: #10b981;
     --danger: #ef4444;
     --font-main: 'Inter', 'Inter Fallback', sans-serif;
@@ -137,6 +137,7 @@ ul { list-style: none; }
 .bg-yellow { background: var(--primary); }
 .text-yellow { color: var(--primary); }
 .highlight { color: var(--primary); }
+.brand-name .highlight { color: var(--link); } /* navbar brand on white: 5.0:1 (primary amber is 1.78:1) */
 .text-white { color: var(--white); }
 .lead { font-size: 1.2rem; margin-bottom: 20px; opacity: 0.9; }
 
@@ -172,7 +173,7 @@ ul { list-style: none; }
     box-shadow: var(--shadow);
 }
 .btn-whatsapp:hover { 
-    background: #20bd5a; 
+    background: #128C7E; 
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
 }
