@@ -357,3 +357,16 @@ Corrigé :
 - **CSS inline 17,7 Ko** : le générateur élague désormais, page par page, les règles du bloc critique dont les classes n'apparaissent pas dans la page (classes ajoutées par JS en liste blanche) : articles ≈ 9,5 Ko, pages légales ≈ 10 Ko, pages hero ≈ 15-16 Ko (la barre des 10 Ko de l'outil n'est pas atteignable sur les pages hero sans dégrader le premier rendu). Les règles `.post-figure` sont ajoutées au bloc critique : la marge des figures arrivait avec la feuille et produisait le CLS 0,03 des articles.
 - Contrôles : premier rendu critique vs complet inchangé (différences = animations et bruit de dégradé, styles calculés identiques), 0 titre dupliqué, QA/validate/feed/FAQ verts.
 - Non modifiables : en-têtes HTTP (CSP, Referrer-Policy, Permissions-Policy, X-Content-Type-Options, Content-Language), extension `.html` des URL (changer les URL sans 301 est exclu), premier octet froid du CDN, DNS GoDaddy.
+
+## 6e passe (2026-09-03) — CLS résiduel des titres : Oswald en `font-display: optional`
+
+Symptôme : CLS ≈ 0,03 sur les articles (throttling devtools), attribué au swap de la police Oswald sur les titres.
+
+Diagnostic (Chrome headless, 412 px, 8 gabarits, 302 titres) :
+- tous les titres h1–h3 sont en `text-transform: uppercase` (règle globale), donc le repli « Oswald Fallback » calibré à 77,8 % est le bon ; une piste « repli casse mixte » (91 %) a été testée puis abandonnée (elle aggravait : 35 à 64 titres décalés selon la valeur).
+- le ratio largeur Oswald/Arial par chaîne va de 0,99 (p10) à 1,05 (p90) : aucune valeur unique de `size-adjust` ne supprime les changements de nombre de lignes (balayage 76 → 80 % : 11 à 20 titres décalés sur 302, 2 à 4 H1). 77,8 % reste l'optimum et n'est pas modifié.
+- A/B local avec polices retardées de 1,5 s : `swap` → CLS 0,083 (page ville, héros) et 0,031 (tarifs) ; `optional` → ≤ 0,0025 (résidu Inter sur `.badge`). Sans retard : 0 dans les deux cas.
+
+Correctif : les 2 blocs `@font-face` d'Oswald passent en `font-display: optional` (styles.css + bloc critique). La police est préchargée, donc utilisée dès le premier rendu quand elle arrive à temps ; sinon le repli calibré reste pour cette vue et aucun décalage n'est possible. Inter (corps) garde `swap` : son repli est calibré à 1,000 et son résidu est négligeable.
+
+Piège : `getComputedStyle(el).fontFamily` renvoie la pile déclarée, pas la police effectivement rendue — pour savoir quelle face est affichée, comparer les hauteurs/largeurs mesurées ou `document.fonts.check`.
