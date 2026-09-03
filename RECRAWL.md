@@ -25,6 +25,7 @@ Demander une indexation » dans GSC, puis re-soumettre `sitemap.xml`.
 | https://stp-terrassement.com/blog/prix-raccordement-eau-potable.html | 2026-08-31 | 2026-08-31 | title réécrit | [ ] |
 | https://stp-terrassement.com/blog/prix-terrassement-m2.html | 2026-08-31 | 2026-08-31 | title réécrit | [ ] |
 | https://stp-terrassement.com/blog/prix-terrassement-piscine-dimensions.html | 2026-08-31 | 2026-08-31 |  | [ ] |
+| https://stp-terrassement.com/blog/prix-terrassement-rocheux-brh.html | 2026-09-03 | 2026-09-03 |  | [ ] |
 | https://stp-terrassement.com/blog/raccordement-tout-egout-prix.html | 2026-08-31 | 2026-08-31 | title réécrit | [ ] |
 | https://stp-terrassement.com/blog/terrassement-piscine-guide.html | 2026-08-31 | 2026-08-31 |  | [ ] |
 | https://stp-terrassement.com/bordures-caniveaux-aix-en-provence.html | — | 2026-08-31 |  | [ ] |
@@ -33,9 +34,11 @@ Demander une indexation » dans GSC, puis re-soumettre `sitemap.xml`.
 | https://stp-terrassement.com/decaissement-terrain-marseille.html | — | 2026-08-31 |  | [ ] |
 | https://stp-terrassement.com/drainage-terrain-aix-en-provence.html | — | 2026-08-31 |  | [ ] |
 | https://stp-terrassement.com/drainage-terrain-marseille.html | — | 2026-08-31 |  | [ ] |
+| https://stp-terrassement.com/lexique-terrassement.html | — | 2026-09-03 |  | [ ] |
 | https://stp-terrassement.com/location-materiel.html | — | 2026-08-31 | title réécrit | [ ] |
 | https://stp-terrassement.com/nivellement-terrain-aix-en-provence.html | — | 2026-08-31 |  | [ ] |
 | https://stp-terrassement.com/paves-autobloquants-aix-en-provence.html | — | 2026-08-31 |  | [ ] |
+| https://stp-terrassement.com/tarifs-terrassement-2026.html | — | 2026-09-03 |  | [ ] |
 | https://stp-terrassement.com/terrassement-marseille.html | — | 2026-08-31 | title réécrit | [ ] |
 | https://stp-terrassement.com/terrassement-terrain-constructible-aix-en-provence.html | — | 2026-08-31 |  | [ ] |
 | https://stp-terrassement.com/viabilisation-terrain-aix-en-provence.html | — | 2026-08-31 |  | [ ] |
@@ -43,7 +46,7 @@ Demander une indexation » dans GSC, puis re-soumettre `sitemap.xml`.
 | https://stp-terrassement.com/viabilisation-terrain-marseille.html | — | 2026-08-31 |  | [ ] |
 | https://stp-terrassement.com/viabilisation-terrain-salon-de-provence.html | — | 2026-08-31 |  | [ ] |
 
-**34 pages** à faire recrawler en priorité.
+**37 pages** à faire recrawler en priorité.
 
 Vérification du recrawl (J+7 → J+21) : dans GSC, Inspection d'URL → « Vue
 d'ensemble de la page explorée » doit montrer une date de crawl postérieure au

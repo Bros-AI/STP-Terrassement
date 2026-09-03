@@ -31,7 +31,7 @@ def main():
     os.chdir(ROOT)
     sm = open('sitemap.xml', encoding='utf-8').read()
     lastmod = dict(re.findall(r'<loc>' + re.escape(SITE) + r'/([^<]*)</loc>\s*<lastmod>([0-9-]+)</lastmod>', sm))
-    targets = sorted({p for p, lm in lastmod.items() if lm == '2026-08-31'} | set(RETITLED))
+    targets = sorted({p for p, lm in lastmod.items() if lm >= '2026-08-31'} | set(RETITLED))  # campaign start; later rounds included
 
     rows = []
     for p in targets:
