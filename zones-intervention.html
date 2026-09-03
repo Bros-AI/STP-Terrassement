@@ -170,6 +170,89 @@
       "hasMap": "https://www.google.com/maps?cid=13986326121576911507"
     }
     </script>
+    <style>
+            .city-card {
+                background: linear-gradient(135deg, #1e293b, #0f172a);
+                border: 1px solid #334155;
+                border-radius: 16px;
+                padding: 28px;
+                transition: all 0.3s ease;
+            }
+            .city-card:hover {
+                border-color: var(--primary);
+                transform: translateY(-4px);
+                box-shadow: 0 12px 40px rgba(245, 158, 11, 0.15);
+            }
+            .city-card--siege {
+                border: 2px solid var(--primary);
+                background: linear-gradient(135deg, #1e293b, #0f172a);
+                position: relative;
+                overflow: hidden;
+            }
+            .city-card--siege::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 3px;
+                background: linear-gradient(90deg, var(--primary), #fbbf24, var(--primary));
+            }
+            .city-card--large {
+                grid-column: span 2;
+            }
+            .service-pill {
+                background: #334155;
+                color: #e2e8f0;
+                padding: 8px 14px;
+                border-radius: 8px;
+                text-decoration: none;
+                font-size: 0.85rem;
+                transition: all 0.2s ease;
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                border: 1px solid transparent;
+            }
+            .service-pill:hover {
+                background: rgba(245, 158, 11, 0.15);
+                border-color: var(--primary);
+                color: var(--primary);
+                transform: translateY(-1px);
+            }
+            .service-pill i {
+                color: var(--primary);
+                font-size: 0.75rem;
+            }
+            .city-hub-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+            @media (max-width: 768px) {
+                .city-hub-grid {
+                    grid-template-columns: 1fr;
+                }
+                .city-card--large {
+                    grid-column: span 1;
+                }
+            }
+            .small-cities-strip a {
+                color: #94a3b8;
+                text-decoration: none;
+                padding: 6px 16px;
+                border: 1px solid #334155;
+                border-radius: 20px;
+                font-size: 0.85rem;
+                transition: all 0.2s ease;
+                white-space: nowrap;
+            }
+            .small-cities-strip a:hover {
+                color: var(--primary);
+                border-color: var(--primary);
+                background: rgba(245,158,11,0.1);
+            }
+        </style>
 </head>
 <body>
     <a class="skip-link" href="#main-content">Aller au contenu principal</a>
@@ -280,89 +363,6 @@
         </div>
 
         <!-- SECTION 3 - INTERACTIVE CITY HUB (DARK THEME) -->
-        <style>
-            .city-card {
-                background: linear-gradient(135deg, #1e293b, #0f172a);
-                border: 1px solid #334155;
-                border-radius: 16px;
-                padding: 28px;
-                transition: all 0.3s ease;
-            }
-            .city-card:hover {
-                border-color: var(--primary);
-                transform: translateY(-4px);
-                box-shadow: 0 12px 40px rgba(245, 158, 11, 0.15);
-            }
-            .city-card--siege {
-                border: 2px solid var(--primary);
-                background: linear-gradient(135deg, #1e293b, #0f172a);
-                position: relative;
-                overflow: hidden;
-            }
-            .city-card--siege::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                height: 3px;
-                background: linear-gradient(90deg, var(--primary), #fbbf24, var(--primary));
-            }
-            .city-card--large {
-                grid-column: span 2;
-            }
-            .service-pill {
-                background: #334155;
-                color: #e2e8f0;
-                padding: 8px 14px;
-                border-radius: 8px;
-                text-decoration: none;
-                font-size: 0.85rem;
-                transition: all 0.2s ease;
-                display: inline-flex;
-                align-items: center;
-                gap: 6px;
-                border: 1px solid transparent;
-            }
-            .service-pill:hover {
-                background: rgba(245, 158, 11, 0.15);
-                border-color: var(--primary);
-                color: var(--primary);
-                transform: translateY(-1px);
-            }
-            .service-pill i {
-                color: var(--primary);
-                font-size: 0.75rem;
-            }
-            .city-hub-grid {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 24px;
-            }
-            @media (max-width: 768px) {
-                .city-hub-grid {
-                    grid-template-columns: 1fr;
-                }
-                .city-card--large {
-                    grid-column: span 1;
-                }
-            }
-            .small-cities-strip a {
-                color: #94a3b8;
-                text-decoration: none;
-                padding: 6px 16px;
-                border: 1px solid #334155;
-                border-radius: 20px;
-                font-size: 0.85rem;
-                transition: all 0.2s ease;
-                white-space: nowrap;
-            }
-            .small-cities-strip a:hover {
-                color: var(--primary);
-                border-color: var(--primary);
-                background: rgba(245,158,11,0.1);
-            }
-        </style>
 
         <section style="background: var(--dark); padding: 80px 0 60px;" aria-label="Services par ville">
             <div class="container">

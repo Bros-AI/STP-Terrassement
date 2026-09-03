@@ -138,14 +138,6 @@
         "geoRadius": "50000"
       },
       "description": "Services d'aménagement extérieur : pose d'enrobé, création d'allées carrossables, cours pavées, enrochement, bordures, préparation terrasses.",
-      "speakable": {
-        "@type": "SpeakableSpecification",
-        "cssSelector": [
-          ".hero-text",
-          "h1",
-          ".section-intro"
-        ]
-      },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "itemListElement": [
@@ -156,7 +148,7 @@
               "name": "Pose d'enrobé"
             },
             "priceSpecification": {
-              "@type": "PriceSpecification",
+              "@type": "UnitPriceSpecification",
               "price": "25",
               "priceCurrency": "EUR",
               "unitText": "par m²"
@@ -169,7 +161,7 @@
               "name": "Création allée carrossable"
             },
             "priceSpecification": {
-              "@type": "PriceSpecification",
+              "@type": "UnitPriceSpecification",
               "price": "40",
               "priceCurrency": "EUR",
               "unitText": "par m²"
@@ -182,7 +174,7 @@
               "name": "Enrochement paysager"
             },
             "priceSpecification": {
-              "@type": "PriceSpecification",
+              "@type": "UnitPriceSpecification",
               "price": "80",
               "priceCurrency": "EUR",
               "unitText": "par m²"
@@ -537,7 +529,7 @@
                 <div class="section" style="margin-top: 80px; background: var(--gray); padding: 60px 40px; border-radius: 20px;">
                     <h2 class="u-center50"><i class="fa-solid fa-balance-scale u-amber"></i> Enrobé vs Pavés vs Gravier : Quel Revêtement Choisir ?</h2>
                     
-                    <div style="overflow-x: auto;">
+                    <div style="overflow-x: auto;" tabindex="0" role="region" aria-label="Tableau défilant horizontalement">
                         <table style="width: 100%; background: white; border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);">
                         <caption>Enrobé vs Pavés vs Gravier : Quel Revêtement Choisir ?</caption>
                             <thead style="background: var(--dark); color: white;">

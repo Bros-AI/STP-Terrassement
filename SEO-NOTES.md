@@ -333,3 +333,15 @@ Lignes visibles (message tronqué après « Duplicate headin… ») et réponses
 - **Premier octet lent au premier appel (28 pages)** : cache CDN GitHub Pages froid ; le second appel est à 8 ms ; rien à faire côté site.
 - **Titres dupliqués** : l'outil vise probablement les titres de cartes répétés dans une même page ; aucun doublon exact de `<h3>` détecté après vérification, ligne non reproduite.
 - Piège rencontré : la feuille contenait déjà un commentaire `/* --- UTILITIES --- */`, la garde d'idempotence du script a cru le bloc présent et les règles `u-*` n'ont pas été écrites au premier passage (11 442 éléments sans style dans l'arbre de travail, détecté par le contrôle des styles calculés avant tout push). Règle : une garde d'idempotence doit tester un marqueur unique. Les utilitaires portent `!important` car un attribut inline gagnait toujours sur la feuille.
+
+## 2026-09-03 — Audit final approfondi (dernière passe)
+
+Nouveaux angles, tous exécutés sur les 165 pages : validation du vocabulaire schema.org propriété par propriété (contre le graphe officiel `schemaorg-current-https.jsonld`), axe-core en viewport mobile, validateur W3C Nu sur toutes les URL de production, ancres de fragments, mojibake, liens `http://`, textes placeholders, fichiers orphelins, cohérence des `lastmod`.
+
+Corrigé :
+- schema.org : `speakable` retiré des nœuds `Service`/`LocalBusiness` (réservé aux types page, ré-attaché sur `WebPage` quand il existe), `PriceSpecification` + `unitText` → `UnitPriceSpecification` (26 nœuds), `legalName` retiré d'un `Article`, `City.postalCode` → `address` PostalAddress (8 pages). Le vocabulaire est désormais propre et gardé par seo-qa.
+- W3C : 21 `<` littéraux échappés en `&lt;` (« < 500 m² ») sur 17 pages ; ces caractères cassaient aussi l'extraction des FAQ (texte avalé) → FAQPage régénérés depuis le texte corrigé ; `<style>` déplacé hors de `<main>` (zones-intervention). Restent deux avertissements advisory : h1 à l'intérieur de `<section>` sur les 48 articles et « section sans titre » sur les hero des pages légales (h1 présent).
+- axe-core : la seule violation réelle était `scrollable-region-focusable` (tableaux à défilement horizontal non atteignables au clavier) → `tabindex="0" role="region" aria-label` sur 24 conteneurs, gardé par seo-qa. Les 3 613 « contrastes » signalés juste après le chargement sont un artefact : l'animation d'apparition des cartes (opacité en transition) fausse la couleur calculée ; 0 violation 2,5 s après le chargement.
+- `sitemap.xml` : `lastmod` 2026-09-03 sur les 65 pages dont le contenu visible a changé (illustrations, accueil, contact) ; RECRAWL.md régénéré (80 pages à soumettre).
+- Budgets Lighthouse de la CI hebdomadaire resserrés (desktop ≥ 95, mobile ≥ 88, LCP mobile ≤ 3,2 s).
+- Non modifié, assumé : 70 titres à deux séparateurs « | » (réécriture = décision CTR, la spec impose une attribution par commit) ; `images/logo-stp-terrassement.webp` n'est référencé que dans le JSON-LD (faux positif « orphelin »).

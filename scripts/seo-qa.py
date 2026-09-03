@@ -281,6 +281,29 @@ def main():
                 err(f'{fn}: icon-only link without visible text: {am.group(0)[:60]}')
                 break
 
+        # schema.org vocabulary (final audit): speakable only on page-level types, unitText needs
+        # UnitPriceSpecification, legalName never on Article
+        for d in lds:
+            def _walk(nd):
+                if isinstance(nd, dict):
+                    ty = nd.get('@type'); tl = ty if isinstance(ty, list) else [ty]
+                    if 'speakable' in nd and not any(x in ('Article', 'WebPage', 'CollectionPage', 'ContactPage') for x in tl):
+                        err(f'{fn}: speakable on {tl} (speakable only on page-level types)')
+                    if 'unitText' in nd and 'PriceSpecification' in tl:
+                        err(f'{fn}: unitText on PriceSpecification (use UnitPriceSpecification)')
+                    if 'legalName' in nd and 'Article' in tl:
+                        err(f'{fn}: legalName on Article')
+                    for v in nd.values():
+                        _walk(v)
+                elif isinstance(nd, list):
+                    for v in nd:
+                        _walk(v)
+            _walk(d)
+
+        # a11y: horizontally scrollable wrappers must be keyboard reachable (axe scrollable-region-focusable)
+        if re.search(r'<div style="overflow-x: ?auto;?"(?![^>]*tabindex)>', t):
+            err(f'{fn}: scrollable region without tabindex')
+
         # GitHub-Pages-only hardening: full meta CSP + frame-buster
         if 'content="default-src' not in t:
             err(f'{fn}: missing full Content-Security-Policy meta')

@@ -72,14 +72,6 @@
         "Fondations",
         "Viabilisation"
       ],
-      "speakable": {
-        "@type": "SpeakableSpecification",
-        "cssSelector": [
-          ".hero-text",
-          "h1",
-          ".section-intro"
-        ]
-      },
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "798 C Chemin de la Roque",
@@ -146,7 +138,7 @@
               "description": "Préparation de terrain, fondations pour maisons et piscines"
             },
             "priceSpecification": {
-              "@type": "PriceSpecification",
+              "@type": "UnitPriceSpecification",
               "price": "25",
               "priceCurrency": "EUR",
               "unitText": "par m²",
@@ -175,7 +167,7 @@
               "description": "Allées, cours, enrochement, pose d'enrobé"
             },
             "priceSpecification": {
-              "@type": "PriceSpecification",
+              "@type": "UnitPriceSpecification",
               "price": "25",
               "priceCurrency": "EUR",
               "unitText": "par m²",
@@ -190,7 +182,7 @@
               "description": "Démolition de bâtiments, dalles béton, évacuation gravats"
             },
             "priceSpecification": {
-              "@type": "PriceSpecification",
+              "@type": "UnitPriceSpecification",
               "price": "50",
               "priceCurrency": "EUR",
               "unitText": "par m²",
@@ -265,7 +257,7 @@
             },
             "priceCurrency": "EUR",
             "priceSpecification": {
-              "@type": "PriceSpecification",
+              "@type": "UnitPriceSpecification",
               "minPrice": 25,
               "maxPrice": 90,
               "priceCurrency": "EUR",
@@ -282,7 +274,7 @@
             },
             "priceCurrency": "EUR",
             "priceSpecification": {
-              "@type": "PriceSpecification",
+              "@type": "UnitPriceSpecification",
               "minPrice": 15,
               "maxPrice": 80,
               "priceCurrency": "EUR",
@@ -299,7 +291,7 @@
             },
             "priceCurrency": "EUR",
             "priceSpecification": {
-              "@type": "PriceSpecification",
+              "@type": "UnitPriceSpecification",
               "minPrice": 15,
               "maxPrice": 90,
               "priceCurrency": "EUR",
@@ -316,7 +308,7 @@
             },
             "priceCurrency": "EUR",
             "priceSpecification": {
-              "@type": "PriceSpecification",
+              "@type": "UnitPriceSpecification",
               "minPrice": 25,
               "maxPrice": 220,
               "priceCurrency": "EUR",
@@ -333,7 +325,7 @@
             },
             "priceCurrency": "EUR",
             "priceSpecification": {
-              "@type": "PriceSpecification",
+              "@type": "UnitPriceSpecification",
               "minPrice": 200,
               "maxPrice": 600,
               "priceCurrency": "EUR",
@@ -341,6 +333,14 @@
               "valueAddedTaxIncluded": false
             }
           }
+        ]
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".hero-text",
+          "h1",
+          ".section-intro"
         ]
       }
     }
@@ -520,7 +520,7 @@
                         <img src="images/terrassement-pelle-mecanique.webp" alt="Pelle mécanique STP Terrassement sur un chantier de terrassement en Provence" width="470" height="300" loading="lazy" decoding="async" srcset="images/terrassement-pelle-mecanique-400.webp 400w, images/terrassement-pelle-mecanique.webp 470w" sizes="(max-width: 768px) 100vw, 470px" fetchpriority="high">
                         <figcaption>Chantier STP Terrassement en Provence (photo d'illustration).</figcaption>
                     </figure>
-                    <div style="overflow-x:auto;">
+                    <div style="overflow-x: auto;" tabindex="0" role="region" aria-label="Tableau défilant horizontalement">
                     <table class="price-table">
                         <caption>Terrassement : prix au m³ et au m²</caption>
                         <thead><tr><th>Prestation</th><th>Fourchette 2026</th><th>Unité</th><th>Guide détaillé</th></tr></thead>
@@ -549,7 +549,7 @@
 
                     <h2 id="vrd">VRD, tranchées et raccordements</h2>
                     <p>Les <a href="vrd-assainissement.html">travaux de VRD</a> se chiffrent au mètre linéaire de tranchée, plus les postes fixes (taxe de branchement, regards, compteur). Les totaux ci-dessous incluent la part du concessionnaire quand elle est incontournable.</p>
-                    <div style="overflow-x:auto;">
+                    <div style="overflow-x: auto;" tabindex="0" role="region" aria-label="Tableau défilant horizontalement">
                     <table class="price-table">
                         <caption>VRD, tranchées et raccordements</caption>
                         <thead><tr><th>Prestation</th><th>Fourchette 2026</th><th>Unité</th><th>Guide détaillé</th></tr></thead>
@@ -572,7 +572,7 @@
 
                     <h2 id="amenagement">Aménagement extérieur : enrobé, pavés, gravier, béton</h2>
                     <p>Pour un <a href="amenagement-exterieur.html">aménagement extérieur</a>, le prix au m² dépend d'abord de l'épaisseur du revêtement et de la préparation du fond de forme. Les fourchettes sont fournies et posées, hors terrassement préalable.</p>
-                    <div style="overflow-x:auto;">
+                    <div style="overflow-x: auto;" tabindex="0" role="region" aria-label="Tableau défilant horizontalement">
                     <table class="price-table">
                         <caption>Aménagement extérieur : enrobé, pavés, gravier, béton</caption>
                         <thead><tr><th>Prestation</th><th>Fourchette 2026</th><th>Unité</th><th>Guide détaillé</th></tr></thead>
@@ -597,7 +597,7 @@
 
                     <h2 id="demolition">Démolition et déconstruction</h2>
                     <p>Une <a href="demolition.html">démolition</a> se chiffre au m² de bâti ou de dalle, évacuation comprise ou non. Les diagnostics obligatoires (amiante, plomb) et le <a href="blog/permis-demolir-guide.html">permis de démolir</a> s'ajoutent au prix des travaux.</p>
-                    <div style="overflow-x:auto;">
+                    <div style="overflow-x: auto;" tabindex="0" role="region" aria-label="Tableau défilant horizontalement">
                     <table class="price-table">
                         <caption>Démolition et déconstruction</caption>
                         <thead><tr><th>Prestation</th><th>Fourchette 2026</th><th>Unité</th><th>Guide détaillé</th></tr></thead>
@@ -616,7 +616,7 @@
 
                     <h2 id="location">Location d'engins avec ou sans chauffeur</h2>
                     <p>La <a href="location-materiel.html">location de matériel</a> se raisonne à la journée pour une machine nue, à l'heure avec chauffeur. Comptez le transport aller-retour en plus sur les petites durées.</p>
-                    <div style="overflow-x:auto;">
+                    <div style="overflow-x: auto;" tabindex="0" role="region" aria-label="Tableau défilant horizontalement">
                     <table class="price-table">
                         <caption>Location d'engins avec ou sans chauffeur</caption>
                         <thead><tr><th>Engin</th><th>Fourchette 2026</th><th>Unité</th><th>Guide détaillé</th></tr></thead>

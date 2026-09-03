@@ -69,14 +69,6 @@
         "Fondations",
         "Viabilisation"
       ],
-      "speakable": {
-        "@type": "SpeakableSpecification",
-        "cssSelector": [
-          ".hero-text",
-          "h1",
-          ".section-intro"
-        ]
-      },
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "798 C Chemin de la Roque",
@@ -143,7 +135,7 @@
               "description": "Préparation de terrain, fondations pour maisons et piscines"
             },
             "priceSpecification": {
-              "@type": "PriceSpecification",
+              "@type": "UnitPriceSpecification",
               "price": "25",
               "priceCurrency": "EUR",
               "unitText": "par m²",
@@ -172,7 +164,7 @@
               "description": "Allées, cours, enrochement, pose d'enrobé"
             },
             "priceSpecification": {
-              "@type": "PriceSpecification",
+              "@type": "UnitPriceSpecification",
               "price": "25",
               "priceCurrency": "EUR",
               "unitText": "par m²",
@@ -187,7 +179,7 @@
               "description": "Démolition de bâtiments, dalles béton, évacuation gravats"
             },
             "priceSpecification": {
-              "@type": "PriceSpecification",
+              "@type": "UnitPriceSpecification",
               "price": "50",
               "priceCurrency": "EUR",
               "unitText": "par m²",
@@ -295,6 +287,14 @@
         "@type": "AdministrativeArea",
         "name": "Bouches-du-Rhône",
         "sameAs": "https://fr.wikipedia.org/wiki/Bouches-du-Rh%C3%B4ne"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".hero-text",
+          "h1",
+          ".section-intro"
+        ]
       }
     }
     </script>
@@ -442,7 +442,7 @@
 
                     <h2>Prix du terrassement rocheux : l'essentiel en un tableau</h2>
                     <p>Fourchettes hors taxes, chantier accessible à une pelle de 8 t ou plus, évacuation non comprise. Elles sont cohérentes avec notre <a href="../tarifs-terrassement-2026.html">grille des tarifs 2026</a> et avec les guides spécialisés cités.</p>
-                    <div style="overflow-x:auto;">
+                    <div style="overflow-x: auto;" tabindex="0" role="region" aria-label="Tableau défilant horizontalement">
                     <table class="price-table">
                         <caption>Prix du terrassement rocheux : l'essentiel en un tableau</caption>
                         <thead><tr><th>Type de sol ou prestation</th><th>Prix 2026 (HT)</th><th>Rendement indicatif</th><th>Guide lié</th></tr></thead>

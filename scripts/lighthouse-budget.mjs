@@ -21,8 +21,8 @@ const metrics = {
 };
 
 const budgets = profile === 'desktop'
-  ? { score: 0.90, cls: 0.05, tbt: 300, lcp: 2500 }
-  : { score: 0.72, cls: 0.05, tbt: 300, lcp: 4600 };
+  ? { score: 0.95, cls: 0.05, tbt: 200, lcp: 2500 }   // 2026-09-03: desktop measured 97-100
+  : { score: 0.88, cls: 0.05, tbt: 300, lcp: 3200 };  // 2026-09-03: mobile measured 92-100 (simulated), LCP 1.5-2.1 s
 
 let failed = false;
 for (const [k, limit] of Object.entries(budgets)) {

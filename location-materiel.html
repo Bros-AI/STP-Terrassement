@@ -138,14 +138,6 @@
         "geoRadius": "50000"
       },
       "description": "Location de matériel BTP avec chauffeur qualifié CACES : mini-pelles, pelles hydrauliques, compacteurs, camions bennes. Matériel récent et entretenu.",
-      "speakable": {
-        "@type": "SpeakableSpecification",
-        "cssSelector": [
-          ".hero-text",
-          "h1",
-          ".section-intro"
-        ]
-      },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "itemListElement": [
@@ -156,7 +148,7 @@
               "name": "Location mini-pelle avec chauffeur"
             },
             "priceSpecification": {
-              "@type": "PriceSpecification",
+              "@type": "UnitPriceSpecification",
               "price": "400",
               "priceCurrency": "EUR",
               "unitText": "par jour"
@@ -169,7 +161,7 @@
               "name": "Location pelle 13-20T avec chauffeur"
             },
             "priceSpecification": {
-              "@type": "PriceSpecification",
+              "@type": "UnitPriceSpecification",
               "price": "800",
               "priceCurrency": "EUR",
               "unitText": "par jour"
@@ -182,7 +174,7 @@
               "name": "Location brise-roche hydraulique"
             },
             "priceSpecification": {
-              "@type": "PriceSpecification",
+              "@type": "UnitPriceSpecification",
               "price": "600",
               "priceCurrency": "EUR",
               "unitText": "par jour"
@@ -224,7 +216,7 @@
       "name": "Quelle mini-pelle choisir pour mon projet ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Choix selon votre projet : Mini-pelle 1-2T → jardinage, petites tranchées ("
+        "text": "Choix selon votre projet : Mini-pelle 1-2T → jardinage, petites tranchées (<40cm large), accès très restreints (<1,5m), travaux de précision ; Mini-pelle 3-5T → fondations petites maisons, piscines jusqu'à 10x5m, VRD résidentiel (tranchées 80cm), allées ; Pelle 15-20T → gros terrassement (500m³+), fondations bâtiments collectifs, démolition lourde avec BRH, carrières. Puissance godet : 1T = 0,08m³, 3T = 0,15m³, 5T = 0,25m³, 15T = 0,6m³, 20T = 0,8-1m³. Besoin d'aide pour choisir ? Contactez-nous."
       }
     },
     {
@@ -548,7 +540,7 @@
                 <div class="section u-mt80">
                     <h2 class="u-center50"><i class="fa-solid fa-compass-drafting u-amber"></i> Quel Engin Choisir Pour Mon Projet ?</h2>
                     
-                    <div style="overflow-x: auto;">
+                    <div style="overflow-x: auto;" tabindex="0" role="region" aria-label="Tableau défilant horizontalement">
                         <table style="width: 100%; background: white; border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);">
                         <caption>Quel Engin Choisir Pour Mon Projet ?</caption>
                             <thead style="background: var(--dark); color: white;">
@@ -631,7 +623,7 @@
                                 Quelle mini-pelle choisir pour mon projet ?
                             </summary>
                             <p class="u-list">
-                                Choix selon votre projet : <strong>Mini-pelle 1-2T</strong> → jardinage, petites tranchées (<40cm large), accès très restreints (<1,5m), travaux de précision ; <strong>Mini-pelle 3-5T</strong> → fondations petites maisons, piscines jusqu'à 10x5m, VRD résidentiel (tranchées 80cm), allées ; <strong>Pelle 15-20T</strong> → gros terrassement (500m³+), fondations bâtiments collectifs, démolition lourde avec BRH, carrières. <strong>Puissance godet</strong> : 1T = 0,08m³, 3T = 0,15m³, 5T = 0,25m³, 15T = 0,6m³, 20T = 0,8-1m³. <a class="u-link" href="contact.html">Besoin d'aide pour choisir ? Contactez-nous</a>.
+                                Choix selon votre projet : <strong>Mini-pelle 1-2T</strong> → jardinage, petites tranchées (&lt;40cm large), accès très restreints (&lt;1,5m), travaux de précision ; <strong>Mini-pelle 3-5T</strong> → fondations petites maisons, piscines jusqu'à 10x5m, VRD résidentiel (tranchées 80cm), allées ; <strong>Pelle 15-20T</strong> → gros terrassement (500m³+), fondations bâtiments collectifs, démolition lourde avec BRH, carrières. <strong>Puissance godet</strong> : 1T = 0,08m³, 3T = 0,15m³, 5T = 0,25m³, 15T = 0,6m³, 20T = 0,8-1m³. <a class="u-link" href="contact.html">Besoin d'aide pour choisir ? Contactez-nous</a>.
                             </p>
                         </details>
 
