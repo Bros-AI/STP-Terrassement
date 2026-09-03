@@ -201,8 +201,56 @@ def main():
                 if cblock.count('@media') < 4 or 'max-width:768px' not in cblock:
                     err(f'{fn}: critical CSS block missing responsive breakpoints '
                         f'(@media={cblock.count("@media")})')
-            if '"@type":"WebSite"' not in t:
+            if not re.search(r'"@type":\s*"WebSite"', t):
                 err(f'{fn}: missing WebSite schema')
+
+        # schema completeness (SEO check 2026-09-03): og:image dimensions, Service
+        # identity, LocalBusiness geo/map/hours, page-type entity, clean FAQ answers
+        for og_key in ('og:image:width', 'og:image:height', 'og:image:alt'):
+            if f'property="{og_key}"' not in t:
+                err(f'{fn}: missing {og_key}')
+        lds = []
+        for m in LD_RE.finditer(t):
+            try:
+                lds.append(json.loads(m.group(1)))
+            except Exception:
+                pass
+
+        def walk(node):
+            if isinstance(node, dict):
+                yield node
+                for v in node.values():
+                    yield from walk(v)
+            elif isinstance(node, list):
+                for v in node:
+                    yield from walk(v)
+        ORG_ID = DOMAIN + '/#organization'
+        for node in [n for d in lds for n in walk(d)]:
+            if node.get('@type') == 'Service' and node.get('serviceType') and 'provider' in node:
+                for key in ('@id', 'name', 'url'):
+                    if not node.get(key):
+                        err(f'{fn}: Service schema missing {key}')
+            if node.get('@id') == ORG_ID and 'name' in node and 'address' in node:
+                for key in ('geo', 'hasMap', 'openingHoursSpecification'):
+                    if key not in node:
+                        err(f'{fn}: LocalBusiness node missing {key}')
+        ENTITY_TYPES = {'Service', 'Article', 'WebPage', 'CollectionPage', 'ContactPage',
+                        'DefinedTermSet', 'LocalBusiness', 'ItemList', 'AboutPage'}
+        top_types = set()
+        for d in lds:
+            ty = d.get('@type') if isinstance(d, dict) else None
+            for x in (ty if isinstance(ty, list) else [ty]):
+                top_types.add(x)
+            if isinstance(d, dict) and '@graph' in d:
+                for g in d['@graph']:
+                    top_types.add(g.get('@type'))
+        if not top_types & ENTITY_TYPES:
+            err(f'{fn}: no page-type schema (one of {sorted(ENTITY_TYPES)})')
+        for fb in faq_blocks:
+            for ent in fb.get('mainEntity', []):
+                a = ent.get('acceptedAnswer', {}).get('text', '')
+                if 'Devis gratuit sous 24 h' in a or 'Faire analyser mon devis' in a:
+                    err(f'{fn}: FAQ answer polluted by cta-local text: "{ent.get("name", "")[:50]}"')
 
         # GitHub-Pages-only hardening: full meta CSP + frame-buster
         if 'content="default-src' not in t:

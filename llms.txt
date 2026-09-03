@@ -2,7 +2,7 @@
 
 > Entreprise de terrassement et VRD basée à Simiane-Collongue (13109), intervenant sur Aix-en-Provence et toute la région PACA.
 
-Dernière mise à jour : 2026-08-31 · Plan du site : https://stp-terrassement.com/sitemap.xml
+Dernière mise à jour : 2026-09-03 · Plan du site : https://stp-terrassement.com/sitemap.xml
 
 ## À propos
 
@@ -25,6 +25,11 @@ STP Terrassement (SOPHIE TERRASSEMENT PROVENCE, SAS) est spécialisée dans les 
 - [Démolition](https://stp-terrassement.com/demolition.html): Démolition bâtiment, dalle béton, curage intérieur, évacuation gravats
 - [Location Engins](https://stp-terrassement.com/location-materiel.html): Mini-pelle, pelle mécanique 13-20T, brise-roche hydraulique, avec chauffeur CACES
 
+## Tarifs et lexique
+
+- [Tarifs terrassement 2026](https://stp-terrassement.com/tarifs-terrassement-2026.html) : grille de prix complète (m³, fondations, piscine, VRD au ml, enrobé au m², démolition, location), extraite des guides
+- [Lexique du terrassement](https://stp-terrassement.com/lexique-terrassement.html) : 45 termes de chantier définis (déblai, remblai, foisonnement, GNT, BRH, radier...)
+
 ## Zones d'intervention
 
 Aix-en-Provence (13090), Marseille (13001-13016), Gardanne (13120), Bouc-Bel-Air (13320), Salon-de-Provence (13300), Aubagne (13400), Vitrolles (13127), Marignane (13700), Pertuis (84120), Fuveau (13710), Trets (13530), Cabriès (13480), Simiane-Collongue (13109), Venelles (13770), Éguilles (13510), Meyreuil (13590), Peynier (13790), Luynes (13080), Les Milles (13290)
@@ -32,6 +37,7 @@ Aix-en-Provence (13090), Marseille (13001-13016), Gardanne (13120), Bouc-Bel-Air
 ## Guides & Blog (prix 2026, validés terrain PACA)
 
 - [Prix terrassement au m²](https://stp-terrassement.com/blog/prix-terrassement-m2.html) : tarifs au m² et au m³ par type de sol (terre, argile, roche), barème PACA
+- [Prix terrassement sol rocheux](https://stp-terrassement.com/blog/prix-terrassement-rocheux-brh.html) : 50 à 90 €/m³ au brise-roche hydraulique, calcaire de Provence, exemples chiffrés
 - [Prix enrobé au m²](https://stp-terrassement.com/blog/prix-enrobe-m2.html) : 25 à 60 €/m² posé, par surface et épaisseur, devis types anonymisés
 - [Prix goudronnage allée](https://stp-terrassement.com/blog/prix-goudronnage-allee.html) : 20 à 50 €/m², devis types 50 et 100 m², bicouche vs enrobé
 - [Prix fondations maison](https://stp-terrassement.com/blog/prix-fondations-maison.html) : semelle filante, radier, pieux — 100 à 250 €/m²

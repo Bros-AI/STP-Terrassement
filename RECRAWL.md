@@ -1,6 +1,6 @@
 # Suivi de recrawl — pages modifiées de la campagne SEO
 
-Généré par `scripts/recrawl-tracker.py` le 2026-08-31. IndexNow (Bing/Seznam/Yandex) :
+Généré par `scripts/recrawl-tracker.py` le 2026-09-03. IndexNow (Bing/Seznam/Yandex) :
 **160 URL soumises le 2026-08-31, réponse 202 Accepted** ; les pushs suivants
 re-soumettent automatiquement les pages modifiées (workflow `indexnow.yml`).
 Google n'utilise pas IndexNow : cocher chaque page après « Inspection de l'URL →

@@ -211,3 +211,29 @@ volontairement non appliqués (refactor lourd / coût de maintenance) :
 Les fourchettes de prix (titles, FAQ, tableaux, devis types) reprennent celles du spec et des pages
 existantes — **à faire valider par le métier** avant/juste après mise en ligne.
 Valider chaque gabarit modifié sur https://search.google.com/test/rich-results.
+
+## 2026-09-03 — Audit complet, enrichissement schema, 3 nouvelles pages
+
+Audit lecture seule (11 catégories) puis corrections, puis 3 passes de vérification.
+
+### Corrections
+- `scripts/build-faq-schema.py` : une réponse s'arrête au premier bloc `<aside|div|section|figure|table>` ; les 11 réponses polluées par le texte du `cta-local` sont régénérées propres.
+- Schéma `Service` (107 pages) : ajout `@id` (`canonical#service`), `name` (« {serviceType} à {ville} »), `url` ; `areaServed` City → `sameAs` Wikipédia (20 communes vérifiées HTTP 200).
+- Nœud `LocalBusiness` (162 pages, y compris `provider`) : `url`, `image`, `logo`, `priceRange`, `geo`, `hasMap` (cid Google), `openingHoursSpecification` Lun-Sam 07:00-19:00.
+- `og:image:width/height/alt` sur toutes les pages (dimensions lues sur les fichiers).
+- Schéma de type page sur les 7 pages qui n'en avaient pas : CollectionPage (blog, réalisations), ContactPage (contact, devis), WebPage (zones, mentions, politique), reliés à `#website` et `#organization`.
+- `robots.txt` : `Allow: /` explicite pour GPTBot, ClaudeBot, PerplexityBot, Google-Extended, Applebot-Extended.
+- `realisations.html` : section « Les types de chantiers que nous réalisons » (6 familles, liens prix), sans projet inventé.
+
+### Nouvelles pages
+- `tarifs-terrassement-2026.html` : grille de prix par poste, chaque ligne reprend la fourchette du guide qu'elle relie ; schéma WebPage + OfferCatalog ; lien « Tarifs 2026 » dans le footer de toutes les pages.
+- `lexique-terrassement.html` : 45 définitions, schéma `DefinedTermSet` généré depuis le texte visible, `sameAs` Wikipédia uniquement sur les URL vérifiées.
+- `blog/prix-terrassement-rocheux-brh.html` : sol rocheux, BRH, calcaire de Provence, 3 exemples chiffrés, FAQ ; Article avec `about` entités, `wordCount`, `spatialCoverage`.
+- Intégration : sitemap, feed.xml, maj-recentes, llms.txt, 404 (liens + index de recherche), carte blog, RECRAWL.md.
+
+### Nouveaux invariants seo-qa
+`og:image:width/height/alt` présents ; `Service` avec `@id/name/url` ; `LocalBusiness` avec `geo/hasMap/openingHoursSpecification` ; au moins un schéma de type page ; aucune réponse FAQ contenant le texte d'un bouton `cta-local` ; le check WebSite tolère les deux formats JSON.
+
+### Piège rencontré
+Insertion d'un lien dans un footer sur une seule ligne : calculer l'indentation avec `rfind('
+')` duplique le préfixe de ligne (29 pages avec un `<div` orphelin, détecté par validate.py avant push). Toujours re-valider l'équilibre des balises après une insertion générique.

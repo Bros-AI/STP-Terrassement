@@ -8,3 +8,15 @@ User-agent: ChatGPT-User
 User-agent: Claude-Web
 User-agent: Googlebot
 Allow: /llms.txt
+
+# AI answer engines: explicitly welcome (price guides are meant to be cited)
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot-Extended
+Allow: /

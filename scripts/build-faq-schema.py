@@ -84,6 +84,11 @@ def extract_h3_sections_pairs(t: str):
             q = clean(h3.group(1))
             a_end = h3s[j + 1].start() if j + 1 < len(h3s) else len(section)
             answer_html = section[h3.end():a_end]
+            # an answer stops at the first block that is not part of it (cta-local
+            # asides, figures, tables, wrappers): otherwise the aside's <p> leaks in
+            cut = re.search(r'<(?:aside|div|section|figure|table)' + chr(92) + 'b', answer_html)
+            if cut:
+                answer_html = answer_html[:cut.start()]
             paragraphs = re.findall(r'<p\b[^>]*>(.*?)</p>', answer_html, re.S)
             a = clean(' '.join(paragraphs)) if paragraphs else clean(answer_html)
             if q and a:
