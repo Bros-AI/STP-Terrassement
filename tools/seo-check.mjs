@@ -14,7 +14,7 @@ for (let i = 0; i < urls.length; i += 8) {
     pages.push({
       u, status: r.status,
       title: pick(/<title[^>]*>([\s\S]*?)<\/title>/i),
-      desc: pick(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']+)/i),
+      desc: pick(/<meta[^>]+name=["']description["'][^>]+content="([^"]+)"/i),   // apostrophes are frequent in French: match up to the closing double quote only
       canonical: pick(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)/i),
       h1: (html.match(/<h1[\s>]/gi) || []).length,
       imgs: (html.match(/<img[\s>]/gi) || []).length,
