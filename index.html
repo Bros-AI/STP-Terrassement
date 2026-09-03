@@ -297,8 +297,8 @@
     <meta name="DC.description" content="Entreprise de terrassement et VRD à Aix-en-Provence">
     <meta name="DC.language" content="fr">
     <style>
-    /* perf: the home page is long (1 241 elements, 11 sections); skipping layout of sections that start well below the fold cut the DOMContentLoaded layout task from 213 ms to ~130 ms (TBT 50 -> 2 in local A/B, CLS unchanged, first-viewport pixels identical). Sections 1-2 stay eager because the first one straddles the viewport. */
-    main > section.section:nth-of-type(n+3) { content-visibility: auto; contain-intrinsic-size: auto 1200px; }
+    /* perf: the home page is long (1 241 elements, 11 sections); skipping layout of sections that start well below the fold cut the DOMContentLoaded layout task from 213 ms to ~130 ms (TBT 50 -> 2 in local A/B, CLS unchanged, first-viewport pixels identical). Section 1 stays eager (it straddles the viewport on tall screens); deferring section 2 as well was measured at TBT 440 -> 398 ms with a pixel-identical first viewport at 412 and 1366 px (fonts pre-warmed). */
+    main > section.section:nth-of-type(n+2) { content-visibility: auto; contain-intrinsic-size: auto 1200px; }
     </style>
 </head>
 <body>
