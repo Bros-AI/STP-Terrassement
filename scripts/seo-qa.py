@@ -302,8 +302,12 @@ def main():
                 err(f'{fn}: missing skip-to-content link')
             if 'id="main-content"' not in t:
                 err(f'{fn}: missing id="main-content" skip target')
-        if 'font-awesome/6.5.1/css/all.min.css"' in t and 'integrity="sha384-' not in t:
-            err(f'{fn}: Font Awesome CSS without SRI integrity')
+        # icons: self-hosted Font Awesome subset (no third-party CSS/fonts), both faces preloaded
+        if 'cdnjs.cloudflare.com/ajax' in t:
+            err(f'{fn}: Font Awesome still loaded from cdnjs (must use the self-hosted subset)')
+        for face in ('fa-solid-subset.woff2', 'fa-brands-subset.woff2'):
+            if f'<link rel="preload" href="/fonts/{face}"' not in t:
+                err(f'{fn}: missing preload for /fonts/{face}')
         # Article schema must carry an image (rich results recommendation)
         for m2 in LD_RE.finditer(t):
             try:

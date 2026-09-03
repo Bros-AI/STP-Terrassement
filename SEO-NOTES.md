@@ -245,3 +245,30 @@ Insertion d'un lien dans un footer sur une seule ligne : calculer l'indentation 
 
 ### CLS : lire les bons chiffres
 En mode `simulate` (défaut), Lighthouse a attribué un CLS de 0,181 à l'image lazy de l'article sol rocheux sur une mesure sur deux, alors que la même page donnait 0,009 juste avant. Reproduit en local avec `--throttling-method=devtools` sur quatre variantes (témoin, `aspect-ratio` explicite, sans image, sans lazy) : CLS strictement identique (0,046 / 0,016) dans les quatre cas, uniquement dû aux permutations de polices (h1 Oswald 0,03, paragraphes Inter 0,016). L'image est hors de cause ; le 0,181 est un artefact d'attribution du mode simulé (image lazy chargée pendant la capture pleine page). Règle : pour diagnostiquer un CLS, mesurer avec `--throttling-method=devtools` et faire un A/B local sur une copie servie par `python -m http.server`, jamais conclure sur une seule mesure simulée.
+
+## 2026-09-03 (2e passe) — icônes, contraste, débordement mobile, validité
+
+Constats de la passe « secrets » et corrections, toutes vérifiées en local avant push.
+
+### Icônes : 6 classes Font Awesome Pro invisibles, puis auto-hébergement
+- `fa-excavator` (icône du logo, 165 pages), `fa-merge`, `fa-shield-check`, `fa-shovel`, `fa-wall`, `fa-wall-brick` n'existent pas dans FA Free 6.5.1 : elles ne s'affichaient nulle part. Remplacées par des icônes Free (`fa-person-digging`, `fa-network-wired`, `fa-shield-halved`, `fa-trowel`, `fa-trowel-bricks`).
+- Font Awesome n'est plus chargé depuis cdnjs (19 Ko CSS + 268 Ko de polices tierces) : sous-ensemble généré par `fontTools` depuis les webfonts officielles (`fonts/fa-solid-subset.woff2` 20 Ko / 187 glyphes, `fonts/fa-brands-subset.woff2` 2 Ko / 13 glyphes, licence dans `fonts/FONT-AWESOME-LICENSE.txt`), règles CSS ajoutées à `styles.css` et inlinées dans le bloc critique (jeton `fa-`), deux preloads. Vérification : rendu des 204 icônes pixel-identique au CDN (0 px de différence). Si une nouvelle icône est utilisée, régénérer le sous-ensemble (script `fa_subset.py` de la session, ou refaire : cmap depuis all.min.css → pyftsubset).
+- `seo-qa` refuse désormais toute référence cdnjs et exige les deux preloads.
+
+### Contraste (accessibilité 92-97 → 100)
+- 1 837 textes ambre `#FFB400` en style inline sur fond clair (1,78:1) basculés vers `var(--link)` ; 20 conservés sur fond sombre. Décision élément par élément par luminance réelle du fond calculée dans Chrome headless (`classify_amber.mjs`), jamais par remplacement aveugle.
+- `--link` `#B45309` → `#A64B07` (5,2:1 sur le fond crème des `cta-local`, 5,8:1 sur blanc) ; `--text-light` `#6b7280` → `#5f6b7b` (4,8:1 sur `--gray`).
+- Règles : `.subtitle`, `.blog-tag`, lien actif du menu (règle injectée par `js/script.js`), h1 des pages légales, `.contact-infos .info-item`, texte du footer, `.email-protect`.
+
+### Débordement horizontal mobile (réel, mesuré en émulation 412 px)
+- `.feature-list li` / `.service-list li` étaient en `display:flex` : chaque fragment de texte et chaque `<strong>` devenait un item flex séparé par le `gap`, la ligne débordait de 9 à 79 px (pages service et ville). Icône en absolu, texte en bloc normal.
+- `.grid-2 > *` etc. : `min-width: 0` (une image de 470 px ou un mot long forçait la colonne `1fr` au-delà de l'écran).
+- Listes multi-colonnes (`columns: 3` sur blog.html, `columns: 2` sur le lexique) : largeur mini de colonne pour retomber à 2 colonnes sur mobile.
+- Contrôle : `scrollWidth == 412` sur 10 gabarits.
+
+### Validité W3C et divers
+- Suppression de `<meta http-equiv="X-Content-Type-Options">` (valeur invalide, inopérante en meta), des `/>` sur les éléments vides, des rôles ARIA redondants, de `autocomplete` sur la case honeypot ; `<style>` du body de l'accueil déplacé dans le head.
+- Appel ERP (`admin.stp-terrassement.com`) retiré de `js/script.js` et `script.min.js` : le propriétaire confirme que l'envoi Web3Forms suffit ; la CSP reste stricte.
+- `sitemap.xml` : lastmod 2026-09-03 sur réalisations, devis, blog (contenu visible modifié). Schémas `Article` alignés (author/publisher `@id`, `isPartOf`, `inLanguage`).
+- LCP réel (throttling devtools) : accueil 2,07 s, ville 1,64 s, tarifs 2,07 s ; les 3,5-4 s du mode simulé sont le pessimisme de Lantern face aux ressources préchargées.
+- Test « premier rendu » : styles calculés identiques entre bloc critique seul et rendu complet ; seules différences de pixels = animations (`@keyframes` volontairement hors bloc critique).
