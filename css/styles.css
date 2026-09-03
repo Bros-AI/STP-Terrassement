@@ -1984,7 +1984,9 @@ a[style*="var(--link)"] { text-decoration: underline; }
 }
 @media (max-width: 767px) {
     .article-content p, .article-content li, .page-content p, .section-intro { font-size: 1rem; }   /* 16px floor for read text */
-    small, .meta, figcaption, .article-meta { font-size: .875rem; }                                  /* 14px floor */
+    small, .meta, figcaption, .article-meta { font-size: .875rem; }
+/* fixed icon box: the meta line must not re-wrap when the icon glyphs arrive after an Arial-metric first paint */
+.article-meta i { display: inline-block; width: 1.25em; text-align: center; }                                  /* 14px floor */
 }
 
 /* --- ILLUSTRATIONS (spec SEO-02): responsive figures, dimensions always set (CLS 0) --- */

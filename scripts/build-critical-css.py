@@ -30,7 +30,7 @@ BARE = {':root', '*', 'html', 'body', 'h1, h2, h3, h4', 'a', 'img', 'ul',
         # pages (articles, legal): without it the first frame renders the H1
         # clipped under the menu, then shifts down when styles.css lands
         # (measured CLS 0.092 on articles)
-        '.section', '.bg-light', '*::before, *::after', '.visually-hidden'}
+        '.section', '.bg-light', '*::before, *::after', '.visually-hidden', '.article-meta', '.article-meta i'}
 
 
 FA_RULE_RE = re.compile(r'((?:\.fa-[a-z0-9-]+::before,?)+)\{content:"[^"]*"\}')
