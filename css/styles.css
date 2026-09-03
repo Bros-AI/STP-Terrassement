@@ -1995,3 +1995,35 @@ a[style*="var(--link)"] { text-decoration: underline; }
 .proof-google { white-space: nowrap; }
 .proof-google__stars { color: var(--primary); letter-spacing: 1px; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* --- U-CLASSES (audit round 4): the 30 most repeated inline styles became classes. !important on purpose: an inline style
+   always won over the sheet, the classes must keep that precedence (.nav-links a, .card a ... would otherwise override them). Also inlined in the critical block. --- */
+.u-link { color: var(--link) !important; text-decoration: underline !important; }
+.u-cardlink { text-decoration: none !important; color: inherit !important; display: block !important; padding: 25px !important; }
+.u-h3dark { margin-bottom: 10px !important; color: var(--dark) !important; }
+.u-icon { color: var(--primary) !important; margin-right: 10px !important; }
+.u-p { margin: 0 !important; color: var(--text) !important; }
+.u-lead { font-weight: 700 !important; font-size: 1.1rem !important; color: var(--dark) !important; }
+.u-list { margin-top: 20px !important; padding-left: 30px !important; line-height: 1.7 !important; }
+.u-more { display: inline-block !important; margin-top: 15px !important; color: var(--link) !important; font-weight: 600 !important; text-decoration: underline !important; }
+.u-mt80 { margin-top: 80px !important; }
+.u-chip { display: inline-flex !important; align-items: center !important; gap: 7px !important; background: #fff !important; border: 1px solid #e5e7eb !important; border-radius: 30px !important; padding: 10px 18px !important; color: var(--link) !important; text-decoration: none !important; font-weight: 600 !important; font-size: 0.9rem !important; box-shadow: 0 1px 4px rgba(0,0,0,0.05) !important; }
+.u-amber { color: var(--primary) !important; }
+.u-card { background: white !important; padding: 25px !important; border-radius: 10px !important; margin-bottom: 20px !important; cursor: pointer !important; }
+.u-plain { color: inherit !important; text-decoration: none !important; }
+.u-whitelink { color: white !important; text-decoration: underline !important; }
+.u-wfull { margin-top: 20px !important; width: 100% !important; }
+.u-center { text-align: center !important; }
+.u-bigicon { font-size: 3rem !important; color: var(--primary) !important; margin-bottom: 20px !important; }
+.u-center50 { text-align: center !important; margin-bottom: 50px !important; }
+.u-muted { color: var(--text-light) !important; }
+.u-gray { color: #9ca3af !important; }
+.u-narrow { max-width: 900px !important; margin: 0 auto !important; }
+.u-mt20 { margin-top: 20px !important; }
+.u-linkhead { color: var(--link) !important; margin-bottom: 15px !important; }
+.u-para { line-height: 1.8 !important; margin-bottom: 18px !important; }
+.u-bb { border-bottom: 1px solid var(--gray) !important; }
+.u-graybox { background: var(--gray) !important; padding: 30px !important; border-radius: 15px !important; }
+.u-mr10 { margin-right: 10px !important; }
+/* tables: captions announce the table (a11y); derived from the preceding heading */
+table caption { caption-side: top; text-align: left; font-size: .9rem; color: var(--text-light); padding: 0 0 8px; }

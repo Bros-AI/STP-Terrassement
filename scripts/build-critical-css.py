@@ -24,13 +24,13 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TOKENS = ['skip-link', 'navbar', 'nav-container', 'logo', 'brand-', 'nav-links',
           'btn', 'mobile-toggle', 'mobile-menu', 'hero', 'badge', 'trust-',
           'wave-bottom', 'container', 'form', 'highlight',
-          'fa-', 'float-wa', 'grid-', 'align-center', 'rounded-img', 'feature-list', 'service-list', 'focus-visible', 'callbar']  # self-hosted icon subset; float-wa is visible in the first frame: icons render at first paint
+          'fa-', 'float-wa', 'grid-', 'align-center', 'rounded-img', 'feature-list', 'service-list', 'focus-visible', 'callbar', 'u-']  # self-hosted icon subset; float-wa is visible in the first frame: icons render at first paint
 BARE = {':root', '*', 'html', 'body', 'h1, h2, h3, h4', 'a', 'img', 'ul',
         # .section provides the top offset under the fixed navbar on no-hero
         # pages (articles, legal): without it the first frame renders the H1
         # clipped under the menu, then shifts down when styles.css lands
         # (measured CLS 0.092 on articles)
-        '.section', '.bg-light', '*::before, *::after'}
+        '.section', '.bg-light', '*::before, *::after', '.visually-hidden'}
 
 
 FA_RULE_RE = re.compile(r'((?:\.fa-[a-z0-9-]+::before,?)+)\{content:"[^"]*"\}')

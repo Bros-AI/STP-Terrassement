@@ -319,3 +319,17 @@ Fiche publique lue en navigateur headless (consentement accepté, lecture seule)
 - llms.txt : horaires et avis ajoutés.
 
 Reste côté propriétaire : collecter des avis (3 aujourd'hui ; avis.html + QR existent), envoyer les originaux des 3 photos de la fiche pour remplacer des illustrations, vérifier que le repère de la fiche est bien le bon (le site le suit désormais).
+
+## 2026-09-03 (4e passe) — audit tiers n° 4
+
+Lignes visibles (message tronqué après « Duplicate headin… ») et réponses :
+- **CSS inline 39 Ko** : l'outil additionne les attributs `style` (18 450 sur le site, 934 Ko cumulés). Les 30 motifs les plus répétés (11 442 attributs) sont devenus des classes utilitaires `u-*` (règles dans styles.css **et** dans le bloc critique, jeton `u-`, pour un premier rendu identique). Le reste (styles uniques) est conservé.
+- **Tableaux sans légende** : 154 `<caption>` générées depuis le titre h2/h3 qui précède chaque tableau ; invariant seo-qa.
+- **Liens icônes sans texte** (réseaux sociaux, Google Maps, WhatsApp flottant) : texte masqué visuellement (`.visually-hidden`, inline dans le bloc critique) ajouté dans 1 155 liens ; invariant seo-qa.
+- **`srcset` manquant** : variantes 400 px générées pour les 9 photos existantes (`images/<nom>-400.webp`), `srcset`/`sizes` sur 369 balises + sur les `<img>` de repli des 69 `<picture>`.
+- **2 images au-dessus du pli sans `fetchpriority`** : première image de chaque page en `eager` + `high` (règle de la spec), deuxième en `high` (reste en lazy : l'attribut n'agit qu'au moment du chargement). 230 balises.
+- **En-têtes HTTP** (CSP, Referrer-Policy, Permissions-Policy, X-Content-Type-Options) : impossibles sur GitHub Pages, comme documenté ; `referrer` et CSP existent en meta.
+- **Téléphone en clair** : voulu (entreprise locale, la spec exige le numéro visible).
+- **Premier octet lent au premier appel (28 pages)** : cache CDN GitHub Pages froid ; le second appel est à 8 ms ; rien à faire côté site.
+- **Titres dupliqués** : l'outil vise probablement les titres de cartes répétés dans une même page ; aucun doublon exact de `<h3>` détecté après vérification, ligne non reproduite.
+- Piège rencontré : la feuille contenait déjà un commentaire `/* --- UTILITIES --- */`, la garde d'idempotence du script a cru le bloc présent et les règles `u-*` n'ont pas été écrites au premier passage (11 442 éléments sans style dans l'arbre de travail, détecté par le contrôle des styles calculés avant tout push). Règle : une garde d'idempotence doit tester un marqueur unique. Les utilitaires portent `!important` car un attribut inline gagnait toujours sur la feuille.

@@ -271,6 +271,16 @@ def main():
         if 'js/track.js' not in t:
             err(f'{fn}: js/track.js not loaded')
 
+        # audit round 4: data tables carry a caption; icon-only links carry text; first image prioritised
+        for tm in re.finditer(r'<table\b[^>]*>([\s\S]{0,120})', t):
+            if '<caption' not in tm.group(1):
+                err(f'{fn}: table without <caption>')
+                break
+        for am in re.finditer(r'<a\b[^>]*aria-label="[^"]*"[^>]*>(.*?)</a>', t, re.S):
+            if re.sub(r'<i\b[^>]*></i>|\s+', '', am.group(1)) == '':
+                err(f'{fn}: icon-only link without visible text: {am.group(0)[:60]}')
+                break
+
         # GitHub-Pages-only hardening: full meta CSP + frame-buster
         if 'content="default-src' not in t:
             err(f'{fn}: missing full Content-Security-Policy meta')
