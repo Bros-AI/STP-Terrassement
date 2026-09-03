@@ -284,6 +284,10 @@ def main():
         if 'font-display:block' in t:
             err(f'{fn}: font-display:block found (use fallback/swap)')
 
+        # a11y: every piece of content sits in a landmark — the floating WhatsApp button lives outside
+        # <footer>, so it carries its own complementary landmark (axe 'region', 2026-09-03)
+        if 'float-wa' in t and 'float-wa-wrap' not in t:
+            err(f'{fn}: floating WhatsApp link outside a landmark (missing .float-wa-wrap)')
         # spec SEO-07 / SEO-01: mobile call bar and conversion tracking on every template page
         if 'class="callbar"' not in t:
             err(f'{fn}: mobile call bar (.callbar) missing')

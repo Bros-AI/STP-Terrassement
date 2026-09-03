@@ -1993,6 +1993,8 @@ a[style*="var(--link)"] { text-decoration: underline; }
 .post-figure { margin: 28px 0; }
 .post-figure img { width: 100%; height: auto; border-radius: 12px; display: block; }
 .post-figure figcaption { font-size: .875rem; color: var(--text-light); margin-top: 8px; line-height: 1.5; }
+/* --text-light only reaches 3.27:1 on the dark section background (#111827) */
+.bg-dark figcaption, .text-white figcaption { color: #cbd5e1; }
 
 /* --- GOOGLE PROOF (spec SEO-04): real rating + review count, linked to the listing; no self-declared rating markup --- */
 .proof-google { white-space: nowrap; }
