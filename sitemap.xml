@@ -26,12 +26,20 @@
     <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/tarifs-terrassement-2026-1600.webp</image:loc>
+      <image:title>Vue d'ensemble d'un chantier de terrassement : pelle, tranchée, camion et fondation</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/lexique-terrassement.html</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/lexique-terrassement-1600.webp</image:loc>
+      <image:title>Vue en coupe d'un chantier réunissant fouille, remblai, tranchée, semelle, mur et drain</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/terrassement.html</loc>
@@ -78,6 +86,10 @@
     <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/devis-gratuit-1600.webp</image:loc>
+      <image:title>Terrain mesuré au laser avant devis, pelle en attente</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/location-materiel.html</loc>
@@ -96,18 +108,30 @@
     <lastmod>2026-09-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/blog-1600.webp</image:loc>
+      <image:title>Plans techniques de terrassement, casque et mètre sur un bureau</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/zones-intervention.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/zones-intervention-1600.webp</image:loc>
+      <image:title>Paysage stylisé de Provence avec villes et villages desservis</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/contact.html</loc>
     <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/contact-1600.webp</image:loc>
+      <image:title>Bureau de chantier avec téléphone et plans, pelle visible par la fenêtre</image:title>
+    </image:image>
   </url>
 
   <!-- ===== TERRASSEMENT - PAGES VILLES ===== -->
@@ -306,66 +330,110 @@
     <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/prix-terrassement-m2-1600.webp</image:loc>
+      <image:title>Trois natures de sol en coupe : terre meuble, argile et calcaire, avec une pelle</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/cout-demolition-maison.html</loc>
     <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/cout-demolition-maison-1600.webp</image:loc>
+      <image:title>Démolition d'une maison avec tri des gravats en piles séparées et benne</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/epaisseur-enrobe-allee.html</loc>
     <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/epaisseur-enrobe-allee-1600.webp</image:loc>
+      <image:title>Coupes comparant trois épaisseurs d'enrobé selon l'usage : piéton, voiture, poids lourd</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/prix-demolition-dalle-beton.html</loc>
     <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/prix-demolition-dalle-beton-1600.webp</image:loc>
+      <image:title>Démolition d'une dalle béton au brise-roche hydraulique avec évacuation en benne</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/raccordement-tout-egout-prix.html</loc>
     <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/raccordement-tout-egout-prix-1600.webp</image:loc>
+      <image:title>Raccordement au tout-à-l'égout : canalisation en pente, regard de branchement, collecteur public</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/combien-coute-viabilisation-terrain.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/combien-coute-viabilisation-terrain-1600.webp</image:loc>
+      <image:title>Schéma d'un terrain en cours de viabilisation : eau, électricité, assainissement et télécom dans une tranchée</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/prix-fondations-maison.html</loc>
     <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/prix-fondations-maison-1600.webp</image:loc>
+      <image:title>Coupe de fondations de maison : semelle filante armée sur bon sol</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/terrassement-piscine-guide.html</loc>
     <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/terrassement-piscine-guide-1600.webp</image:loc>
+      <image:title>Excavation d'une piscine avec fond en gravier et pelle mécanique</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/prix-terrassement-piscine-dimensions.html</loc>
     <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/prix-terrassement-piscine-dimensions-1600.webp</image:loc>
+      <image:title>Trois fouilles de piscine de tailles croissantes dans un jardin</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/enrobe-chaud-vs-froid.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/enrobe-chaud-vs-froid-1600.webp</image:loc>
+      <image:title>Comparaison enrobé à chaud posé au finisseur et enrobé à froid appliqué à la main</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/prix-enrobe-m2.html</loc>
     <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/prix-enrobe-m2-1600.webp</image:loc>
+      <image:title>Pose d'enrobé sur une allée résidentielle avec finisseur et rouleau compacteur</image:title>
+    </image:image>
   </url>
 
   <!-- ===== BLOG - GUIDES TECHNIQUES ===== -->
@@ -374,60 +442,100 @@
     <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/mur-soutenement-guide-1600.webp</image:loc>
+      <image:title>Coupe d'un mur de soutènement en béton armé avec drainage arrière</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/etude-sol-g1-g2.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/etude-sol-g1-g2-1600.webp</image:loc>
+      <image:title>Sondage géotechnique sur un terrain avec carotte de sol et couches visibles</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/permis-demolir-guide.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/permis-demolir-guide-1600.webp</image:loc>
+      <image:title>Maison à démolir avec clôture de chantier et panneau d'affichage</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/micro-station-epuration-guide.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/micro-station-epuration-guide-1600.webp</image:loc>
+      <image:title>Coupe d'une micro-station d'épuration enterrée à trois compartiments</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/fosse-septique-vs-tout-egout.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/fosse-septique-vs-tout-egout-1600.webp</image:loc>
+      <image:title>Comparaison assainissement individuel avec fosse et raccordement au tout-à-l'égout</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/terrassement-terrain-en-pente.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/terrassement-terrain-en-pente-1600.webp</image:loc>
+      <image:title>Terrain en pente aménagé en deux plateformes avec mur de soutènement</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/drainage-terrain-guide.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/drainage-terrain-guide-1600.webp</image:loc>
+      <image:title>Coupe d'un drain périphérique : tuyau perforé, gravier, géotextile le long d'une fondation</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/viabilisation-terrain-constructible.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/viabilisation-terrain-constructible-1600.webp</image:loc>
+      <image:title>Terrain constructible viabilisé avec accès et coffrets de raccordement en limite</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/amenagement-allee-carrossable.html</loc>
     <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/amenagement-allee-carrossable-1600.webp</image:loc>
+      <image:title>Coupe d'une allée carrossable : fond de forme compacté, géotextile, grave, enrobé</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/location-minipelle-guide.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/location-minipelle-guide-1600.webp</image:loc>
+      <image:title>Mini-pelle compacte creusant une tranchée dans un jardin étroit</image:title>
+    </image:image>
   </url>
 
   <!-- ===== TERRASSEMENT - VILLES SUPPLÉMENTAIRES ===== -->
@@ -498,24 +606,40 @@
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/vrd-assainissement-vitrolles-1600.webp</image:loc>
+      <image:title>Tranchée de réseaux ouverte dans une rue résidentielle avec pose de canalisations</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/vrd-assainissement-marignane.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/vrd-assainissement-marignane-1600.webp</image:loc>
+      <image:title>Réseaux VRD entre la rue et la maison : assainissement, eau, électricité</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/amenagement-exterieur-vitrolles.html</loc>
     <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/amenagement-exterieur-vitrolles-1600.webp</image:loc>
+      <image:title>Cour en pavés autobloquants avec bordures et caniveau</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/amenagement-exterieur-marignane.html</loc>
     <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/amenagement-exterieur-marignane-1600.webp</image:loc>
+      <image:title>Aménagement extérieur : allée, terrasse, chemin en gravier et muret</image:title>
+    </image:image>
   </url>
 
   <!-- ===== PAGES SERVICES SPÉCIFIQUES (KEYWORDS) - AIX ===== -->
@@ -560,6 +684,10 @@
     <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/viabilisation-terrain-aix-en-provence-1600.webp</image:loc>
+      <image:title>Viabilisation : réseaux eau, électricité et télécom vers les coffrets en limite</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/mur-soutenement-aix-en-provence.html</loc>
@@ -572,48 +700,80 @@
     <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/bordures-caniveaux-aix-en-provence-1600.webp</image:loc>
+      <image:title>Coupe d'une bordure et d'un caniveau béton posés sur solin</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/decaissement-terrain-aix-en-provence.html</loc>
     <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/decaissement-terrain-aix-en-provence-1600.webp</image:loc>
+      <image:title>Décaissement d'un terrain jusqu'à une plateforme plane avec évacuation</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/paves-autobloquants-aix-en-provence.html</loc>
     <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/paves-autobloquants-aix-en-provence-1600.webp</image:loc>
+      <image:title>Pose de pavés autobloquants sur lit de sable avec plaque vibrante</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/assainissement-individuel-aix-en-provence.html</loc>
     <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/assainissement-individuel-aix-en-provence-1600.webp</image:loc>
+      <image:title>Assainissement individuel : fosse, boîte de répartition et épandage</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/demolition-maison-aix-en-provence.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/demolition-maison-aix-en-provence-1600.webp</image:loc>
+      <image:title>Déconstruction d'une maison en pierre avec tri des matériaux</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/terrassement-terrain-constructible-aix-en-provence.html</loc>
     <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/terrassement-terrain-constructible-aix-en-provence-1600.webp</image:loc>
+      <image:title>Terrain constructible préparé : plateforme nivelée et fouilles marquées</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/drainage-terrain-aix-en-provence.html</loc>
     <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/drainage-terrain-aix-en-provence-1600.webp</image:loc>
+      <image:title>Réseau de drains en tranchées de gravier vers un regard collecteur</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/nivellement-terrain-aix-en-provence.html</loc>
     <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/nivellement-terrain-aix-en-provence-1600.webp</image:loc>
+      <image:title>Nivellement d'un terrain au laser avant construction</image:title>
+    </image:image>
   </url>
 
   <!-- ===== PAGES SERVICES SPÉCIFIQUES - MARSEILLE ===== -->
@@ -622,12 +782,20 @@
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/enrobe-marseille-1600.webp</image:loc>
+      <image:title>Pose d'enrobé dans une cour urbaine avec finisseur et rouleau</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/terrassement-piscine-marseille.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/terrassement-piscine-marseille-1600.webp</image:loc>
+      <image:title>Fouille de piscine sur un jardin en pente avec roche calcaire apparente</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/enrochement-marseille.html</loc>
@@ -894,48 +1062,80 @@
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/terrassement-maison-individuelle-guide-1600.webp</image:loc>
+      <image:title>Terrassement d'une maison individuelle : décapage, fouilles de fondations, tranchée de réseaux</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/prix-goudronnage-allee.html</loc>
     <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/prix-goudronnage-allee-1600.webp</image:loc>
+      <image:title>Goudronnage d'une allée : émulsion de bitume et gravillons compactés</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/comment-choisir-terrassier.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/comment-choisir-terrassier-1600.webp</image:loc>
+      <image:title>Chantier de terrassement bien organisé : pelle, niveau laser, clôture de sécurité et documents</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/prix-raccordement-eau-potable.html</loc>
     <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/prix-raccordement-eau-potable-1600.webp</image:loc>
+      <image:title>Raccordement à l'eau potable : prise sur la conduite, regard compteur et tuyau en tranchée</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/terrassement-garage-guide.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/terrassement-garage-guide-1600.webp</image:loc>
+      <image:title>Terrassement d'un garage accolé avec rampe d'accès en pente</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/enrochement-paysager-guide.html</loc>
     <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/enrochement-paysager-guide-1600.webp</image:loc>
+      <image:title>Enrochement paysager en blocs de calcaire posés à la pelle sur un talus</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/prix-paves-autobloquants-m2.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/prix-paves-autobloquants-m2-1600.webp</image:loc>
+      <image:title>Coupe d'un dallage en pavés autobloquants : fondation, lit de sable, pavés, bordure</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/normes-assainissement-2026.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/normes-assainissement-2026-1600.webp</image:loc>
+      <image:title>Installation d'assainissement individuel conforme avec regards de visite</image:title>
+    </image:image>
   </url>
   <!-- ===== BLOG - NOUVEAUX ARTICLES JUIN 2026 ===== -->
   <url>
@@ -943,114 +1143,190 @@
     <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/debroussaillement-obligatoire-paca-1600.webp</image:loc>
+      <image:title>Maison en zone boisée avec périmètre débroussaillé autour du bâtiment</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/prix-dalle-beton-m2.html</loc>
     <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/prix-dalle-beton-m2-1600.webp</image:loc>
+      <image:title>Coupe d'une dalle béton : hérisson, film, treillis soudé et béton</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/prix-evacuation-gravats.html</loc>
     <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/prix-evacuation-gravats-1600.webp</image:loc>
+      <image:title>Évacuation de gravats : chargement de bennes et camion sur un chantier</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/prix-tranchee-ml.html</loc>
     <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/prix-tranchee-ml-1600.webp</image:loc>
+      <image:title>Coupe d'une tranchée de réseau : lit de sable, canalisation, grillage avertisseur, remblai</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/comment-calculer-volume-terrassement.html</loc>
     <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/comment-calculer-volume-terrassement-1600.webp</image:loc>
+      <image:title>Schéma de cubage : fouille rectangulaire et tas de déblais foisonnés à côté d'un camion</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/prix-vide-sanitaire.html</loc>
     <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/prix-vide-sanitaire-1600.webp</image:loc>
+      <image:title>Comparaison dalle sur terre-plein et vide sanitaire ventilé</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/prix-comblement-piscine.html</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/prix-comblement-piscine-1600.webp</image:loc>
+      <image:title>Comblement d'une piscine : fond percé, couches de remblai compacté, pelouse en surface</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/cour-gravier-empierrement-prix.html</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/cour-gravier-empierrement-prix-1600.webp</image:loc>
+      <image:title>Coupe d'une cour en gravier stabilisé : géotextile, empierrement, dalle alvéolaire et gravier</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/gestion-eaux-pluviales-maison.html</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/gestion-eaux-pluviales-maison-1600.webp</image:loc>
+      <image:title>Gestion des eaux pluviales : gouttières vers cuve enterrée et puits d'infiltration</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/prix-puits-perdu.html</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/prix-puits-perdu-1600.webp</image:loc>
+      <image:title>Coupe d'un puits perdu : buses béton, galets et infiltration des eaux de pluie</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/location-tractopelle-prix.html</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/location-tractopelle-prix-1600.webp</image:loc>
+      <image:title>Tractopelle chargeant un camion avec son godet avant et creusant avec le bras arrière</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/prix-nivellement-terrain.html</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/prix-nivellement-terrain-1600.webp</image:loc>
+      <image:title>Nivellement de terrain au laser rotatif avec pelle et niveleuse</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/prix-assainissement-non-collectif.html</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/prix-assainissement-non-collectif-1600.webp</image:loc>
+      <image:title>Coupe d'un assainissement non collectif : fosse toutes eaux et épandage en tranchées</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/prix-decapage-terre-vegetale.html</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/prix-decapage-terre-vegetale-1600.webp</image:loc>
+      <image:title>Décapage de la terre végétale avec stockage en cordon en bordure de terrain</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/prix-raccordement-enedis.html</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/prix-raccordement-enedis-1600.webp</image:loc>
+      <image:title>Raccordement électrique : fourreau rouge en tranchée avec grillage avertisseur et coffret</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/terrassement-sous-sol-prix.html</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/terrassement-sous-sol-prix-1600.webp</image:loc>
+      <image:title>Fouille de sous-sol avec blindage et drainage en fond de fouille</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/recuperation-eau-pluie-prix.html</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/recuperation-eau-pluie-prix-1600.webp</image:loc>
+      <image:title>Cuve de récupération d'eau de pluie enterrée avec trop-plein et pompe</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/prix-remblai-terrain.html</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/prix-remblai-terrain-1600.webp</image:loc>
+      <image:title>Remblaiement d'un terrain par couches compactées au rouleau</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/blog/prix-terrassement-rocheux-brh.html</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+      <image:image>
+      <image:loc>https://stp-terrassement.com/images/illustrations/prix-terrassement-rocheux-brh-1600.webp</image:loc>
+      <image:title>Pelle équipée d'un brise-roche hydraulique fracturant un banc de calcaire</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stp-terrassement.com/mentions-legales.html</loc>

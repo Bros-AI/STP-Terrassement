@@ -297,3 +297,13 @@ Contrainte rappelée : GitHub Pages seul (décision propriétaire), Web3Forms se
 | Annexe C | fait | `tools/seo-check.mjs` dans le dépôt. |
 
 Effet de bord corrigé au passage : dans 46 articles le bloc « Pour Aller Plus Loin » était un `<h3>` à l'intérieur de la section FAQ, donc le `FAQPage` généré contenait une fausse question. Passé en `<h2>`, schémas régénérés.
+
+## 2026-09-03 — Illustrations générées (SEO-02 / SEO-03 sans photos client)
+
+- 69 illustrations techniques générées avec l'API Gemini (`gemini-3.1-flash-image`, 2752 × 1536, style vectoriel isométrique / coupe, charte ambre + marine, aucun texte) : une par article (48) et une pour chaque page hors blog qui manquait de visuel (21). Sujets et légendes dans le catalogue de session ; **chaque figure est légendée « Illustration »**, jamais présentée comme une photo de chantier réel ni localisée.
+- Variantes `images/illustrations/<slug>-{400,800,1600}.{webp,avif}` (AVIF ≈ 8 / 25 / 63 Ko), `<picture>` AVIF → WebP, `srcset` + `sizes`, `width="1600" height="900"`, `loading="lazy"`, `decoding="async"`, CSS `.post-figure`. Total ajouté au dépôt : ≈ 19 Mo d'illustrations + 6,7 Mo de cartes OG.
+- Articles : figure placée avant le 2e `<h2>`, `Article.image` = l'illustration en `ImageObject` (unique par article, présente dans la page), carte Open Graph 1200 × 630 par article (`images/og/blog/`) avec titre et bandeau marque.
+- Pages : illustration après le premier paragraphe de la première section, plus une photo existante quand la page n'en avait aucune → toutes les pages indexables ont ≥ 2 images sauf les deux pages légales (choix : pas d'image décorative sur des mentions légales ; l'outil de l'annexe C les signale).
+- `sitemap.xml` : 69 entrées `<image:image>` supplémentaires.
+- Incident corrigé : 10 articles sans bloc `.article-meta` avaient reçu la photo d'illustration **avant `<head>`** (ancre introuvable → position 0). Déplacées dans l'article ; invariant seo-qa « le document commence par `<!DOCTYPE html>` ».
+- Clé API : utilisée depuis un fichier du scratchpad, jamais dans le dépôt ni dans une commande ; à révoquer côté propriétaire après lecture.

@@ -80,6 +80,10 @@ def main():
         base = os.path.dirname(f)
         skip_page = os.path.basename(f) in NOINDEX_PAGES
 
+        # document must start with the doctype (a script once inserted a <figure> before <head>)
+        if os.path.basename(f) not in NOINDEX_PAGES and not t.lstrip().startswith('<!DOCTYPE html>'):
+            err(f'{fn}: document must start with <!DOCTYPE html>')
+
         # forbidden legacy values — everywhere, even noindex pages
         for p in FORBIDDEN:
             if p in t:
