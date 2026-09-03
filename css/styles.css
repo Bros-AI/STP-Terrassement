@@ -1954,3 +1954,7 @@ footer p, .copyright p { color: #9ca3af; }
 .feature-list li > i { position: absolute; left: 0; top: 0.2em; margin-top: 0; }
 .service-list li { display: block; position: relative; padding-left: calc(0.85rem + 10px); }
 .service-list li > i { position: absolute; left: 0; top: 0.35em; }
+/* a11y: the home contact box is dark, keep its info items light there (the light rule above is for contact.html) */
+.contact-box .contact-infos .info-item, .contact-box .contact-infos .info-item a { color: #d1d5db; }
+/* a11y (link-in-text-block): a link whose colour is close to the surrounding text must be underlined */
+a[style*="var(--link)"] { text-decoration: underline; }
