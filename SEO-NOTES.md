@@ -345,3 +345,4 @@ Corrigé :
 - `sitemap.xml` : `lastmod` 2026-09-03 sur les 65 pages dont le contenu visible a changé (illustrations, accueil, contact) ; RECRAWL.md régénéré (80 pages à soumettre).
 - Budgets Lighthouse de la CI hebdomadaire resserrés (desktop ≥ 95, mobile ≥ 88, LCP mobile ≤ 3,2 s).
 - Non modifié, assumé : 70 titres à deux séparateurs « | » (réécriture = décision CTR, la spec impose une attribution par commit) ; `images/logo-stp-terrassement.webp` n'est référencé que dans le JSON-LD (faux positif « orphelin »).
+- axe-core (second passage, avec délai de stabilisation) : 21 lignes d'en-tête de tableau en blanc sur ambre (1,78:1) passées en texte sombre (9,7:1), `tabindex="0"` sur les 115 tableaux `.price-table` à défilement propre, libellés de régions uniques (« Tableau : {légende} »). Résultat : 0 violation sur les 8 pages les plus concernées, 0 sur l'échantillon accueil / ville / contact.
