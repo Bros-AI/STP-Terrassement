@@ -275,3 +275,25 @@ Constats de la passe « secrets » et corrections, toutes vérifiées en local a
 
 ### TBT accueil et `content-visibility`
 Après suppression du CDN, le FCP de l'accueil est passé de ~3,9 s à ~2,1 s (simulé) : la fenêtre TBT commence plus tôt et capte désormais le layout complet du DOMContentLoaded (profil de trace : 213 ms de Layout sur 1 241 éléments, 3 ms de JS). Correctif ciblé accueil uniquement : `main > section.section:nth-of-type(n+3) { content-visibility: auto; contain-intrinsic-size: auto 1200px }` (A/B local ×3 : TBT 50 → 2, style/layout −30 %, CLS 0, pixels du premier écran identiques hors animations). Non généralisé aux autres gabarits (TBT déjà 0) ; les deux premières sections restent en rendu immédiat car la première chevauche le premier écran. Le CLS 0,181 intermittent de l'article sol rocheux n'a pas été reproduit sur 16 mesures locales supplémentaires (avec et sans image, avec polices de repli forcées) : artefact rare du mode simulé, aucune cause dans la page.
+
+## 2026-09-03 — Spec SEO v1.0 (auditeur externe) : faisabilité et livraison
+
+Contrainte rappelée : GitHub Pages seul (décision propriétaire), Web3Forms seul canal des demandes, aucun outil de mesure choisi.
+
+| Ticket | Statut | Détail |
+|---|---|---|
+| SEO-01 mesure | partiel | `js/track.js` livré (événements `appel_telephone`, `clic_whatsapp`, `clic_email`, `devis_envoye` émis une fois après la réponse OK de Web3Forms via `stp:lead`). Aucune donnée ne part tant qu'aucun outil n'est chargé : choix Plausible/GA4, vérification domaine Search Console et ajout du domaine de l'outil à la CSP (`script-src`, `connect-src`) restent côté propriétaire. |
+| SEO-02 visuels | intérimaire | 47 articles reçoivent 1 photo topique existante (dimensionnée, lazy, légende honnête) et `Article.image` devient un `ImageObject` réellement présent dans la page. Les photos par article, schémas et avant/après dépendent du client. |
+| SEO-03 images | partiel | Cartes Open Graph 1200×630 par famille (7 fichiers `images/og/`), balises `og:image`/`twitter:image` mises à jour partout. `srcset`/AVIF/2400 px impossibles sans originaux photo. |
+| SEO-04 preuve | non fait | Nombre d'avis réel, attestation décennale, études de cas : contenu propriétaire. Aucun `aggregateRating` ajouté (règle conservée). |
+| SEO-05 cannibalisation | option B déjà en place | Les 11 pages satellites lient leur page principale dans les 2-18 % du contenu. L'option A (fusion + 301) n'est pas faisable sans redirection serveur ; le repli meta-refresh n'a pas été appliqué : décision stratégique à prendre par page. |
+| SEO-06 maillage | fait | Cartes « communes voisines » géographiques (20) + liens contextuels dans les articles (11) + 3 paragraphes de proximité : plus aucune page sous 5 liens entrants. Accueil : 101 liens internes uniques (les 214 de l'audit comptaient les doublons). |
+| SEO-07 barre d'appel | fait | `.callbar` sur les 164 pages gabarit, safe-area iOS, cibles 48 px, bouton flottant masqué sur mobile, `body{padding-bottom:76px}`. |
+| SEO-08 mobile | fait | Parallaxe désactivée ≤ 1024 px, `overflow-x:hidden` retiré du body (scrollWidth = clientWidth vérifié à 360/390/414 sur 15 gabarits), planchers 16 px / 14 px, `.brand-sub` 12 px. |
+| SEO-09 icônes | fait | PNG rendus depuis favicon.svg par Chrome headless (180/192/512 + maskable), `manifest.json`, balises sur toutes les pages. |
+| SEO-10 contraste | fait | 38 textes `#A64B07` sur fonds sombres ou dégradés remis en ambre (la classification précédente ignorait les dégradés) ; jetons `--primary-ink-light` / `--primary-ink-dark`. |
+| SEO-11 Cloudflare | refusé | Contraire à la décision d'hébergement. Conséquence : en-têtes HTTP, Brotli, cache long et 301 restent impossibles. |
+| SEO-12 sitemap / RGPD / champs | fait | Pages légales dans le sitemap (165 URL, lastmod réel), Web3Forms nommé dans la politique (durée de conservation « 12 mois maximum » à confirmer par le propriétaire), mention sous les 3 formulaires, champs `commune` (obligatoire) et `delai` (facultatif tant que le taux de complétion n'est pas mesuré). |
+| Annexe C | fait | `tools/seo-check.mjs` dans le dépôt. |
+
+Effet de bord corrigé au passage : dans 46 articles le bloc « Pour Aller Plus Loin » était un `<h3>` à l'intérieur de la section FAQ, donc le `FAQPage` généré contenait une fausse question. Passé en `<h2>`, schémas régénérés.
