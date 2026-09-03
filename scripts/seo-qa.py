@@ -47,6 +47,9 @@ LD_RE = re.compile(r'<script type="application/ld\+json">(.*?)</script>', re.S)
 LINK_RE = re.compile(r'(?:href|src)="([^"#]+)')
 IMG_RE = re.compile(r'<img\b[^>]*>')
 PRELOAD_IMG_RE = re.compile(r'<link rel="preload"[^>]*as="image"[^>]*>')
+HERO_IMAGE = 'images/hero-terrassement-bouc-bel-air.webp'
+HERO_LCP_PAGES = {l.strip() for l in open(os.path.join(ROOT, 'scripts', 'hero-lcp-pages.txt'), encoding='utf-8')
+                  if l.strip() and not l.startswith('#')}
 
 errors, warnings = [], []
 
@@ -165,11 +168,14 @@ def main():
                     err(f'{fn}: FAQ answer differs from visible text: "{ent.get("name", "")[:60]}"')
 
         # image preloads: only for images the page shows in an <img> tag.
-        # Preloading a CSS background (the old hero preload) was measured to
-        # cost ~1s of LCP because the LCP element is the hero text — banned.
+        # Preloading a CSS background is LCP-negative when the LCP element is the hero TEXT (measured ~1 s
+        # in 2026-08, +109 ms on index.html in the 2026-09-03 A/B) and LCP-positive when the LCP element is
+        # the hero IMAGE itself (-340 ms on demolition.html). scripts/hero-lcp-pages.txt lists the pages whose
+        # measured LCP is the shared hero background: the preload is required there and banned elsewhere.
         page_img_srcs = {os.path.basename(re.search(r'src="([^"]+)"', tag).group(1))
                          for tag in IMG_RE.findall(t)
                          if re.search(r'src="([^"]+)"', tag)}
+        hero_preload_seen = False
         for tag in PRELOAD_IMG_RE.findall(t):
             hm = re.search(r'href="([^"]+)"', tag)
             if not hm:
@@ -180,10 +186,23 @@ def main():
                 os.path.normpath(os.path.join(base, url)).replace('\\', '/')
             if fname in page_img_srcs:
                 continue
+            if target == HERO_IMAGE and fn in HERO_LCP_PAGES:
+                hero_preload_seen = True
+                if 'fetchpriority="high"' not in tag:
+                    err(f'{fn}: hero preload without fetchpriority="high"')
+                continue
             if target in css_assets:
                 err(f'{fn}: preload of a CSS background image (measured LCP-negative): {url}')
             else:
                 err(f'{fn}: preloaded image not used by the page: {url}')
+        if fn in HERO_LCP_PAGES and not hero_preload_seen:
+            err(f'{fn}: listed in scripts/hero-lcp-pages.txt but the hero image preload is missing')
+        # an image cannot be both deferred and prioritised; below-the-fold images are lazy, measured in-viewport
+        # images are eager + high (imgpos probe, 2026-09-03)
+        for tag in IMG_RE.findall(t):
+            if 'loading="lazy"' in tag and 'fetchpriority=' in tag:
+                err(f'{fn}: lazy image with fetchpriority: {tag[:70]}')
+                break
 
         # css strategy — one pattern on every template page:
         # inline critical CSS + async styles.css (preload+onload + noscript

@@ -374,3 +374,25 @@ Piège : `getComputedStyle(el).fontFamily` renvoie la pile déclarée, pas la po
 Complément (même jour) — Inter aussi en `optional` : en retardant chaque famille séparément (Chrome headless, 412 px), seul le swap d'Inter décale la mise en page : 0,023 sur `prix-enrobe-m2` et 0,085 sur `terrassement-piscine-guide` (les spans de `.article-meta` se recomposent) ; Oswald (optional), icônes FA et images donnent 0. Les 2 blocs `@font-face` d'Inter passent donc aussi en `font-display: optional` : première visite lente = Arial calibré (repli « Inter Fallback »), visites suivantes = Inter depuis le cache. Aucune police du site ne peut plus décaler la mise en page après le premier rendu.
 
 Dernier résidu (polices toutes retardées, 16 gabarits × 2 largeurs) : 0,009 sur la ligne `.article-meta` de 2 articles en mobile, quand les glyphes d'icônes arrivent après un premier rendu aux métriques Arial. Correctif : les `<i>` de `.article-meta` ont une boîte de largeur fixe (1,25 em, centrée) → 0 partout.
+
+## 7e passe (2026-09-03) — export d'audit n° 4 : priorisation des images, CSS inline, titre dupliqué
+
+**Images au-dessus de la ligne de flottaison (45 pages signalées).** L'outil ne mesure pas la position réelle : un sondage Chrome (167 pages × 412 px et 1366 px) donne la position de chaque `<img>` et l'élément LCP. Résultat : 49 images seulement sont réellement dans le premier écran, 162 pages portaient `loading="lazy"` ET `fetchpriority="high"` sur la même balise (contradictoire : le navigateur diffère puis priorise), et 116 images hors écran étaient en `eager`. Les attributs sont désormais posés d'après la mesure : 48 images `eager` + `fetchpriority="high"`, tout le reste `lazy`. Invariant seo-qa : aucune image ne peut être `lazy` et prioritaire à la fois.
+
+**Vraie LCP des pages de service/ville : l'image de fond du héros.** Sur 47 pages, l'élément LCP mesuré est `images/hero-terrassement-bouc-bel-air.webp` (fond CSS). A/B local, Lighthouse throttling devtools, 3 exécutions alternées :
+
+| page | sans préchargement | avec préchargement |
+|---|---|---|
+| demolition.html | LCP 2268 ms | **1930 ms** |
+| terrassement-gardanne.html | 1666 ms | 1642 ms |
+| index.html | 1739 ms | **1848 ms** (dégradation) |
+
+Le préchargement n'est donc posé que sur les 47 pages dont la LCP est cette image ; la liste est figée dans `scripts/hero-lcp-pages.txt` et seo-qa l'exige là et l'interdit ailleurs (l'ancienne règle « jamais précharger un fond CSS » venait d'une mesure sur des pages où la LCP est le texte du héros : les deux mesures sont vraies, elles ne portent pas sur les mêmes pages).
+
+**CSS inline 35,4 Ko (accueil).** Décomposition réelle : 15,7 Ko de bloc critique + 19,3 Ko d'attributs `style`. 99 valeurs répétées (6 296 occurrences, 383 Ko) sont devenues des classes `.u-xN` avec `!important`. Les propriétés d'animation (`transition`, `animation`) ne prennent pas `!important` pour rester surchargeables par `prefers-reduced-motion`. Accueil 35,4 → 24,5 Ko ; médiane du site 16,3 → 16,8 Ko (le bloc critique augmente un peu puisqu'il embarque les nouvelles classes, mais l'octet est mutualisé au lieu d'être répété). Bloc critique gzippé : 4,3 à 4,6 Ko.
+
+Vérification de la conversion (avant/après, deux serveurs locaux) : 166 pages × 2 largeurs, 17 940 éléments convertis comparés propriété par propriété en style calculé → 2 écarts, tous deux sur `404.html`, qui ne charge pas `styles.css` : ses styles en ligne sont restaurés et le script ignore désormais toute page sans feuille partagée. Contrôle `prefers-reduced-motion` : 5 216 éléments, 0 différence. 32 captures pleine page (16 pages × 2 largeurs, animations désactivées) : **0 pixel de différence**.
+
+**Titre dupliqué (accueil).** « VRD & Assainissement » apparaissait en `h3` de carte de service et en `h3` de colonne du maillage. La colonne devient « VRD & Assainissement par Ville », aligné sur ses colonnes sœurs. Le détecteur précédent ne décodait pas les entités HTML (`&amp;`), d'où l'oubli.
+
+**Toujours impossibles sur GitHub Pages** (aucune action possible sans CDN, l'hébergement est un choix du propriétaire) : `Access-Control-Allow-Origin: *` (imposé par les serveurs GitHub Pages), CSP, Referrer-Policy et Permissions-Policy en en-tête (le `<meta>` couvre CSP et referrer, pas les autres), `X-Content-Type-Options`, `Content-Language`, HSTS. Démarrage à froid (1 848 ms puis 7 ms) = cache Varnish/Fastly de GitHub, pas un serveur lent. Délai DNS sur 4 pages : hors de notre contrôle. Téléphone en clair : volontaire, c'est un artisan qui veut être appelé.

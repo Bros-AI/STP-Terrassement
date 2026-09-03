@@ -1,0 +1,51 @@
+# Pages whose measured LCP element (Chrome, 412x823 mobile) is the shared hero background image.
+# On these pages seo-qa REQUIRES <link rel="preload" as="image" fetchpriority="high"> for that image (A/B 2026-09-03:
+# LCP 2268 -> 1930 ms on demolition.html); everywhere else the LCP is text and the preload is banned (+109 ms on index.html).
+# Regenerate with the imgpos probe (scratchpad probe_imgpos_all.mjs pattern) after changing the hero or its text.
+amenagement-exterieur-aubagne.html
+amenagement-exterieur-bouc-bel-air.html
+amenagement-exterieur-marseille.html
+amenagement-exterieur-salon-de-provence.html
+amenagement-exterieur-vitrolles.html
+amenagement-exterieur.html
+assainissement-individuel-aix-en-provence.html
+blog.html
+bordures-caniveaux-aix-en-provence.html
+contact.html
+decaissement-terrain-aix-en-provence.html
+demolition-bouc-bel-air.html
+demolition-maison-aix-en-provence.html
+demolition-marignane.html
+demolition-marseille.html
+demolition-vitrolles.html
+demolition.html
+devis-gratuit.html
+enrobe-aix-en-provence.html
+enrobe-marseille.html
+enrochement-fuveau.html
+fondations-maison-marseille.html
+fondations-maison-vitrolles.html
+goudronnage-aix-en-provence.html
+goudronnage-marignane.html
+goudronnage-marseille.html
+location-engins-aubagne.html
+location-engins-bouc-bel-air.html
+location-engins-gardanne.html
+location-engins-marseille.html
+location-engins-salon-de-provence.html
+location-materiel.html
+mur-soutenement-aix-en-provence.html
+mur-soutenement-marseille.html
+paves-autobloquants-aix-en-provence.html
+raccordement-tout-egout-marseille.html
+realisations.html
+tarifs-terrassement-2026.html
+terrassement-piscine-marseille.html
+terrassement-piscine-pertuis.html
+terrassement-piscine-trets.html
+terrassement-terrain-constructible-aix-en-provence.html
+terrassement.html
+viabilisation-terrain-aix-en-provence.html
+viabilisation-terrain-gardanne.html
+viabilisation-terrain-marseille.html
+zones-intervention.html
