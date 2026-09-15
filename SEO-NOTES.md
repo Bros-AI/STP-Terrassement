@@ -499,3 +499,15 @@ Le réflexe serait d'incriminer un contenu trop mince. **C'est faux, et mesuré*
 Correctif : **120 liens contextuels** ajoutés dans les listes « Pour aller plus loin » de 40 articles, choisis par recouvrement de mots-clés entre titres et sous-titres et pondérés vers les pages qui en manquent le plus (aucune liste ne dépasse 8 entrées, aucun doublon). Puis **47 liens** ajoutés dans les rangées de guides des pages villes concernées par les trois nouveaux guides, qui passent de 3 à 27, 18 et 11 liens entrants.
 
 Les 3 URL en 404 ne figurent pas dans l'export (seuls les comptes y sont) et aucun fichier HTML n'a été supprimé dans l'historique Git : ce sont des liens externes ou d'anciennes URL. La page 404 renvoie bien un code 404 et propose une recherche interne, donc leur impact est nul. Pour les identifier, il faut ouvrir le rapport « Pages » dans la Search Console et exporter la liste des URL concernées.
+
+## 11e passe (2026-09-15) — audit navigateur mobile et ordinateur
+
+24 pages pilotées dans Chrome à **4 largeurs** (360, 412, 1366, 1920 px) : erreurs console, requêtes en échec, débordement horizontal, images cassées, cibles tactiles, ancres mortes, liens sans texte, identifiants dupliqués, éléments masqués par la barre d'appel fixe.
+
+**Résultat : 0 erreur console, 0 requête en échec, 0 débordement, 0 ancre morte, 0 lien sans texte, 0 identifiant dupliqué, 0 élément masqué par la barre d'appel.** Deux catégories restaient.
+
+**Les « images cassées » n'en étaient pas.** Les 38 signalements correspondent exactement aux images en `loading="lazy"` : en navigateur sans affichage, le défilement scripté ne déclenche pas toujours leur chargement. Vérifié page par page : toutes sont `lazy`, aucune n'est absente du disque ni en 404.
+
+**Cibles tactiles : un vrai défaut.** 23 liens autonomes mesuraient 16 à 20 px de haut à 360 px — fil d'Ariane, lien vers les avis, listes de communes et de guides des pages piliers, lien e-mail, listes « Pour aller plus loin ». La règle WCAG 2.2 AA (2.5.8) demande 24 × 24 px, avec une exception pour les liens insérés dans une phrase. La zone cliquable est étendue par une **surcouche `::after`, jamais par du `padding`** : rien ne bouge, donc aucun décalage de mise en page. Vérification : **731 contrôles, 0 sous 24 px, 0 chevauchement** entre zones voisines.
+
+**Bouton du menu mobile.** Il portait `aria-label` mais pas `aria-expanded`, et le script ne le mettait jamais à jour : un lecteur d'écran annonçait « replié » en permanence, menu ouvert compris. Ajout de `aria-expanded="false"` et `aria-controls="mobile-menu"` sur les 175 pages, de l'`id` correspondant sur le menu, et mise à jour de l'attribut dans les trois chemins de fermeture (bouton, clic sur un lien, clic à l'extérieur). Vérifié : `false → true → false → false`.

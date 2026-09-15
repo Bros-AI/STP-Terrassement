@@ -11,7 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('active');
             const icon = mobileBtn.querySelector('i');
-            
+            // the button must announce its own state: without this it always reads "collapsed"
+            mobileBtn.setAttribute('aria-expanded', mobileMenu.classList.contains('active') ? 'true' : 'false');
+
             if (mobileMenu.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-xmark');
@@ -27,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.remove('active');
+                mobileBtn.setAttribute('aria-expanded', 'false');
                 const icon = mobileBtn.querySelector('i');
                 icon.classList.remove('fa-xmark');
                 icon.classList.add('fa-bars');
@@ -38,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('click', (e) => {
             if (!mobileBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
                 mobileMenu.classList.remove('active');
+                mobileBtn.setAttribute('aria-expanded', 'false');
                 const icon = mobileBtn.querySelector('i');
                 icon.classList.remove('fa-xmark');
                 icon.classList.add('fa-bars');

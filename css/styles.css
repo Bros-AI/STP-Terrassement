@@ -2092,6 +2092,40 @@ a[style*="var(--link)"] { text-decoration: underline; }
 .hub-link a { color: var(--link); font-weight: 700; text-decoration: underline; }
 .footer-col a.hub-footer { display: block; }
 
+/* --- TAP TARGETS (WCAG 2.5.8): standalone links need 24px of height.
+   The area is extended with an overlay, never with padding, so the layout does not move. --- */
+.service-list li a,
+.plan-list a,
+.proof-google,
+.maj-recentes a,
+.contact-infos a,
+nav[aria-label="Fil d'Ariane"] a,
+.footer-col .legal-links a,
+.article-content ul > li > a:only-child,
+p > a:only-child,
+.u-x61 a,
+.u-x26,
+.u-x41,
+a:has(> .email-protect) { position: relative; }
+.service-list li a::after,
+.plan-list a::after,
+.proof-google::after,
+.maj-recentes a::after,
+.contact-infos a::after,
+nav[aria-label="Fil d'Ariane"] a::after,
+.footer-col .legal-links a::after,
+.article-content ul > li > a:only-child::after,
+p > a:only-child::after,
+.u-x61 a::after,
+.u-x26::after,
+.u-x41::after,
+a:has(> .email-protect)::after {
+    content: ""; position: absolute; left: 0; right: 0; top: 50%;
+    height: 24px; transform: translateY(-50%);
+}
+/* the overlay must never sit on top of the next link */
+.plan-list li, .service-list li { position: relative; }
+
 /* --- U-CLASSES (audit round 4): the 30 most repeated inline styles became classes. !important on purpose: an inline style
    always won over the sheet, the classes must keep that precedence (.nav-links a, .card a ... would otherwise override them). Also inlined in the critical block. --- */
 .u-link { color: var(--link) !important; text-decoration: underline !important; }
