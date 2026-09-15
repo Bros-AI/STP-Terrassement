@@ -24,7 +24,12 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TOKENS = ['skip-link', 'navbar', 'nav-container', 'logo', 'brand-', 'nav-links',
           'btn', 'mobile-toggle', 'mobile-menu', 'hero', 'badge', 'trust-',
           'wave-bottom', 'container', 'form', 'highlight',
-          'fa-', 'float-wa', 'grid-', 'align-center', 'rounded-img', 'feature-list', 'service-list', 'focus-visible', 'callbar', 'u-', 'post-figure', 'lead-', 'plan-']  # figures can sit in the first viewport: their margin must not arrive late  # self-hosted icon subset; float-wa is visible in the first frame: icons render at first paint
+          'fa-', 'float-wa', 'grid-', 'align-center', 'rounded-img', 'feature-list', 'service-list', 'focus-visible', 'callbar', 'u-', 'post-figure', 'lead-', 'plan-',
+          # the meta line sits in the first viewport on every article: its .875rem size lives in a grouped
+          # selector (`small, .meta, figcaption, .article-meta`) that no other token matches, and without it
+          # the line renders at 16px, wraps onto an extra row and shifts the whole page (measured 0.19 CLS
+          # on lexique-terrassement.html). `cta-local` is inlined for the same reason: its box grew 93 px.
+          'article-meta', 'cta-local']  # figures can sit in the first viewport: their margin must not arrive late  # self-hosted icon subset; float-wa is visible in the first frame: icons render at first paint
 BARE = {':root', '*', 'html', 'body', 'h1, h2, h3, h4', 'a', 'img', 'ul',
         # .section provides the top offset under the fixed navbar on no-hero
         # pages (articles, legal): without it the first frame renders the H1
