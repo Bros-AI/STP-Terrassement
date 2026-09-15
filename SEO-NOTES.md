@@ -489,3 +489,13 @@ Reste 0,073 en mobile sur le plan du site, sans différence de géométrie mesur
 3. Illustrations générées avec Vertex AI sur le compte du propriétaire, recadrées sur le contenu.
 
 **Ce qui reste mesuré mais non fait** : « mur de soutènement » (1 212 impressions en page 2) est capté par la page ville de Marseille plutôt que par le guide — c'est une cannibalisation à surveiller maintenant que le pilier existe.
+
+### Rapport de couverture d'indexation (export du 15/09/2026)
+
+**129 pages indexées, 46 non indexées.** Détail des 46 : 19 « détectées, actuellement non indexées », 18 « explorées, actuellement non indexées », 3 introuvables (404), 3 en redirection, 2 exclues par `noindex` (volontaire), 1 avec canonique correcte.
+
+Le réflexe serait d'incriminer un contenu trop mince. **C'est faux, et mesuré** : les 27 pages que Google n'a jamais affichées comptent **2 151 mots de médiane**, contre **2 076** pour les pages qu'il affiche. Ce qui les sépare, ce sont les **liens internes** : 5 à 12 liens entrants, contre 124 pour tout ce qui figure dans le pied de page. Ce sont presque toutes des publications récentes, peu maillées.
+
+Correctif : **120 liens contextuels** ajoutés dans les listes « Pour aller plus loin » de 40 articles, choisis par recouvrement de mots-clés entre titres et sous-titres et pondérés vers les pages qui en manquent le plus (aucune liste ne dépasse 8 entrées, aucun doublon). Puis **47 liens** ajoutés dans les rangées de guides des pages villes concernées par les trois nouveaux guides, qui passent de 3 à 27, 18 et 11 liens entrants.
+
+Les 3 URL en 404 ne figurent pas dans l'export (seuls les comptes y sont) et aucun fichier HTML n'a été supprimé dans l'historique Git : ce sont des liens externes ou d'anciennes URL. La page 404 renvoie bien un code 404 et propose une recherche interne, donc leur impact est nul. Pour les identifier, il faut ouvrir le rapport « Pages » dans la Search Console et exporter la liste des URL concernées.
