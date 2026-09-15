@@ -511,3 +511,20 @@ Les 3 URL en 404 ne figurent pas dans l'export (seuls les comptes y sont) et auc
 **Cibles tactiles : un vrai défaut.** 23 liens autonomes mesuraient 16 à 20 px de haut à 360 px — fil d'Ariane, lien vers les avis, listes de communes et de guides des pages piliers, lien e-mail, listes « Pour aller plus loin ». La règle WCAG 2.2 AA (2.5.8) demande 24 × 24 px, avec une exception pour les liens insérés dans une phrase. La zone cliquable est étendue par une **surcouche `::after`, jamais par du `padding`** : rien ne bouge, donc aucun décalage de mise en page. Vérification : **731 contrôles, 0 sous 24 px, 0 chevauchement** entre zones voisines.
 
 **Bouton du menu mobile.** Il portait `aria-label` mais pas `aria-expanded`, et le script ne le mettait jamais à jour : un lecteur d'écran annonçait « replié » en permanence, menu ouvert compris. Ajout de `aria-expanded="false"` et `aria-controls="mobile-menu"` sur les 175 pages, de l'`id` correspondant sur le menu, et mise à jour de l'attribut dans les trois chemins de fermeture (bouton, clic sur un lien, clic à l'extérieur). Vérifié : `false → true → false → false`.
+
+## 12e passe (2026-09-15) — photographies régénérées en haute résolution
+
+**Le problème mesuré.** Les 11 photographies du site faisaient 470 × 300 px (quelques-unes un peu plus) et s'affichaient jusqu'à 1 160 px de large : c'est ce que Lighthouse signalait sous « serves images with low resolution », et c'était visible à l'œil sur grand écran.
+
+**Ce qui a été fait.** Les 11 images sont régénérées avec Vertex AI (`gemini-3.1-flash-image`) via les identifiants gcloud du propriétaire, **chacune recadrée sur son ratio d'origine exact** pour que rien ne bouge dans la mise en page, puis écrites en 1280 px (1920 px pour le fond du héros) avec des variantes 800 et 400. Style documentaire, Provence, aucun visage identifiable, aucune marque, aucun texte dans l'image.
+
+**Ce sont des images générées, pas des photos des chantiers de STP** : tous les textes alternatifs qui l'affirmaient ont été reformulés (68 corrections), les légendes « Chantier STP Terrassement en Provence » deviennent « Illustration : … » (66), et la page Réalisations porte une mention visible expliquant que les images illustrent les types de travaux et ne sont pas des photographies de chantiers précis. Une vraie photothèque reste le meilleur investissement de confiance.
+
+**Trois corrections techniques associées.**
+- `srcset` reconstruit sur 369 balises : le fichier principal est passé de 470 w à 1280 w et une variante 800 w existe désormais, donc les descripteurs ne décrivaient plus la réalité.
+- `width`/`height` corrigés sur 369 balises : ils étaient faux (un fichier 470 × 300 déclaré 600 × 400 ou 400 × 220), ce qui réservait la mauvaise boîte avant chargement.
+- `sizes` réécrit sur 547 balises et sources `<picture>` **d'après la largeur mesurée** dans Chrome : il annonçait 470 px (ou 760 px pour les illustrations) pour des images rendues jusqu'à 1 160 px, donc le navigateur choisissait une variante trop petite — l'agrandissement persistait malgré les nouveaux fichiers. Après correction : **0 image agrandie** en 1366/dpr1, 412/dpr2 et 360/dpr3.
+
+**Le héros est un fond CSS, donc sans `srcset`** : tous les écrans téléchargeaient le même fichier. En 1920 px il pesait 295 Ko, ce qu'un téléphone n'a pas à payer. Il est désormais servi en trois largeurs par media query (800 / 1280 / 1920) avec un préchargement par palier. Poids de l'accueil : 321 Ko avant (image floue de 21 Ko), **355 Ko en mobile** et 431 Ko en ordinateur après — 34 Ko de plus sur mobile pour un héros net.
+
+**Régression introduite et corrigée dans la foulée** : les 6 liens des pages piliers, destinés à la colonne « services » du pied de page, ont d'abord atterri dans le `<li>` « Démolition » de la **navigation principale** (le motif recherché apparaissait plus tôt dans le document), faisant déborder la barre sur le logo des 175 pages. Détecté à la capture d'écran, pas par la QA : un contrôle automatique ne remplace pas un coup d'œil au rendu.

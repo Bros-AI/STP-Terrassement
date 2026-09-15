@@ -49,6 +49,10 @@ IMG_RE = re.compile(r'<img\b[^>]*>')
 PRELOAD_IMG_RE = re.compile(r'<link rel="preload"[^>]*as="image"[^>]*>')
 PHONE_PATTERN = 'pattern="(?:\\+33|0033|0)\\s?[1-9](?:[\\s.\\-]?[0-9]{2}){4}"'
 HERO_IMAGE = 'images/hero-terrassement-bouc-bel-air.webp'
+# the hero is a CSS background with no srcset, so it is served in three widths chosen by media query;
+# a preload exists per breakpoint and all three count as "the hero preload"
+HERO_VARIANTS = {HERO_IMAGE, 'images/hero-terrassement-bouc-bel-air-1280.webp',
+                 'images/hero-terrassement-bouc-bel-air-800.webp'}
 HERO_LCP_PAGES = {l.strip() for l in open(os.path.join(ROOT, 'scripts', 'hero-lcp-pages.txt'), encoding='utf-8')
                   if l.strip() and not l.startswith('#')}
 
@@ -187,7 +191,7 @@ def main():
                 os.path.normpath(os.path.join(base, url)).replace('\\', '/')
             if fname in page_img_srcs:
                 continue
-            if target == HERO_IMAGE and fn in HERO_LCP_PAGES:
+            if target in HERO_VARIANTS and fn in HERO_LCP_PAGES:
                 hero_preload_seen = True
                 if 'fetchpriority="high"' not in tag:
                     err(f'{fn}: hero preload without fetchpriority="high"')

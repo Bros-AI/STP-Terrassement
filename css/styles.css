@@ -330,7 +330,7 @@ ul { list-style: none; }
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: url('../images/hero-terrassement-bouc-bel-air.webp') no-repeat center/cover;
+    background: url('../images/hero-terrassement-bouc-bel-air-800.webp') no-repeat center/cover;
     background-attachment: fixed;
     padding-top: 100px;
     padding-bottom: 100px;
@@ -2125,6 +2125,14 @@ a:has(> .email-protect)::after {
 }
 /* the overlay must never sit on top of the next link */
 .plan-list li, .service-list li { position: relative; }
+
+/* --- hero background by width: a phone must not download the 1920 px file --- */
+@media (min-width: 769px) {
+    .hero { background-image: url('../images/hero-terrassement-bouc-bel-air-1280.webp'); }
+}
+@media (min-width: 1400px) {
+    .hero { background-image: url('../images/hero-terrassement-bouc-bel-air.webp'); }
+}
 
 /* --- U-CLASSES (audit round 4): the 30 most repeated inline styles became classes. !important on purpose: an inline style
    always won over the sheet, the classes must keep that precedence (.nav-links a, .card a ... would otherwise override them). Also inlined in the critical block. --- */
