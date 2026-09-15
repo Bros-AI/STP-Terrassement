@@ -2075,6 +2075,16 @@ a[style*="var(--link)"] { text-decoration: underline; }
 /* colour alone is not enough to mark a link inside a paragraph (WCAG 1.4.1) */
 .lead-form .form-note a, .form-alt a, .lead-wrap .form-note a { text-decoration: underline; }
 
+/* The quote page exists for the form: on a phone it comes before the hero copy, not after it. */
+@media (max-width: 768px) {
+    /* keep the H1 on screen, then the form: the descriptive copy, the buttons and the trust row
+       move below it - the page is the form, the prose can wait for a scroll */
+    .page-devis .hero-content { gap: 20px; }
+    .page-devis .hero-text > p, .page-devis .hero-text .trust-badges, .page-devis .hero-text .hero-buttons { display: none; }
+    .page-devis .hero-text h1 { font-size: 1.7rem; margin-bottom: 0; }
+    .page-devis .hero { padding-top: 90px; padding-bottom: 40px; }
+}
+
 /* --- U-CLASSES (audit round 4): the 30 most repeated inline styles became classes. !important on purpose: an inline style
    always won over the sheet, the classes must keep that precedence (.nav-links a, .card a ... would otherwise override them). Also inlined in the critical block. --- */
 .u-link { color: var(--link) !important; text-decoration: underline !important; }
