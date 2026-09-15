@@ -2066,6 +2066,12 @@ a[style*="var(--link)"] { text-decoration: underline; }
     .devis-table th, .devis-table td { padding: 9px 10px; }
 }
 
+/* the form card is white: undo the dark-block text colours the CTA blocks set on p and a */
+.cta-blog .lead-wrap p, .cta-box .lead-wrap p, .lead-section .lead-wrap p { color: var(--text-light); }
+.cta-blog .lead-wrap .lead-label, .cta-box .lead-wrap .lead-label { color: var(--dark); }
+.cta-blog .lead-wrap a, .cta-box .lead-wrap a, .lead-section .lead-wrap a { color: var(--link); }
+.cta-blog .lead-wrap .btn-block, .cta-box .lead-wrap .btn-block { color: #fff; }
+
 /* --- U-CLASSES (audit round 4): the 30 most repeated inline styles became classes. !important on purpose: an inline style
    always won over the sheet, the classes must keep that precedence (.nav-links a, .card a ... would otherwise override them). Also inlined in the critical block. --- */
 .u-link { color: var(--link) !important; text-decoration: underline !important; }

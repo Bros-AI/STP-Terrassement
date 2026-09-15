@@ -436,3 +436,19 @@ La page contient désormais **7 devis types chiffrés poste par poste** (terrain
 **Découvrabilité.** Le flux Atom existait mais n'était référencé nulle part : `<link rel="alternate" type="application/atom+xml">` ajouté dans l'en-tête des 165 pages indexables, et liens **Plan du site / Flux RSS / Sitemap XML** dans le pied de page. Nouvelle page `plan-du-site.html` : index HTML de 165 liens classés en 10 groupes (services, communes, guides), schéma `CollectionPage`, inscrite au sitemap.
 
 **Accessibilité.** Les 7 tableaux de devis débordent horizontalement sur mobile : ils portent `tabindex="0"` comme les tableaux de prix des articles (axe : 0 violation sur les 5 pages testées en 2 largeurs).
+
+### Trois nouveaux guides, choisis sur les données (15/09/2026)
+
+| Article | Requêtes visées (impressions sur 3 mois) | Position actuelle |
+|---|---|---|
+| `blog/revetement-allee-carrossable.html` | « voie carrossable » 601, « chemin carrossable » 539, « revêtement (pour) allée carrossable » 503, « aménagement allée voiture » 461, « allée carrossable pas cher » 634 | 8 à 12, 2 clics au total |
+| `blog/enrobe-colore-prix.html` | « enrobé beige » 533, « prix m2 enrobé colas » 641, « prix rabotage enrobé m2 » 227, « prix m2 enrobé particulier » 226 | 8 à 11 |
+| `blog/enrochement-pierres-mise-en-oeuvre.html` | « enrochement pierre » 758, « comment faire enrochement » 190, « enrochement jardin » 183, « enrochement gabion talus » 212 | 6 à 21 |
+
+Chaque guide reprend les fourchettes de prix déjà publiées sur le site (aucun chiffre inventé), contient des tableaux avec légende et `tabindex`, une FAQ visible convertie en `FAQPage`, et des liens internes vers les guides existants. Les illustrations sont générées avec **Vertex AI (`gemini-3.1-flash-image`) via les identifiants gcloud du propriétaire** — aucune clé n'est collée nulle part — puis recadrées en 16:9 **sur le contenu** : le modèle laisse une large bande de son propre fond, qu'un recadrage centré classique conserverait.
+
+### Deux bugs corrigés, trouvés en vérifiant plutôt qu'en supposant
+
+**Le formulaire était dans la navigation.** Sur les 38 articles à bloc `.cta-blog`, le sélecteur `class="btn[^"]*"` du script d'insertion a aussi capturé le bouton de menu `class="btn-nav"`, qui apparaît plus tôt dans le document : le formulaire remplaçait le bouton « Devis Gratuit » de la barre de navigation. 41 pages réparées (bouton restauré, formulaire déplacé dans le bloc CTA), sélecteur resserré sur `class="btn btn-primary btn-lg"`.
+
+**Mention légale blanche sur blanc.** Les blocs `.cta-blog` et `.cta-box` peignent leurs `p` et `a` en blanc (fond sombre). La carte du formulaire est blanche : la mention RGPD et la ligne « Pressé ? » y étaient invisibles sur 41 pages. Corrigé par des règles plus spécifiques (`.cta-blog .lead-wrap p`), vérifié en couleur calculée : #5f6b7b sur blanc et liens #A64B07.
