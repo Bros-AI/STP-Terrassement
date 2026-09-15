@@ -258,12 +258,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
             
-            // Phone validation
+            // Phone validation — normalised first: autofill routinely returns "+33 6 12 34 56 78"
             const phoneInput = form.querySelector('input[type="tel"]');
             if (phoneInput && phoneInput.value) {
-                const phoneRegex = /^[0-9]{10}$/;
-                if (!phoneRegex.test(phoneInput.value.replace(/\s/g, ''))) {
-                    showNotification('Numéro de téléphone invalide (10 chiffres requis)', 'error');
+                const digits = phoneInput.value.replace(/[\s.\-()\u00a0]/g, '').replace(/^(?:\+33|0033)/, '0');
+                if (!/^0[1-9][0-9]{8}$/.test(digits)) {
+                    showNotification('Numéro de téléphone invalide (ex. : 06 12 34 56 78)', 'error');
                     phoneInput.style.borderColor = '#ef4444';
                     setTimeout(() => {
                         phoneInput.style.borderColor = '#e5e7eb';

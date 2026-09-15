@@ -288,6 +288,30 @@ def main():
         # <footer>, so it carries its own complementary landmark (axe 'region', 2026-09-03)
         if 'float-wa' in t and 'float-wa-wrap' not in t:
             err(f'{fn}: floating WhatsApp link outside a landmark (missing .float-wa-wrap)')
+        # quote form (2026-09-15): one 3-field form on every commercial page - phone, e-mail, project.
+        # Extra fields were measured as friction; the phone is the only required one and the form is
+        # the same component everywhere (hero card, article CTA block, glossary section).
+        if os.path.basename(f) not in ('mentions-legales.html', 'politique-confidentialite.html'):
+            n_forms = len(re.findall(r'<form\b', t))
+            if n_forms != 1:
+                err(f'{fn}: {n_forms} quote forms (want exactly 1)')
+            names = re.findall(r'<(?:input|textarea|select)\b[^>]*name="([^"]+)"', t)
+            visible = sorted(x for x in names if x not in ('access_key', 'subject', 'from_name', 'page', 'botcheck'))
+            if visible != ['email', 'message', 'phone']:
+                err(f'{fn}: quote form fields are {visible} (want email, message, phone)')
+            for need in ('name="access_key"', 'name="botcheck"', 'autocomplete="tel"', 'autocomplete="email"'):
+                if need not in t:
+                    err(f'{fn}: quote form missing {need}')
+            for lab in re.findall(r'<label class="lead-label" for="([^"]+)"', t):
+                if ('id="' + lab + '"') not in t:
+                    err(f'{fn}: <label for="{lab}"> points at no control')
+        # a link that shows the phone number must dial it (10 article buttons once went to contact.html)
+        for am in re.finditer(r'<a\b[^>]*href="([^"]*)"[^>]*>(.*?)</a>', t, re.S):
+            txt = re.sub(r'<[^>]+>|&nbsp;|\s+', ' ', am.group(2)).strip()
+            if re.search(r'0?7\s*45\s*14\s*20\s*49', txt) and not am.group(1).startswith('tel:'):
+                err(f'{fn}: link showing the phone number does not dial: {am.group(1)}')
+                break
+
         # spec SEO-07 / SEO-01: mobile call bar and conversion tracking on every template page
         if 'class="callbar"' not in t:
             err(f'{fn}: mobile call bar (.callbar) missing')

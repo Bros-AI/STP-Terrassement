@@ -2001,6 +2001,35 @@ a[style*="var(--link)"] { text-decoration: underline; }
 .proof-google__stars { color: var(--primary); letter-spacing: 1px; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
+/* --- LEAD-FORM: the 3-field quote form (phone / e-mail / project), used in the hero card,
+   inside the dark CTA blocks of the articles and in the glossary section.
+   1rem on the controls is deliberate: below 16px iOS Safari zooms the page on focus. --- */
+.lead-form { display: block; }
+.lead-label { display: block; font-size: .875rem; font-weight: 600; color: var(--dark); margin: 0 0 6px; }
+.lead-label .lead-opt { font-weight: 400; color: var(--text-light); }
+.lead-form .lead-input { width: 100%; padding: 14px; margin-bottom: 14px; border: 2px solid #d1d5db; border-radius: 8px;
+    font-family: inherit; font-size: 1rem; line-height: 1.4; background: #fff; color: var(--text); transition: border-color .2s ease; }
+.lead-form .lead-input::placeholder { color: #6b7280; }
+.lead-form .lead-input:focus { outline: 3px solid var(--primary); outline-offset: 1px; border-color: var(--primary); }
+.lead-form textarea.lead-input { resize: vertical; min-height: 84px; }
+.lead-form .btn-block { margin-top: 4px; }
+/* honeypot: off-screen, never announced, never focusable */
+.lead-hp { position: absolute !important; width: 1px !important; height: 1px !important; overflow: hidden !important;
+    clip: rect(0 0 0 0) !important; clip-path: inset(50%) !important; white-space: nowrap !important; }
+.form-alt { text-align: center; font-size: .9rem; margin-top: 12px; color: var(--text-light); }
+.form-alt a { color: var(--link); font-weight: 700; }
+/* white card so the form keeps its contrast on the dark CTA blocks */
+.lead-wrap { background: #fff; border-radius: 12px; padding: 24px; margin: 22px auto 0; max-width: 460px; text-align: left;
+    box-shadow: var(--shadow-xl); }
+.lead-wrap-title { font-family: var(--font-head); text-transform: uppercase; font-size: 1.2rem; color: var(--dark);
+    margin: 0 0 14px; text-align: center; }
+.cta-box .lead-wrap { margin: 0; flex-shrink: 0; }
+.lead-section { background: var(--gray); }
+.lead-section .lead-wrap { box-shadow: var(--shadow); }
+@media (max-width: 768px) {
+    .lead-wrap { padding: 20px; }
+}
+
 /* --- U-CLASSES (audit round 4): the 30 most repeated inline styles became classes. !important on purpose: an inline style
    always won over the sheet, the classes must keep that precedence (.nav-links a, .card a ... would otherwise override them). Also inlined in the critical block. --- */
 .u-link { color: var(--link) !important; text-decoration: underline !important; }
