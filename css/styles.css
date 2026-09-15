@@ -2030,6 +2030,42 @@ a[style*="var(--link)"] { text-decoration: underline; }
     .lead-wrap { padding: 20px; }
 }
 
+/* --- PLAN DU SITE: the HTML index (plan-du-site.html) --- */
+.plan-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px; }
+.plan-group { background: #fff; border-radius: 12px; padding: 24px; box-shadow: var(--shadow); border-top: 4px solid var(--primary); }
+.plan-group h2 { font-size: 1.15rem; margin: 0 0 14px; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.plan-group h2 i { color: var(--primary); }
+.plan-count { font-family: var(--font-body, inherit); font-size: .85rem; font-weight: 400; color: var(--text-light); text-transform: none; }
+.plan-list { list-style: none; padding: 0; margin: 0; }
+.plan-list li { padding: 5px 0; border-bottom: 1px solid #f1f5f9; line-height: 1.45; }
+.plan-list li:last-child { border-bottom: 0; }
+.plan-list a { color: var(--link); text-decoration: none; font-size: .95rem; }
+.plan-list a:hover, .plan-list a:focus-visible { text-decoration: underline; }
+
+/* --- DEVIS: the costed example quotes on devis-gratuit.html --- */
+.devis-example { margin: 34px 0; padding-top: 24px; border-top: 2px solid #e5e7eb; }
+.devis-example h3 { font-size: 1.2rem; margin-bottom: 8px; }
+.devis-table { margin: 18px 0 10px; overflow-x: auto; }
+.devis-table table { width: 100%; border-collapse: collapse; font-size: .95rem; background: #fff;
+    border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); }
+.devis-table caption { text-align: left; font-size: .875rem; color: var(--text-light); padding-bottom: 8px; }
+.devis-table th { background: var(--dark); color: #fff; text-align: left; padding: 12px 14px; font-size: .9rem;
+    font-weight: 700; }
+.devis-table td { padding: 11px 14px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+.devis-table tbody tr:nth-child(even) td { background: #f9fafb; }
+.devis-table tr.devis-total td { background: #fff7ed; border-top: 2px solid var(--primary); border-bottom: 0;
+    font-size: 1rem; }
+.devis-note { font-size: .92rem; color: var(--text-light); line-height: 1.65; }
+.devis-note i { color: var(--primary); margin-right: 6px; }
+.devis-warning { background: #fff7ed; border-left: 4px solid var(--primary); padding: 16px 18px;
+    border-radius: 8px; margin-bottom: 28px; line-height: 1.65; }
+.devis-warning i { color: #b45309; margin-right: 8px; }
+.u-right { text-align: right; white-space: nowrap; }
+@media (max-width: 768px) {
+    .devis-table table { font-size: .9rem; }
+    .devis-table th, .devis-table td { padding: 9px 10px; }
+}
+
 /* --- U-CLASSES (audit round 4): the 30 most repeated inline styles became classes. !important on purpose: an inline style
    always won over the sheet, the classes must keep that precedence (.nav-links a, .card a ... would otherwise override them). Also inlined in the critical block. --- */
 .u-link { color: var(--link) !important; text-decoration: underline !important; }

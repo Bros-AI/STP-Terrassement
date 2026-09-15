@@ -47,6 +47,7 @@ LD_RE = re.compile(r'<script type="application/ld\+json">(.*?)</script>', re.S)
 LINK_RE = re.compile(r'(?:href|src)="([^"#]+)')
 IMG_RE = re.compile(r'<img\b[^>]*>')
 PRELOAD_IMG_RE = re.compile(r'<link rel="preload"[^>]*as="image"[^>]*>')
+PHONE_PATTERN = 'pattern="(?:\\+33|0033|0)\\s?[1-9](?:[\\s.\\-]?[0-9]{2}){4}"'
 HERO_IMAGE = 'images/hero-terrassement-bouc-bel-air.webp'
 HERO_LCP_PAGES = {l.strip() for l in open(os.path.join(ROOT, 'scripts', 'hero-lcp-pages.txt'), encoding='utf-8')
                   if l.strip() and not l.startswith('#')}
@@ -299,6 +300,11 @@ def main():
             visible = sorted(x for x in names if x not in ('access_key', 'subject', 'from_name', 'page', 'botcheck'))
             if visible != ['email', 'message', 'phone']:
                 err(f'{fn}: quote form fields are {visible} (want email, message, phone)')
+            # Browsers compile the `pattern` attribute with the RegExp `v` flag, where `[\s.-]` is a syntax
+            # error - and an invalid pattern is silently ignored, so the field would validate nothing.
+            # Measured in Chrome 2026-09-15: only the escaped-hyphen form compiles.
+            if PHONE_PATTERN not in t:
+                err(f'{fn}: phone pattern is not the browser-validated one')
             for need in ('name="access_key"', 'name="botcheck"', 'autocomplete="tel"', 'autocomplete="email"'):
                 if need not in t:
                     err(f'{fn}: quote form missing {need}')
