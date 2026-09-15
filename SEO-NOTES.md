@@ -466,3 +466,26 @@ Exception ajoutée au générateur de CSS critique : les règles `.lead-*` sont 
 **Le vrai coupable du CLS, trouvé par comparaison de géométrie.** L'hypothèse de la police était fausse : supprimer le doublon `@font-face` ne change rien (0,0744 avant comme après). En parcourant tout le DOM et en comparant la hauteur de chaque élément avec le bloc critique seul puis avec la feuille complète, deux règles manquantes sont apparues sur `lexique-terrassement.html` : la taille `.875rem` de la **ligne de métadonnées** — elle vit dans un sélecteur groupé (`small, .meta, figcaption, .article-meta`) qu'aucun jeton ne capturait, donc la ligne se composait en 16 px, passait sur une ligne de plus et décalait toute la page — et l'encadré `.cta-local`, qui grandissait de 93 px. Les deux jetons ajoutés : **CLS 0,1903 → 0,0001**, et plus aucune différence de hauteur supérieure à 4 px. Ce correctif profite à tous les articles, qui portent la même ligne de métadonnées.
 
 Reste 0,073 en mobile sur le plan du site, sans différence de géométrie mesurable : un ressaut transitoire au moment où la feuille est analysée. Sous le seuil « bon » de Google (0,1), sur une page utilitaire — laissé tel quel.
+
+## 10e passe (2026-09-15) — audit de mots-clés complet et pages piliers
+
+**Ce que dit l'export complet (925 requêtes, marques concurrentes retirées) :** 90 661 impressions, 668 clics, CTR 0,74 %.
+
+| Position | Requêtes | Impressions | Clics | CTR |
+|---|---|---|---|---|
+| Top 3 | 40 | 2 719 | 95 | 3,49 % |
+| Page 1 (4-10) | 478 | 51 919 | 468 | 0,90 % |
+| Page 2 (11-20) | 276 | 26 894 | 99 | 0,37 % |
+| Page 3 (21-30) | 82 | 5 796 | 5 | 0,09 % |
+
+**Pourquoi 100 pages de plus auraient été une erreur.** Sur les 925 requêtes, **124 seulement nomment un lieu**, pour **8 992 impressions (10 %)** — et le site aligne déjà **114 pages ville × service** dessus, qui rankent entre la position 15 et 35. Plusieurs de ces requêtes ne sont même pas commerciales (« peynier code postal », « débarras gardanne », « travertin meyreuil »). Multiplier des pages quasi identiques sur ce volume, c'est exactement le motif *doorway pages* que Google sanctionne. Le levier réel est ailleurs : **~635 clics** sont laissés sur la table par 32 requêtes **déjà en page 1**, soit presque le double du trafic actuel.
+
+**Ce qui a été fait à la place.**
+
+1. **14 titres et méta-descriptions réécrits** sur les pages qui perdent le plus de clics. Ce sont des requêtes de prix, où Google répond en ligne : le snippet doit donc promettre ce qu'une réponse générée ne donne pas — le chiffre exact, un devis type, un tableau. Chaque titre reprend la formulation de la requête pour que Google la mette en gras.
+
+2. **Six pages piliers de service**, créées parce que le site avait des pages villes **sans page mère au-dessus** : enrobé (16 086 impressions de cluster, 11 pages villes, aucun pilier), enrochement (11 724 / 4), terrassement piscine (4 571 / 11), fondations (3 386 / 6), mur de soutènement (2 039 / 3), goudronnage (1 914 / 4). Chacune porte son propre contenu, un tableau de prix repris des guides publiés, une FAQ, le formulaire de devis, et relie **vers le bas** ses pages communes et **en travers** les guides du blog. Les 39 pages villes concernées renvoient désormais vers leur pilier. C'est une architecture pilier / satellite, pas une duplication.
+
+3. Illustrations générées avec Vertex AI sur le compte du propriétaire, recadrées sur le contenu.
+
+**Ce qui reste mesuré mais non fait** : « mur de soutènement » (1 212 impressions en page 2) est capté par la page ville de Marseille plutôt que par le guide — c'est une cannibalisation à surveiller maintenant que le pilier existe.

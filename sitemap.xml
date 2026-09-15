@@ -57,6 +57,66 @@
       <image:title>Terrassement professionnel pelle mécanique Aix-en-Provence</image:title>
     </image:image>
   </url>
+    <url>
+        <loc>https://stp-terrassement.com/goudronnage.html</loc>
+        <lastmod>2026-09-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://stp-terrassement.com/images/illustrations/hub-goudronnage-1600.webp</image:loc>
+            <image:title>Goudronnage - STP Terrassement</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://stp-terrassement.com/mur-soutenement.html</loc>
+        <lastmod>2026-09-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://stp-terrassement.com/images/illustrations/hub-mur-soutenement-1600.webp</image:loc>
+            <image:title>Mur de soutènement - STP Terrassement</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://stp-terrassement.com/fondations-maison.html</loc>
+        <lastmod>2026-09-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://stp-terrassement.com/images/illustrations/hub-fondations-maison-1600.webp</image:loc>
+            <image:title>Fondations maison - STP Terrassement</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://stp-terrassement.com/terrassement-piscine.html</loc>
+        <lastmod>2026-09-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://stp-terrassement.com/images/illustrations/hub-terrassement-piscine-1600.webp</image:loc>
+            <image:title>Terrassement piscine - STP Terrassement</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://stp-terrassement.com/enrochement.html</loc>
+        <lastmod>2026-09-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://stp-terrassement.com/images/illustrations/hub-enrochement-1600.webp</image:loc>
+            <image:title>Enrochement - STP Terrassement</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://stp-terrassement.com/enrobe.html</loc>
+        <lastmod>2026-09-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://stp-terrassement.com/images/illustrations/hub-enrobe-1600.webp</image:loc>
+            <image:title>Enrobé - STP Terrassement</image:title>
+        </image:image>
+    </url>
   <url>
     <loc>https://stp-terrassement.com/vrd-assainissement.html</loc>
     <lastmod>2026-09-15</lastmod>
