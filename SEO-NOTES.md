@@ -452,3 +452,13 @@ Chaque guide reprend les fourchettes de prix déjà publiées sur le site (aucun
 **Le formulaire était dans la navigation.** Sur les 38 articles à bloc `.cta-blog`, le sélecteur `class="btn[^"]*"` du script d'insertion a aussi capturé le bouton de menu `class="btn-nav"`, qui apparaît plus tôt dans le document : le formulaire remplaçait le bouton « Devis Gratuit » de la barre de navigation. 41 pages réparées (bouton restauré, formulaire déplacé dans le bloc CTA), sélecteur resserré sur `class="btn btn-primary btn-lg"`.
 
 **Mention légale blanche sur blanc.** Les blocs `.cta-blog` et `.cta-box` peignent leurs `p` et `a` en blanc (fond sombre). La carte du formulaire est blanche : la mention RGPD et la ligne « Pressé ? » y étaient invisibles sur 41 pages. Corrigé par des règles plus spécifiques (`.cta-blog .lead-wrap p`), vérifié en couleur calculée : #5f6b7b sur blanc et liens #A64B07.
+
+### Le plan du site et le CLS : ce qui a été trouvé
+
+Le nouvel index HTML (165 liens) a d'abord décalé la page de **0,769 en ordinateur et 0,116 en mobile** : ses règles `.plan-*` n'étaient pas dans le bloc critique, l'index se composait sans style puis sautait. Après ajout du jeton `plan-` : **0,000 en ordinateur, 0,073 en mobile**, performance 100 / 96.
+
+Le résidu mobile a été isolé en retardant chaque ressource séparément : il n'apparaît que lorsque **`styles.css` arrive en retard**, pas les polices. Aucune propriété calculée ne change entre les deux instants — c'est la **police rendue** qui change. Cause : les mêmes `@font-face` sont déclarés **deux fois**, dans le bloc critique en ligne et dans `styles.css`. Avec `font-display: optional`, le premier rendu peut utiliser le repli calibré ; quand `styles.css` redéclare les faces, le navigateur crée de nouvelles entrées, cette fois déjà en cache, et re-rend le texte en Inter — d'où le décalage, proportionnel au nombre de lignes qui se recomposent (165 liens ici, négligeable ailleurs).
+
+Test de la suppression du doublon (8 blocs `@font-face` retirés de `styles.css`) : le décalage avec feuille retardée de 1,5 s passe de **0,2406 à 0,0734**. Non appliqué : `styles.css` deviendrait dépendant du bloc critique pour ses polices, et le gain réel en production est faible (0,073 reste sous le seuil « bon » de Google, et toutes les autres pages sont à 0,000). À reconsidérer si d'autres pages à forte densité de liens apparaissent.
+
+Exception ajoutée au générateur de CSS critique : les règles `.lead-*` sont élaguées sur les articles (formulaire très bas dans la page) mais **conservées** sur les pages dont le formulaire est sa propre `.lead-section` (plan du site, lexique), où leur arrivée tardive faisait grandir la section de 300 px.

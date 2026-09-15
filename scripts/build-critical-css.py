@@ -47,9 +47,11 @@ def page_block(block, html):
         return (','.join(keep) + m.group(0)[m.end(1) - m.start():]) if keep else ''
     block = FA_RULE_RE.sub(filt, block)
 
-    # The quote form is in the first viewport only where it is the hero card; on articles and the glossary
-    # it sits far below the fold, so its ~1 KB of rules can wait for styles.css instead of being inlined.
-    if 'id="devis" class="hero-form"' not in html:
+    # The quote form is in the first viewport only where it is the hero card. Inside an article's CTA block it
+    # sits far below the fold, so its ~1 KB of rules can wait for styles.css. But a page whose form is its own
+    # `.lead-section` (the site index, the glossary) grows ~300 px when those rules land, which shifts the
+    # page: keep them inline there (measured CLS 0.073 on plan-du-site.html before this exception).
+    if 'id="devis" class="hero-form"' not in html and 'lead-section' not in html:
         block = re.sub(r'[^{}]*\.lead-[^{}]*\{[^}]*\}', '', block)
     return block
 
