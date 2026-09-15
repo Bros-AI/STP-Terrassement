@@ -2072,6 +2072,9 @@ a[style*="var(--link)"] { text-decoration: underline; }
 .cta-blog .lead-wrap a, .cta-box .lead-wrap a, .lead-section .lead-wrap a { color: var(--link); }
 .cta-blog .lead-wrap .btn-block, .cta-box .lead-wrap .btn-block { color: #fff; }
 
+/* colour alone is not enough to mark a link inside a paragraph (WCAG 1.4.1) */
+.lead-form .form-note a, .form-alt a, .lead-wrap .form-note a { text-decoration: underline; }
+
 /* --- U-CLASSES (audit round 4): the 30 most repeated inline styles became classes. !important on purpose: an inline style
    always won over the sheet, the classes must keep that precedence (.nav-links a, .card a ... would otherwise override them). Also inlined in the critical block. --- */
 .u-link { color: var(--link) !important; text-decoration: underline !important; }
