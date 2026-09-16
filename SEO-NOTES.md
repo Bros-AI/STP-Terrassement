@@ -528,3 +528,24 @@ Les 3 URL en 404 ne figurent pas dans l'export (seuls les comptes y sont) et auc
 **Le héros est un fond CSS, donc sans `srcset`** : tous les écrans téléchargeaient le même fichier. En 1920 px il pesait 295 Ko, ce qu'un téléphone n'a pas à payer. Il est désormais servi en trois largeurs par media query (800 / 1280 / 1920) avec un préchargement par palier. Poids de l'accueil : 321 Ko avant (image floue de 21 Ko), **355 Ko en mobile** et 431 Ko en ordinateur après — 34 Ko de plus sur mobile pour un héros net.
 
 **Régression introduite et corrigée dans la foulée** : les 6 liens des pages piliers, destinés à la colonne « services » du pied de page, ont d'abord atterri dans le `<li>` « Démolition » de la **navigation principale** (le motif recherché apparaissait plus tôt dans le document), faisant déborder la barre sur le logo des 175 pages. Détecté à la capture d'écran, pas par la QA : un contrôle automatique ne remplace pas un coup d'œil au rendu.
+
+## Lignes d'audit récurrentes : ce qui est déjà fait, ce qui est impossible (16/09/2026)
+
+Le même outil tiers remonte les mêmes lignes à chaque export. Voici l'état vérifié de chacune, pour éviter d'y revenir.
+
+| Ligne signalée | État réel |
+|---|---|
+| Content-Security-Policy manquante | **Fausse alerte.** Une CSP existe et est appliquée par les navigateurs via `<meta http-equiv="Content-Security-Policy">` sur les 175 pages. L'outil ne lit que les en-têtes HTTP. Vérifié : 0 violation en console sur 5 pages, 61 requêtes toutes vers le domaine du site. |
+| Referrer-Policy manquante | **Fausse alerte.** `<meta name="referrer" content="strict-origin-when-cross-origin">` est présente et respectée par les navigateurs. |
+| Strict-Transport-Security manquante | **Impossible.** GitHub Pages n'envoie HSTS que sur les domaines `*.github.io`, pas sur un domaine personnalisé. Aucune balise meta n'existe pour cet en-tête. |
+| Access-Control-Allow-Origin: * | **Impossible.** C'est GitHub Pages qui l'envoie, sur toutes les réponses. Sans conséquence ici : le site est public et statique, ce en-tête n'autorise que la lecture de pages déjà publiques. |
+| Permissions-Policy manquante | **Impossible.** Pas d'équivalent en balise meta (la liste des `http-equiv` acceptés par la spécification HTML ne la contient pas). |
+| X-Content-Type-Options manquant | **Impossible.** Même raison. |
+| Démarrage à froid (2 238 ms puis 6 ms) | **Impossible.** C'est le cache Fastly de GitHub qui se réveille, pas un serveur applicatif. Aucune instance à garder chaude : il n'y en a pas. |
+| CSS inline 26,6 Ko | **Compromis assumé et mesuré.** La couverture réelle du bloc critique est de 58 à 82 % dès le premier écran (Chrome CSS coverage). Le sortir en fichier externe rendrait le rendu bloquant : c'est l'inverse du gain recherché. |
+| Téléphone en clair | **Volontaire.** C'est un artisan dont le métier est d'être appelé. |
+| Trop de liens (3 pages) | **Volontaire.** Ce sont `plan-du-site.html` (234), `blog.html` (217) et l'accueil (210) — des pages d'index. La règle des 100 liens n'existe plus chez Google, et réduire ces listes retirerait des liens entrants aux pages qui peinent déjà à être indexées. |
+
+**Un seul levier existe pour les 4 en-têtes impossibles** : passer le domaine derrière un CDN capable d'ajouter des en-têtes (Cloudflare en gratuit le fait en quelques minutes). Le propriétaire a écarté cette option ; elle reste la seule façon d'obtenir HSTS, Permissions-Policy, X-Content-Type-Options et une CORS restreinte, et elle apporterait en prime Brotli et un cache long.
+
+**Durcissement effectué** : la CSP autorisait encore `cdnjs.cloudflare.com` en `style-src` et `font-src`, héritage d'avant l'auto-hébergement des polices. Vérification faite que le site ne charge plus rien d'externe, l'autorisation est retirée et `object-src 'none'` / `frame-src 'none'` ajoutés. 0 violation après changement, formulaire de devis toujours fonctionnel.
