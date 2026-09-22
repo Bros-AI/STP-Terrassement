@@ -622,3 +622,37 @@ Sept dimensions testées sur les 175 pages. **Cinq sont parfaites**, deux ont r�
 **Vérification qui a évité une erreur** : quatre URL candidates ont été récupérées et leur sujet contrôlé avant citation. Deux fiches service-public envisagées se sont révélées porter sur le **permis de conduire** et le **congé du locataire** — elles ont été écartées. Ne jamais citer une source sans avoir ouvert la page.
 
 **Piège** : la première insertion automatique a placé une citation à l'intérieur d'une réponse de FAQ, ce qui a cassé la parité entre le texte visible et le schéma `FAQPage` (détecté par seo-qa). La note a été déplacée dans la section réglementaire.
+
+## 15e passe — vérifications de conformité (2026-09-22)
+
+Contrôles qui n'avaient jamais été faits, sur les exigences réelles des moteurs
+plutôt que sur les recommandations d'outils d'audit :
+
+- **sitemap.xml / feed.xml** : parsent en XML valide, 175 URL distinctes, 175
+  `lastmod`, aucune date dans le futur, aucune URL en `http://`.
+- **JSON-LD** : 0 propriété obligatoire manquante sur les types que Google
+  exploite (Article, LocalBusiness, BreadcrumbList, FAQPage, Service).
+  0 `headline` d'Article au-delà de 110 caractères (au-delà, Google ignore
+  le balisage).
+- **Cartes sociales** : og:title / og:description / og:image / og:url / og:type
+  et les 3 balises twitter présentes sur les 175 pages.
+- **Contenu mixte** : 0 référence `http://` dans tout le site.
+- **Sur-optimisation** : densité du terme principal entre 3,5 % et 4,1 % sur les
+  6 pages les plus denses, sur des pages dont c'est le sujet — pas du bourrage.
+- **Canonicals** : 175/175 présents, auto-référents, et tous présents dans le
+  sitemap. Les 2 pages en `noindex` (404, avis) sont absentes du sitemap.
+
+### Corrigé : un piège dans robots.txt
+
+`Googlebot` figurait dans un groupe « LLM context » qui ne contenait que
+`Allow: /llms.txt`. Or un user-agent nommé **remplace intégralement** le groupe
+`User-agent: *` : Googlebot ne lisait donc plus les règles générales.
+
+Sans effet aujourd'hui (aucun `Disallow` nulle part, donc tout restait
+crawlable), mais tout `Disallow` ajouté plus tard au groupe `*` aurait été
+silencieusement ignoré par Google seul — le genre de panne invisible qui ne se
+découvre qu'au moment où le trafic tombe.
+
+`robots.txt` réécrit : Googlebot retiré du groupe (il hérite de `*`),
+`Claude-Web` (jeton retiré) remplacé par `Claude-User`, ajout de `OAI-SearchBot`
+et `Bingbot`, `Sitemap:` placé en fin de fichier.
