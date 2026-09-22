@@ -549,3 +549,36 @@ Le même outil tiers remonte les mêmes lignes à chaque export. Voici l'état v
 **Un seul levier existe pour les 4 en-têtes impossibles** : passer le domaine derrière un CDN capable d'ajouter des en-têtes (Cloudflare en gratuit le fait en quelques minutes). Le propriétaire a écarté cette option ; elle reste la seule façon d'obtenir HSTS, Permissions-Policy, X-Content-Type-Options et une CORS restreinte, et elle apporterait en prime Brotli et un cache long.
 
 **Durcissement effectué** : la CSP autorisait encore `cdnjs.cloudflare.com` en `style-src` et `font-src`, héritage d'avant l'auto-hébergement des polices. Vérification faite que le site ne charge plus rien d'externe, l'autorisation est retirée et `object-src 'none'` / `frame-src 'none'` ajoutés. 0 violation après changement, formulaire de devis toujours fonctionnel.
+
+## 13e passe (2026-09-22) — lecture croisée des rapports Search Console
+
+### La trajectoire : mai contre septembre
+
+| | export de mai (fév.-mai) | export de septembre (juin-sept.) |
+|---|---|---|
+| Clics | 2,3 / jour | **51,3 / jour** (14 derniers jours) |
+| Impressions | 307 / jour | **4 753 / jour** |
+| Position moyenne | 11,0 | **8,6** |
+| CTR | 1,72 % | 1,08 % |
+
+Le site a été multiplié par 20 en six mois, porté par le blog : `prix-enrobe-m2` passe de 288 à 39 280 impressions, `raccordement-tout-egout-prix` de 3 à 27 809, `prix-terrassement-m2` de 6 à 27 101. 61 pages sont apparues dans les résultats, 2 ont disparu.
+
+### Le CTR n'est pas le problème qu'il paraît
+
+**18 % des impressions ne viennent pas d'humains.** 78 requêtes portent la marque d'un concurrent suisse (`travaux-terrassement.ch`, 18 090 impressions, 12 clics), auxquelles s'ajoutent des familles de requêtes très longues et calibrées — six variantes de « goudronnage … marseille » en position médiane 1,3 avec **zéro clic sur 647 impressions**, ce qui est statistiquement impossible pour un vrai résultat en première position. Une requête commence même par « 35. » : c'est une ligne de liste collée dans Google, pas une recherche.
+
+Sur les requêtes qui génèrent réellement des clics : **337 requêtes, 41 581 impressions, 668 clics, CTR 1,61 % en position moyenne 8,3** — soit exactement ce qu'on attend à cette position. La requête de marque « stp terrassement » fait 29,5 % de CTR en position 1,4, ce qui confirme que le site convertit normalement quand la requête est réelle.
+
+**Conséquence** : le levier n'est pas le CTR, c'est la position sur les requêtes qui convertissent.
+
+### Cannibalisation : 61 % des titres se disputaient les mêmes requêtes
+
+« devis terrassement » : 524 impressions, position 19,5, **zéro clic** — alors que la page faite pour y répondre ne récoltait que 12 impressions. Cause trouvée : **108 titres sur 177 (61 %) contenaient « devis »**, dont 86 en suffixe (« | Devis », « | Devis 24h », « | Devis Gratuit »). Chaque page ville était donc candidate, et les signaux se répartissaient sur tout le site.
+
+Correctif : le suffixe de 85 titres est remplacé par une promesse propre au service (« Tri & Évacuation », « Réseaux & Tranchées », « Semelle & Radier », « Avec Chauffeur »…). **La tête du titre — service + commune, qui porte le poids du classement — n'est pas touchée.** « Devis » tombe de 61 % à 13 % des titres et reste sur les pages qui doivent posséder ces requêtes. Unicité et longueur (< 65) vérifiées par la QA.
+
+C'est un pari argumenté, pas une certitude : le titre est un signal fort, et il faut compter 2 à 4 semaines avant de savoir. Le changement est entièrement réversible par Git.
+
+### Ce qui n'a délibérément pas été touché
+
+Les ancres internes sont **déjà saturées** : `enrochement.html` reçoit 179 liens dont 178 avec l'ancre exacte « Enrochement » (le lien de pied de page, présent partout). En ajouter serait contre-productif. Le levier sur « enrochement » (2 622 impressions en position 10,8, le plus gros terme du site) est le contenu et le temps, pas le maillage.
