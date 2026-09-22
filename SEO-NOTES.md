@@ -766,8 +766,9 @@ W3C : 0 erreur sur les pages modifiées.
 
 ### Corrigé : un lastmod périmé sur la totalité du sitemap
 
-Les 175 `<lastmod>` indiquaient `2026-09-15` alors que les pages avaient été
-réécrites depuis. `lastmod` est l'un des rares champs du sitemap que Google
+173 des 175 `<lastmod>` indiquaient `2026-09-15` et les 2 derniers
+`2026-09-03`, alors que les pages avaient été réécrites depuis — **les 175
+étaient faux**, mesuré contre l'historique git. `lastmod` est l'un des rares champs du sitemap que Google
 exploite réellement — **et seulement tant qu'il reste fiable** : une valeur
 toujours fausse apprend au robot à ignorer le champ pour tout le site.
 

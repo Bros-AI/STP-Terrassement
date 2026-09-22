@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 """Sitemap lastmod generator — dates come from git, never from a hand edit.
 
-Every <lastmod> in sitemap.xml read 2026-09-15 while the pages had been rewritten
-since. `lastmod` is one of the few sitemap fields Google actually uses, and only
+Every <lastmod> in sitemap.xml was wrong: 173 read 2026-09-15 and 2 read
+2026-09-03, while the pages had been rewritten since. `lastmod` is one of the few sitemap fields Google actually uses, and only
 while it stays trustworthy: a value that is always wrong teaches the crawler to
 ignore the field for the whole site.
 
