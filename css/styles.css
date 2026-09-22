@@ -2134,6 +2134,12 @@ a:has(> .email-protect)::after {
     .hero { background-image: url('../images/hero-terrassement-bouc-bel-air.webp'); }
 }
 
+/* official-source note under a regulatory claim */
+.source-note { font-size: .9rem; color: var(--text-light); border-left: 3px solid var(--primary);
+    padding: 8px 14px; margin: 14px 0; background: #fff7ed; border-radius: 0 8px 8px 0; }
+.source-note i { color: #b45309; margin-right: 6px; }
+.source-note a { color: var(--link); text-decoration: underline; }
+
 /* --- U-CLASSES (audit round 4): the 30 most repeated inline styles became classes. !important on purpose: an inline style
    always won over the sheet, the classes must keep that precedence (.nav-links a, .card a ... would otherwise override them). Also inlined in the critical block. --- */
 .u-link { color: var(--link) !important; text-decoration: underline !important; }

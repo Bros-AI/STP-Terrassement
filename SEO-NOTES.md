@@ -600,3 +600,25 @@ Les ancres internes sont **déjà saturées** : `enrochement.html` reçoit 179 l
 ### Lacunes de contenu comblées
 
 En attribuant chaque requête à la page qui la mérite le mieux, les pages à fort trafic couvrent déjà tout leur vocabulaire. Deux exceptions, corrigées : « épaisseur enrobé particulier » et « épaisseur enrobé cour » (200 impressions, sur la page qui convertit le mieux du site à 1,88 %) et « combien de micropieux par m² » (94 impressions). Ajoutées aux FAQ visibles, donc reprises automatiquement dans le schéma `FAQPage`.
+
+## 14e passe (2026-09-22) — audit expert sur les dimensions encore non couvertes
+
+Sept dimensions testées sur les 175 pages. **Cinq sont parfaites**, deux ont révélé de vrais défauts.
+
+| Dimension | Résultat |
+|---|---|
+| Profondeur de clic depuis l'accueil | **maximum 2 clics**, 0 page inaccessible. Aucun problème d'exploration. |
+| Hiérarchie des titres | **0 page** avec un niveau sauté (h2 → h4). |
+| Textes alternatifs | **0 image** sans alt exploitable, aucune phrase réutilisée plus de 20 fois. |
+| Troncature des titres en résultats | **0 titre** dépassant la largeur affichée par Google. |
+| Descriptions | 17 sur 175 dépassent 155 caractères, de 5 caractères au maximum — négligeable, laissé tel quel. |
+| **Épaisseur des pages piliers** | **défaut réel** — voir ci-dessous. |
+| **Citations de sources** | **défaut réel** — voir ci-dessous. |
+
+**Défaut 1 : les 6 pages piliers étaient les plus maigres du site.** 524 à 605 mots quand la médiane est de 1 907 — et ce sont précisément les pages qui visent les termes principaux (enrobé 16 086 impressions de cluster, enrochement 11 724, piscine 4 571, fondations 3 386, soutènement 2 039, goudronnage 1 914). Chacune gagne trois sections qui répondent à ce qu'un client demande avant de signer : le déroulement du chantier étape par étape, ce que le devis doit préciser, et ce qui coince localement (l'argile dans les Bouches-du-Rhône, la roche sous les piscines, le mur en limite de propriété, le calcul bicouche/enrobé sur dix ans). Elles passent à 769-1 104 mots, sans remplissage ni répétition des guides qu'elles chapeautent.
+
+**Défaut 2 : aucune source officielle citée.** Le site affirme des règles — exposition au retrait-gonflement des argiles, déclaration préalable, DT/DICT — sans jamais renvoyer à l'autorité qui les fixe, et ne pointe que vers 10 hôtes externes, presque tous ses propres réseaux sociaux. Cinq citations ajoutées vers **Géorisques**, **service-public.fr** et le **guichet unique des réseaux**.
+
+**Vérification qui a évité une erreur** : quatre URL candidates ont été récupérées et leur sujet contrôlé avant citation. Deux fiches service-public envisagées se sont révélées porter sur le **permis de conduire** et le **congé du locataire** — elles ont été écartées. Ne jamais citer une source sans avoir ouvert la page.
+
+**Piège** : la première insertion automatique a placé une citation à l'intérieur d'une réponse de FAQ, ce qui a cassé la parité entre le texte visible et le schéma `FAQPage` (détecté par seo-qa). La note a été déplacée dans la section réglementaire.
