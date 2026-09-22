@@ -893,3 +893,57 @@ sitemap a immédiatement fait échouer `build-sitemap.py --check`.
 Vérifié au passage&nbsp;: **pas de problème de fuseau horaire.** Le runner CI
 affiche `2026-09-22T23:15 UTC`, mais git enregistre le décalage
 (`2026-09-23T01:15+02:00`) et `%cs` rend bien `2026-09-23`, comme la date locale.
+
+## 18e passe — le flux RSS était doublement échappé (2026-09-23)
+
+### Le défaut
+
+Contrôle du flux et du sitemap en production après l'ajout des 5 guides. Le
+sitemap était juste. Le flux ne l'était pas&nbsp;:
+
+```xml
+<title>Rabotage enrob&amp;eacute; : prix au m&amp;sup2;, fraisage et reprise</title>
+```
+
+Une fois le XML analysé, cela donne le texte littéral
+`Rabotage enrob&eacute; : prix au m&sup2;` — c'est **ce que les lecteurs RSS
+affichaient**, entités comprises.
+
+**Cause.** `build-feed.py` lisait le `<title>` du HTML tel quel — donc avec ses
+entités HTML (`&eacute;`, `&sup2;`, `&#x27;`, `&amp;`) — puis appliquait
+`html.escape()` en écrivant le XML. Le `&` de `&eacute;` devenait `&amp;`, d'où
+`&amp;eacute;`. XML ne connaît que **cinq** entités (`&amp; &lt; &gt; &quot;
+&apos;`)&nbsp;; tout le reste doit être un vrai caractère.
+
+**Ampleur&nbsp;: 6 titres et 5 résumés sur 56.** Trois titres étaient touchés
+**avant** les nouveaux guides (`Prix Remblai Terrain au m² 2026 | Remblaiement
+&amp; Apport` et deux autres contenant une esperluette). Le défaut existait donc
+depuis la création du flux et n'avait jamais été vu&nbsp;: `build-feed.py --check`
+comparait une sortie fausse à une sortie fausse, et passait.
+
+**Correctif à la racine.** `html.unescape()` au moment de l'extraction, avant le
+ré-échappement XML. Les 11 entrées sont corrigées d'un coup, anciennes comprises.
+
+### Garde-fou
+
+Invariant ajouté à `seo-qa.py`&nbsp;: aucune entité HTML littérale dans un
+`<title>`, `<summary>` ou `<content>` de `feed.xml`. Testé en réintroduisant la
+régression — l'erreur remonte. L'expression couvre les entités nommées
+(`&eacute;`), décimales (`&#39;`) et hexadécimales (`&#x27;`) sans se déclencher
+sur une esperluette isolée.
+
+### Vérifié sans défaut
+
+- **Sitemap**&nbsp;: 180 URL distinctes, 90 entrées `<image:image>`, aucune entité
+  littérale dans les `<image:title>`, dates réparties 160 au 22 / 20 au 23.
+- **Flux**&nbsp;: Atom valide, 56 entrées, `id`/`title`/`updated`/`author`
+  présents, `rel="self"` et `rel="alternate"` corrects, entrées triées du plus
+  récent au plus ancien, les 5 nouveaux guides présents.
+
+### Leçon de méthode
+
+Un générateur qui se vérifie lui-même (`--check` compare sa sortie au fichier sur
+disque) ne détecte que les **dérives**, jamais ses propres **erreurs
+systématiques**. Il faut un contrôle qui porte sur le résultat attendu — ici,
+l'absence d'entité littérale — et non sur la cohérence entre le générateur et sa
+propre production.

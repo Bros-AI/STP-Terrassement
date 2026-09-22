@@ -453,6 +453,28 @@ def main():
             if isinstance(d2, dict) and d2.get('@type') == 'Article' and 'image' not in d2:
                 err(f'{fn}: Article schema without image property')
 
+    # feed.xml: no LITERAL HTML entity in a title or summary.
+    # The pages carry &eacute; / &sup2; / &amp; in their <title>; build-feed.py must decode them
+    # before XML-escaping, otherwise "&eacute;" becomes "&amp;eacute;" and a feed reader shows the
+    # literal text "Rabotage enrob&eacute;". Measured 2026-09-23: 6 titles and 5 summaries were
+    # double-escaped, 3 of them from before the new guides. XML defines only five entities.
+    feed_path = os.path.join(ROOT, 'feed.xml')
+    if os.path.exists(feed_path):
+        import xml.etree.ElementTree as _ET
+        _A = '{http://www.w3.org/2005/Atom}'
+        _ENT = re.compile(r'&(?:[a-zA-Z][a-zA-Z0-9]+|#\d+|#x[0-9a-fA-F]+);')
+        try:
+            _root = _ET.parse(feed_path).getroot()
+        except Exception as _e:
+            err(f'feed.xml: does not parse ({_e})')
+        else:
+            for _entry in _root.findall(_A + 'entry'):
+                for _field in ('title', 'summary', 'content'):
+                    _v = _entry.findtext(_A + _field) or ''
+                    if _ENT.search(_v):
+                        err(f'feed.xml: literal HTML entity in <{_field}>: {_v[:60]}')
+                        break
+
     # sitemap parity
     sm = open('sitemap.xml', encoding='utf-8').read()
     locs = re.findall(r'<loc>([^<]+)</loc>', sm)

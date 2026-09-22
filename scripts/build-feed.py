@@ -30,8 +30,13 @@ def collect_entries():
     for f in sorted(glob.glob(os.path.join(ROOT, 'blog', '*.html'))):
         t = open(f, encoding='utf-8').read()
         name = 'blog/' + os.path.basename(f)
-        title = re.search(r'<title>(.*?)</title>', t, re.S).group(1).strip()
-        desc = re.search(r'<meta name="description" content="([^"]*)"', t).group(1)
+        # The page source carries HTML entities (&eacute;, &sup2;, &#x27;, &amp;). They must be
+        # decoded to real characters HERE, because the entry is XML-escaped on the way out: feeding
+        # the raw source through html.escape() turns "&eacute;" into "&amp;eacute;", and a reader
+        # then displays the literal text "Rabotage enrob&eacute;". XML knows only five entities —
+        # everything else has to be a real character.
+        title = html.unescape(re.search(r'<title>(.*?)</title>', t, re.S).group(1).strip())
+        desc = html.unescape(re.search(r'<meta name="description" content="([^"]*)"', t).group(1))
         pub = mod = None
         for m in LD_RE.finditer(t):
             d = json.loads(m.group(1))
