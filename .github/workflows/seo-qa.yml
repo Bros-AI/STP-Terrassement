@@ -5,8 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }   # build-sitemap date chaque page sur son historique
       - uses: actions/setup-python@v5
         with: { python-version: '3.12' }
       - run: python scripts/seo-qa.py --strict
       - run: python scripts/build-feed.py --check
       - run: python scripts/build-fresh-links.py --check
+      - run: python scripts/build-breadcrumbs.py --check
+      - run: python scripts/build-sitemap.py --check

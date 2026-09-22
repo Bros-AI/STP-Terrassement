@@ -24,6 +24,7 @@ The last crumb has no <a>; its URL is the page's own canonical URL.
 Usage:
   python scripts/build-breadcrumbs.py            # report only (dry run)
   python scripts/build-breadcrumbs.py --write    # apply changes
+  python scripts/build-breadcrumbs.py --check    # CI: non-zero if anything is out of date
 """
 import glob
 import html as htmllib
@@ -146,6 +147,10 @@ def main():
     if not write and counts.get('changed'):
         print('(dry run — rerun with --write to apply)')
     bad = sum(v for k, v in counts.items() if k not in ('ok', 'ok-home', 'changed'))
+    if '--check' in sys.argv and counts.get('changed'):
+        print('FAIL: the JSON-LD breadcrumb no longer matches the visible one — '
+              'run scripts/build-breadcrumbs.py --write')
+        return 1
     return 1 if bad else 0
 
 

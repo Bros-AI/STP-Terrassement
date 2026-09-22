@@ -715,3 +715,83 @@ la boucle est sortie immédiatement et a déclaré déployée une page encore à
 l'ancienne version. La sentinelle doit porter sur la **disparition** de l'ancienne
 valeur, pas sur la présence de la nouvelle, et la requête doit casser le cache
 (`?cb=$RANDOM`).
+
+## 16e passe — sitemap, flux, guides, fil d'Ariane (2026-09-22)
+
+### Le flux et les guides étaient déjà justes
+
+`feed.xml` : Atom valide, **51 `<entry>` pour 51 guides sur disque**, 0 absent,
+0 entrée fantôme, `id`/`title`/`updated` présents partout, `link rel="self"` et
+`rel="alternate"` corrects, autodiscovery `<link rel="alternate">` sur les
+175 pages. Les 51 guides portent tous un `Article` avec `datePublished` et
+`dateModified`, tous sous le même parent `Blog`, et **aucun n'a moins de
+3 liens entrants**. Rien à corriger.
+
+### Corrigé : deux fils d'Ariane concurrents qui avaient divergé
+
+Chaque page portait **deux** déclarations maintenues séparément :
+
+1. les microdonnées schema.org dans le `<nav aria-label="Fil d'Ariane">` visible ;
+2. un bloc JSON-LD `BreadcrumbList` autonome.
+
+Elles avaient divergé sur **38 maillons répartis sur 38 pages** — toutes les URL
+étaient bonnes, seuls les noms différaient :
+
+| Cas | Pages | JSON-LD | Visible |
+|---|---|---|---|
+| Hubs de service | 6 | `Terrassement` | `Enrobé`, `Enrochement`, `Goudronnage`… |
+| Guides issus d'un gabarit | 3 | `Prix Goudronnage Allée` | leur propre sujet |
+| Pages villes | 29 | `Démolition Aubagne` | `Aubagne` |
+
+Les 6 hubs affichaient donc dans Google un fil identique
+« stp-terrassement.com › Terrassement », et 3 guides celui d'une page qui n'a
+rien à voir. Google demande que les données structurées correspondent au contenu
+visible : **le fil visible devient la source de vérité** et le JSON-LD en dérive,
+via `scripts/build-breadcrumbs.py` — même principe que `build-faq-schema.py`.
+La parité n'est plus à maintenir, elle est structurelle.
+
+Au passage :
+
+- 3 guides récents affichaient leur **titre complet** (48 à 54 caractères) en
+  dernier maillon, contre une médiane de 24 sur les 48 autres. Raccourcis.
+- Le séparateur `/` était un `<li>` à part entière dans l'`<ol>` : un lecteur
+  d'écran l'annonçait comme un élément de liste. `aria-hidden` sur 172 pages.
+- `mentions-legales` et `politique-confidentialite` balisaient un fil d'Ariane
+  **qu'aucun lecteur ne voyait** — contraire aux règles générales de Google sur
+  les données structurées. Fil visible ajouté plutôt que balisage retiré.
+- L'accueil déclarait un fil à **un seul maillon pointant sur lui-même**, sans
+  fil visible. Balisage retiré : un fil à un élément n'apporte rien.
+
+W3C : 0 erreur sur les pages modifiées.
+
+### Corrigé : un lastmod périmé sur la totalité du sitemap
+
+Les 175 `<lastmod>` indiquaient `2026-09-15` alors que les pages avaient été
+réécrites depuis. `lastmod` est l'un des rares champs du sitemap que Google
+exploite réellement — **et seulement tant qu'il reste fiable** : une valeur
+toujours fausse apprend au robot à ignorer le champ pour tout le site.
+
+Le correctif naïf — « date du dernier commit touchant le fichier » — serait
+faux dans l'autre sens : la plupart des commits ici réécrivent le CSS critique
+inliné sur les 175 pages d'un coup, ce qui ne change rien pour un lecteur ni
+pour un robot. Dater toutes les pages là-dessus gonfle le `lastmod` aussi
+gravement que de le laisser périmé.
+
+`scripts/build-sitemap.py` date donc chaque page sur **le dernier commit qui l'a
+modifiée en dehors de son bloc `<!-- critical:start -->…<!-- critical:end -->`**.
+`priority`, `changefreq` et les entrées `<image:image>` sont préservés à
+l'identique ; seul `lastmod` est régénéré.
+
+Logique vérifiée, pas supposée : en se plaçant 3 commits en arrière, les dates
+se répartissent **96 / 79 sur deux dates distinctes** au lieu d'une seule — la
+discrimination fonctionne, il n'y a pas de repli silencieux. Aujourd'hui les
+175 pages partagent la même date parce qu'elles ont toutes réellement changé
+hors bloc critique (fil d'Ariane sur 40, séparateur sur 172, nom d'entreprise
+sur 8).
+
+### Garde-fous CI
+
+`seo-qa.yml` exécute désormais `build-breadcrumbs.py --check` et
+`build-sitemap.py --check` : tout écart entre le fil visible et le JSON-LD, ou
+tout `lastmod` non régénéré, casse le build. Le checkout passe en
+`fetch-depth: 0`, la datation ayant besoin de l'historique complet.

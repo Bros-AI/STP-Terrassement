@@ -23,6 +23,8 @@ or removed to keep parity with what is on disk.
 Usage:
   python scripts/build-sitemap.py            # report only (dry run)
   python scripts/build-sitemap.py --write    # apply changes
+  python scripts/build-sitemap.py --check    # CI: non-zero if lastmod or parity drifted
+                                             # (needs full history: fetch-depth: 0)
 """
 import glob
 import os
@@ -136,6 +138,9 @@ def main():
         print('  sitemap.xml ecrit')
     elif not write and changed:
         print('  (dry run — relancer avec --write)')
+    if '--check' in sys.argv and (changed or added or removed):
+        print('FAIL: sitemap.xml is out of date — run scripts/build-sitemap.py --write')
+        return 1
     return 1 if (added or removed) else 0
 
 
