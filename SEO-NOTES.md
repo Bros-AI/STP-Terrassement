@@ -691,3 +691,27 @@ LocalBusiness / Organization / GeneralContractor doit porter exactement
   `placeholder`/`title` du champ téléphone — le format attendu, jamais du texte
   visible ni un numéro d'entreprise.
 - **Horaires** : une seule déclaration, en `openingHoursSpecification`.
+
+### Liens externes
+
+46 liens externes distincts testés en GET : **45 répondent 200**. Le seul écart
+est `linkedin.com/company/stpterrassement` qui renvoie `999` — le code
+anti-robot que LinkedIn sert à toute requête non authentifiée, pas un lien mort.
+
+Deux pièges de mesure rencontrés sur ce test, notés pour la prochaine fois :
+
+- `curl -I` (HEAD) renvoie `000` sur la quasi-totalité de ces hôtes. Il faut un
+  GET (`curl -sL`) : un HEAD refusé ressemble exactement à un lien mort.
+- Une liste d'URL produite par Python sous Windows porte des `\r` en fin de
+  ligne ; passée à `curl` dans une boucle `while read`, chaque URL est demandée
+  avec un octet parasite et échoue. `tr -d '\r'` avant l'appel.
+
+### Piège de vérification : la sentinelle d'attente
+
+Pour confirmer un déploiement j'attendais l'apparition de
+`"name": "STP Terrassement",` sur la page Éguilles. Cette chaîne était **déjà
+présente** dans les autres nœuds JSON-LD de la même page (Service, WebSite) :
+la boucle est sortie immédiatement et a déclaré déployée une page encore à
+l'ancienne version. La sentinelle doit porter sur la **disparition** de l'ancienne
+valeur, pas sur la présence de la nouvelle, et la requête doit casser le cache
+(`?cb=$RANDOM`).
