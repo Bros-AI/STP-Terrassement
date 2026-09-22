@@ -864,3 +864,32 @@ dérivés du HTML visible par `build-faq-schema.py` et `build-breadcrumbs.py`.
 - **Deux dépassements de longueur invisibles à l'écriture** : mon compteur mesurait le
   texte brut, `seo-qa` mesure le HTML échappé — chaque apostrophe devient `&#x27;` et
   coûte 5 caractères. Un titre de 56 caractères en faisait 66 dans le fichier.
+
+### Le CI a attrapé ce que j'avais oublié
+
+Le premier push des 5 guides a **cassé le workflow SEO QA** :
+`build-fresh-links.py --check` a signalé que le bloc « mises à jour récentes »
+de `blog.html` ne listait pas les nouveaux articles. Je l'avais oublié — le
+garde-fou a fait exactement son travail.
+
+Cela met en évidence un **ordre obligatoire** entre les générateurs, parce que
+chacun modifie du HTML et donc le `lastmod` de la page qu'il touche :
+
+```
+1. build-faq-schema.py   --write   (FAQPage depuis le HTML visible)
+2. build-breadcrumbs.py  --write   (BreadcrumbList depuis le fil visible)
+3. build-fresh-links.py  --write   (bloc « mises à jour récentes » de blog.html)
+4. build-feed.py         --write   (feed.xml)
+5. build-critical-css.py           (CSS critique inliné)
+6. build-sitemap.py      --write   ← TOUJOURS EN DERNIER
+7. seo-qa.py             --strict
+```
+
+`build-sitemap.py` doit passer en dernier&nbsp;: il date les pages sur leur
+dernière modification, donc toute régénération faite après lui invalide son
+résultat. C'est ce qui s'est produit ici — régénérer `blog.html` après le
+sitemap a immédiatement fait échouer `build-sitemap.py --check`.
+
+Vérifié au passage&nbsp;: **pas de problème de fuseau horaire.** Le runner CI
+affiche `2026-09-22T23:15 UTC`, mais git enregistre le décalage
+(`2026-09-23T01:15+02:00`) et `%cs` rend bien `2026-09-23`, comme la date locale.
