@@ -31,6 +31,7 @@ import os
 import re
 import subprocess
 import sys
+import datetime
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOMAIN = 'https://stp-terrassement.com/'
@@ -79,9 +80,13 @@ def content_dates(pages):
             if meaningful(now) != meaningful(before):
                 dates[f] = date
                 pending.discard(f)
-    today = git('log', '-1', '--format=%cs').strip()
+    # Un fichier modifie dans l'arbre de travail date d'aujourd'hui, pas du dernier commit :
+    # prendre la date du dernier commit ici daterait d'hier un guide ecrit ce matin, et le
+    # --check echouerait juste apres le commit.
+    today = datetime.date.today().isoformat()
+    last_commit = git('log', '-1', '--format=%cs').strip()
     for f in pending:
-        dates[f] = today
+        dates[f] = last_commit or today
     for f in changed_now & set(pages):
         dates[f] = today
     return dates

@@ -796,3 +796,71 @@ sur 8).
 `build-sitemap.py --check` : tout écart entre le fil visible et le JSON-LD, ou
 tout `lastmod` non régénéré, casse le build. Le checkout passe en
 `fetch-depth: 0`, la datation ayant besoin de l'historique complet.
+
+## 17e passe — 5 nouveaux guides sur des manques mesurés (2026-09-23)
+
+### La méthode : ne pas écrire au hasard
+
+Les sujets ne sont pas choisis par intuition mais par croisement de deux mesures sur
+l'export Search Console du 15 septembre (107 908 impressions, 1 000 requêtes) :
+
+1. **Les requêtes qui génèrent déjà des impressions** sans qu'aucune page ne leur
+   réponde — c'est là que Google hésite, faute de page dédiée ;
+2. **Le test de cannibalisation** : le sujet ne doit apparaître dans **aucun `<title>`
+   ni `<h1>`** du site. Un doublon casserait les deux pages.
+
+Le bruit a d'abord été retiré : `travaux-terrassement.ch` (concurrent suisse) et
+`meusetravaux.be` pèsent des dizaines de milliers d'impressions pour **0 clic** — les
+garder aurait faussé tout le classement des opportunités.
+
+### Les 5 sujets retenus
+
+| Guide | Impressions | Position | Couverture avant |
+|---|---|---|---|
+| Chemin d'accès carrossable | ~1 428 | 9-14 | 1 seul H2 |
+| Prix enrochement à la tonne | ~650 | 6-11 | aucune |
+| Enrobé drainant | 362 | 9,4 | aucune |
+| Location chargeuse compacte | 242 | 21,9 | aucune |
+| Rabotage d'enrobé | 227 | 7,9 | 1 seul H2 |
+
+### Le sujet écarté, et pourquoi
+
+**« Décaissement de terrain »** (385 impressions) était tentant. Il est écarté :
+**21 pages du site le portent déjà en titre ou en H1**. Publier un guide de plus aurait
+mis 22 pages en concurrence sur la même requête. La cannibalisation des titres avait
+déjà été ramenée de 61 % à 13 % ; la recréer volontairement n'aurait aucun sens.
+
+### Cohérence des prix
+
+Les fourchettes des nouveaux guides sont alignées sur celles déjà publiées (enrobé
+25-60 €/m², enrochement 100-200 €/m², tractopelle 500-800 €/jour). Le guide sur
+l'enrochement à la tonne **démontre explicitement la conversion** : 1 m² de parement
+≈ 1,5 à 2 t, ce qui redonne bien 100-200 €/m². Deux articles qui se contrediraient sur
+un prix décrédibiliseraient les deux.
+
+### Ce qui a été construit
+
+- 5 guides de **1 554 à 2 124 mots**, 7 questions FAQ chacun, 0 erreur W3C.
+- **35 fichiers image** générés via Vertex AI (illustrations 400/800/1600 en webp et
+  avif, plus l'image Open Graph 1200×630). Images générées, pas des photos de chantiers
+  STP : les textes alternatifs et légendes le disent. Aucun visage, aucune marque,
+  aucun texte dans l'image.
+- **11 liens contextuels** insérés depuis les guides voisins, dans le corps du texte
+  plutôt qu'en pied de page. Chaque nouveau guide reçoit 3 à 5 liens entrants : sans
+  cela une page neuve reste des mois inconnue.
+- Inscription dans `sitemap.xml` (avec entrée `<image:image>`), `blog.html` et
+  `feed.xml` (56 entrées).
+
+Les schémas `FAQPage` et `BreadcrumbList` ne sont pas écrits à la main : ils sont
+dérivés du HTML visible par `build-faq-schema.py` et `build-breadcrumbs.py`.
+
+### Corrigé au passage
+
+- **`build-sitemap.py` datait les fichiers non commités sur le dernier commit.** Un
+  guide écrit le 23 était donc daté du 22, et le `--check` aurait échoué juste après le
+  commit. Les fichiers modifiés dans l'arbre de travail prennent désormais la date du
+  jour. (Piège rencontré dans la foulée : la variable de boucle s'appelait aussi
+  `date` et masquait `datetime.date`.)
+- **Deux dépassements de longueur invisibles à l'écriture** : mon compteur mesurait le
+  texte brut, `seo-qa` mesure le HTML échappé — chaque apostrophe devient `&#x27;` et
+  coûte 5 caractères. Un titre de 56 caractères en faisait 66 dans le fichier.
