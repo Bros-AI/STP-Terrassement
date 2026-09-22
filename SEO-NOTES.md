@@ -582,3 +582,21 @@ C'est un pari argumenté, pas une certitude : le titre est un signal fort, et il
 ### Ce qui n'a délibérément pas été touché
 
 Les ancres internes sont **déjà saturées** : `enrochement.html` reçoit 179 liens dont 178 avec l'ancre exacte « Enrochement » (le lien de pied de page, présent partout). En ajouter serait contre-productif. Le levier sur « enrochement » (2 622 impressions en position 10,8, le plus gros terme du site) est le contenu et le temps, pas le maillage.
+
+### Rapport d'indexation : le diagnostic complet (22/09/2026)
+
+129 pages indexées, 46 non. Quatre causes possibles ont été testées une par une, sur le site en ligne.
+
+**1. Blocage technique — écarté.** Les 175 URL du sitemap ont été récupérées : **0 anomalie**. Aucune redirection, aucun `noindex`, toutes les canoniques pointent sur elles-mêmes, tous les codes 200. Temps de réponse médian **169 ms**, p90 198 ms, maximum 443 ms. `robots.txt` ne bloque rien et référence le sitemap. Sitemap et disque coïncident exactement (175 = 175).
+
+**2. Contenu dupliqué — écarté, et c'est le résultat le plus utile.** Le soupçon logique sur 114 pages ville × service construites depuis un gabarit. Mesure du texte visible (shingles de 6 mots, hors navigation et pied de page) : le recouvrement médian à l'intérieur d'une même famille va de **2 % à 11 %**, le maximum observé est de 15 %, et **aucune paire du site ne dépasse 45 %**. Les pages villes sont réellement différenciées.
+
+**3. Données structurées — conformes.** Un premier contrôle a signalé 84 pages sans `areaServed` de commune ; vérification faite, c'était une erreur de mon contrôle : les pages villes déclarent bien `{"@type": "City", "name": "Gardanne", "sameAs": "…wikipedia…"}`. Les nœuds signalés étaient les entrées de l'`OfferCatalog`, qui n'ont pas à porter ce champ. Le rapport Google « données structurées non analysables » affiche d'ailleurs **0 page concernée**.
+
+**4. Maillage interne — c'était bien la cause, déjà corrigée.** Les pages jamais affichées n'étaient pas maigres (2 151 mots de médiane contre 2 076 pour les indexées) mais peu liées (5 à 12 liens entrants). 174 liens contextuels ont été ajoutés le 15 septembre.
+
+**Conclusion honnête** : il ne reste aucun défaut technique ni éditorial qui explique les 37 pages non indexées. C'est une question d'âge du site, de budget d'exploration et d'autorité — cela se résout avec le temps, les liens et les demandes d'indexation manuelles.
+
+### Lacunes de contenu comblées
+
+En attribuant chaque requête à la page qui la mérite le mieux, les pages à fort trafic couvrent déjà tout leur vocabulaire. Deux exceptions, corrigées : « épaisseur enrobé particulier » et « épaisseur enrobé cour » (200 impressions, sur la page qui convertit le mieux du site à 1,88 %) et « combien de micropieux par m² » (94 impressions). Ajoutées aux FAQ visibles, donc reprises automatiquement dans le schéma `FAQPage`.
