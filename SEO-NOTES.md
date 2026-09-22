@@ -656,3 +656,38 @@ découvre qu'au moment où le trafic tombe.
 `robots.txt` réécrit : Googlebot retiré du groupe (il hérite de `*`),
 `Claude-Web` (jeton retiré) remplacé par `Claude-User`, ajout de `OAI-SearchBot`
 et `Bingbot`, `Sitemap:` placé en fin de fichier.
+
+### Corrigé : une entité, neuf noms
+
+Huit pages villes (Cabriès, Éguilles, Les Milles, Luynes, Meyreuil, Peynier,
+Simiane-Collongue, Venelles) déclaraient un `LocalBusiness` sous l'`@id`
+canonique `https://stp-terrassement.com/#organization` — donc **la même entité
+que les 167 autres pages** — mais avec le nom `STP Terrassement - <Ville>`,
+alors que l'adresse du même bloc restait Simiane-Collongue.
+
+Deux problèmes réels :
+
+1. **Données contradictoires sur une entité unique.** Google fusionne par `@id` :
+   il recevait un seul établissement décrit sous neuf noms différents, avec un
+   nom disant « Éguilles » et une adresse disant « Simiane-Collongue ».
+2. **Nom d'établissement géo-enrichi.** Les règles de Google Business
+   Profile demandent que le nom reflète le nom réel de l'entreprise ; y ajouter
+   une ville est précisément le motif sanctionné.
+
+Nom ramené à `STP Terrassement` sur les 8 pages. Le ciblage local n'est pas
+perdu : il est porté par `areaServed` (présent, 2 occurrences par page), le
+`<title>`, le H1 et le corps de texte — là où il doit l'être.
+
+Invariant ajouté à `seo-qa.py` (`BUSINESS_NAME`, helper `ld_nodes`) : tout nœud
+LocalBusiness / Organization / GeneralContractor doit porter exactement
+`STP Terrassement`. Testé en réintroduisant la régression : l'erreur remonte.
+
+### Vérifié sans défaut
+
+- **Ancres internes** : 0 lien `href="#..."` pointant vers un id inexistant.
+- **Adresse et téléphone** : une seule valeur sur tout le site
+  (798 C Chemin de la Roque, 13109 Simiane-Collongue, +33745142049), identique
+  dans les 637 liens `tel:`. Le `06 12 34 56 78` présent 346 fois est le
+  `placeholder`/`title` du champ téléphone — le format attendu, jamais du texte
+  visible ni un numéro d'entreprise.
+- **Horaires** : une seule déclaration, en `openingHoursSpecification`.

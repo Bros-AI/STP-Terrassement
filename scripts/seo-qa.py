@@ -19,7 +19,8 @@ and must never break again:
   images      every <img> has width+height; files exist
   sitemap     parity with the indexable pages on disk
   nap         constants (email, phone, geo) present where expected; the old
-              forbidden values are absent everywhere
+              forbidden values are absent everywhere; the business entity carries
+              exactly one name site-wide, never geo-suffixed
 
 Exit code: 0 = clean (warnings allowed unless --strict), 1 = errors.
 Usage: python scripts/seo-qa.py [--strict]
@@ -38,6 +39,7 @@ faqlib = __import__('build-faq-schema')
 DOMAIN = 'https://stp-terrassement.com'
 EMAIL = 'stp13109@gmail.com'
 PHONE = '+33745142049'
+BUSINESS_NAME = 'STP Terrassement'  # the real-world name; never geo-suffixed
 GEO = '43.42634;5.45900'  # Google Business Profile pin (Plus code CFG5+GJ), read 2026-09-03
 NOINDEX_PAGES = {'404.html', 'avis.html', 'v38cnl93ujw3zgpz916ykx807t2c3v.html'}
 FORBIDDEN = ['43.529742', '5.447427', '43.4302;5.4341', '127 avis', 'Notés 5/5', 'Lun-Sam: 7h-19h', 'contact@stp-terrassement.com',
@@ -73,6 +75,20 @@ def site_css_urls():
         for m in re.finditer(r'url\([\'"]?([^\'")]+)', open(css, encoding='utf-8').read()):
             urls.add(os.path.normpath(os.path.join('css', m.group(1))).replace('\\', '/'))
     return urls
+
+
+BUSINESS_TYPES = {'LocalBusiness', 'GeneralContractor', 'HomeAndConstructionBusiness', 'Organization'}
+
+
+def ld_nodes(node):
+    """Yield every dict in a JSON-LD tree, @graph and nested nodes included."""
+    if isinstance(node, dict):
+        yield node
+        for v in node.values():
+            yield from ld_nodes(v)
+    elif isinstance(node, list):
+        for v in node:
+            yield from ld_nodes(v)
 
 
 def main():
@@ -121,6 +137,17 @@ def main():
                 continue
             if isinstance(d, dict) and d.get('@type') == 'FAQPage':
                 faq_blocks.append(d)
+            # NAP: the business entity carries one name everywhere. Eight city pages once declared
+            # the canonical @id .../#organization as "STP Terrassement - <City>" while its address
+            # stayed Simiane-Collongue - contradictory data on a single entity, and the geo-suffixed
+            # business name Google's business-name guidelines forbid. City targeting belongs in
+            # areaServed, the title and the H1, never in the legal name.
+            for node in ld_nodes(d):
+                types = node.get('@type')
+                types = types if isinstance(types, list) else [types]
+                if any(x in BUSINESS_TYPES for x in types) and 'name' in node:
+                    if node['name'] != BUSINESS_NAME:
+                        err(f'{fn}: business name is "{node["name"]}" (want "{BUSINESS_NAME}")')
 
         if skip_page:
             continue
