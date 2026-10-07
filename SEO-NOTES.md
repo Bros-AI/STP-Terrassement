@@ -1228,3 +1228,73 @@ désormais la carte réelle du site, avec les chiffres exacts et les URL à cite
 À noter&nbsp;: les 173 blocs `FAQPage` **ne produisent aucun résultat enrichi**
 (mesuré&nbsp;: `searchAppearance` vide sur 16 mois). Ils gardent leur utilité pour les
 systèmes de réponse, pas pour l'affichage Google.
+
+## 23e passe — soumission par API, et deux régressions corrigées (2026-10-07)
+
+### Sitemaps soumis
+
+Le scope écriture ayant été accordé, les quatre sitemaps sont soumis par l'API
+(`PUT /sites/{site}/sitemaps/{feedpath}` → 204) :
+
+```
+sitemap.xml            index, déjà lu le 2026-10-06
+sitemap-guides.xml     56 URL   soumis, en attente de première lecture
+sitemap-villes.xml    103 URL   soumis, en attente
+sitemap-services.xml   22 URL   soumis, en attente
+```
+
+### Les 5 guides ne sont toujours pas explorés
+
+Deux semaines après publication et malgré 3 à 7 liens entrants chacun depuis des pages
+que Google explore (certaines lues le 3 octobre), les 5 guides et les 6 hubs restent
+**« jamais explorés »**. Le sitemap les contient depuis le 23 septembre et a été relu
+depuis.
+
+Le diagnostic honnête n'est donc ni le contenu, ni le maillage, ni le sitemap : c'est le
+**budget d'exploration**. Google ne juge pas le site assez important pour aller chercher
+ses nouvelles URL. Aucune optimisation de page ne corrige cela — seuls comptent la
+demande d'indexation manuelle et l'autorité externe.
+
+**Conséquence sur la méthode** : l'effort d'optimisation se porte désormais sur les pages
+que Google explore **déjà**. Optimiser une page non indexée ne produit rien.
+
+### Deux régressions de ma passe précédente
+
+En alignant les titres sur les requêtes, j'avais ajouté un mot **en en retirant un autre
+qui pesait plus lourd** :
+
+| Page | Mot ajouté | Mot perdu | Volume perdu |
+|---|---|---|---|
+| prix-goudronnage-allee | goudronner (117 imp) | **goudronnage** | **425 imp**, pos 8-12, CTR 0 % |
+| amenagement-allee-carrossable | voie (424 imp) | **aménagement** | **1 171 imp**, pos 9,6, CTR 0 % |
+
+Les deux titres reprennent désormais les deux formes. « voie » est volontairement laissé
+au guide `chemin-acces-carrossable`, qui le cible : le reprendre ici cannibaliserait la
+page dédiée dès qu'elle sera indexée.
+
+**Leçon** : un titre modifié doit être vérifié contre *toutes* les requêtes de la page,
+pas seulement celle qu'on cherche à gagner.
+
+### Autres titres alignés sur 90 jours de données
+
+- `enrochement-paysager-guide` : « pierre » valait **1 355 impressions** sur 2 requêtes
+  et « jardin » 232, aucun des deux dans le titre. Le repère de prix passe en description.
+- `prix-raccordement-eau-potable` : « assainissement », 200 impressions en position 9,9
+  avec 0 clic.
+- Trois pages gardent leur titre (le chiffre y est un atout) et reçoivent le mot manquant
+  en description : `cout-demolition-maison` (destruction, combien coûte),
+  `prix-fondations-maison` (semi-profondes, 100 m²), `normes-assainissement-2026`
+  (mise aux normes, fosse septique).
+
+### Filtres appliqués à l'analyse
+
+Sur 8 232 couples requête/page en 90 jours, deux familles sont écartées avant tout
+classement :
+
+- **Marques concurrentes** (`travaux-terrassement.ch`, `meusetravaux.be`) : elles
+  dominent les « manques » apparents avec des milliers d'impressions à 0 clic, mais un
+  internaute cherchant un concurrent nommé ne cliquera jamais sur ce site.
+- **Requêtes déjà visées par une page créée mais non indexée** : les reprendre dans un
+  titre existant reviendrait à saboter la page dédiée.
+
+Sans ces deux filtres, les dix premières « opportunités » auraient toutes été fausses.
