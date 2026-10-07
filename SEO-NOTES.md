@@ -1572,3 +1572,51 @@ dépendant de l'horloge de la machine qui le génère.**
 `build-sitemap.py` a été vérifié pour le même motif&nbsp;: sa variable `today` ne sert qu'aux
 fichiers modifiés dans l'arbre de travail, qui n'existent pas sur un runner CI — le contrôle
 y lit toujours l'historique. Pas de défaut.
+
+## 29e passe — pourquoi le lastmod n'était pas écouté (2026-10-08)
+
+Question du propriétaire&nbsp;: «&nbsp;il n'y a pas une date de mise à jour pour indiquer de
+faire un recrawl&nbsp;?&nbsp;» Si, et elle est correcte sur les 181 URL. Mesuré sur
+30 d'entre elles&nbsp;:
+
+```
+ 7  à jour            Google est passé après la modification
+15  signal ignoré     lastmod postérieur au dernier passage, de 8 à 320 jours
+ 8  jamais explorées
+```
+
+`mentions-legales.html` annonce une modification du 7 octobre&nbsp;; Google n'y est pas passé
+depuis le **21 novembre 2025**, soit 320 jours. L'attestation d'assurance ajoutée hier n'a
+jamais été vue. `devis-gratuit.html`&nbsp;: lastmod du 22 septembre, dernière lecture le
+1ᵉʳ septembre.
+
+### L'explication, et c'est nous qui l'avons causée
+
+Google ne respecte le `lastmod` **que s'il le juge fiable** — c'est sa documentation qui le
+dit. Or le 7 octobre, la 22ᵉ passe a constaté que **les 175 `lastmod` du sitemap étaient
+faux**&nbsp;: tous figés au 15 septembre alors que les pages avaient été réécrites depuis.
+Et la 24ᵉ passe a trouvé **53 `dateModified` périmés**, dont un guide retouché en octobre
+qui déclarait août.
+
+Pendant des mois, ce site a donc annoncé des dates fausses. Google a appris à ne pas les
+croire. Ce n'est pas une anomalie&nbsp;: c'est le mécanisme qui fonctionne comme prévu.
+
+Depuis le 7 octobre les dates sont exactes, dérivées de l'historique git, avec deux
+garde-fous CI (`build-dates --check`, `build-sitemap --check`) qui cassent la publication si
+elles dérivent. **Il faudra plusieurs semaines de dates honnêtes pour que le signal regagne
+du crédit.** C'est la seule bonne nouvelle de ce diagnostic&nbsp;: la cause est corrigée, mais
+l'effet se mérite.
+
+### Fausses pistes écartées
+
+`<changefreq>` et `<priority>` figurent dans le sitemap mais **Google les ignore totalement**,
+il l'a confirmé publiquement. Les ajuster ne produirait rien.
+
+### État du sitemap
+
+Audité sur les fichiers servis&nbsp;: **32 contrôles, 0 écart**. Index valide, 3 enfants,
+181 URL toutes en 200, 0 redirection, 0 noindex, canonical auto-référent partout, 90 entrées
+image toutes valides, robots.txt déclarant l'index. Google lui-même&nbsp;: 0 erreur,
+0 avertissement.
+
+Il n'y a plus rien à corriger dans le sitemap. Le signal de recrawl y est, correct et complet.
