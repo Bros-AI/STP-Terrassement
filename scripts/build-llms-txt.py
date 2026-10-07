@@ -97,7 +97,8 @@ def build():
                  ('Téléphone', '+33 7 45 14 20 49'),
                  ('Email', 'stp13109@gmail.com'),
                  ('Horaires', 'lundi-vendredi 8h-19h30, samedi 11h-19h30, dimanche fermé'),
-                 ('Assurances', 'garantie décennale et RC professionnelle'),
+                 ('Assurance décennale', 'SMA SA (groupe SMABTP), contrat ATOUTP Global, valide du 01/01/2026 au 31/12/2026, France métropolitaine et DROM'),
+                 ('Activités garanties', 'terrassement urbain et non urbain, assainissement non collectif, aménagement paysager et VRD, démolition par engin mécanique, réseaux en tranchée'),
                  ('Fiche Google', 'https://www.google.com/maps?cid=13986326121576911507')):
         L.append(f'- {k} : {v}')
     L.append('')

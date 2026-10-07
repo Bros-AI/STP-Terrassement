@@ -1353,3 +1353,47 @@ datation doit refléter l'état final. `build-sitemap` reste strictement en dern
 ne les liront : un contenu jamais exploré n'existe pour personne. Tant que le budget
 d'exploration ne monte pas — demandes d'indexation manuelles, autorité externe, avis —
 ces pages restent invisibles quelle que soit leur qualité.
+
+## 25e passe — attestation d'assurance publiée (2026-10-07)
+
+Le propriétaire a fourni l'attestation SMA du 03/03/2026. Elle comble la lacune la plus
+gênante du site.
+
+### Une affirmation sans preuve sur 181 pages
+
+Le site annonçait « garantie décennale » sur **181 pages**, et les mentions légales n'en
+disaient **rien**. En France, un professionnel du bâtiment doit indiquer l'assureur, ses
+coordonnées et la couverture géographique du contrat. C'était donc à la fois une lacune
+réglementaire et une affirmation invérifiable — ce qui, pour Google comme pour un
+visiteur, ne vaut rien.
+
+Section « Assurances professionnelles » ajoutée aux mentions légales, avec les seuls
+éléments issus de l'attestation : assureur (SMA SA, groupe SMABTP), son adresse, le nom
+du contrat (ATOUTP Global), la période de validité, la couverture géographique et les
+cinq activités garanties. Les sections suivantes sont renumérotées.
+
+**Les numéros d'assuré et de contrat ne sont pas publiés** : ils ne sont pas exigés et ce
+sont des identifiants. La page indique que l'attestation complète est remise avec chaque
+devis et disponible sur demande.
+
+`llms.txt` reprend l'assureur et les activités garanties : un fait vérifiable qu'un
+moteur de réponse peut citer, là où « garantie décennale » seul n'est qu'une allégation.
+
+### Deux écarts relevés dans le document, non corrigés d'office
+
+1. **Code postal.** L'attestation porte `13107 SIMIANE COLLONGUE`, le site utilise
+   `13109` (987 occurrences, cohérent avec la fiche Google). L'un des deux est faux. Je
+   n'ai rien changé : corriger le site sur la foi d'un document qui peut lui-même
+   comporter une coquille serait pire que de signaler l'écart.
+
+2. **Limites contractuelles vs ce que le site vend.** L'activité G81B couvre les parois
+   soutenant les terres et l'enrochement non lié **jusqu'à 1,50 m de hauteur**, au titre
+   de l'aménagement paysager. Or le site vend de l'enrochement de soutènement de 2 à 3 m
+   et des blocs cyclopéens. L'activité principale G232 mentionne « la protection et la
+   fixation des sols contre l'érosion », ce qui peut couvrir une partie de ces ouvrages —
+   mais c'est une question d'interprétation du contrat, pas une question de rédaction web.
+   **À faire confirmer par l'assureur.**
+
+   Les limites connues sont mentionnées honnêtement sur la page plutôt que passées sous
+   silence : plages et margelles jusqu'à 50 m², réalisation de piscine exclue (le site
+   réalise le terrassement, pas le bassin), étanchéité de toitures-terrasses exclue.
