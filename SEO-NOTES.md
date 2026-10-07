@@ -1397,3 +1397,42 @@ moteur de réponse peut citer, là où « garantie décennale » seul n'est qu'u
    Les limites connues sont mentionnées honnêtement sur la page plutôt que passées sous
    silence : plages et margelles jusqu'à 50 m², réalisation de piscine exclue (le site
    réalise le terrassement, pas le bassin), étanchéité de toitures-terrasses exclue.
+
+## 26e passe — approfondir plutôt que publier (2026-10-07)
+
+Question du propriétaire&nbsp;: «&nbsp;rien à faire, pas même de nouveaux articles&nbsp;?&nbsp;»
+Ma réponse précédente était trop catégorique. **Ne pas créer de page** et **ne rien faire**
+sont deux choses différentes.
+
+Créer une page de plus est effectivement inutile tant que les onze de septembre ne sont pas
+explorées. Mais **approfondir une page que Google explore déjà** fonctionne&nbsp;: elle est
+réexplorée, et le contenu ajouté est pris en compte.
+
+### Trois gisements mesurés sur 90 jours
+
+| Sujet | Impressions | Position | Couverture avant |
+|---|---|---|---|
+| **«&nbsp;bitume&nbsp;»** | 2 131 sur 104 requêtes | 12,4 | 2 occurrences dans 2 834 mots, 0 titre |
+| **plage de piscine** | ~634 (hors concurrent) | 22 à 40 | «&nbsp;margelle&nbsp;» absent du site |
+| **fosse septique / étanche, réglementation** | 192 | 21 à 28 | effleuré |
+
+**Le cas «&nbsp;bitume&nbsp;» est le plus net.** C'est le mot que le grand public emploie pour
+l'enrobé. Le site se classe 10ᵉ à 14ᵉ sur «&nbsp;prix bitume&nbsp;», «&nbsp;prix bitume m²&nbsp;»
+et «&nbsp;allée de garage en bitume&nbsp;» **par accident**&nbsp;: le mot apparaissait deux fois
+dans une page de 2 834 mots et dans aucun titre de section. Section ajoutée distinguant
+bitume (le liant), enrobé (le mélange posé) et goudron (produit de houille, interdit depuis
+des décennies), avec un tableau de prix qui répond littéralement à la requête.
+
+**La plage de piscine est une occasion manquée doublement.** Position 22 à 40, zéro clic — et
+surtout&nbsp;: l'attestation SMA couvre explicitement «&nbsp;terrasses maçonnées, plages et
+margelles y compris autour de piscines privatives&nbsp;». C'est une prestation assurée que le
+site ne décrivait nulle part. Section ajoutée au guide piscine, centrée sur ce qui fait
+réellement vieillir une plage (remblai non compacté, absence de pente, joint de dilatation
+oublié, racines), avec les prix des revêtements et la ligne qu'on oublie dans les
+comparaisons&nbsp;: la préparation du support.
+
+### Ce que cette passe n'a pas fait
+
+Aucune page créée. Trois sections ajoutées à des pages explorées, +971 mots au total. Si ces
+pages remontent de la 12ᵉ à la 6ᵉ place sur «&nbsp;bitume&nbsp;», le gain dépasse celui de
+cinq articles neufs qui resteraient invisibles.
