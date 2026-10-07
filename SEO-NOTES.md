@@ -1006,3 +1006,88 @@ façon de l'ajouter manuellement dans l'interface Search Console.
 La voie retenue est plus simple et sans secret nouveau : votre propre compte est
 déjà propriétaire vérifié de la propriété. Une seule commande, dans votre
 terminal, suffit à ajouter le scope manquant.
+
+## 20e passe — Search Console connectée, et une erreur de ma part corrigée (2026-10-07)
+
+### La connexion
+
+Par l'API, authentifiée par gcloud (`gcloud auth application-default login` avec
+le scope `webmasters.readonly`). Il n'existe pas de commande `gcloud
+search-console` : Search Console n'est pas un service Google Cloud. Les outils
+vivent dans `../seo-tools/`, **hors du dépôt**.
+
+Un piège : les appels sont imputés au projet de quota des identifiants
+(`vestiae`), où l'API n'est pas activée. Elle l'est sur `jishie-prod` — les
+outils forcent donc ce projet par `with_quota_project()`, sans toucher à la
+configuration gcloud globale.
+
+### Je me suis trompé, et c'est important
+
+J'avais écrit, à partir de l'export CSV : *« sur les requêtes réellement
+cliquées, le site fait 1,61 % de CTR en position moyenne 8,3. Ce CTR est normal
+pour cette position — il n'est pas cassé. Le problème est la position. »*
+
+**C'était faux.** Les données complètes, par page, le montrent :
+
+| Position | Impressions | Clics | CTR réel | CTR attendu | Clics perdus |
+|---|---|---|---|---|---|
+| 4 – 6 | 26 617 | 468 | **1,76 %** | ~5,4 % | 965 |
+| 7 – 10 | 52 382 | 607 | **1,16 %** | ~2,7 % | 800 |
+| 11 – 20 | 7 050 | 78 | 1,11 % | 0,8 % | 0 |
+
+En position 11-20, le CTR est **conforme**. En position 4-10, il est **deux à
+trois fois sous l'attendu**. Le manque à gagner est de l'ordre de **1 790 clics
+par 28 jours — le double du trafic actuel**, sans gagner une seule place.
+
+Deux erreurs dans mon raisonnement initial. D'abord j'ai jugé le CTR sur une
+moyenne globale au lieu de le ventiler par position. Ensuite j'ai travaillé sur
+l'export par requête, qui ne contient que 46 856 impressions : Google y masque
+les requêtes rares. Le vrai volume, mesuré par page, est de **144 831** — mon
+analyse portait sur un tiers des données.
+
+### Ce que j'ai pu démontrer, et ce que je n'ai pas pu
+
+Testé puis **écarté** : l'hypothèse des aperçus IA absorbant les clics sur les
+requêtes « prix ». À position comparable (4-10), les requêtes prix/devis font
+0,84 % et les autres 0,63 % — les requêtes prix font donc *mieux*. L'échantillon
+« question » (201 impressions) est trop faible pour trancher. **La cause générale
+du CTR bas reste non élucidée** ; je ne la maquille pas en diagnostic.
+
+Ce qui est **démontrable** : 4 pages reçoivent 1 593 impressions, en position
+3 à 9, avec un CTR nul, sur des requêtes dont le mot central n'apparaît **ni dans
+le titre ni dans la description**.
+
+| Page | Mots absents | Impressions |
+|---|---|---|
+| amenagement-allee-carrossable | voie, voiture | 716 |
+| raccordement-tout-egout-prix | assainissement, maison ancienne | 350 |
+| epaisseur-enrobe-allee | parking | 302 |
+| prix-goudronnage-allee | goudronner, bitume | 225 |
+
+Le cas le plus net : `epaisseur-enrobe-allee` sort **4e sur « enrobé parking »**
+avec 194 impressions et **0 clic**, pendant que son titre annonce « Allée de
+Garage ». Les 4 titres et descriptions sont réécrits pour reprendre le mot
+cherché sans perdre celui qui fonctionne déjà.
+
+### L'indexation : un tiers du site échappe à Google
+
+- **162 pages sur 180 (90 %)** ont reçu au moins une impression en 28 jours.
+- Mais sur 45 URL inspectées : 64 % indexées, **24 % inconnues de Google**,
+  7 % détectées non indexées, 4 % explorées non indexées. **14 sur 45 n'ont
+  jamais été explorées.**
+- **Les 5 guides du 23 septembre ne sont pas indexés et n'ont jamais été
+  explorés**, deux semaines après publication.
+- Les 6 hubs non plus. `plan-du-site.html`, `blog/enrobe-colore-prix.html` et
+  `blog/revetement-allee-carrossable.html` n'ont **jamais eu une impression en
+  16 mois**, malgré 179 liens internes pour les hubs et le plan du site.
+
+### Concentration extrême
+
+Les **10 premières pages portent 68 %** des impressions, les 20 premières 91 %.
+Les 142 autres se partagent 9 %.
+
+### Tendance
+
+38 impressions en novembre 2025 → **149 708 en septembre 2026**. 1 779 clics en
+septembre. La croissance est forte et régulière ; le CTR, lui, stagne autour de
+1,2 %.
