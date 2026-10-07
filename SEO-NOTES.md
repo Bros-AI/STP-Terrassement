@@ -1298,3 +1298,58 @@ classement :
   titre existant reviendrait à saboter la page dédiée.
 
 Sans ces deux filtres, les dix premières « opportunités » auraient toutes été fausses.
+
+## 24e passe — audit « prêt pour les moteurs de réponse » (2026-10-07)
+
+Audit mené **en production**, chaque point testé plutôt qu'affirmé.
+
+### Conforme, vérifié
+
+- **GPTBot reçoit exactement la même page qu'un navigateur** — octet pour octet sur
+  3 pages testées (accueil, guide, page ville). Pas de cloaking, pas de variante dégradée.
+- **Contenu lisible sans JavaScript** : 2 834 mots et 7 tableaux présents dans le HTML
+  brut, 0 script dans le corps. Les robots qui n'exécutent pas JS lisent tout.
+- **`llms.txt`** : 74 liens, **0 lien mort**, 56/56 guides cités.
+- **`robots.txt`** : aucun `Disallow` bloquant.
+
+### Corrigé : 53 `dateModified` périmés
+
+Un guide retouché le 7 octobre déclarait le **31 août**. Le signal de fraîcheur compte
+deux fois : Google s'en sert pour décider de réexplorer, et les moteurs de réponse pour
+arbitrer entre deux sources qui se contredisent sur un prix.
+
+`scripts/build-dates.py` dérive la date du **dernier commit ayant modifié la page hors
+bloc critique** — même définition que le `<lastmod>` du sitemap, qu'il importe plutôt que
+de la réécrire. Gonfler la date à chaque reconstruction de CSS détruirait la confiance
+dans le signal aussi sûrement que de la laisser périmée. La ligne visible « Mis à jour
+le … » est alignée sur la même date : 53 pages corrigées, 0 en retard.
+
+### Corrigé : 7 robots IA nommés
+
+`CCBot` (Common Crawl, qui alimente une large part des corpus), `Amazonbot`,
+`meta-externalagent`, `Diffbot`, `cohere-ai`, `YouBot`, `Timpibot` étaient couverts par
+`User-agent: *` mais pas nommés. Les nommer rend l'intention explicite et survivra à
+l'ajout d'un futur `Disallow` dans le groupe générique — exactement le piège corrigé sur
+Googlebot à la 15e passe.
+
+### L'ordre des générateurs, encore affiné
+
+`build-dates` modifie `dateModified`, dont dépendent le flux Atom et le bloc « mises à
+jour récentes ». Il doit donc passer **avant** eux. Ordre complet :
+
+```
+1. build-faq-schema    2. build-breadcrumbs   3. build-dates
+4. build-fresh-links   5. build-feed          6. build-llms-txt
+7. build-critical-css  8. build-dates (à nouveau)  9. build-sitemap
+10. seo-qa --strict
+```
+
+`build-dates` repasse après le CSS critique : la reconstruction touche les fichiers, et la
+datation doit refléter l'état final. `build-sitemap` reste strictement en dernier.
+
+### Ce qui n'est pas parfait, et que je ne peux pas corriger
+
+**11 pages créées ne sont toujours pas explorées par Google.** Ni les moteurs de réponse
+ne les liront : un contenu jamais exploré n'existe pour personne. Tant que le budget
+d'exploration ne monte pas — demandes d'indexation manuelles, autorité externe, avis —
+ces pages restent invisibles quelle que soit leur qualité.

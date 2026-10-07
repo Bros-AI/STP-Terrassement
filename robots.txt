@@ -35,6 +35,27 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
+User-agent: CCBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Timpibot
+Allow: /
+
 # Resume du site pour les LLM : https://stp-terrassement.com/llms.txt
 
 Sitemap: https://stp-terrassement.com/sitemap.xml

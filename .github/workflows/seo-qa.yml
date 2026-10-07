@@ -13,4 +13,5 @@ jobs:
       - run: python scripts/build-fresh-links.py --check
       - run: python scripts/build-breadcrumbs.py --check
       - run: python scripts/build-sitemap.py --check
+      - run: python scripts/build-dates.py --check
       - run: python scripts/build-llms-txt.py --check
