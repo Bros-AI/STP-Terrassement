@@ -1171,3 +1171,60 @@ première section de grilles de liens de l'autre.
 Second piège : le remplacement global « Marseille → Aix-en-Provence » fabrique des liens
 vers des pages qui n'existent pas, les deux villes n'ayant pas les mêmes slugs de
 services. Quatre liens cassés, remappés vers les pages réelles après vérification.
+
+## 22e passe — sitemap en index, llms.txt généré (2026-10-07)
+
+### Soumission par API : impossible en lecture seule
+
+`PUT /sites/{site}/sitemaps/{feedpath}` renvoie **403 — insufficient authentication
+scopes** : la soumission exige `webmasters` (écriture), pas `webmasters.readonly`.
+Cela dit, le sitemap est déjà soumis et **relu chaque jour** (dernière lecture
+2026-10-06) — le resoumettre à l'identique n'aurait rien changé. Ce qui manquait
+n'était pas la soumission, c'était la **lisibilité**.
+
+### Le sitemap devient un index groupé
+
+Un fichier unique de 181 URL ne dit pas *lesquelles* sont indexées. Search Console
+rapporte la couverture **par sitemap** : en séparant les groupes, le rapport « Pages »
+se filtre par groupe. C'est exactement la question ouverte — 24 % des URL inspectées
+sont inconnues de Google, encore faut-il savoir lesquelles.
+
+```
+sitemap.xml              index
+  ├─ sitemap-guides.xml     56 URL
+  ├─ sitemap-villes.xml    103 URL
+  └─ sitemap-services.xml   22 URL
+```
+
+`priority`, `changefreq` et les entrées `<image:image>` sont conservés à l'identique ;
+seul `lastmod` est régénéré, toujours sur le dernier changement de contenu hors bloc
+critique. `seo-qa` suit désormais l'index jusqu'aux enfants et signale un enfant
+déclaré mais absent, ou un fichier sitemap orphelin — testé en retirant un enfant.
+
+### llms.txt : généré, plus écrit à la main
+
+Le fichier avait dérivé&nbsp;: **18 guides cités sur 56**, aucun des 11 hubs, ni le plan
+du site, ni la page Aix. Un fichier censé dire « voici tout le site » qui en décrit un
+tiers dessert plus qu'il n'aide — un moteur de réponse qui s'y fie conclut que le reste
+n'existe pas.
+
+`scripts/build-llms-txt.py` le dérive des pages : 56/56 guides, 11/11 hubs, les pages de
+référence, les communes, l'identité légale complète et une mention de citation.
+
+**Un piège évité de justesse.** La première version extrayait les trois premiers prix
+rencontrés dans le corps. Résultat sur le guide du chemin d'accès&nbsp;: « repères&nbsp;:
+2 à 4 €/m² » — le prix du **géotextile**, pas celui de l'ouvrage (25 à 40 €/m²). Un
+modèle citant ce repère propage une erreur. Seuls sont retenus désormais les prix
+figurant dans le **titre ou la description**, ceux que l'auteur a choisi d'afficher :
+11 guides en portent, 45 n'en portent aucun plutôt qu'un chiffre faux. Vérification
+croisée : 11 repères, 0 incohérence.
+
+### Ce que ça change pour les moteurs de réponse
+
+`robots.txt` accueille déjà explicitement GPTBot, ClaudeBot, PerplexityBot,
+OAI-SearchBot, Google-Extended et Applebot-Extended. Le `llms.txt` complet leur donne
+désormais la carte réelle du site, avec les chiffres exacts et les URL à citer.
+
+À noter&nbsp;: les 173 blocs `FAQPage` **ne produisent aucun résultat enrichi**
+(mesuré&nbsp;: `searchAppearance` vide sur 16 mois). Ils gardent leur utilité pour les
+systèmes de réponse, pas pour l'affichage Google.

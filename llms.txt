@@ -1,73 +1,145 @@
 # STP Terrassement
 
-> Entreprise de terrassement et VRD basée à Simiane-Collongue (13109), intervenant sur Aix-en-Provence et toute la région PACA.
+> Entreprise de terrassement, VRD et assainissement basée à Simiane-Collongue (13109), intervenant sur Aix-en-Provence, Marseille et les Bouches-du-Rhône. Ce site publie des guides de prix chiffrés, mis à jour pour 2026, destinés à être cités.
 
-Dernière mise à jour : 2026-09-03 · Plan du site : https://stp-terrassement.com/sitemap.xml
+Dernière mise à jour : 2026-10-07 · Sitemap : https://stp-terrassement.com/sitemap.xml · Plan du site : https://stp-terrassement.com/plan-du-site.html
 
-## À propos
+## Identité
 
-STP Terrassement (SOPHIE TERRASSEMENT PROVENCE, SAS) est spécialisée dans les travaux de terrassement, VRD, assainissement, démolition, aménagement extérieur et location d'engins de chantier. Garantie décennale, assurance RC Pro, plus de 200 chantiers réalisés.
-
-- Raison sociale : SOPHIE TERRASSEMENT PROVENCE
+- Raison sociale : SOPHIE TERRASSEMENT PROVENCE (SAS)
+- Nom commercial : STP Terrassement
 - SIRET : 994 240 588 00016
 - TVA : FR03994240588
-- NAF : 4312A - Travaux de terrassement courants et travaux préparatoires
-- Adresse : 798 C Chemin de la Roque, 13109 Simiane-Collongue
-- Téléphone : 07 45 14 20 49
-- Horaires : lundi-vendredi 8h-19h30, samedi 11h-19h30, dimanche fermé
-- Avis Google : 5,0 sur 3 avis (fiche : https://www.google.com/maps?cid=13986326121576911507)
+- Code NAF : 4312A — Travaux de terrassement courants et travaux préparatoires
+- Adresse : 798 C Chemin de la Roque, 13109 Simiane-Collongue, France
+- Téléphone : +33 7 45 14 20 49
 - Email : stp13109@gmail.com
-- Site web : https://stp-terrassement.com
+- Horaires : lundi-vendredi 8h-19h30, samedi 11h-19h30, dimanche fermé
+- Assurances : garantie décennale et RC professionnelle
+- Fiche Google : https://www.google.com/maps?cid=13986326121576911507
 
 ## Services
 
-- [Terrassement](https://stp-terrassement.com/terrassement.html): Fondations maison, décaissement, nivellement laser, terrassement piscine, préparation terrain constructible
-- [VRD & Assainissement](https://stp-terrassement.com/vrd-assainissement.html): Raccordement tout-à-l'égout, viabilisation terrain, réseaux eau/électricité/télécom, assainissement individuel
-- [Aménagement Extérieur](https://stp-terrassement.com/amenagement-exterieur.html): Enrobé à chaud, pavés autobloquants, bordures T2, enrochement paysager, goudronnage allée
-- [Démolition](https://stp-terrassement.com/demolition.html): Démolition bâtiment, dalle béton, curage intérieur, évacuation gravats
-- [Location Engins](https://stp-terrassement.com/location-materiel.html): Mini-pelle, pelle mécanique 13-20T, brise-roche hydraulique, avec chauffeur CACES
+- [Terrassement Aix-en-Provence (13)](https://stp-terrassement.com/terrassement.html) : Entreprise de terrassement à Aix-en-Provence. Fondations, décaissement, piscine, nivellement. Garantie décennale, devis gratuit 24h
+- [VRD Assainissement Aix (13)](https://stp-terrassement.com/vrd-assainissement.html) : Expert VRD et assainissement à Aix-en-Provence. Raccordement tout-à-l'égout, viabilisation terrain. Devis gratuit sous 24h
+- [Aménagement Extérieur Aix-en-Provence (13)](https://stp-terrassement.com/amenagement-exterieur.html) : Aménagement extérieur à Aix-en-Provence. Enrobé, allées, cours, enrochement. Garantie décennale. Devis gratuit sous 24h
+- [Démolition Aix-en-Provence (13)](https://stp-terrassement.com/demolition.html) : Expert démolition à Aix-en-Provence. Bâtiment, dalle béton, évacuation gravats. Tri sélectif 90%. Devis gratuit sous 24h
+- [Location engins TP avec chauffeur (13)](https://stp-terrassement.com/location-materiel.html) : Location de mini-pelles, pelles 15–20T, compacteurs et camions avec chauffeur CACES dans les Bouches-du-Rhône. Tarifs à la journée, devis 24 h
+- [Enrobé](https://stp-terrassement.com/enrobe.html) : Pose d'enrobé à chaud, à froid ou coloré pour allée, cour et parking : prix au m², épaisseurs, rabotage et réfection. Devis gratuit sous 24 h
+- [Enrochement](https://stp-terrassement.com/enrochement.html) : Enrochement de soutènement et paysager : choix des blocs, drainage, prix au m² et pose à la pelle mécanique en Provence. Devis gratuit sous 24 h
+- [Goudronnage](https://stp-terrassement.com/goudronnage.html) : Goudronnage d'allée, de cour et de chemin en Provence : bicouche, enrobé à chaud, prix au m² et préparation du support. Devis gratuit sous 24 h
+- [Mur de soutènement](https://stp-terrassement.com/mur-soutenement.html) : Mur de soutènement en béton banché, gabion, parpaings ou enrochement : prix au m², règles de hauteur, drainage et autorisations. Devis gratuit…
+- [Fondations maison](https://stp-terrassement.com/fondations-maison.html) : Fondations de maison en Provence : semelles filantes, radier, puits et micropieux. Prix au mètre linéaire et au m², étude de sol et exécution.…
+- [Terrassement piscine](https://stp-terrassement.com/terrassement-piscine.html) : Terrassement de piscine en Provence : implantation, excavation, évacuation des terres et plateforme prête pour le pisciniste. Prix par dimension,…
 
-## Tarifs et lexique
+## Guides de prix et guides techniques
 
-- [Tarifs terrassement 2026](https://stp-terrassement.com/tarifs-terrassement-2026.html) : grille de prix complète (m³, fondations, piscine, VRD au ml, enrobé au m², démolition, location), extraite des guides
-- [Lexique du terrassement](https://stp-terrassement.com/lexique-terrassement.html) : 45 termes de chantier définis (déblai, remblai, foisonnement, GNT, BRH, radier...)
+56 guides, chiffrés pour 2026 sur le marché des Bouches-du-Rhône. Les fourchettes citées sont des prix posés, fourniture comprise, sauf mention contraire dans la page.
+
+- [Allée ou voie carrossable pour voiture : prix 2026](https://stp-terrassement.com/blog/amenagement-allee-carrossable.html) : Créer une allée ou une voie carrossable pour voiture : structure selon le trafic, choix du revêtement, budget au m² et exemples chiffrés en Provence
+- [Chemin d'accès carrossable : prix, structure et pente](https://stp-terrassement.com/blog/chemin-acces-carrossable.html) : Prix au mètre linéaire d'un chemin d'accès carrossable, structure et portance selon le trafic, pente maximale, drainage et accès pompiers en PACA
+- [Combien Coûte une Viabilisation de Terrain en 2026 ?](https://stp-terrassement.com/blog/combien-coute-viabilisation-terrain.html) : Coût viabilisation terrain en 2026 : eau, électricité, assainissement, télécom. Prix détaillés et devis gratuit à Aix-en-Provence
+- [Comment Calculer le Volume de Terrassement](https://stp-terrassement.com/blog/comment-calculer-volume-terrassement.html) : Comment calculer le volume de terrassement (cubage) : formules, foisonnement, déblais/remblai, exemples chiffrés. Méthode d'expert à…
+- [Comment Choisir un Terrassier ? 10 Critères Essentiels](https://stp-terrassement.com/blog/comment-choisir-terrassier.html) : Comment choisir un terrassier en 2026 ? Les 10 critères essentiels : garanties, assurances, devis, équipement. Guide expert Aix-en-Provence
+- [Prix Cour en Gravier & Empierrement au m² 2026](https://stp-terrassement.com/blog/cour-gravier-empierrement-prix.html) : Prix d'une cour en gravier et empierrement au m² en 2026 : concassé, stabilisé, géotextile, pose à Aix-en-Provence. Guide complet. Devis gratuit…
+- [Prix démolition maison : 80 à 200 €/m² en 2026](https://stp-terrassement.com/blog/cout-demolition-maison.html) : Prix de démolition d'une maison au m² en 2026, permis de démolir, désamiantage et évacuation des gravats. Le budget complet avec un exemple chiffré — repères : 80 à 200 €/m²
+- [Débroussaillement Obligatoire PACA 2026](https://stp-terrassement.com/blog/debroussaillement-obligatoire-paca.html) : Débroussaillement obligatoire (OLD) en PACA et Bouches-du-Rhône : règles 2026, distances, amendes, prix au m². Guide complet. Devis gratuit sous 24h
+- [Drainage Terrain : Guide Complet, Prix & Techniques 2026](https://stp-terrassement.com/blog/drainage-terrain-guide.html) : Guide drainage terrain : drain français, puisard, techniques, prix au ml et conseils d'experts. Aix-en-Provence et Bouches-du-Rhône
+- [Enrobé à froid ou à chaud : lequel choisir en 2026](https://stp-terrassement.com/blog/enrobe-chaud-vs-froid.html) : Enrobé à froid ou à chaud : durée de vie, prix au m², pose et cas d'usage comparés dans un tableau. Quand le froid suffit, quand il ne tient pas
+- [Enrobé beige, rouge ou noir : prix au m² en 2026](https://stp-terrassement.com/blog/enrobe-colore-prix.html) : Prix de l'enrobé beige, rouge et noir au m² en 2026, différence entre enrobé pigmenté et porphyre, coût du rabotage et tarif pour un particulier
+- [Enrobé drainant : prix au m², pose et limites réelles](https://stp-terrassement.com/blog/enrobe-drainant-prix.html) : Prix de l'enrobé drainant au m² en 2026, fonctionnement de la structure réservoir, risque de colmatage, entretien et cas où il n'est pas justifié
+- [Enrochement paysager : 100 à 200 €/m² posé (2026)](https://stp-terrassement.com/blog/enrochement-paysager-guide.html) : Prix d'un enrochement paysager ou de soutènement en 2026 : au m², à la tonne, choix des blocs et drainage. Trois chantiers chiffrés en Provence — repères : 100 à 200 €/m²
+- [Enrochement : quelles pierres et comment le réaliser](https://stp-terrassement.com/blog/enrochement-pierres-mise-en-oeuvre.html) : Quelles pierres pour un enrochement, quel poids de blocs, quel drainage et quelles étapes de mise en œuvre pour un mur qui tient dans le temps
+- [Épaisseur enrobé : allée, parking et cour en 2026](https://stp-terrassement.com/blog/epaisseur-enrobe-allee.html) : Quelle épaisseur d'enrobé pour une allée de garage, un parking ou une cour ? Structure et nombre de centimètres selon le trafic réel, avec les…
+- [Étude de Sol G1 G2 : Obligations, Prix & Déroulement](https://stp-terrassement.com/blog/etude-sol-g1-g2.html) : Tout savoir sur l'étude de sol G1 et G2 : obligations légales (loi ELAN), prix, déroulement et différences. Guide expert pour Aix-en-Provence et le 13
+- [Fosse Septique vs Tout-à-l'Égout : Comparatif Complet](https://stp-terrassement.com/blog/fosse-septique-vs-tout-egout.html) : Fosse septique ou tout-à-l'égout ? Comparatif complet : coûts, entretien, avantages et inconvénients. Guide expert assainissement Aix-en-Provence
+- [Gestion des Eaux Pluviales : Règles & Prix 2026](https://stp-terrassement.com/blog/gestion-eaux-pluviales-maison.html) : Gestion des eaux pluviales d'une maison en 2026 : réglementation, infiltration, récupération, prix des solutions à Aix-en-Provence. Guide expert.…
+- [Location de chargeuse compacte : prix 2026 et usages](https://stp-terrassement.com/blog/location-chargeuse-compacte.html) : Prix de location d'une chargeuse compacte type Bobcat en 2026 : tarif jour et semaine, avec ou sans chauffeur, transport et accessoires
+- [Location Mini-Pelle : Prix, Conseils & Guide Pratique](https://stp-terrassement.com/blog/location-minipelle-guide.html) : Guide complet location mini-pelle : prix à la journée et à la semaine, tailles, avec ou sans chauffeur, sécurité et conseils. Aix-en-Provence (13)
+- [Prix Location Tractopelle 2026](https://stp-terrassement.com/blog/location-tractopelle-prix.html) : Prix location tractopelle en 2026 : tarif journée/semaine, avec ou sans chauffeur, carburant, transport à Aix-en-Provence. Guide complet. Devis…
+- [Micro-Station d'Épuration : Fonctionnement, Prix & Normes](https://stp-terrassement.com/blog/micro-station-epuration-guide.html) : Tout sur la micro-station d'épuration : fonctionnement, types, prix d'installation, entretien et normes NF. Guide expert assainissement non collectif
+- [Mur de soutènement : prix au m² et règles de calcul](https://stp-terrassement.com/blog/mur-soutenement-guide.html) : Prix d'un mur de soutènement en 2026 : 100 à 400 €/m² selon la technique. Hauteur, fruit, drainage et autorisations : ce qu'un devis doit contenir — repères : 100 à 400 €/m²
+- [Normes Assainissement 2026 : Réglementation & Obligations](https://stp-terrassement.com/blog/normes-assainissement-2026.html) : Normes d'assainissement en 2026 : SPANC, zonage, NF DTU, loi sur l'eau. Toutes les obligations réglementaires à Aix-en-Provence et en PACA
+- [Permis de Démolir : Démarches, Délais & Documents 2026](https://stp-terrassement.com/blog/permis-demolir-guide.html) : Guide complet du permis de démolir en 2026 : quand est-il obligatoire, documents Cerfa, délais d'instruction et diagnostic amiante. Aix-en-Provence
+- [Prix Assainissement Non Collectif (ANC) 2026](https://stp-terrassement.com/blog/prix-assainissement-non-collectif.html) : Prix d un assainissement non collectif (ANC) en 2026 : fosse toutes eaux, épandage, micro-station, étude SPANC à Aix-en-Provence. Guide complet.…
+- [Prix Comblement Piscine 2026](https://stp-terrassement.com/blog/prix-comblement-piscine.html) : Prix pour combler ou démolir une piscine en 2026 : comblement partiel/total, démolition, déclaration mairie à Aix-en-Provence. Devis gratuit sous 24h
+- [Prix Dalle Béton au m² en 2026](https://stp-terrassement.com/blog/prix-dalle-beton-m2.html) : Prix d'une dalle béton au m² en 2026 : terrasse, garage, extérieur. Tarifs fourniture + pose, épaisseur, ferraillage à Aix-en-Provence. Devis…
+- [Prix Décapage Terre Végétale au m² 2026](https://stp-terrassement.com/blog/prix-decapage-terre-vegetale.html) : Prix du décapage de terre végétale au m² en 2026 : épaisseur, stockage, réutilisation, évacuation à Aix-en-Provence. Guide d expert. Devis gratuit…
+- [Prix Démolition Dalle Béton au m²](https://stp-terrassement.com/blog/prix-demolition-dalle-beton.html) : Découvrez le prix de démolition d'une dalle béton au m² en 2026. Tarifs selon épaisseur, méthodes et évacuation. Devis gratuit à Aix-en-Provence
+- [Prix enrobé au m² : 25 à 60 € posé, barème 2026](https://stp-terrassement.com/blog/prix-enrobe-m2.html) : Prix réel d'un enrobé au m² en 2026 : à chaud, à froid, coloré, par surface et par épaisseur. Quatre budgets types de 30 à 200 m² et les pièges à… — repères : 25 à 60 €
+- [Prix de l'enrochement à la tonne en 2026 : pierre et pose](https://stp-terrassement.com/blog/prix-enrochement-tonne.html) : Prix de l'enrochement à la tonne en 2026 : coût de la pierre en carrière, transport, calibre des blocs, pose et conversion entre tonne et m² de…
+- [Prix Évacuation Gravats & Déblais 2026](https://stp-terrassement.com/blog/prix-evacuation-gravats.html) : Prix évacuation gravats et déblais de chantier en 2026 : tarif au m³, location benne, taxe décharge à Aix-en-Provence. Guide complet. Devis…
+- [Prix fondations maison : 100 à 250 €/m² en 2026](https://stp-terrassement.com/blog/prix-fondations-maison.html) : Coût des fondations d'une maison en 2026 : semelles filantes, radier, pieux et micropieux. Prix au mètre linéaire et au m², avec un devis type… — repères : 100 à 250 €/m²
+- [Goudronner une allée : prix du bitume 20 à 50 €/m²](https://stp-terrassement.com/blog/prix-goudronnage-allee.html) : Goudronner une allée en 2026 : prix du bitume posé de 20 à 50 €/m², différence entre enrobé et bicouche, et ce qui fait varier le devis au m² — repères : 20 à 50 €/m²
+- [Prix Nivellement de Terrain au m² 2026](https://stp-terrassement.com/blog/prix-nivellement-terrain.html) : Prix du nivellement de terrain au m² en 2026 : aplanir, décaisser, mettre à niveau un jardin à Aix-en-Provence. Tarifs et méthode d'expert. Devis…
+- [Prix Pavés Autobloquants au m²](https://stp-terrassement.com/blog/prix-paves-autobloquants-m2.html) : Prix des pavés autobloquants au m² en 2026. Tarifs fourniture et pose, comparatif béton vs pierre naturelle. Guide complet à Aix-en-Provence et PACA
+- [Prix Puits Perdu (Puisard) 2026](https://stp-terrassement.com/blog/prix-puits-perdu.html) : Prix d'un puits perdu (puisard) en 2026 : dimensions, installation, réglementation des eaux pluviales à Aix-en-Provence. Guide complet. Devis…
+- [Raccordement eau potable : prix 2026 et qui paie quoi](https://stp-terrassement.com/blog/prix-raccordement-eau-potable.html) : Prix d'un raccordement à l'eau potable en 2026 : 800 à 3 000 € selon la distance. Taxe communale, compteur, tranchée : le détail de qui facture quoi — repères : 800 à 3 000 €
+- [Prix Raccordement Électrique ENEDIS 2026](https://stp-terrassement.com/blog/prix-raccordement-enedis.html) : Prix du raccordement électrique ENEDIS en 2026 : maison neuve, tranchée, distance, devis Enedis à Aix-en-Provence. Guide complet. Devis…
+- [Prix Remblai Terrain au m³ 2026](https://stp-terrassement.com/blog/prix-remblai-terrain.html) : Prix du remblai de terrain au m³ en 2026 : remblaiement, apport de terre, tout-venant, compactage à Aix-en-Provence. Guide d'expert. Devis gratuit…
+- [Prix terrassement au m² : 25 à 90 € selon le sol](https://stp-terrassement.com/blog/prix-terrassement-m2.html) : Prix du terrassement au m² et au m³ en 2026 selon le sol : terre, argile, roche. Barème PACA, surcoût du BRH et exemples de devis poste par poste — repères : 25 à 90 €
+- [Prix terrassement piscine 8x4 : 2 500 à 5 000 € (2026)](https://stp-terrassement.com/blog/prix-terrassement-piscine-dimensions.html) : Prix du terrassement de piscine par dimension : 6x3, 8x4, 10x5 et couloir de nage. Volume excavé, surcoût en sol rocheux et budget total, chiffrés… — repères : 2 500 à 5 000 €
+- [Prix terrassement rocheux 2026 : BRH, calcaire, 50 à 90 €/m³](https://stp-terrassement.com/blog/prix-terrassement-rocheux-brh.html) : Prix du terrassement en sol rocheux en 2026 : brise-roche hydraulique (BRH), calcaire de Provence, surcoût réel face au sol meuble. Exemples… — repères : 50 à 90 €/m³
+- [Prix Tranchée au Mètre Linéaire 2026](https://stp-terrassement.com/blog/prix-tranchee-ml.html) : Prix d'une tranchée au mètre linéaire en 2026 : réseaux eau, électricité, assainissement. Tarifs au ml selon profondeur et sol à Aix-en-Provence.…
+- [Vide Sanitaire ou Dalle : Prix & Comparatif 2026](https://stp-terrassement.com/blog/prix-vide-sanitaire.html) : Vide sanitaire ou dalle sur terre-plein ? Comparatif 2026 : prix au m², avantages, terrains argileux. Conseils d'expert à Aix-en-Provence. Devis…
+- [Rabotage enrobé : prix au m², fraisage et reprise](https://stp-terrassement.com/blog/rabotage-enrobe-prix.html) : Prix du rabotage d'enrobé au m² en 2026, différence entre rabotage et recharge, devenir des fraisats, minimum de déplacement et cas où il est inutile
+- [Raccordement tout-à-l'égout : prix 2026, maison ancienne](https://stp-terrassement.com/blog/raccordement-tout-egout-prix.html) : Raccordement au tout-à-l'égout en 2026, y compris en maison ancienne : 3 500 à 10 900 € poste par poste, taxe PFAC et devis assainissement détaillé — repères : 3 500 à 10 900 €
+- [Prix Cuve Récupération Eau de Pluie 2026](https://stp-terrassement.com/blog/recuperation-eau-pluie-prix.html) : Prix d une cuve de récupération d eau de pluie enterrée en 2026 : volume, pose, terrassement, usages à Aix-en-Provence. Guide complet. Devis…
+- [Revêtement allée carrossable : comparatif et prix 2026](https://stp-terrassement.com/blog/revetement-allee-carrossable.html) : Enrobé, gravier stabilisé, béton ou pavés : quel revêtement pour une allée carrossable ? Comparatif des prix au m², des épaisseurs et de la durée…
+- [Terrassement Garage : Étapes, Prix & Conseils 2026](https://stp-terrassement.com/blog/terrassement-garage-guide.html) : Guide complet du terrassement pour garage en 2026. Excavation, drainage, prix garage accolé vs indépendant. Conseils experts à Aix-en-Provence et PACA
+- [Terrassement Maison Individuelle : Étapes & Prix 2026](https://stp-terrassement.com/blog/terrassement-maison-individuelle-guide.html) : Guide complet du terrassement pour maison individuelle en 2026. Étapes détaillées, prix par phase, conseils d'experts à Aix-en-Provence et en PACA
+- [Terrassement piscine : étapes, engins et prix 2026](https://stp-terrassement.com/blog/terrassement-piscine-guide.html) : Terrassement d'une piscine étape par étape : implantation, excavation, évacuation et plateforme. Volumes, engins et prix au m³ avec exemples chiffrés
+- [Terrassement Sous-Sol : Prix & Guide 2026](https://stp-terrassement.com/blog/terrassement-sous-sol-prix.html) : Terrassement d un sous-sol en 2026 : prix au m³, excavation, soutènement, drainage, sol rocheux PACA à Aix-en-Provence. Guide d expert. Devis…
+- [Terrassement Terrain en Pente : Techniques & Solutions](https://stp-terrassement.com/blog/terrassement-terrain-en-pente.html) : Terrassement de terrain en pente : techniques (plateformes, escaliers, enrochement), coûts et solutions adaptées. Expert terrassement Aix-en-Provence
+- [Viabilisation Terrain Constructible : Étapes & Coûts 2026](https://stp-terrassement.com/blog/viabilisation-terrain-constructible.html) : Guide viabilisation terrain : étapes, coûts par réseau (eau, électricité, assainissement, télécom), délais et permis. Expert VRD Aix
+
+Index des guides : https://stp-terrassement.com/blog.html · Flux Atom : https://stp-terrassement.com/feed.xml
+
+## Pages de référence
+
+- [Tarifs terrassement 2026](https://stp-terrassement.com/tarifs-terrassement-2026.html) : Grille des prix 2026 du terrassement en PACA : m³, fondations, piscine, tranchées VRD au ml, enrobé au m², démolition, location. Barèmes réels,…
+- [Lexique du terrassement](https://stp-terrassement.com/lexique-terrassement.html) : Déblai, remblai, foisonnement, GNT, BRH, fond de forme : 45 termes de terrassement et de VRD définis simplement par STP Terrassement, avec les…
+- [Réalisations Terrassement Aix (13)](https://stp-terrassement.com/realisations.html) : Découvrez nos réalisations terrassement, VRD et aménagement à Aix-en-Provence en photos. 15 ans de savoir-faire. Devis 24h
+- [Zones Intervention Terrassement Aix (13)](https://stp-terrassement.com/zones-intervention.html) : STP Terrassement intervient à Aix-en-Provence, Gardanne, Marseille et dans toute la PACA. 15 ans d'expérience. Devis gratuit
+- [Plan du site STP Terrassement](https://stp-terrassement.com/plan-du-site.html) : Toutes les pages du site STP Terrassement : services de terrassement, VRD et démolition, communes d'intervention en PACA, guides de prix et…
+- [Devis terrassement](https://stp-terrassement.com/devis-gratuit.html) : Sept exemples de devis terrassement, VRD et démolition chiffrés poste par poste, les mentions obligatoires à vérifier, et votre demande gratuite…
+- [Contact STP Terrassement Aix (13)](https://stp-terrassement.com/contact.html) : Contactez STP Terrassement à Aix-en-Provence. Disponible 7j/7, visite technique offerte. Réponse garantie sous 24h. Appelez
 
 ## Zones d'intervention
 
-Aix-en-Provence (13090), Marseille (13001-13016), Gardanne (13120), Bouc-Bel-Air (13320), Salon-de-Provence (13300), Aubagne (13400), Vitrolles (13127), Marignane (13700), Pertuis (84120), Fuveau (13710), Trets (13530), Cabriès (13480), Simiane-Collongue (13109), Venelles (13770), Éguilles (13510), Meyreuil (13590), Peynier (13790), Luynes (13080), Les Milles (13290)
+103 pages décrivent une prestation dans une commune précise. Communes couvertes :
 
-## Guides & Blog (prix 2026, validés terrain PACA)
+- Aix-en-Provence (13080, 13090, 13100)
+- Marseille (13001-13016)
+- Les Milles (13290)
+- Luynes (13080)
+- Simiane-Collongue (13109)
+- Gardanne (13120)
+- Bouc-Bel-Air (13320)
+- Cabriès (13480)
+- Vitrolles (13127)
+- Marignane (13700)
+- Aubagne (13400)
+- Salon-de-Provence (13300)
+- Fuveau (13710)
+- Trets (13530)
+- Peynier (13790)
+- Meyreuil (13590)
+- Venelles (13770)
+- Éguilles (13510)
+- Pertuis (84120)
 
-- [Prix terrassement au m²](https://stp-terrassement.com/blog/prix-terrassement-m2.html) : tarifs au m² et au m³ par type de sol (terre, argile, roche), barème PACA
-- [Prix terrassement sol rocheux](https://stp-terrassement.com/blog/prix-terrassement-rocheux-brh.html) : 50 à 90 €/m³ au brise-roche hydraulique, calcaire de Provence, exemples chiffrés
-- [Prix enrobé au m²](https://stp-terrassement.com/blog/prix-enrobe-m2.html) : 25 à 60 €/m² posé, par surface et épaisseur, devis types anonymisés
-- [Prix goudronnage allée](https://stp-terrassement.com/blog/prix-goudronnage-allee.html) : 20 à 50 €/m², devis types 50 et 100 m², bicouche vs enrobé
-- [Prix fondations maison](https://stp-terrassement.com/blog/prix-fondations-maison.html) : semelle filante, radier, pieux — 100 à 250 €/m²
-- [Prix raccordement tout-à-l'égout](https://stp-terrassement.com/blog/raccordement-tout-egout-prix.html) : 3 000 à 10 000 €, taxe PRE, partie publique/privée
-- [Prix raccordement eau potable](https://stp-terrassement.com/blog/prix-raccordement-eau-potable.html) : 800 à 3 000 €, branchement, compteur, tranchée
-- [Coût démolition maison](https://stp-terrassement.com/blog/cout-demolition-maison.html) : 80 à 200 €/m² par type de bâtiment, permis, désamiantage
-- [Guide terrassement piscine](https://stp-terrassement.com/blog/terrassement-piscine-guide.html) : étapes, engins, délais, gestion des terres
-- [Prix terrassement piscine 6x3, 8x4, 10x5](https://stp-terrassement.com/blog/prix-terrassement-piscine-dimensions.html) : budget par dimension, sol meuble ou rocheux
-- [Guide mur de soutènement](https://stp-terrassement.com/blog/mur-soutenement-guide.html) : prix au m² et au ml, coupe technique, limite de propriété
-- [Guide enrochement paysager](https://stp-terrassement.com/blog/enrochement-paysager-guide.html) : prix à la tonne, choix du type de roche
-- [Allée carrossable](https://stp-terrassement.com/blog/amenagement-allee-carrossable.html) : comparatif matériaux/prix/durée de vie, chemin en terrain naturel
-- [Épaisseur enrobé allée](https://stp-terrassement.com/blog/epaisseur-enrobe-allee.html) : épaisseurs recommandées par usage
-- [Enrobé chaud vs froid](https://stp-terrassement.com/blog/enrobe-chaud-vs-froid.html) : différences, prix, durabilité
-- [Étude de sol G1/G2](https://stp-terrassement.com/blog/etude-sol-g1-g2.html) : quand elle est obligatoire, prix, contenu
-- [Fosse septique vs tout-à-l'égout](https://stp-terrassement.com/blog/fosse-septique-vs-tout-egout.html) : comparatif réglementaire et financier
-- [Viabilisation terrain constructible](https://stp-terrassement.com/blog/viabilisation-terrain-constructible.html) : étapes et coûts par réseau
+Liste complète des pages : https://stp-terrassement.com/plan-du-site.html
 
-Tous les articles : https://stp-terrassement.com/blog.html
+## Réseaux
 
-## Réseaux sociaux
+- Instagram : https://www.instagram.com/stp.terrassement/
+- Facebook : https://www.facebook.com/profile.php?id=61579528244326
+- X : https://x.com/stpterrassement
+- TikTok : https://www.tiktok.com/@stp.terrassement
+- LinkedIn : https://www.linkedin.com/company/stpterrassement
 
-- Instagram: https://www.instagram.com/stp.terrassement/
-- Facebook: https://www.facebook.com/profile.php?id=61579528244326
-- X: https://x.com/stpterrassement
-- TikTok: https://www.tiktok.com/@stp.terrassement
-- LinkedIn: https://www.linkedin.com/company/stpterrassement
-- Google Business: https://www.google.com/maps?cid=13986326121576911507
+## Conditions de citation
 
-## Devis
+Les guides de prix sont écrits pour être cités, y compris par des moteurs de réponse. Merci de citer la page source par son URL. Les prix sont des fourchettes observées dans les Bouches-du-Rhône en 2026 et ne valent pas devis : un chiffrage ferme demande une visite (https://stp-terrassement.com/devis-gratuit.html).
 
-Demandez un devis gratuit : https://stp-terrassement.com/devis-gratuit.html

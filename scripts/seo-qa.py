@@ -475,11 +475,26 @@ def main():
                         err(f'feed.xml: literal HTML entity in <{_field}>: {_v[:60]}')
                         break
 
-    # sitemap parity
+    # sitemap parity — sitemap.xml est un INDEX depuis 2026-10-07 : la couverture se lit
+    # alors par groupe dans Search Console (guides / villes / services), ce qu'un sitemap
+    # unique de 181 URL ne permettait pas. On suit donc l'index jusqu'aux fichiers enfants.
     sm = open('sitemap.xml', encoding='utf-8').read()
-    locs = re.findall(r'<loc>([^<]+)</loc>', sm)
+    if '<sitemapindex' in sm:
+        children = re.findall(r'<loc>([^<]+)</loc>', sm)
+        locs = []
+        for c in children:
+            name = c.replace(DOMAIN + '/', '')
+            if not os.path.exists(name):
+                err(f'sitemap.xml: enfant declare mais absent du disque: {name}')
+                continue
+            locs += re.findall(r'<loc>([^<]+)</loc>', open(name, encoding='utf-8').read())
+        for orphan in sorted(set(glob.glob('sitemap-*.xml')) - {c.replace(DOMAIN + '/', '')
+                                                                for c in children}):
+            err(f'{orphan}: fichier sitemap non reference par l\'index')
+    else:
+        locs = re.findall(r'<loc>([^<]+)</loc>', sm)
     if len(locs) != len(set(locs)):
-        err('sitemap.xml: duplicate <loc> entries')
+        err('sitemap: duplicate <loc> entries')
     sm_paths = {(u.replace(DOMAIN + '/', '') or 'index.html') for u in locs}
     disk = {f.replace('\\', '/') for f in files} - NOINDEX_PAGES
     for missing in sorted(disk - sm_paths):

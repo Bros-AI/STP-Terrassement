@@ -92,6 +92,33 @@ def content_dates(pages):
     return dates
 
 
+# Un seul sitemap de 181 URL ne dit rien sur QUI est indexe. Search Console rapporte la
+# couverture par sitemap : en separant guides, pages villes et services, le rapport "Pages"
+# se filtre par groupe et montre directement lequel n'est pas explore. C'est exactement la
+# question ouverte ici - 24 % des URL inspectees sont inconnues de Google, et il faut savoir
+# lesquelles.
+HUBS = {'terrassement.html', 'vrd-assainissement.html', 'amenagement-exterieur.html',
+        'demolition.html', 'location-materiel.html', 'enrobe.html', 'enrochement.html',
+        'goudronnage.html', 'mur-soutenement.html', 'fondations-maison.html',
+        'terrassement-piscine.html'}
+FIXED = {'index.html', 'blog.html', 'tarifs-terrassement-2026.html', 'lexique-terrassement.html',
+         'realisations.html', 'zones-intervention.html', 'plan-du-site.html',
+         'devis-gratuit.html', 'contact.html', 'mentions-legales.html',
+         'politique-confidentialite.html'}
+HEAD = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n'
+        '        xmlns:xhtml="http://www.w3.org/1999/xhtml"\n'
+        '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n')
+
+
+def group_of(page):
+    if page.startswith('blog/'):
+        return 'guides'
+    if page in HUBS or page in FIXED:
+        return 'services'
+    return 'villes'
+
+
 def main():
     write = '--write' in sys.argv
     os.chdir(ROOT)
@@ -99,54 +126,78 @@ def main():
              if os.path.basename(f) not in SKIP]
     dates = content_dates(pages)
 
-    sm = open('sitemap.xml', encoding='utf-8').read()
-    blocks = re.findall(r'[ \t]*<url>.*?</url>\n?', sm, re.S)
+    # On relit les blocs <url> existants pour conserver priority, changefreq et les
+    # entrees <image:image> telles qu'elles ont ete ecrites : seul <lastmod> est regenere.
     by_loc = {}
-    for b in blocks:
-        loc = re.search(r'<loc>([^<]+)</loc>', b)
-        if loc:
-            by_loc[loc.group(1)] = b
+    for f in ['sitemap.xml'] + sorted(glob.glob('sitemap-*.xml')):
+        if not os.path.exists(f):
+            continue
+        for b in re.findall(r'[ \t]*<url>.*?</url>\n?', open(f, encoding='utf-8').read(), re.S):
+            loc = re.search(r'<loc>([^<]+)</loc>', b)
+            if loc:
+                by_loc[loc.group(1)] = b
 
-    changed, added, removed = [], [], []
-    out = sm
+    changed, added = [], []
+    groups = {'guides': [], 'villes': [], 'services': []}
     for p in pages:
         loc = DOMAIN + ('' if p == 'index.html' else p)
         want = dates[p]
         block = by_loc.get(loc)
         if block is None:
             added.append(loc)
-            continue
-        cur = re.search(r'<lastmod>([^<]+)</lastmod>', block)
-        if cur and cur.group(1)[:10] != want:
-            new_block = block.replace(f'<lastmod>{cur.group(1)}</lastmod>',
+            block = (f'    <url>\n        <loc>{loc}</loc>\n'
+                     f'        <lastmod>{want}</lastmod>\n'
+                     f'        <changefreq>monthly</changefreq>\n'
+                     f'        <priority>0.6</priority>\n    </url>\n')
+        else:
+            cur = re.search(r'<lastmod>([^<]+)</lastmod>', block)
+            if cur and cur.group(1)[:10] != want:
+                block = block.replace(f'<lastmod>{cur.group(1)}</lastmod>',
                                       f'<lastmod>{want}</lastmod>')
-            out = out.replace(block, new_block, 1)
-            changed.append((p, cur.group(1)[:10], want))
+                changed.append((p, cur.group(1)[:10], want))
+        groups[group_of(p)].append(block)
+
     on_disk = {DOMAIN + ('' if p == 'index.html' else p) for p in pages}
     removed = sorted(set(by_loc) - on_disk)
 
-    for p, old, new in changed[:12]:
+    files = {f'sitemap-{g}.xml': HEAD + ''.join(blocks) + '</urlset>\n'
+             for g, blocks in groups.items()}
+    newest = max(dates.values())
+    files['sitemap.xml'] = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        + ''.join(f'    <sitemap>\n        <loc>{DOMAIN}{n}</loc>\n'
+                  f'        <lastmod>{newest}</lastmod>\n    </sitemap>\n'
+                  for n in sorted(files))
+        + '</sitemapindex>\n')
+
+    stale = [n for n, body in files.items()
+             if not os.path.exists(n) or open(n, encoding='utf-8').read() != body]
+
+    for p, old, new in changed[:10]:
         print(f'  {p[:52]:52} {old} -> {new}')
-    if len(changed) > 12:
-        print(f'  … {len(changed) - 12} de plus')
+    if len(changed) > 10:
+        print(f'  … {len(changed) - 10} de plus')
     print(f'\nbuild-sitemap: {len(pages)} pages | lastmod mis a jour: {len(changed)} | '
-          f'absents du sitemap: {len(added)} | orphelins: {len(removed)}')
-    if added:
-        print('  A AJOUTER:', added[:5])
+          f'ajoutees: {len(added)} | orphelines: {len(removed)}')
+    for g, blocks in sorted(groups.items()):
+        print(f'   sitemap-{g}.xml : {len(blocks)} URL')
     if removed:
         print('  A RETIRER:', removed[:5])
     from collections import Counter
     print('  repartition des dates:', dict(Counter(dates.values()).most_common()))
 
-    if write and out != sm:
-        open('sitemap.xml', 'w', encoding='utf-8', newline='').write(out)
-        print('  sitemap.xml ecrit')
-    elif not write and changed:
-        print('  (dry run — relancer avec --write)')
-    if '--check' in sys.argv and (changed or added or removed):
-        print('FAIL: sitemap.xml is out of date — run scripts/build-sitemap.py --write')
+    if write:
+        for n, body in files.items():
+            if n in stale:
+                open(n, 'w', encoding='utf-8', newline='').write(body)
+        print(f'  {len(stale)} fichier(s) ecrit(s): {", ".join(sorted(stale)) or "aucun"}')
+    elif stale:
+        print(f'  (dry run — {len(stale)} fichier(s) a reecrire)')
+    if '--check' in sys.argv and (stale or removed):
+        print('FAIL: les sitemaps sont perimes — run scripts/build-sitemap.py --write')
         return 1
-    return 1 if (added or removed) else 0
+    return 1 if removed else 0
 
 
 if __name__ == '__main__':
