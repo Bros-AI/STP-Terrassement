@@ -1091,3 +1091,83 @@ Les 142 autres se partagent 9 %.
 38 impressions en novembre 2025 → **149 708 en septembre 2026**. 1 779 clics en
 septembre. La croissance est forte et régulière ; le CTR, lui, stagne autour de
 1,2 %.
+
+## 21e passe — sitemaps, résultats enrichis, et le référencement local (2026-10-07)
+
+### Aucun résultat enrichi, nulle part
+
+La dimension `searchAppearance` de l'API ne renvoie **aucune ligne**, ni sur 28 jours
+ni sur 16 mois. Google n'attribue au site **aucune apparence enrichie** : les
+173 blocs `FAQPage` ne produisent **aucun affichage FAQ dans les résultats**.
+
+Ce n'est pas un défaut du balisage : depuis août 2023, Google réserve les résultats
+enrichis FAQ aux sites gouvernementaux et de santé reconnus. Le balisage reste utile
+aux systèmes de réponse automatique, mais il ne faut **attendre aucun gain
+d'affichage** — et donc ne pas investir davantage dans cette direction.
+
+### Types de recherche
+
+| Type | Impressions | Clics |
+|---|---|---|
+| web | 140 843 | 1 744 |
+| image | 3 594 | 3 |
+| vidéo, actualités, Discover | 0 | 0 |
+
+Discover à zéro est attendu pour un site de services local.
+
+### Sitemap, tel que Google le voit
+
+```
+lastSubmitted : 2026-04-11   lastDownloaded : 2026-10-06
+web   : 180 soumises     image : 90 soumises
+erreurs : 0   avertissements : 0
+```
+
+Le champ `indexed: 0` n'est pas un signal : Google ne le renseigne plus. La lecture
+quotidienne du sitemap est en revanche confirmée.
+
+### Le constat central : le local ne marche pas
+
+Le site compte **102 pages villes**. Elles produisent **6,1 % des impressions** et
+119 clics en 28 jours.
+
+| Position | Requêtes locales | Requêtes nationales |
+|---|---|---|
+| 1 – 3 | 4 % | 8 % |
+| 4 – 10 | 14 % | **57 %** |
+| 11 – 20 | 29 % | 23 % |
+| 21 – 50 | **43 %** | 11 % |
+
+Autrement dit : le site se place en page 1 sur **65 %** des impressions nationales
+informatives (« prix terrassement au m² »), et seulement **18 %** des impressions
+locales commerciales (« terrassement marseille »). La position moyenne locale est
+**22,2** contre 10,6 en national.
+
+C'est exactement l'inverse de ce dont vit l'entreprise : la requête nationale amène
+un lecteur, la requête locale amène un client.
+
+### Corrigé : la page ville manquante la plus évidente
+
+18 villes ont une page `terrassement-<ville>`. **Aix-en-Provence n'en avait pas**,
+alors qu'elle dispose de 16 pages pour tous les autres services (enrobé, enrochement,
+goudronnage, fondations, drainage, nivellement…).
+
+Conséquence mesurée : « terrassement aix en provence » (pos 8,9), « aix terrassement »
+(pos 9,0) et « terrassier aix en provence » (pos 7,7) étaient servies par **l'accueil**.
+
+`terrassement-aix-en-provence.html` créée : 1 561 mots, contenu propre au bassin aixois
+(marnes et argiles, calcaire des hauteurs, alluvions de l'Arc, remblais des lotissements
+1970-80), 6 questions fréquentes, 25 liens entrants. Similarité maximale avec les autres
+pages villes : **14 %**, conforme au reste du site. W3C : 0 erreur.
+
+### Piège rencontré
+
+Le gabarit des pages villes place le **formulaire de devis à l'intérieur du hero**, et
+son `<h2>` est le premier de la page. Remplacer le corps « à partir du premier `<h2>` »
+supprime donc le formulaire — ce que `seo-qa` a immédiatement signalé (4 erreurs
+d'invariants de formulaire). Les frontières correctes sont `</header>` d'un côté et la
+première section de grilles de liens de l'autre.
+
+Second piège : le remplacement global « Marseille → Aix-en-Provence » fabrique des liens
+vers des pages qui n'existent pas, les deux villes n'ayant pas les mêmes slugs de
+services. Quatre liens cassés, remappés vers les pages réelles après vérification.
