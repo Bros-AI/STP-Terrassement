@@ -947,3 +947,62 @@ disque) ne détecte que les **dérives**, jamais ses propres **erreurs
 systématiques**. Il faut un contrôle qui porte sur le résultat attendu — ici,
 l'absence d'entité littérale — et non sur la cohérence entre le générateur et sa
 propre production.
+
+## 19e passe — audit en production et Open Graph des hubs (2026-10-07)
+
+### Audit sur le site servi, pas sur le disque
+
+Tout ce qui avait été vérifié jusqu'ici l'était sur les fichiers locaux. Or
+Google lit ce que GitHub Pages **sert**. Les 180 URL ont donc été interrogées
+en production :
+
+| Contrôle | Résultat |
+|---|---|
+| Statuts HTTP | 180/180 en 200, **0 redirection** |
+| Temps de réponse | médiane 167 ms, p90 189 ms |
+| Écart disque ↔ production | **0** (titre, description, canonical) |
+| Indexabilité servie | 0 noindex, 0 canonical manquant ou divergent |
+| Doublons servis | 0 titre, 0 description |
+| Profondeur depuis l'accueil | max 2, 0 page inatteignable, 6 151 liens |
+| JSON-LD servi | 0 bloc illisible |
+| Images | 0 sans alt, 0 sans width+height |
+
+### Dimensions jamais mesurées, toutes saines
+
+- **Similarité de corps** (shingles de 5 mots, Jaccard) : maximum 17 % entre deux
+  pages villes, loin du seuil problématique. Les 5 nouveaux guides sont à **1 %**
+  de leur plus proche voisin — contenu réellement distinct.
+- **Ancres internes** : 12 610 liens pour 1 348 ancres distinctes. Les ancres très
+  répétées (596× « Démolition ») sont la **navigation**, pas de la
+  sur-optimisation. Rien à corriger — il aurait été facile de fabriquer un
+  problème ici.
+- **Images orphelines** : 7 sur 602, dont 6 qui ont servi au correctif ci-dessous.
+
+### Corrigé : les 6 hubs annonçaient de fausses dimensions Open Graph
+
+```html
+<meta property="og:image" content=".../hub-enrobe-1600.webp">   <!-- 1600×900 -->
+<meta property="og:image:width"  content="1200">                <!-- faux -->
+<meta property="og:image:height" content="630">                 <!-- faux -->
+```
+
+Deux problèmes cumulés : les **dimensions déclarées ne correspondaient pas** au
+fichier, et le format **WebP** n'est pas lu par tous les robots d'aperçu —
+LinkedIn notamment l'ignore. Résultat : un partage de page hub risquait de
+s'afficher sans image.
+
+Les JPEG 1200×630 au bon format **existaient déjà** dans `images/og/blog/` mais
+n'étaient câblés nulle part : ils figuraient parmi les images orphelines. Les
+6 hubs pointent désormais dessus, et les dimensions déclarées sont exactes.
+
+### Search Console par API : bloqué sur une action qui vous revient
+
+Voir `../seo-tools/gsc.py` — **volontairement hors du dépôt**. Le compte gcloud
+porte les scopes cloud mais pas `webmasters` : un token gcloud ne peut donc pas
+appeler l'API Search Console. L'usurpation d'un compte de service a été refusée
+(élévation de privilège), et la voie du compte de service imposerait de toute
+façon de l'ajouter manuellement dans l'interface Search Console.
+
+La voie retenue est plus simple et sans secret nouveau : votre propre compte est
+déjà propriétaire vérifié de la propriété. Une seule commande, dans votre
+terminal, suffit à ajouter le scope manquant.
