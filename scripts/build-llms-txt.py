@@ -21,6 +21,7 @@ import glob
 import html as H
 import os
 import re
+import subprocess
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -68,7 +69,12 @@ def one_line(de, prices):
 
 def build():
     os.chdir(ROOT)
-    today = dt.date.today().isoformat()
+    # PAS date.today() : le runner CI tourne en UTC et le poste en Europe/Paris. Entre
+    # minuit et 2 h, les deux ne sont pas le meme jour et --check echoue sur un fichier
+    # pourtant correct. La date vient donc de git, identique partout.
+    git_day = subprocess.run(['git', 'log', '-1', '--format=%cs'], cwd=ROOT,
+                             capture_output=True, text=True).stdout.strip()
+    today = git_day or dt.date.today().isoformat()
     guides = sorted(f.replace(os.sep, '/') for f in glob.glob('blog/*.html'))
     cities = sorted(f for f in glob.glob('*.html')
                     if f not in SKIP and f not in HUBS and f not in FIXED

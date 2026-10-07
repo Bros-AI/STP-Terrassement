@@ -1553,3 +1553,22 @@ démentie.
 Il n'y a plus de travail d'optimisation à rendement sérieux sur ce site. Le facteur limitant
 n'est ni le contenu, ni la technique, ni le maillage&nbsp;: c'est que Google n'explore pas,
 et cela se joue sur l'autorité du domaine.
+
+### Corrigé : un contrôle CI qui échouait deux heures par jour
+
+`build-llms-txt.py --check` a cassé le build sur un fichier pourtant correct. La cause&nbsp;:
+`llms.txt` porte une ligne «&nbsp;Dernière mise à jour&nbsp;», calculée avec
+`date.today()`. Le poste est en Europe/Paris, le runner GitHub en UTC&nbsp;: **entre minuit
+et 2 h, les deux ne sont pas le même jour.** Le fichier généré localement le 8 était
+recalculé par le CI comme devant porter le 7.
+
+Le défaut n'était pas aléatoire&nbsp;: il se serait reproduit **chaque nuit, deux heures
+durant**. La date vient désormais du dernier commit (`git log -1 --format=%cs`), identique
+sur toutes les machines.
+
+**Règle&nbsp;: un fichier vérifié par égalité octet pour octet ne doit contenir aucune valeur
+dépendant de l'horloge de la machine qui le génère.**
+
+`build-sitemap.py` a été vérifié pour le même motif&nbsp;: sa variable `today` ne sert qu'aux
+fichiers modifiés dans l'arbre de travail, qui n'existent pas sur un runner CI — le contrôle
+y lit toujours l'historique. Pas de défaut.
