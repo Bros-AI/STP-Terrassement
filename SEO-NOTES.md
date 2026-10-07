@@ -1436,3 +1436,48 @@ comparaisons&nbsp;: la préparation du support.
 Aucune page créée. Trois sections ajoutées à des pages explorées, +971 mots au total. Si ces
 pages remontent de la 12ᵉ à la 6ᵉ place sur «&nbsp;bitume&nbsp;», le gain dépasse celui de
 cinq articles neufs qui resteraient invisibles.
+
+## 27e passe — cohérence des chiffres, le risque propre aux moteurs de réponse (2026-10-07)
+
+Un humain qui lit deux fourchettes différentes sur deux pages hausse les épaules. **Un
+modèle en cite une** — parfois la mauvaise — et la propage sans la nuance. S'il détecte la
+contradiction, il cesse de traiter la source comme fiable. C'est la dimension «&nbsp;prêt
+pour les LLM&nbsp;» que je n'avais jamais testée.
+
+### Deux vrais défauts, un faux positif à moi
+
+| Page | Le tableau dit | Le titre disait | Verdict |
+|---|---|---|---|
+| `cout-demolition-maison` | maison&nbsp;: **80 à 250&nbsp;€/m²** | 80 à 200 | titre **faux** |
+| `prix-fondations-maison` | radier **120 à 200&nbsp;€/m²** | 100 à 250 | titre **non étayé** |
+| `prix-terrassement-m2` | plat 25-40 → rocheux 50-90 | 25 à 90 | titre **juste** |
+
+`cout-demolition-maison` se contredisait **à l'intérieur d'une même page**&nbsp;: le titre
+annonçait 200, l'introduction 250, et le tableau donnait raison à l'introduction (parpaings
+80-150, pierre 120-220, étage 100-200, sous-sol 130-250). Titre et description corrigés sur
+la valeur que le tableau soutient.
+
+`prix-fondations-maison` annonçait 100 à 250&nbsp;€/m² sans qu'aucune ligne ne l'étaye&nbsp;:
+le radier est à 120-200&nbsp;€/m² et le corps calculait lui-même «&nbsp;12 000 à
+20 000&nbsp;€ pour 100&nbsp;m², soit 120 à 200&nbsp;€/m²&nbsp;». Aligné.
+
+### Un enseignement pour la citabilité
+
+`prix-terrassement-m2` annonçait 25 à 90&nbsp;€/m², parfaitement soutenu par son tableau —
+mais **la phrase n'existait nulle part**. Le chiffre n'était lisible qu'en recoupant sept
+lignes de tableau.
+
+Un modèle cite une phrase bien plus facilement qu'une ligne de tableau&nbsp;: il faut qu'il
+puisse l'extraire telle quelle, avec son unité et sa condition. La phrase manquante a été
+écrite avant le tableau, qui la détaille ensuite.
+
+**Règle à retenir&nbsp;: tout chiffre annoncé dans un titre doit exister en toutes lettres
+dans une phrase du corps.** Vérifié sur les six pages dont le titre porte une fourchette —
+0 titre non étayé.
+
+### Méthode
+
+Mon premier détecteur regroupait les prix par simple proximité d'un mot-clé&nbsp;: il a
+produit presque exclusivement des faux positifs, mélangeant le prix d'une couche
+d'accrochage et celui d'un enrobé posé. Le test qui marche est plus étroit et prouvable&nbsp;:
+**le chiffre du titre est-il soutenu par le corps ou par un tableau de la même page&nbsp;?**
