@@ -1481,3 +1481,75 @@ Mon premier détecteur regroupait les prix par simple proximité d'un mot-clé&n
 produit presque exclusivement des faux positifs, mélangeant le prix d'une couche
 d'accrochage et celui d'un enrobé posé. Le test qui marche est plus étroit et prouvable&nbsp;:
 **le chiffre du titre est-il soutenu par le corps ou par un tableau de la même page&nbsp;?**
+
+## 28e passe — analyse finale : « indexée » ne veut pas dire « à jour » (2026-10-08)
+
+### Le chiffre que je donnais était faux, et dans le mauvais sens
+
+Je parlais de **11 pages non indexées**. Sur un échantillon de 40 pages inspectées une par
+une&nbsp;:
+
+```
+12 à jour          18 version périmée chez Google          10 jamais explorées
+```
+
+Extrapolé aux 184 pages, **environ un quart du site n'a jamais été exploré** — pas onze
+pages. Et une catégorie m'avait échappé&nbsp;: «&nbsp;indexée mais périmée&nbsp;», qui est
+pire que non indexée, parce que la page compte pour Google — dans sa mauvaise version.
+
+### Le cas qui résume tout
+
+`devis-gratuit.html`, la page la plus commerciale du site&nbsp;:
+
+| | |
+|---|---|
+| Dernière exploration par Google | **1ᵉʳ septembre** |
+| Contenu à cette date | **169 mots** |
+| Contenu depuis le 15 septembre | **2 111 mots**, 7 devis chiffrés |
+| Impressions en 90 jours | **2** |
+
+Google classe donc la page de devis sur un brouillon de 169 mots. Pendant ce temps,
+«&nbsp;devis terrassement&nbsp;» (600 impressions, intention commerciale maximale) est servie
+par un guide de prix en position 19,7, pour **zéro clic**.
+
+La page n'a aucun défaut&nbsp;: titre exact, H1 exact, l'expression neuf fois dans le corps,
+960 liens entrants. Elle n'a simplement pas été relue.
+
+Deux autres pages commerciales sont dans le même cas&nbsp;: `tarifs-terrassement-2026.html`
+et `lexique-terrassement.html`, **jamais explorées**.
+
+### Mon hypothèse de travail, réfutée par les données
+
+J'ai supposé que des liens contextuels depuis les pages fortement explorées aideraient à la
+découverte. **Les données disent non**&nbsp;:
+
+| Page jamais explorée | Liens en plein texte |
+|---|---|
+| `blog/drainage-terrain-guide.html` | **10** — dernière exploration : 22 mai |
+| `blog/prix-evacuation-gravats.html` | 7 |
+| `lexique-terrassement.html` | 5 |
+| `tarifs-terrassement-2026.html` | 4 |
+
+Une page avec dix liens en plein texte, non explorée depuis quatre mois et demi, ne sera pas
+sauvée par un onzième. J'ai donc arrêté après avoir traité les **deux seules** pages qui
+n'avaient aucun lien en plein texte (`prix-raccordement-enedis`,
+`debroussaillement-obligatoire-paca`) — les seuls cas où l'hypothèse n'était pas déjà
+démentie.
+
+### Ce que l'analyse a écarté
+
+- **Cannibalisation&nbsp;: inexistante.** 191 requêtes sont servies par deux pages ou plus,
+  mais les pages secondaires captent **1 297 impressions sur ~100 000**. C'est du bruit.
+- **Requêtes émergentes&nbsp;: aucune** au-dessus de 60 impressions. Le marché est stable.
+- **Pages en forte hausse**&nbsp;: goudronnage +152&nbsp;%, démolition maison +113&nbsp;%,
+  démolition dalle +68&nbsp;%, épaisseur enrobé +42&nbsp;%. Toutes ont reçu un travail de
+  titre récemment — je me garde d'y voir une preuve, la demande saisonnière bouge aussi.
+- **Pages en forte baisse**&nbsp;: `prix-fondations-maison` −3 342 impressions (−37&nbsp;%)
+  alors que sa position s'améliore (6,6 → 6,0). C'est la demande qui recule, pas le
+  classement.
+
+### Conclusion de la passe
+
+Il n'y a plus de travail d'optimisation à rendement sérieux sur ce site. Le facteur limitant
+n'est ni le contenu, ni la technique, ni le maillage&nbsp;: c'est que Google n'explore pas,
+et cela se joue sur l'autorité du domaine.
