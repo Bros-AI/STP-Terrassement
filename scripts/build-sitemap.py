@@ -162,13 +162,22 @@ def main():
 
     files = {f'sitemap-{g}.xml': HEAD + ''.join(blocks) + '</urlset>\n'
              for g, blocks in groups.items()}
-    newest = max(dates.values())
+
+    # Le <lastmod> d'un enfant dans l'index est celui de CET enfant, pas le maximum global.
+    # Annoncer la date du jour sur un sitemap dont aucune page n'a bouge est un mensonge,
+    # et c'est exactement ce qui a fait perdre a ce site la confiance de Google dans ses
+    # dates : 175 lastmod figes au 15 septembre pendant des mois. Le protocole est clair,
+    # et la credibilite du signal se joue sur ce genre de detail.
+    per_group = {}
+    for p in pages:
+        g = group_of(p)
+        per_group[g] = max(per_group.get(g, ''), dates[p])
     files['sitemap.xml'] = (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         + ''.join(f'    <sitemap>\n        <loc>{DOMAIN}{n}</loc>\n'
-                  f'        <lastmod>{newest}</lastmod>\n    </sitemap>\n'
-                  for n in sorted(files))
+                  f'        <lastmod>{per_group[n[8:-4]]}</lastmod>\n    </sitemap>\n'
+                  for n in sorted(f for f in files if f != 'sitemap.xml'))
         + '</sitemapindex>\n')
 
     stale = [n for n, body in files.items()

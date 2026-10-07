@@ -1620,3 +1620,54 @@ image toutes valides, robots.txt déclarant l'index. Google lui-même&nbsp;: 0 e
 0 avertissement.
 
 Il n'y a plus rien à corriger dans le sitemap. Le signal de recrawl y est, correct et complet.
+
+## 30e passe — l'index annonçait une date fausse pour deux enfants (2026-10-08)
+
+### Du nouveau depuis hier
+
+Quatre pages sont sorties de l'invisibilité, explorées le 7 octobre&nbsp;:
+`chemin-acces-carrossable`, `prix-enrochement-tonne`, `enrobe-drainant-prix` et
+`terrassement-aix-en-provence`. Elles étaient toutes «&nbsp;inconnues de Google&nbsp;» la
+veille.
+
+Et une corrélation&nbsp;:
+
+```
+sitemap-guides.xml     lu le 7 octobre   ->  ses pages explorées le 7 octobre
+sitemap-services.xml   JAMAIS lu         ->  ses pages jamais explorées
+sitemap-villes.xml     JAMAIS lu         ->  ses pages jamais explorées
+```
+
+Le seul enfant lu est celui dont les pages ont bougé, le même jour. Ce n'est pas une preuve
+de causalité, mais le découpage en sitemaps groupés fait apparemment ce pour quoi il a été
+mis en place. Les deux enfants jamais lus ont été resoumis.
+
+### Le défaut trouvé en relisant mon propre générateur
+
+L'index annonçait **la même date pour les trois enfants** — le maximum global —, alors que
+`sitemap-villes.xml` n'avait en réalité rien de plus récent que le 7 octobre&nbsp;:
+
+```
+                      annoncé       réel
+sitemap-guides.xml    2026-10-08    2026-10-08    juste
+sitemap-services.xml  2026-10-08    2026-10-08    juste
+sitemap-villes.xml    2026-10-08    2026-10-07    FAUX
+```
+
+Un jour d'écart, sur un seul fichier&nbsp;: dérisoire en apparence. Mais c'est exactement le
+mécanisme qui a coûté la confiance de Google dans les dates de ce site — 175 `lastmod` figés
+au 15 septembre pendant des mois. Le `<lastmod>` d'un enfant dans l'index doit être celui de
+**cet** enfant&nbsp;; revendiquer la date du jour sur un sitemap dont rien n'a bougé est un
+mensonge de plus, au moment précis où l'on cherche à regagner du crédit.
+
+Corrigé&nbsp;: chaque enfant porte désormais le maximum de ses propres URL. Concordance
+vérifiée sur les trois.
+
+### Ce qui n'a pas bougé, et c'est normal
+
+CTR global&nbsp;: 1,19&nbsp;% contre 1,20&nbsp;% la veille — les titres ont moins de 24 h.
+`lastmod` écouté&nbsp;: 7 à jour, 15 signal ignoré, 8 jamais explorées — identique.
+
+Mon diagnostic de la veille («&nbsp;Google n'explore plus, c'est l'autorité&nbsp;») était
+**trop pessimiste**&nbsp;: quelque chose a bougé en 24 heures, et le levier semble être le
+sitemap groupé autant que l'autorité.
