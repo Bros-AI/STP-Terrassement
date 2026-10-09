@@ -1788,3 +1788,62 @@ minifié maintenu à la main, et les désynchroniser serait un piège durable. C
 
 Deux fautes rattrapées au contrôle visuel&nbsp;: un mot parasite qui cassait le script, et
 «&nbsp;telephone&nbsp;» sans accent.
+
+## 33e passe — audit complet (2026-10-09)
+
+### Conforme, mesuré
+
+| Contrôle | Résultat |
+|---|---|
+| Dépôt et CI | arbre propre, 0 commit en attente, 3 workflows `success` |
+| `seo-qa --strict` | 184 pages, **0 erreur, 0 avertissement** |
+| 6 générateurs `--check` | tous à 0 |
+| Sitemap (32 contrôles) | **0 écart** |
+| Production, 181 URL | **181/181 en 200**, 0 redirection, médiane 156 ms |
+| Écart disque ↔ serveur | **0** |
+| Indexabilité servie | 0 noindex, 0 canonical manquant ou divergent |
+| Doublons servis | 0 titre, 0 description |
+| Maillage | profondeur max 2, 0 page inatteignable, 6 233 liens |
+| JSON-LD servi | 0 bloc illisible |
+| Liens externes | 49 testés, **0 non-200** |
+| W3C | 5 pages, **0 erreur** |
+| Moteurs de réponse | GPTBot reçoit la même page, contenu lisible sans JS, `llms.txt` 56/56 guides, 0 lien mort |
+
+### Une erreur de mesure que je corrige
+
+J'ai d'abord relevé «&nbsp;28 pages périmées sur 40&nbsp;». **Le chiffre était gonflé par mes
+propres modifications du jour** — l'injection du script de sortie et le changement d'URL
+Facebook ont touché 182 fichiers quelques heures plus tôt. Une page retouchée ce matin et
+explorée la semaine dernière n'est pas un problème.
+
+Le signal honnête est l'**ancienneté de l'exploration**, qui ne dépend pas de ce qu'on vient
+de faire&nbsp;:
+
+```
+moins de 7 jours    25 %    #########
+7 à 14 jours        25 %    #########
+15 à 30 jours        8 %    ###
+1 à 3 mois          15 %    ######
+plus de 3 mois       5 %    ##
+jamais explorée     22 %    ########
+                            indexées : 72 %
+```
+
+**La moitié du site est revisitée sous quinze jours.** C'est sain. Le problème n'est pas
+général&nbsp;: il est concentré sur 22&nbsp;% de pages jamais explorées et une traîne de
+8 pages non revues depuis plus d'un mois — dont `devis-gratuit.html`, 38 jours.
+
+### Deux pages que Google croit mortes
+
+`enrobe.html` et `terrassement-piscine.html` sont rapportées **«&nbsp;Introuvable (404)&nbsp;»**,
+explorées les 7 et 8 juin — avant leur création en septembre. Elles répondent aujourd'hui 200
+(51,8 et 50,8 Ko) et figurent dans `sitemap-services.xml`.
+
+C'est pire qu'«&nbsp;inconnue&nbsp;»&nbsp;: Google détient un constat de page morte et n'a
+aucune raison d'y revenir spontanément. **Ces deux-là passent en tête de la liste des
+demandes d'indexation.**
+
+### Inchangé
+
+CTR global 1,19&nbsp;%, manque à gagner estimé à **1 794 clics sur 28 jours**. Les titres
+corrigés ont moins de 48 heures et la plupart des pages concernées n'ont pas été relues.
