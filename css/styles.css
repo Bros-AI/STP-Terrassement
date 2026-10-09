@@ -1758,7 +1758,7 @@ footer p, .copyright p { color: #9ca3af; }
 .fa-l::before{content:"\4c"}
 .fa-faucet::before{content:"\e005"}
 .fa-faucet-drip::before{content:"\e006"}
-.fa-tiktok::before{content:"\e07b"}
+.fa-youtube::before{content:"\f167"}.fa-tiktok::before{content:"\e07b"}
 .fa-filter-circle-xmark::before{content:"\e17b"}
 .fa-stairs::before{content:"\e289"}
 .fa-vault::before{content:"\e2c5"}
@@ -2139,6 +2139,19 @@ a:has(> .email-protect)::after {
     padding: 8px 14px; margin: 14px 0; background: #fff7ed; border-radius: 0 8px 8px 0; }
 .source-note i { color: #b45309; margin-right: 6px; }
 .source-note a { color: var(--link); text-decoration: underline; }
+
+/* grille video : miniatures auto-hebergees, lecture sur YouTube */
+.video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; margin-top: 30px; }
+.video-card a:first-child { position: relative; display: block; border-radius: 12px;
+    overflow: hidden; box-shadow: var(--shadow); }
+.video-card img { width: 100%; height: auto; display: block; transition: var(--transition); }
+.video-card a:first-child:hover img { transform: scale(1.03); }
+.video-play { position: absolute; inset: 0; display: flex; align-items: center;
+    justify-content: center; font-size: 3.4rem; color: #fff;
+    text-shadow: 0 2px 12px rgba(0,0,0,.55); pointer-events: none; }
+.video-card h3 { margin: 14px 0 6px; font-size: 1.05rem; line-height: 1.3; }
+.video-card p { color: var(--text-light); font-size: .95rem; }
 
 /* --- U-CLASSES (audit round 4): the 30 most repeated inline styles became classes. !important on purpose: an inline style
    always won over the sheet, the classes must keep that precedence (.nav-links a, .card a ... would otherwise override them). Also inlined in the critical block. --- */

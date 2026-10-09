@@ -159,7 +159,8 @@ def build():
                  ('Facebook', 'https://www.facebook.com/profile.php?id=61579528244326'),
                  ('X', 'https://x.com/stpterrassement'),
                  ('TikTok', 'https://www.tiktok.com/@stp.terrassement'),
-                 ('LinkedIn', 'https://www.linkedin.com/company/stpterrassement')):
+                 ('LinkedIn', 'https://www.linkedin.com/company/stpterrassement'),
+                 ('YouTube', 'https://www.youtube.com/@STPTerrassement')):
         L.append(f'- {n} : {u}')
     L.append('')
     L.append('## Conditions de citation')

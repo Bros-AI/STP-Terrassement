@@ -1671,3 +1671,55 @@ CTR global&nbsp;: 1,19&nbsp;% contre 1,20&nbsp;% la veille — les titres ont mo
 Mon diagnostic de la veille («&nbsp;Google n'explore plus, c'est l'autorité&nbsp;») était
 **trop pessimiste**&nbsp;: quelque chose a bougé en 24 heures, et le levier semble être le
 sitemap groupé autant que l'autorité.
+
+## 31e passe — intégration de la chaîne YouTube (2026-10-09)
+
+Chaîne vérifiée avant tout&nbsp;: `https://www.youtube.com/@STPTerrassement` répond 200,
+identifiant `UCF-hEd6Xj9SAEu9e6iJ6c4g`, 2 vidéos publiées.
+
+### Le point bloquant : le glyphe n'existait pas
+
+Le site auto-héberge une police Font Awesome réduite à **13 glyphes (1 984 octets)** — la CSP
+n'autorise que `font-src 'self'`, et charger la police complète coûterait 60 fois plus lourd.
+Le glyphe YouTube (`U+F167`) n'y était pas&nbsp;: poser `<i class="fa-brands fa-youtube">`
+aurait affiché un carré vide, et **aucun contrôle automatique ne l'aurait vu**.
+
+Sous-ensemble régénéré avec `fontTools` à partir de la police complète&nbsp;: les 13 glyphes
+d'origine **plus** YouTube, soit 14 glyphes et 2 204 octets (+220). Vérifié avant remplacement
+qu'aucun glyphe n'était perdu, puis **contrôlé au rendu** — l'icône s'affiche bien entre
+LinkedIn et Google.
+
+### Ce qui a été intégré
+
+- **Lien visible** dans le pied de page des **181 pages**, après LinkedIn, avec `aria-label`
+  et libellé pour lecteurs d'écran, comme les autres réseaux.
+- **`sameAs`** des **190 nœuds d'entreprise** — avec l'URL de la chaîne *et* l'URL canonique
+  que YouTube déclare, les deux formes servant au rattachement de l'entité. Les nœuds `City`
+  gardent leurs liens Wikipédia&nbsp;: YouTube n'y a rien à faire.
+- **`llms.txt`** : YouTube rejoint la liste des réseaux.
+- **Section «&nbsp;Nos chantiers en vidéo&nbsp;»** sur `realisations.html` (567 → 632 mots),
+  avec les deux miniatures.
+
+**Un piège de CSP évité.** `img-src 'self' data:` interdit les images de `i.ytimg.com`&nbsp;:
+une miniature servie par YouTube ne s'afficherait pas. Les deux miniatures ont donc été
+rapatriées, recadrées en 16:9 et converties en WebP (15 et 27 Ko), servies depuis le domaine —
+plutôt que d'élargir la CSP pour un détail d'affichage.
+
+### Ce que je n'ai PAS fait, et pourquoi
+
+**Aucun lecteur intégré, aucun balisage `VideoObject`.** Un `<iframe>` YouTube imposerait
+d'ouvrir `frame-src` et `script-src` à un tiers, et Google n'accepte `VideoObject` que si la
+vidéo est réellement lisible sur la page. Baliser une vidéo qui ne l'est pas expose à une
+action manuelle. **C'est un arbitrage qui appartient au propriétaire**, pas une évidence
+technique&nbsp;: la section renvoie donc vers la chaîne.
+
+### Une erreur de ma part, corrigée
+
+J'avais écrit pour la seconde vidéo&nbsp;: «&nbsp;Quelques minutes sur un chantier&nbsp;:
+décapage, décaissement et réglage de plateforme.&nbsp;» **C'était inventé.** Le contrôle
+visuel a montré une miniature de couple près d'une piscine portant la mention «&nbsp;GARANTIE
+DÉCENNALE&nbsp;». Titre et description refaits sur ce qui est vérifiable depuis la miniature
+et le titre YouTube.
+
+**Je ne peux pas regarder ces vidéos&nbsp;: les deux descriptions sont à relire par le
+propriétaire.**
