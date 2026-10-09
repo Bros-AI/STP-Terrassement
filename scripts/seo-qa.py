@@ -30,6 +30,7 @@ import json
 import os
 import re
 import sys
+import unicodedata
 from urllib.parse import unquote
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -80,6 +81,34 @@ def site_css_urls():
 BUSINESS_TYPES = {'LocalBusiness', 'GeneralContractor', 'HomeAndConstructionBusiness', 'Organization'}
 
 
+AREA_RE = re.compile(r'"areaServed":\s*\{[^}]*?"name":\s*"([^"]+)"')
+# Champs qui disent QUI est la page. Une page de ville ne doit nommer qu'elle-meme ici.
+# terrassement-aix-en-provence.html, clonee depuis la page Marseille, affichait
+# "NOS SERVICES A MARSEILLE" en clair, et le formulaire envoyait au proprietaire un
+# objet annoncant Marseille pour un contact venu d'Aix : le mauvais signal local pour
+# Google, et une piste commerciale mal identifiee pour l'entreprise.
+IDENTITY_FIELDS = [
+    ('og:image:alt', re.compile(r'og:image:alt" content="([^"]*)"')),
+    ('form subject', re.compile(r'name="subject" value="([^"]*)"')),
+    ('visible subtitle', re.compile(r'<span class="subtitle">(.*?)</span>', re.S)),
+]
+
+
+def _fold(s):
+    """minuscules sans accents, balises retirees : pour comparer des libelles."""
+    s = re.sub(r'<[^>]+>', ' ', s).replace('&nbsp;', ' ').replace(' ', ' ')
+    s = unicodedata.normalize('NFD', s.lower())
+    return re.sub(r'\s+', ' ', ''.join(c for c in s if not unicodedata.combining(c))).strip()
+
+
+def site_cities(texts):
+    """Les villes que le site declare lui-meme, via areaServed."""
+    out = set()
+    for x in texts:
+        out |= set(AREA_RE.findall(x))
+    return {c for c in out if len(_fold(c)) > 4}
+
+
 def ld_nodes(node):
     """Yield every dict in a JSON-LD tree, @graph and nested nodes included."""
     if isinstance(node, dict):
@@ -96,6 +125,7 @@ def main():
     os.chdir(ROOT)
     files = sorted(glob.glob('*.html') + glob.glob('blog/*.html'))
     css_assets = site_css_urls()
+    cities = site_cities(open(f, encoding='utf-8').read() for f in files)
     titles, descs = {}, {}
 
     for f in files:
@@ -148,6 +178,18 @@ def main():
                 if any(x in BUSINESS_TYPES for x in types) and 'name' in node:
                     if node['name'] != BUSINESS_NAME:
                         err(f'{fn}: business name is "{node["name"]}" (want "{BUSINESS_NAME}")')
+
+        # une page de ville ne nomme qu'elle-meme dans ses champs d'identite
+        mine = {_fold(v) for v in AREA_RE.findall(t)}
+        if mine:
+            for label, rx in IDENTITY_FIELDS:
+                for occ in rx.findall(t):
+                    folded = _fold(occ)
+                    for city in cities:
+                        fc = _fold(city)
+                        if fc in folded and not any(fc in m for m in mine):
+                            err(f'{fn}: {label} names "{city}" but the page serves '
+                                f'{sorted(mine)}')
 
         if skip_page:
             continue
