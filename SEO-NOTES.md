@@ -1847,3 +1847,38 @@ demandes d'indexation.**
 
 CTR global 1,19&nbsp;%, manque à gagner estimé à **1 794 clics sur 28 jours**. Les titres
 corrigés ont moins de 48 heures et la plupart des pages concernées n'ont pas été relues.
+
+## 34e passe — le modal ne se fermait pas (2026-10-09)
+
+Signalé par le propriétaire&nbsp;: ni la croix, ni le clic à l'extérieur, ni rien ne fermait
+la fenêtre. Sur **177 pages**.
+
+### La cause
+
+```css
+.exit-modal { display: flex; }   /* selecteur de classe */
+```
+
+L'attribut `[hidden]` doit son `display: none` à la **feuille de style du navigateur**.
+N'importe quelle déclaration `display` d'un auteur la bat. `modal.hidden = true` posait donc
+l'attribut sans rien masquer&nbsp;: la fenêtre restait à l'écran, inchangée.
+
+Corrigé par une règle explicite&nbsp;:
+
+```css
+.exit-modal[hidden] { display: none !important; }
+```
+
+### Pourquoi mon test ne l'avait pas vu — et c'est le vrai enseignement
+
+Mon test vérifiait `m.hidden`, c'est-à-dire **l'attribut**. L'attribut était bien passé à
+`true`. Le test affichait «&nbsp;Escape ferme : true&nbsp;» sur une fenêtre qui restait
+ouverte à l'écran.
+
+**Tester l'état interne au lieu de l'effet visible produit un vert sur un défaut.** Le test
+mesure désormais le `display` calculé et la boîte englobante, et il couvre les trois moyens
+de fermeture&nbsp;: croix, clic extérieur, Échap. Les trois passent de `flex` à `none`.
+
+C'est la deuxième fois dans ce chantier qu'un contrôle automatique passe au vert sur un
+défaut visible&nbsp;: la première, c'était le glyphe YouTube manquant, qui aurait affiché un
+carré vide. Les deux ont été rattrapés par un contrôle au rendu, jamais par le code.

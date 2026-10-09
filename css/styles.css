@@ -2154,6 +2154,10 @@ a:has(> .email-protect)::after {
 .video-card p { color: var(--text-light); font-size: .95rem; }
 
 /* rappel de contact a la sortie (desktop uniquement, voir js/exit-intent.js) */
+/* [hidden] pose display:none via la feuille du navigateur, mais un selecteur de classe
+   le bat : sans cette regle, modal.hidden = true ne masque rien et la fenetre ne se
+   ferme jamais. */
+.exit-modal[hidden] { display: none !important; }
 .exit-modal { position: fixed; inset: 0; z-index: 1500; display: flex; align-items: center;
     justify-content: center; padding: 20px; background: rgba(17,24,39,.72);
     backdrop-filter: blur(3px); animation: exit-fade .18s ease-out; }
