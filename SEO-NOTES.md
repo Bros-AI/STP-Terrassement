@@ -1882,3 +1882,59 @@ de fermeture&nbsp;: croix, clic extérieur, Échap. Les trois passent de `flex` 
 C'est la deuxième fois dans ce chantier qu'un contrôle automatique passe au vert sur un
 défaut visible&nbsp;: la première, c'était le glyphe YouTube manquant, qui aurait affiché un
 carré vide. Les deux ont été rattrapés par un contrôle au rendu, jamais par le code.
+
+## 35e passe — trois guides renforcés, un H1 oublié, une ville fausse (2026-10-10)
+
+Demande&nbsp;: «&nbsp;do articles blog&nbsp;», puis «&nbsp;act as a senior developer, verify
+twice, don't add issues&nbsp;». Zéro page nouvelle&nbsp;: chaque manque mesuré est voisin d'une
+page qui se positionne déjà, et une page de plus recréerait la cannibalisation ramenée de
+61&nbsp;% à 13&nbsp;%. Trois guides renforcés à la place (`normes-assainissement-2026`,
+`amenagement-allee-carrossable`, `enrochement-paysager-guide`), commits `c7af34d` et `5e8c213`.
+
+### Le H1 oublié — rattrapé par la sentinelle, pas par la relecture
+
+Le premier commit retitrait le guide assainissement pour y mettre «&nbsp;mise&nbsp;», mot de sa
+première requête (436 impressions, 0 clic). En ligne, le `<title>` était le nouveau… et le
+contrôle «&nbsp;l'ancienne valeur a-t-elle disparu&nbsp;?&nbsp;» répondait **non**&nbsp;: l'ancien
+libellé vivait encore dans le H1, `og:image:alt`, l'objet du formulaire, le fil d'Ariane et
+cinq textes de lien sur d'autres pages. Le signal le plus fort de la page ne portait toujours
+pas le mot pour lequel on l'avait retitrée.
+
+Avant de toucher au H1, les 491 requêtes de la page&nbsp;: «&nbsp;mise&nbsp;» 986 impressions,
+«&nbsp;réglementation&nbsp;» 451, et «&nbsp;individuel&nbsp;» 371 — **absent de tous les titres de
+section** alors que le corps l'emploie six fois (la page dit «&nbsp;non collectif&nbsp;», le
+terme administratif&nbsp;; les gens cherchent «&nbsp;individuel&nbsp;»). Nouveau H1&nbsp;:
+*Mise aux normes assainissement individuel : réglementation 2026*, complémentaire du titre.
+`build-fresh-links` lit le H1, donc le bloc généré de `blog.html` a suivi seul&nbsp;; les cinq
+liens écrits à la main ont été repris.
+
+### La ville fausse
+
+`terrassement-aix-en-provence.html`, clonée depuis la page Marseille en 17e passe, gardait
+trois résidus&nbsp;: `og:image:alt`, l'objet du courriel de devis — le propriétaire recevait
+«&nbsp;TERRASSEMENT À MARSEILLE&nbsp;» pour un contact venu d'Aix — et, **visible à l'écran**,
+«&nbsp;NOS SERVICES À MARSEILLE&nbsp;». Un `grep 'Marseille'` disait zéro&nbsp;: l'occurrence
+était en capitales. Un scan des 103 pages de villes, ville déduite de l'`areaServed` de chaque
+page, a montré l'erreur isolée à celle-ci. Invariant ajouté à `seo-qa.py`&nbsp;: une page de
+ville ne nomme qu'elle-même dans ces trois champs. Prouvé en réintroduisant le défaut&nbsp;:
+les deux variantes sont détectées, le site restauré repasse à zéro.
+
+### Deux de mes détecteurs ont menti avant de servir
+
+- Le comparatif `og:image:alt` / H1 annonçait **130** dérives&nbsp;: en retirant les balises
+  sans insérer d'espace, «&nbsp;AUBAGNE<br>ENROBÉ&nbsp;» devenait «&nbsp;AUBAGNEENROBÉ&nbsp;».
+  Mesure corrigée&nbsp;: 15 dérives, dont 14 de ponctuation et de casse, et **une** vraie — Aix.
+- Le compteur d'entités du flux annonçait 61 titres «&nbsp;échappés&nbsp;». `&amp;` dans une
+  source XML est l'échappement correct à un niveau. Le flux parsé par ElementTree&nbsp;: zéro
+  valeur encore échappée.
+
+Règle&nbsp;: **un compteur n'est pas un résultat tant qu'il n'a pas été vu échouer sur un cas
+connu et réussir sur un autre.** Sans cela, j'aurais modifié 130 pages pour rien.
+
+### Le débordement de 10 px, pour la dernière fois
+
+`scrollWidth` 400 pour une fenêtre de 390, mesuré **à l'identique** sur trois pages modifiées
+et trois pages témoins jamais touchées, accueil comprise&nbsp;; origine `.footer-col`&nbsp;;
+défilement réel 0 px. Ce n'est pas une régression et ce n'est pas visible. La règle
+`.price-table caption` qui prétendait le corriger, et qui cassait la légende en bureau, est
+retirée. Je n'y retoucherai pas sans une mesure de défilement réel non nulle.
