@@ -187,7 +187,7 @@ def build():
     L.append('## Réseaux')
     L.append('')
     for n, u in (('Instagram', 'https://www.instagram.com/stp.terrassement/'),
-                 ('Facebook', 'https://www.facebook.com/profile.php?id=61579528244326'),
+                 ('Facebook', 'https://www.facebook.com/STPTerrassement'),
                  ('X', 'https://x.com/stpterrassement'),
                  ('TikTok', 'https://www.tiktok.com/@stp.terrassement'),
                  ('LinkedIn', 'https://www.linkedin.com/company/stpterrassement'),
