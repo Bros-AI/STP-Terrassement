@@ -1746,3 +1746,45 @@ et `llms.txt`.
 
 **Règle affinée&nbsp;: dans un fichier vérifié par égalité octet pour octet, une valeur ne
 doit dépendre ni de l'horloge de la machine, ni de l'état du dépôt après génération.**
+
+## 32e passe — URL Facebook et rappel de contact à la sortie (2026-10-09)
+
+### Facebook : une redirection supprimée
+
+L'ancienne adresse `facebook.com/profile.php?id=61579528244326` renvoyait un **302** vers
+`facebook.com/STPTerrassement`, qui répond 200 directement et que Facebook déclare
+lui-même en `og:url`. **373 occurrences remplacées dans 182 fichiers**, aucune trace
+restante. Liens externes revérifiés après coup&nbsp;: 49 testés, 0 non-200.
+
+### Rappel de contact à la sortie
+
+Demandé par le propriétaire. Implémenté avec une contrainte que je n'ai pas prise seul mais
+qui n'était pas négociable&nbsp;:
+
+**Ordinateur uniquement.** Google sanctionne les interstitiels intrusifs **sur mobile** : une
+fenêtre qui recouvre le contenu à l'arrivée depuis la recherche coûte des positions. Sur
+ordinateur, déclenchée quand le curseur quitte la page par le haut, elle sort du champ de
+cette règle. Et sur écran tactile l'intention de sortie n'existe pas : il n'y a pas de
+curseur à suivre. Un modal mobile aurait donc été à la fois inefficace et risqué.
+
+Garde-fous retenus&nbsp;:
+
+| Règle | Raison |
+|---|---|
+| Largeur ≥ 1024 px et `pointer: fine` | exclut tactile et fenêtres étroites |
+| 8 secondes avant armement | ne rien proposer à qui repart aussitôt |
+| Une seule fois par session | `sessionStorage`, tolérant au mode privé |
+| Jamais sur devis, contact, pages légales | elles convertissent déjà ; le script n'y est même pas chargé |
+| `role="dialog"`, `aria-modal`, piège à focus, Échap, focus rendu | accessible au clavier |
+| `prefers-reduced-motion` respecté | pas d'animation imposée |
+
+**Testé, pas supposé** — six comportements vérifiés au navigateur : ouverture après délai
+avec focus à l'intérieur, fermeture par Échap, pas de réouverture, rien avant 8 s, **rien à
+390 px**, rien sur `devis-gratuit.html`.
+
+Fichier séparé (4,9 Ko) plutôt qu'un ajout à `script.js`&nbsp;: ce dernier a un jumeau
+minifié maintenu à la main, et les désynchroniser serait un piège durable. Chargé sur
+177 pages, absent des 4 pages de conversion.
+
+Deux fautes rattrapées au contrôle visuel&nbsp;: un mot parasite qui cassait le script, et
+«&nbsp;telephone&nbsp;» sans accent.
