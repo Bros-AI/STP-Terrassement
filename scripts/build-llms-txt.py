@@ -37,6 +37,28 @@ FIXED = ['tarifs-terrassement-2026.html', 'lexique-terrassement.html', 'realisat
 PRICE_RE = re.compile(r'\b\d[\d  ]{0,6}(?:\s*à\s*\d[\d  ]{0,6})?\s*€\s*(?:/\s*(?:m²|m³|ml|t|jour|an))?')
 
 
+def _dates():
+    """{page: date du dernier changement de contenu}, via la datation du sitemap.
+
+    On importe plutot que de reecrire : une seule definition de "quand cette page a-t-elle
+    vraiment change" pour le sitemap, les dateModified et ce fichier.
+    """
+    import importlib.util
+    spec = importlib.util.spec_from_file_location(
+        'build_sitemap', os.path.join(ROOT, 'scripts', 'build-sitemap.py'))
+    bs = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(bs)
+    cwd = os.getcwd()
+    try:
+        os.chdir(ROOT)
+        pages = [f.replace(os.sep, '/')
+                 for f in sorted(glob.glob('*.html') + glob.glob('blog/*.html'))
+                 if os.path.basename(f) not in SKIP]
+        return bs.content_dates(pages)
+    finally:
+        os.chdir(cwd)
+
+
 def meta(path):
     """Titre, description, et UNIQUEMENT les prix que la page met elle-meme en avant.
 
@@ -72,9 +94,18 @@ def build():
     # PAS date.today() : le runner CI tourne en UTC et le poste en Europe/Paris. Entre
     # minuit et 2 h, les deux ne sont pas le meme jour et --check echoue sur un fichier
     # pourtant correct. La date vient donc de git, identique partout.
-    git_day = subprocess.run(['git', 'log', '-1', '--format=%cs'], cwd=ROOT,
-                             capture_output=True, text=True).stdout.strip()
-    today = git_day or dt.date.today().isoformat()
+    # La date affichee est celle du contenu le plus recent du site, calculee exactement
+    # comme le <lastmod> du sitemap et le dateModified des pages - une seule definition de
+    # "quand ce site a-t-il change pour la derniere fois".
+    #
+    # Deux versions precedentes etaient fausses, pour des raisons opposees :
+    #   date.today()          dependait de l'horloge : le runner CI est en UTC et le poste
+    #                         en Europe/Paris, donc --check echouait deux heures par nuit.
+    #   git log -1 --format   dependait du DERNIER COMMIT, alors que le fichier est genere
+    #                         AVANT d'etre commite : il portait toujours la date du commit
+    #                         precedent et ne pouvait jamais concorder avec le recalcul du CI.
+    # La date du contenu, elle, est la meme avant et apres le commit.
+    today = max(_dates().values())
     guides = sorted(f.replace(os.sep, '/') for f in glob.glob('blog/*.html'))
     cities = sorted(f for f in glob.glob('*.html')
                     if f not in SKIP and f not in HUBS and f not in FIXED

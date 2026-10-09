@@ -1723,3 +1723,26 @@ et le titre YouTube.
 
 **Je ne peux pas regarder ces vidéos&nbsp;: les deux descriptions sont à relire par le
 propriétaire.**
+
+### Corrigé : mon correctif de la veille était faux lui aussi
+
+`build-llms-txt --check` a de nouveau cassé le build. La cause était **le correctif que
+j'avais posé la veille**.
+
+Historique des trois versions de cette seule ligne de date&nbsp;:
+
+| Version | Source | Pourquoi elle échoue |
+|---|---|---|
+| `date.today()` | horloge de la machine | runner en UTC, poste en Europe/Paris&nbsp;: échec deux heures par nuit |
+| `git log -1 --format=%cs` | **dernier commit** | le fichier est généré **avant** d'être commité&nbsp;: il porte la date du commit *précédent* et ne peut **jamais** concorder avec le recalcul du CI |
+| `max(content_dates())` | date du contenu | identique avant et après le commit |
+
+J'avais remplacé un bug de fuseau par un bug de causalité — plus grave, parce qu'il échouait
+*systématiquement* au lieu de deux heures par jour.
+
+La date vient désormais de `content_dates()`, importée de `build-sitemap.py` : **une seule
+définition** de «&nbsp;quand ce site a-t-il changé&nbsp;» pour le sitemap, les `dateModified`
+et `llms.txt`.
+
+**Règle affinée&nbsp;: dans un fichier vérifié par égalité octet pour octet, une valeur ne
+doit dépendre ni de l'horloge de la machine, ni de l'état du dépôt après génération.**
