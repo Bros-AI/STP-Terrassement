@@ -4,8 +4,32 @@
   <id>https://stp-terrassement.com/feed.xml</id>
   <link href="https://stp-terrassement.com/feed.xml" rel="self" type="application/atom+xml"/>
   <link href="https://stp-terrassement.com/blog.html" rel="alternate" type="text/html"/>
-  <updated>2026-10-09T00:00:00Z</updated>
+  <updated>2026-10-10T00:00:00Z</updated>
   <author><name>STP Terrassement</name></author>
+  <entry>
+    <title>Mise aux normes assainissement 2026 : fosse septique et SPANC</title>
+    <id>https://stp-terrassement.com/blog/normes-assainissement-2026.html</id>
+    <link href="https://stp-terrassement.com/blog/normes-assainissement-2026.html" rel="alternate" type="text/html"/>
+    <published>2026-03-22T00:00:00Z</published>
+    <updated>2026-10-10T00:00:00Z</updated>
+    <summary>Mise aux normes d&#x27;un assainissement non collectif en 2026 : délais après contrôle SPANC, filières agréées, prix et obligations à la vente.</summary>
+  </entry>
+  <entry>
+    <title>Enrochement paysager : pierre, jardin et prix au m²</title>
+    <id>https://stp-terrassement.com/blog/enrochement-paysager-guide.html</id>
+    <link href="https://stp-terrassement.com/blog/enrochement-paysager-guide.html" rel="alternate" type="text/html"/>
+    <published>2026-03-22T00:00:00Z</published>
+    <updated>2026-10-10T00:00:00Z</updated>
+    <summary>Prix d&#x27;un enrochement paysager ou de soutènement en 2026 : 100 à 200 €/m² posé, choix de la pierre et drainage. Trois chantiers chiffrés en Provence.</summary>
+  </entry>
+  <entry>
+    <title>Aménagement d&#x27;allée carrossable pour voiture : prix 2026</title>
+    <id>https://stp-terrassement.com/blog/amenagement-allee-carrossable.html</id>
+    <link href="https://stp-terrassement.com/blog/amenagement-allee-carrossable.html" rel="alternate" type="text/html"/>
+    <published>2026-03-22T00:00:00Z</published>
+    <updated>2026-10-10T00:00:00Z</updated>
+    <summary>Aménager une allée carrossable pour voiture : structure selon le trafic, choix du revêtement, budget au m² et exemples chiffrés en Provence.</summary>
+  </entry>
   <entry>
     <title>Viabilisation Terrain Constructible : Étapes &amp; Coûts 2026</title>
     <id>https://stp-terrassement.com/blog/viabilisation-terrain-constructible.html</id>
@@ -263,14 +287,6 @@
     <summary>Guide complet du permis de démolir en 2026 : quand est-il obligatoire, documents Cerfa, délais d&#x27;instruction et diagnostic amiante. Aix-en-Provence.</summary>
   </entry>
   <entry>
-    <title>Normes Assainissement 2026 : Réglementation &amp; Obligations</title>
-    <id>https://stp-terrassement.com/blog/normes-assainissement-2026.html</id>
-    <link href="https://stp-terrassement.com/blog/normes-assainissement-2026.html" rel="alternate" type="text/html"/>
-    <published>2026-03-22T00:00:00Z</published>
-    <updated>2026-10-09T00:00:00Z</updated>
-    <summary>Normes d&#x27;assainissement 2026 : mise aux normes d&#x27;une fosse septique, contrôle SPANC, obligations du vendeur et délais de travaux après diagnostic.</summary>
-  </entry>
-  <entry>
     <title>Mur de soutènement : prix au m² et règles de calcul</title>
     <id>https://stp-terrassement.com/blog/mur-soutenement-guide.html</id>
     <link href="https://stp-terrassement.com/blog/mur-soutenement-guide.html" rel="alternate" type="text/html"/>
@@ -349,14 +365,6 @@
     <published>2026-09-15T00:00:00Z</published>
     <updated>2026-10-09T00:00:00Z</updated>
     <summary>Quelles pierres pour un enrochement, quel poids de blocs, quel drainage et quelles étapes de mise en œuvre pour un mur qui tient dans le temps.</summary>
-  </entry>
-  <entry>
-    <title>Enrochement paysager : pierre, jardin et prix au m²</title>
-    <id>https://stp-terrassement.com/blog/enrochement-paysager-guide.html</id>
-    <link href="https://stp-terrassement.com/blog/enrochement-paysager-guide.html" rel="alternate" type="text/html"/>
-    <published>2026-03-22T00:00:00Z</published>
-    <updated>2026-10-09T00:00:00Z</updated>
-    <summary>Prix d&#x27;un enrochement paysager ou de soutènement en 2026 : 100 à 200 €/m² posé, choix de la pierre et drainage. Trois chantiers chiffrés en Provence.</summary>
   </entry>
   <entry>
     <title>Enrobé drainant : prix au m², pose et limites réelles</title>
@@ -445,13 +453,5 @@
     <published>2026-09-23T00:00:00Z</published>
     <updated>2026-10-09T00:00:00Z</updated>
     <summary>Prix au mètre linéaire d&#x27;un chemin d&#x27;accès carrossable, structure et portance selon le trafic, pente maximale, drainage et accès pompiers en PACA.</summary>
-  </entry>
-  <entry>
-    <title>Aménagement d&#x27;allée carrossable pour voiture : prix 2026</title>
-    <id>https://stp-terrassement.com/blog/amenagement-allee-carrossable.html</id>
-    <link href="https://stp-terrassement.com/blog/amenagement-allee-carrossable.html" rel="alternate" type="text/html"/>
-    <published>2026-03-22T00:00:00Z</published>
-    <updated>2026-10-09T00:00:00Z</updated>
-    <summary>Aménager une allée carrossable pour voiture : structure selon le trafic, choix du revêtement, budget au m² et exemples chiffrés en Provence.</summary>
   </entry>
 </feed>
