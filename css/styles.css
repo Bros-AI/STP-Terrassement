@@ -1426,6 +1426,12 @@ footer {
 }
 .footer-social {
     display: flex;
+    /* Sept icones de 40 px (44 en mobile) + 6 gaps = 352/380 px, dans une colonne de 253 px en
+       bureau et de 320-350 px sur telephone. Sans retour a la ligne, les cercles s'ecrasent en
+       bureau et, en mobile, la rangee impose 380 px a la colonne 1fr : Chrome Android elargit
+       alors le viewport a 400 px, les barres fixes suivent, le burger sort de l'ecran et la page
+       panote. Le retour a la ligne rend sa largeur minimale a une seule icone. */
+    flex-wrap: wrap;
     gap: 12px;
     margin-top: 20px;
 }
@@ -1625,6 +1631,7 @@ footer {
     /* Touch targets */
     .btn { min-height: 48px; }
     .nav-links a, .mobile-menu a { min-height: 44px; display: flex; align-items: center; }
+    .footer-social { justify-content: center; }
     .footer-social a { min-width: 44px; min-height: 44px; }
 
     /* WhatsApp floating button */
