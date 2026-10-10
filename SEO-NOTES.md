@@ -1938,3 +1938,61 @@ et trois pages témoins jamais touchées, accueil comprise&nbsp;; origine `.foot
 défilement réel 0 px. Ce n'est pas une régression et ce n'est pas visible. La règle
 `.price-table caption` qui prétendait le corriger, et qui cassait la légende en bureau, est
 retirée. Je n'y retoucherai pas sans une mesure de défilement réel non nulle.
+
+## 36e passe — le site débordait de l'écran sur téléphone (2026-10-10)
+
+Signalé par le propriétaire&nbsp;: burger coupé, barre d'appel tronquée, «&nbsp;effet de
+défilement horizontal bizarre&nbsp;». Corrigé par `5755d38`, une seule règle CSS.
+
+### Ce que j'avais raté en 35e passe — et pourquoi
+
+J'avais classé un «&nbsp;débordement de 10 px&nbsp;» comme artefact sous-pixel sans défilement
+réel, mesuré dans un **Chrome bureau** réduit à 390 px. Un navigateur mobile ne se comporte
+pas ainsi&nbsp;: Chrome Android **élargit le viewport de mise en page** pour contenir tout
+débordement. En émulation mobile réelle (Playwright, `isMobile` + tactile), `innerWidth`
+valait **400** sur un iPhone 13 (390 px), un Pixel 5 (393) et **401 sur un Galaxy S8 (360)**,
+alors que `visualViewport.width` valait la largeur de l'écran. Les barres fixes (`.navbar`,
+`.callbar`) se dimensionnent sur ce viewport élargi&nbsp;: le burger se retrouvait à
+356-380 px — hors d'un écran de 360 — et le bouton WhatsApp sortait à droite. Un viewport
+bureau à 390 px ne prouve rien sur un téléphone.
+
+### La cause, mesurée et non devinée
+
+Trois sondes successives, chacune corrigeant l'angle mort de la précédente&nbsp;:
+
+1. Mesurer contre `innerWidth` ne trouvait **rien**&nbsp;: le viewport avait déjà grandi pour
+   tout contenir. Il faut mesurer contre la largeur **visuelle**.
+2. Les éléments à 380 px du pied de page étaient des **victimes**&nbsp;: en forçant la colonne à
+   200 px, tout y rentrait. Ma sonde regardait la *première* colonne, pas la bonne.
+3. Forcer `html, body` à 300 px et lister ce qui refuse de rétrécir a désigné le coupable&nbsp;:
+   `.footer-social`, rangée flex **sans retour à la ligne** de 7 icônes à `min-width: 44px`
+   (la règle de cible tactile de la 11e passe)&nbsp;: 7 × 44 + 6 × 12 = **380 px incompressibles**.
+   La colonne `1fr` du pied de page, c'est-à-dire `minmax(auto, 1fr)`, ne peut pas descendre
+   sous la largeur minimale de son contenu&nbsp;: elle débordait de son conteneur de 320-350 px.
+
+La 7e icône est **celle de YouTube, que j'ai ajoutée en 30e passe**. À six icônes (324 px), le
+Galaxy S8 était déjà cassé&nbsp;; à sept, tous les téléphones l'étaient. En bureau, la même
+rangée «&nbsp;tenait&nbsp;» dans ses 253 px en écrasant les cercles en ovales.
+
+### Le correctif et sa mesure
+
+`flex-wrap: wrap` sur `.footer-social`, centrée sur mobile comme le reste du pied de page.
+Après, en ligne&nbsp;: 3 appareils × 4 pages, `innerWidth` = `scrollWidth` = largeur visuelle
+partout, burger à R340 sur 360 px (381 avant)&nbsp;; 9 largeurs de 360 à 1366 px sans
+débordement, icônes rondes sur deux lignes quand la colonne est étroite, une ligne de 480 à
+768 px. Aucune page HTML modifiée&nbsp;: la règle n'est pas dans le bloc critique.
+
+### Règles
+
+- **Le mobile se teste en émulation mobile**, jamais dans une fenêtre bureau réduite. La
+  mesure qui compte&nbsp;: `innerWidth === visualViewport.width`.
+- Pour trouver un élément incompressible, **forcer le document à 300 px** et lister ce qui
+  dépasse, le plus profond d'abord.
+- Toute rangée `nowrap` ou tout `min-width` sur N éléments se vérifie contre **la colonne la
+  plus étroite** où elle vit (253 px en bureau, 320 px sur téléphone).
+- Quand le propriétaire voit un défaut que mes mesures nient, **ce sont mes mesures qui ont
+  un angle mort**.
+
+Deux détails cosmétiques préexistants vus au passage, non traités&nbsp;: un point orphelin sous
+le lien «&nbsp;région PACA&nbsp;» (le lien est `display: block`, la ponctuation passe à la
+ligne), et le bouton WhatsApp flottant qui mord la fin de la ligne de copyright à 1200 px.
