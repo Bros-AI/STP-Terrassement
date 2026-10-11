@@ -4,8 +4,16 @@
   <id>https://stp-terrassement.com/feed.xml</id>
   <link href="https://stp-terrassement.com/feed.xml" rel="self" type="application/atom+xml"/>
   <link href="https://stp-terrassement.com/blog.html" rel="alternate" type="text/html"/>
-  <updated>2026-10-10T00:00:00Z</updated>
+  <updated>2026-10-11T00:00:00Z</updated>
   <author><name>STP Terrassement</name></author>
+  <entry>
+    <title>Mise aux normes assainissement 2026 : fosse septique, SPANC</title>
+    <id>https://stp-terrassement.com/blog/normes-assainissement-2026.html</id>
+    <link href="https://stp-terrassement.com/blog/normes-assainissement-2026.html" rel="alternate" type="text/html"/>
+    <published>2026-03-22T00:00:00Z</published>
+    <updated>2026-10-11T00:00:00Z</updated>
+    <summary>Mise aux normes d&#x27;un assainissement non collectif en 2026 : délais après contrôle SPANC, filières agréées, prix et obligations à la vente.</summary>
+  </entry>
   <entry>
     <title>Raccordement eau potable et assainissement : prix 2026</title>
     <id>https://stp-terrassement.com/blog/prix-raccordement-eau-potable.html</id>
@@ -13,14 +21,6 @@
     <published>2026-03-22T00:00:00Z</published>
     <updated>2026-10-10T00:00:00Z</updated>
     <summary>Prix d&#x27;un raccordement à l&#x27;eau potable en 2026 : branchement, pose du compteur et raccordement assainissement. Qui paie quoi, et les montants réels.</summary>
-  </entry>
-  <entry>
-    <title>Mise aux normes assainissement 2026 : fosse septique et SPANC</title>
-    <id>https://stp-terrassement.com/blog/normes-assainissement-2026.html</id>
-    <link href="https://stp-terrassement.com/blog/normes-assainissement-2026.html" rel="alternate" type="text/html"/>
-    <published>2026-03-22T00:00:00Z</published>
-    <updated>2026-10-10T00:00:00Z</updated>
-    <summary>Mise aux normes d&#x27;un assainissement non collectif en 2026 : délais après contrôle SPANC, filières agréées, prix et obligations à la vente.</summary>
   </entry>
   <entry>
     <title>Épaisseur enrobé : allée, parking et cour en 2026</title>
