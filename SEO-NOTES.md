@@ -1996,3 +1996,53 @@ débordement, icônes rondes sur deux lignes quand la colonne est étroite, une 
 Deux détails cosmétiques préexistants vus au passage, non traités&nbsp;: un point orphelin sous
 le lien «&nbsp;région PACA&nbsp;» (le lien est `display: block`, la ponctuation passe à la
 ligne), et le bouton WhatsApp flottant qui mord la fin de la ligne de copyright à 1200 px.
+
+## 37e passe — export d'audit tiers : verdicts mesurés, 15 titres, règle en pixels (2026-10-11)
+
+Le propriétaire a collé un export d'audit (98 pages explorées sur 181). Chaque ligne a été
+**mesurée sur le site servi** avant verdict.
+
+| Ligne de l'outil | Mesure | Verdict |
+|---|---|---|
+| CSP, HSTS, Referrer-Policy, Permissions-Policy, X-Content-Type-Options manquants | GitHub Pages n'envoie **aucun** en-tête de sécurité (`curl -D -`) ; CSP et Referrer-Policy existent en `<meta>` sur 181 pages ; les deux autres n'ont pas d'équivalent `<meta>` reconnu | Impossible sans CDN — décision propriétaire (voir 540) |
+| `Access-Control-Allow-Origin: *` | Absent sans `Origin`, présent dès qu'une requête en porte un : c'est GitHub Pages | Impossible, et sans conséquence sur un site statique sans données privées |
+| CSS inline 11,7 Ko > 10 Ko | Médiane **19,7 Ko** par page, guides 11,6 Ko ; c'est le bloc critique, validé par Lighthouse | Pas d'action sur le seuil de l'outil. Piste réelle&nbsp;: le bloc contient toutes les règles des classes présentes, pas seulement l'au-dessus-de-la-ligne-de-flottaison — chaque octet est aussi dans `styles.css` |
+| Téléphone en clair | Délibéré&nbsp;: le NAP visible est la base du référencement local | Aucune action |
+| Démarrage à froid (1 597 ms puis 7 ms) | CDN de GitHub Pages | Impossible |
+| **Titres trop longs (30 pages > 60 caractères)** | Mesure en **Arial 20 px**, ce que Google tronque (~600 px)&nbsp;: **6 titres > 600 px, 15 > 580 px**, 54 > 60 caractères | **Corrigé**, `a2e18dc` |
+
+### Les titres — pourquoi la mesure en caractères était fausse dans les deux sens
+
+La règle de l'outil (60 caractères) flaguait 54 titres dont 39 s'affichent entièrement&nbsp;; ma
+règle `seo-qa` (< 65) laissait passer 6 titres réellement tronqués. Seule la largeur en pixels
+dans la police de Google départage. Les 15 titres > 580 px sont raccourcis selon trois gardes
+automatiques&nbsp;: ≤ 580 px, < 65 caractères, et **chaque mot présent dans le corps de la page**
+— ce dernier garde a retiré «&nbsp;Talus Retenu&nbsp;» de `mur-soutenement-marseille`, où
+«&nbsp;talus&nbsp;» n'apparaissait pas une fois, au profit d'«&nbsp;Enrochement&nbsp;» (7 occurrences,
+15 impressions sur «&nbsp;mur enrochement marseille&nbsp;»). Les requêtes Search Console de chaque
+page ont été lues avant&nbsp;: aucun mot qui rapporte n'est retiré, seuls «&nbsp;Pro&nbsp;»,
+«&nbsp;Expert&nbsp;», «&nbsp;Intervention Rapide&nbsp;» et un «&nbsp;Talus&nbsp;» en double disparaissent.
+
+`seo-qa` porte désormais `TITLE_MAX_PX = 580`, avec les chasses Arial 20 px embarquées (202
+caractères, écart maximal 0,09 px avec PIL sur 184 titres) pour que la CI n'ait pas besoin de la
+police. Prouvé en réintroduisant l'ancien titre du hub&nbsp;: 584 px détectés.
+
+### Ouvert — décision à prendre, pas prise en catimini
+
+`terrassement.html`, le hub de service, s'intitule et se titre en H1 «&nbsp;Terrassement à
+Aix-en-Provence&nbsp;» (30 mentions d'Aix dans le corps, zone déclarée&nbsp;: cercle régional).
+`terrassement-aix-en-provence.html`, créée en 21e passe, vise exactement le même terme. Les deux
+pages se font concurrence sur le plus gros mot-clé local. Le hub devrait devenir régional
+(Bouches-du-Rhône, 5 mentions seulement aujourd'hui) et laisser Aix à la page dédiée — mais c'est
+un chantier de contenu sur la page la plus liée du site, à décider une fois la page d'Aix
+explorée par Google et dotée de données.
+
+### Pièges du jour
+
+- **Le `\r` de Windows, encore**&nbsp;: une liste d'URL écrite par Python et lue par `while read`
+  a renvoyé «&nbsp;0 requête&nbsp;» sur 15 pages, dont une à 491 requêtes la veille. `tr -d '\r'`.
+- **cp1252 contre UTF-8**&nbsp;: `print()` redirigé vers un fichier sous Windows écrit en cp1252&nbsp;;
+  comparé en bash à une réponse UTF-8, tout titre accentué «&nbsp;diffère&nbsp;» — 14 faux écarts
+  sur 15, le seul «&nbsp;égal&nbsp;» étant le titre sans accent. Comparer en Python, en UTF-8.
+- **Un `&` brut dans `<title>`**&nbsp;: le fichier l'écrit sans échappement&nbsp;; un remplacement
+  construit sur `html.escape(ancien)` ne trouve rien. Apparier le texte brut du fichier.
