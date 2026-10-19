@@ -1390,6 +1390,9 @@ footer {
     line-height: 1.7;
     margin-bottom: 15px;
 }
+/* Un lien dans une phrase du pied de page reste en ligne : .footer-col a est en bloc pour les
+   listes de liens, et ce bloc renvoyait la ponctuation qui suit le lien a la ligne. */
+.footer-col p a.u-x20 { display: inline; margin: 0; padding: 0; }
 .footer-col a { 
     display: block; 
     margin-bottom: 12px;
@@ -2322,3 +2325,7 @@ a:has(> .email-protect)::after {
 
 /* tables: captions announce the table (a11y); derived from the preceding heading */
 table caption { caption-side: top; text-align: left; font-size: .9rem; color: var(--text-light); padding: 0 0 8px; }
+
+/* Le bouton WhatsApp flottant (65 px, a 30 px du bord droit) mordait la fin de la ligne de
+   copyright en bureau ; la ligne garde la place du bouton. Sur mobile il est masque. */
+@media (min-width: 769px) { .copyright { padding-right: 110px; } }
