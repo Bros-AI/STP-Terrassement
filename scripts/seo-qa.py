@@ -192,6 +192,13 @@ def main():
                     if node['name'] != BUSINESS_NAME:
                         err(f'{fn}: business name is "{node["name"]}" (want "{BUSINESS_NAME}")')
 
+        # le formulaire de devis declare sa page d'origine : elle doit etre la page elle-meme.
+        # Huit guides clones depuis prix-goudronnage-allee envoyaient au proprietaire un contact
+        # attribue a la mauvaise page, et 46 portaient un objet forme sur un titre perime.
+        for m in re.finditer(r'name="page" value="([^"]*)"', t):
+            if m.group(1) != fn:
+                err(f'{fn}: form origin says "{m.group(1)}"')
+
         # une page de ville ne nomme qu'elle-meme dans ses champs d'identite
         mine = {_fold(v) for v in AREA_RE.findall(t)}
         if mine:
