@@ -62,8 +62,22 @@ def content_dates(pages):
 
     pending = set(pages)
     dates = {}
-    # working tree first: an uncommitted edit means the page changed today
-    changed_now = {f.replace(os.sep, '/') for f in git('diff', '--name-only', 'HEAD').split()}
+    # working tree first: an uncommitted edit means the page changed today - but only if the
+    # edit touches the content. Rebuilding the critical CSS rewrites every page's inline block;
+    # dating 95 pages "today" for that put a lastmod the CI (clean checkout) could not reproduce,
+    # and bumped their dateModified for a change no reader can see.
+    changed_now = set()
+    for f in git('diff', '--name-only', 'HEAD').split():
+        f = f.replace(os.sep, '/')
+        try:
+            with open(f, encoding='utf-8') as fh:
+                work = fh.read()
+            head = git('show', f'HEAD:{f}')
+        except Exception:
+            changed_now.add(f)
+            continue
+        if meaningful(work) != meaningful(head):
+            changed_now.add(f)
     for sha, date, files in commits:
         if not pending:
             break

@@ -2117,3 +2117,58 @@ Un `Get-CimInstance … CommandLine LIKE '%http.server%'` tue aussi **le shell q
 dont la ligne de commande contient le motif&nbsp;: filtrer sur `Name -eq 'python.exe'`. Une
 capture `fullPage` sur un appareil à DPR 3 fait 3× la hauteur du document et *semble*
 répéter la page&nbsp;: vérifier `scrollHeight` et compter les H1 avant de crier au doublon.
+
+## 39e passe — en product owner : tout ce que le site pouvait faire seul (2026-10-19)
+
+Demande&nbsp;: «&nbsp;act as the product owner and fix all remaining&nbsp;». Commits `a2c63ce` et
+le suivant. Ce qui reste au propriétaire est sur une page d'actions (huit points, URL à
+soumettre, courriels prêts, décisions prises).
+
+### Décisions prises et exécutées
+
+- **Les hubs n'étaient liés que depuis le pied de page.** La page d'accueil, la plus explorée
+  du site, ne liait aucun des six hubs de service créés en 10e passe, ni la grille de tarifs,
+  ni le lexique, ni la page d'Aix. Ajoutés dans le corps (tête des colonnes par service, sixième
+  colonne, phrase d'intro). `enrobe.html` et `terrassement-piscine.html`, que Google tient pour
+  404 depuis juin, reçoivent enfin un lien de contenu depuis l'accueil. 211 → 223 liens.
+- **Hub terrassement régional.** Titre, H1, descriptions, `og:image:alt`, objet du formulaire&nbsp;:
+  «&nbsp;Aix-en-Provence&nbsp;» → «&nbsp;Bouches-du-Rhône&nbsp;». La page d'Aix possède seule le terme
+  local. Son corps avait déjà une intro régionale&nbsp;; ses 29 mentions d'Aix restent des exemples.
+- **Vidéos YouTube.** Titres et descriptions réels lus sur la page de chaque vidéo
+  (`ytInitialPlayerResponse`)&nbsp;: la deuxième s'intitule «&nbsp;stp terrassement&nbsp;» et sa
+  description est la présentation de l'entreprise. Les cartes du site reprennent cela
+  fidèlement&nbsp;; le renommage côté YouTube est au propriétaire.
+- **Le site se contredisait sur lui-même**&nbsp;: 63 pages et la chaîne YouTube disent «&nbsp;200
+  chantiers&nbsp;», cinq hubs disaient 500. Alignés sur 200.
+- Pied de page&nbsp;: le lien «&nbsp;région PACA&nbsp;» redevient en ligne (`.footer-col a` est en bloc
+  pour les listes et renvoyait le point à la ligne)&nbsp;; le copyright réserve la place du bouton
+  WhatsApp flottant en bureau. Vérifié en rendu aux trois largeurs.
+- Politique de confidentialité datée de son dernier changement de fond (septembre 2026).
+- Liens sur les requêtes servies par la mauvaise page&nbsp;: «&nbsp;enrobé beige&nbsp;» (503 imp) vers
+  `enrobe-colore-prix` depuis `prix-enrobe-m2`, «&nbsp;revêtement carrossable&nbsp;» (306 imp) vers
+  `revetement-allee-carrossable` depuis le guide allée.
+
+### La CI avait raison contre ma chaîne
+
+`build-sitemap --check` a échoué en CI sur `a2c63ce` alors que tout passait en local&nbsp;: les
+nouvelles règles du pied de page sont inlinées dans le bloc critique, le rebuild a réécrit
+95 pages, et `content_dates()` datait d'aujourd'hui **tout fichier listé par `git diff`**, sans
+le filtre `meaningful()` que la passe historique applique. Sur un dépôt propre, la CI calculait
+la vraie date (9 octobre). Corrigé&nbsp;: l'arbre de travail est comparé à HEAD hors bloc critique,
+comme l'historique. Une page dont seul le CSS inliné change ne change pas de date.
+
+### Ce que le site ne peut pas faire seul (page d'actions)
+
+Demander l'indexation (18 URL, dans l'ordre)&nbsp;; obtenir des avis Google (lien direct et SMS
+prêts)&nbsp;; révoquer les clés collées en chat&nbsp;; écrire à SMA (courriel prêt&nbsp;: code postal
+13107 → 13109, enrochements > 1,50 m)&nbsp;; choisir la mesure d'audience (décision&nbsp;: Plausible,
+exempt CNIL, sans bandeau)&nbsp;; renommer une vidéo&nbsp;; confirmer la durée de conservation des
+courriels&nbsp;; acter que GitHub Pages seul laisse six lignes d'en-têtes HTTP rouges.
+
+### Pièges
+
+Un filtre PowerShell sur la ligne de commande tue le shell qui le lance&nbsp;; `python -I` ignore
+les paquets utilisateur&nbsp;; une capture pleine page à DPR 3 semble répéter le contenu&nbsp;; les
+descriptions `seo-qa` sont limitées à 160 caractères échappés, pas 165&nbsp;; une classe d'icône
+définie en CSS ne garantit pas le glyphe dans la police sous-ensemble (vérifié dans la `cmap`
+de `fa-solid-subset.woff2` avant d'utiliser `fa-mountain`).
