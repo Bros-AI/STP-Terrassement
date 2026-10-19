@@ -2046,3 +2046,74 @@ explorée par Google et dotée de données.
   sur 15, le seul «&nbsp;égal&nbsp;» étant le titre sans accent. Comparer en Python, en UTF-8.
 - **Un `&` brut dans `<title>`**&nbsp;: le fichier l'écrit sans échappement&nbsp;; un remplacement
   construit sur `html.escape(ancien)` ne trouve rien. Apparier le texte brut du fichier.
+
+## 38e passe — prix recontrôlés, trois guides neufs, Search Console relue (2026-10-19)
+
+Demande du propriétaire&nbsp;: recontrôler les prix sur toutes les pages, ajouter des articles,
+audit profond, relecture de Search Console. Commits `adfceae` (prix) et `5409915` (guides).
+
+### Search Console, 28 jours au 17 octobre
+
+151 289 impressions, 1 688 clics, position moyenne 8,9. Manque à gagner par position&nbsp;: ~1 300
+clics. 83&nbsp;% des pages ont reçu au moins une impression&nbsp;; sur un échantillon de 45 URL,
+69&nbsp;% indexées, 22&nbsp;% inconnues de Google. `enrobe.html` et `terrassement-piscine.html` sont
+**toujours** enregistrées en 404 (explorées en juin, avant leur création)&nbsp;: la demande
+d'indexation manuelle n'a pas été faite. Trois des cinq guides du 23 septembre sont désormais
+indexés. Les sitemaps ont été resoumis par l'API (204).
+
+**Fausse alerte vérifiée avant d'agir**&nbsp;: `normes-assainissement-2026` affichait −54&nbsp;%
+d'impressions «&nbsp;28 jours contre 28&nbsp;». La série quotidienne montre que la chute date du
+**19 septembre**, trois semaines avant mon changement de titre du 10 octobre&nbsp;; après le
+changement, la page fait +23&nbsp;% par rapport au site et passe de 5 à 11 clics par semaine.
+Toujours lire la série quotidienne avant d'attribuer une baisse à une modification.
+
+### Les prix&nbsp;: une seule grille
+
+915 fourchettes unitaires extraites, comparées ligne à ligne à `tarifs-terrassement-2026` et aux
+hubs. Contradictions réelles corrigées (43 remplacements sur 17 pages, chacun à nombre
+d'occurrences exact)&nbsp;: enrobé à chaud noir 25-45&nbsp;€/m² à 5&nbsp;cm partout (le hub
+goudronnage et deux guides disaient 35-55 sans épaisseur), bicouche 15-30 (deux tableaux de la
+même page disaient 8-15 et 20-40), fondations (trois fourchettes sur une page), enrochement en
+FAQ (200-600 contre 100-200), assainissement non collectif (six valeurs de micro-station selon
+la page, et deux tableaux contradictoires sur `normes-assainissement-2026` — dont celui que
+j'avais ajouté le 10 octobre), hub démolition aligné sur le guide, guide allée recalculé
+(gravier stabilisé 35-70, tableau sur dix ans refait), étude G2 800-1 500 / 1 500-3 500 partout.
+
+Trois pièges&nbsp;: une réponse de FAQ existe en clair **et** dans le JSON-LD, donc «&nbsp;2
+occurrences&nbsp;» est normal&nbsp;; une phrase visible peut contenir `<strong>` que la copie
+JSON-LD n'a pas — un motif qui ne touche que le JSON-LD est **annulé** à la régénération
+(`demolition.html`)&nbsp;; les cellules de tableau sont séparées par des retours à la ligne et
+des attributs, jamais `</td><td>` collés.
+
+### Trois guides neufs, choisis par la page qui répond déjà
+
+`new_gaps.py` teste un sujet contre les titres&nbsp;; c'est insuffisant. `family_pages.py` ajoute
+la dimension *page*&nbsp;: «&nbsp;permis de démolir&nbsp;» (1 165 imp) et «&nbsp;tout-à-l'égout&nbsp;»
+(2 951) avaient déjà leur guide&nbsp;; «&nbsp;allée en pente&nbsp;» (676) est servie par le guide allée
+à la position 9 avec 11 clics — une page neuve l'aurait cannibalisée. Retenus&nbsp;:
+`enrobe-a-chaud-prix-tonne` (famille 3 513 imp, terme générique en position 25),
+`fondations-sol-argileux-micropieux` (~800 imp servies par un guide de prix hors intention),
+`plage-piscine-prix-revetement` (553 imp, 0 clic, servies par des pages villes à la position 26).
+Les autres sujets sont devenus des sections&nbsp;: allée en pente, démolition intérieure, prix au
+mètre linéaire du soutènement (+ ligne bois), Cerfa dans le titre du guide permis.
+
+Illustrations Vertex AI (identifiants du propriétaire)&nbsp;: le modèle écrit des **marques**
+sur les engins malgré «&nbsp;no logos&nbsp;»&nbsp;; deux images régénérées avec «&nbsp;unbranded, no
+lettering&nbsp;». Toujours regarder l'image avant d'écrire son alt.
+
+### Le formulaire de devis mentait sur son origine
+
+En clonant le gabarit, j'ai trouvé un champ caché `page=blog/prix-goudronnage-allee.html` sur
+`chemin-acces-carrossable`. Mesure sur tout le site&nbsp;: **8 guides** clonés et **les 6 hubs de
+service** (plus le plan du site) envoyaient au propriétaire un contact attribué à une autre
+page, et 46 guides portaient un objet formé sur un titre périmé. Corrigés&nbsp;; invariant
+`seo-qa` «&nbsp;form origin&nbsp;» ajouté et prouvé par réintroduction. Le plan du site ignorait
+les 5 guides de septembre.
+
+### Pièges d'outillage du jour
+
+`python -I` ignore les paquets utilisateur (PIL absent)&nbsp;: réservé aux fichiers non fiables.
+Un `Get-CimInstance … CommandLine LIKE '%http.server%'` tue aussi **le shell qui le lance**,
+dont la ligne de commande contient le motif&nbsp;: filtrer sur `Name -eq 'python.exe'`. Une
+capture `fullPage` sur un appareil à DPR 3 fait 3× la hauteur du document et *semble*
+répéter la page&nbsp;: vérifier `scrollHeight` et compter les H1 avant de crier au doublon.
