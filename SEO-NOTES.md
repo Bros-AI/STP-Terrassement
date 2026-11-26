@@ -2376,3 +2376,33 @@ impressions en position 2 : jamais existé dans le dépôt, à surveiller.
 - Remplacer une fourchette par son nombre seul est faux une fois sur deux (25-45 € vaut pour
   l'enrobé, le sable, une tranchée, une bordure) : le moteur de remplacement exige que le dernier mot-clé
   avant le prix soit celui du poste.
+
+## 43e passe — date de création alignée sur le registre, annuaires via le navigateur (2026-11-26)
+
+Demande : « use the browser extension to full fill SEO ». Bing et Google déjà faits par le propriétaire.
+
+### Date de création : le registre fait foi
+
+L'Annuaire des Entreprises (data.gouv, SIREN 994 240 588) donne une **création le 18/11/2025** et une
+immatriculation au RNE le 04/12/2025. Le site publiait le 4 décembre comme date de création.
+
+- `foundingDate` : `2025-12-04` → `2025-11-18` dans le LocalBusiness des 191 pages.
+- `qui-sommes-nous.html`, `mentions-legales.html`, `build-llms-txt.py` : « créée le 18 novembre 2025,
+  immatriculée au RNE le 4 décembre 2025 ». `llms.txt` et `llms-full.txt` régénérés.
+- Aucune page redatée : elles l'étaient déjà au 26/11 par les passes 41-42.
+
+### Annuaires (NAP du kit `seo-tools/annuaires-kit.md`)
+
+| Annuaire | État |
+|---|---|
+| Google Business Profile, Bing Places | faits par le propriétaire (GBP géré depuis un autre compte) |
+| Cylex, Justacoté, 118712 | fiches existantes |
+| Yelp | aucune fiche ; création commencée, bloquée sur biz.yelp.fr (autorisation du domaine) |
+| Houzz, Apple Business Connect | à faire ; Apple exige la connexion du propriétaire avec son identifiant Apple |
+
+### À corriger par le propriétaire (hors site)
+
+- **Numéro de TVA** : le registre affiche « pas de n° de TVA valide » alors que le site publie
+  FR03994240588. Vérifier auprès du SIE ; tant que ce n'est pas réglé, la mention peut être contestée.
+- **Justacoté** : catégorie « Constructeur » ; demander « Terrassement » ou « Travaux publics ».
+- L'aperçu IA de Google reprend encore « depuis 15 ans » (cache ancien) : se résorbera au recrawl.

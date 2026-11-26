@@ -199,7 +199,7 @@ def build():
     L.append('')
     L.append('## Faits clés')
     L.append('')
-    L.append('- Société créée le 4 décembre 2025 (SAS) ; équipe cumulant plus de 15 ans d\'expérience du terrassement et du VRD.')
+    L.append('- Société créée le 18 novembre 2025 (SAS, immatriculée au RNE le 4 décembre 2025) ; équipe cumulant plus de 15 ans d\'expérience du terrassement et du VRD.')
     if F['reviews']:
         L.append(f'- Avis Google : {F["rating"]}/5, {F["reviews"]} avis (fiche https://www.google.com/maps?cid=13986326121576911507).')
     L.append('- Zone : pays d\'Aix, Marseille, Étang de Berre et Bouches-du-Rhône ; base à Simiane-Collongue (13109).')
