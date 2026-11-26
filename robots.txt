@@ -56,6 +56,20 @@ Allow: /
 User-agent: Timpibot
 Allow: /
 
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
 # Resume du site pour les LLM : https://stp-terrassement.com/llms.txt
+# Version longue (reponses et FAQ de chaque guide) : https://stp-terrassement.com/llms-full.txt
+# Grille de prix lisible par machine : https://stp-terrassement.com/tarifs.json
 
 Sitemap: https://stp-terrassement.com/sitemap.xml

@@ -1,0 +1,17 @@
+name: Attestation d'assurance — echeance
+# Rappel hebdomadaire : echoue (et GitHub previent par e-mail) 30 jours avant la fin de
+# l'attestation publiee dans les mentions legales, ou si elle a expire. Ne tourne jamais
+# sur un push : ne bloque aucun deploiement. Voir scripts/check-attestation.py.
+on:
+  schedule:
+    - cron: '23 7 * * 1'   # chaque lundi 07:23 UTC
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: python scripts/check-attestation.py

@@ -2305,3 +2305,74 @@ jour : `--check` aurait échoué. Remède : `git add -N` sur les nouvelles pages
   ou retirer, comme les témoignages.
 - Les 8 avis Google sont réels et récents : continuer à en demander, c'est le premier levier
   du pack local.
+
+## 42e passe — prix revérifiés sur le marché régional, GEO, trois guides, faux chantiers retirés (2026-11-26)
+
+Demande : « check all price on our region, update all pages, other guides perfect for SEO and LLM,
+improve AI geo optimisation, fix all », plus une PR de specs dans le dépôt ERP.
+
+### Prix : la grille corrigée (sources datées 2025-2026 + tarifs officiels)
+
+| Poste | Avant | Après | Pourquoi |
+|---|---|---|---|
+| Évacuation déblais inertes < 10 km | 8-12 €/m³ | **25-35 €/m³** (30-45 / 40-60 au-delà) | l'ancien prix était la seule redevance de décharge ; le prix est désormais tout compris |
+| Raccordement Enedis < 30 m | 1 200-2 500 € | **2 200-3 500 €** | barème V8 du 28/10/2026 : 1 903,68 € TTC après réfaction, hors travaux privés |
+| Eau potable, nouveau branchement | 800-3 000 € | **2 000-4 500 €** | tarif Eau de Marseille Métropole du 1/7/2026 : 2 490,83 € TTC |
+| Tout-à-l'égout, budget complet | 3 000-10 000 € | **6 000-16 000 €** | partie privée 3 000-9 000 + branchement public + PFAC 30 €/m² |
+| Viabilisation complète | 2 000-8 000 € | **7 000-18 000 € hors PFAC** | somme des postes ci-dessus |
+| Enrobé noir / coloré | 25-45 / 35-65 | **30-55 / 45-75 €/m²** | bitume en hausse (INSEE) |
+| Pavés béton | 15-25 / 30-50 | **50-90 / 60-110 €/m² posés** | l'ancien prix était la fourniture seule |
+| Dalle béton, vide sanitaire | 40-90, 70-130 | **55-110, 90-150 €/m²** | |
+| Mur de soutènement | 100-400 | **150-450 €/m²** | |
+| Débroussaillement OLD | 2-6 €/m² | **0,80-2,50 €/m²** | très au-dessus de toutes les sources |
+| Étude G2 | quatre fourchettes | **AVP 1 200-2 500 ; AVP+PRO 1 800-3 500 €** | une seule série partout |
+| Poste de relevage, micropieux, souches | — | 3 500-7 000 € ; 1 000-2 000 €/u ; par diamètre | |
+
+La grille (`tarifs-terrassement-2026.html`) passe à 81 lignes, base TTC, datée « novembre 2026 ».
+~80 guides et pages villes repris, **exemples chiffrés recalculés** (pas seulement les fourchettes).
+Décisions prises et relevés de sources : feuille `prices/new_prices.md` de la session.
+
+### GEO (moteurs de réponse)
+
+- `scripts/build-price-data.py` (nouveau, en CI) : **`tarifs.json`** + un `OfferCatalog` JSON-LD de
+  81 offres (min, max, unité, TVA) sur la page tarifs, dérivés de la grille HTML — une seule source.
+- `llms.txt` : faits clés (création, avis, assurance lus sur les pages) et les 81 prix de référence ;
+  l'année vient du site, plus « 2026 » en dur. **`llms-full.txt`** (nouveau) : la réponse de tête et
+  la FAQ de chaque guide.
+- `foundingDate` dans le LocalBusiness ; `robots.txt` accueille Claude-SearchBot, Perplexity-User,
+  MistralAI-User, DuckAssistBot.
+- Les guides neufs suivent le format « réponse d'abord » : fourchette et facteurs dans le premier
+  paragraphe, tableau « l'essentiel », H2 en questions, exemple à l'arithmétique visible.
+
+### Autres
+
+- **45 sections « Exemple de chantier réel » retirées** (~8 000 mots) : chantiers inventés, dont un mur
+  de 2,40 m « sous décennale » alors que le contrat limite le soutènement à 1,50 m.
+- Trois guides : `devis-terrassement-guide`, `prix-demolition-mur`, `cour-enrobe-prix`.
+- `scripts/check-attestation.py` + workflow hebdomadaire : échec 30 jours avant la fin de
+  l'attestation publiée (31/12/2026).
+- Prix des `Offer` JSON-LD alignés (18), bicouche et pavés des pages villes.
+- Specs ERP : https://github.com/Bros-AI/ERP-chantier/pull/1 (connecteur Search Console + MCP, file
+  d'indexation, grille de prix unique, avis, portfolio réel, conformité, annuaires, attribution).
+
+### Search Console (26/11) : 141 pages indexées, 48 non indexées
+
+33 « détectées, non indexées » (surtout des guides de prix, 4 hubs, la grille), 7 « explorées, non
+indexées » (pages de niche d'Aix). Une URL fantôme, `blog/fosse-egout.html` (404), reçoit 30
+impressions en position 2 : jamais existé dans le dépôt, à surveiller.
+
+### À confirmer par le propriétaire
+
+- Tarifs officiels (Enedis V8, Eau de Marseille Métropole, PFAC) repris des relevés de la session :
+  à vérifier sur les documents sources avant de les citer à un client.
+- Opérateur d'eau et SPANC à Simiane/Pays d'Aix : tarifs non publiés, pages rédigées « à vérifier ».
+- Aide Agence de l'eau : « 3 000 » et « 3 600 € » coexistent dans `normes-assainissement-2026`.
+- Micropieux : le prix à l'unité divise par trois les anciens totaux publiés.
+
+### Pièges
+
+- Un heredoc bash avale les `\` : `\b` est devenu un caractère de contrôle dans une regex (détecté
+  en comptant les caractères < 32). Écrire les scripts avec l'outil de fichier.
+- Remplacer une fourchette par son nombre seul est faux une fois sur deux (25-45 € vaut pour
+  l'enrobé, le sable, une tranchée, une bordure) : le moteur de remplacement exige que le dernier mot-clé
+  avant le prix soit celui du poste.

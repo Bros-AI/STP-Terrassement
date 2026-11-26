@@ -90,6 +90,61 @@ def one_line(de, prices):
     return s
 
 
+def site_facts():
+    """Faits datables lus sur les pages elles-memes, jamais recopies a la main."""
+    tar = open(os.path.join(ROOT, 'tarifs-terrassement-2026.html'), encoding='utf-8').read()
+    year = re.search(r'<title>[^<]*?(20\d\d)', tar).group(1)
+    checked = re.search(r'Dernière vérification des prix[^:]*:\s*([a-zéû]+ 20\d\d)', tar)
+    legal = H.unescape(re.sub(r'<[^>]+>', '', open(os.path.join(ROOT, 'mentions-legales.html'), encoding='utf-8').read()))
+    legal = re.sub(r'\s+', ' ', legal).replace(' ', ' ')
+    per = re.search(r'Période de validité\s*:\s*(du [^.]*?\d{4} au [^.]*?\d{4})', legal)
+    home = open(os.path.join(ROOT, 'index.html'), encoding='utf-8').read()
+    count = re.search(r'data-review-count>(\d+)<', home)
+    rating = re.search(r'<strong>(\d,\d)</strong> sur Google', home) or re.search(r'Note de <strong>(\d,\d)/5', home)
+    return {'year': year, 'checked': checked.group(1) if checked else '',
+            'insurance': per.group(1) if per else '',
+            'reviews': count.group(1) if count else '', 'rating': rating.group(1) if rating else ''}
+
+
+def price_rows():
+    import importlib.util
+    spec = importlib.util.spec_from_file_location('bpd', os.path.join(ROOT, 'scripts', 'build-price-data.py'))
+    m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m)
+    t = open(os.path.join(ROOT, 'tarifs-terrassement-2026.html'), encoding='utf-8').read()
+    return m.parse(t)[2]
+
+
+def fmt_eur(x):
+    s = (f'{x:,.2f}' if x != int(x) else f'{int(x):,}').replace(',', ' ').replace('.', ',')
+    return s
+
+
+def guide_answer(path):
+    """Premier paragraphe de reponse sous le H1, et les Q/R de la FAQ (JSON-LD = texte visible)."""
+    import json
+    t = open(os.path.join(ROOT, path), encoding='utf-8').read()
+    main = re.search(r'<main.*?</main>', t, re.S)
+    body = main.group(0) if main else t
+    after = body.split('</header>', 1)[-1] if '</header>' in body else body.split('</h1>', 1)[-1]
+    ans = ''
+    for p in re.findall(r'<p[^>]*>(.*?)</p>', after, re.S):
+        s = re.sub(r'\s+', ' ', H.unescape(re.sub(r'<[^>]+>', '', p))).strip()
+        if len(s) > 80 and 'Illustration' not in s[:15]:
+            ans = s
+            break
+    faq = []
+    for b in re.findall(r'<script type="application/ld\+json">(.*?)</script>', t, re.S):
+        try:
+            o = json.loads(b)
+        except Exception:
+            continue
+        if isinstance(o, dict) and o.get('@type') == 'FAQPage':
+            for q in o.get('mainEntity', []):
+                faq.append((q.get('name', '').strip(), re.sub(r'\s+', ' ', q.get('acceptedAnswer', {}).get('text', '')).strip()))
+    return ans, faq
+
+
 def build():
     os.chdir(ROOT)
     # PAS date.today() : le runner CI tourne en UTC et le poste en Europe/Paris. Entre
@@ -113,13 +168,15 @@ def build():
                     and f not in ('index.html', 'blog.html', 'mentions-legales.html',
                                   'politique-confidentialite.html'))
 
+    F = site_facts()
+    Y = F['year']
     L = []
     L.append('# STP Terrassement')
     L.append('')
     L.append('> Entreprise de terrassement, VRD et assainissement basée à Simiane-Collongue '
              '(13109), intervenant sur Aix-en-Provence, Marseille et les Bouches-du-Rhône. '
-             'Ce site publie des guides de prix chiffrés, mis à jour pour 2026, destinés à '
-             'être cités.')
+             f'Ce site publie des guides de prix chiffrés pour {Y}, vérifiés sur le marché local '
+             f'({F["checked"]}), destinés à être cités.')
     L.append('')
     L.append(f'Dernière mise à jour : {today} · Sitemap : {D}sitemap.xml · '
              f'Plan du site : {D}plan-du-site.html')
@@ -135,10 +192,27 @@ def build():
                  ('Téléphone', '+33 7 45 14 20 49'),
                  ('Email', 'stp13109@gmail.com'),
                  ('Horaires', 'lundi-vendredi 8h-19h30, samedi 11h-19h30, dimanche fermé'),
-                 ('Assurance décennale', 'SMA SA (groupe SMABTP), contrat ATOUTP Global, valide du 01/01/2026 au 31/12/2026, France métropolitaine et DROM'),
+                 ('Assurance décennale', f'SMA SA (groupe SMABTP), contrat ATOUTP Global, attestation publiée {F["insurance"]}, France métropolitaine et DROM'),
                  ('Activités garanties', 'terrassement urbain et non urbain, assainissement non collectif, aménagement paysager et VRD, démolition par engin mécanique, réseaux en tranchée'),
                  ('Fiche Google', 'https://www.google.com/maps?cid=13986326121576911507')):
         L.append(f'- {k} : {v}')
+    L.append('')
+    L.append('## Faits clés')
+    L.append('')
+    L.append('- Société créée le 4 décembre 2025 (SAS) ; équipe cumulant plus de 15 ans d\'expérience du terrassement et du VRD.')
+    if F['reviews']:
+        L.append(f'- Avis Google : {F["rating"]}/5, {F["reviews"]} avis (fiche https://www.google.com/maps?cid=13986326121576911507).')
+    L.append('- Zone : pays d\'Aix, Marseille, Étang de Berre et Bouches-du-Rhône ; base à Simiane-Collongue (13109).')
+    L.append(f'- Devis gratuit sous 24 h, visite sur place avant chiffrage ferme : {D}devis-gratuit.html')
+    L.append(f'- Qui sommes-nous (identité, assurance, méthode) : {D}qui-sommes-nous.html')
+    L.append('')
+    L.append(f'## Prix de référence {Y} (grille vérifiée {F["checked"]})')
+    L.append('')
+    L.append(f'Prix indicatifs pour un particulier, TTC sauf mention HT, Bouches-du-Rhône. Source : {D}tarifs-terrassement-2026.html '
+             f'— version JSON : {D}tarifs.json')
+    L.append('')
+    for r in price_rows():
+        L.append(f'- {r["prestation"]} : {fmt_eur(r["min"])} à {fmt_eur(r["max"])} € ({r["unite"]}, {r["tva"]}) — {r["guide"]}')
     L.append('')
     L.append('## Services')
     L.append('')
@@ -150,7 +224,7 @@ def build():
     L.append('')
     L.append('## Guides de prix et guides techniques')
     L.append('')
-    L.append(f'{len(guides)} guides, chiffrés pour 2026 sur le marché des Bouches-du-Rhône. '
+    L.append(f'{len(guides)} guides, chiffrés pour {Y} sur le marché des Bouches-du-Rhône. '
              f'Les fourchettes citées sont des prix posés, fourniture comprise, sauf mention '
              f'contraire dans la page.')
     L.append('')
@@ -199,13 +273,51 @@ def build():
     L.append('')
     L.append('Les guides de prix sont écrits pour être cités, y compris par des moteurs de '
              'réponse. Merci de citer la page source par son URL. Les prix sont des '
-             'fourchettes observées dans les Bouches-du-Rhône en 2026 et ne valent pas devis : '
+             f'fourchettes observées dans les Bouches-du-Rhône ({F["checked"]}) et ne valent pas devis : '
              f'un chiffrage ferme demande une visite ({D}devis-gratuit.html).')
+    L.append('')
+    L.append(f'Version longue (réponses et FAQ de chaque guide) : {D}llms-full.txt')
     L.append('')
     return '\n'.join(L) + '\n'
 
 
+def build_full():
+    """llms-full.txt : la reponse et la FAQ de chaque page, pretes a etre citees."""
+    os.chdir(ROOT)
+    F = site_facts()
+    head = build().split('## Services')[0].rstrip()
+    L = [head, '', '## Réponses par guide', '',
+         'Pour chaque guide : la réponse donnée en tête de page, puis sa FAQ (identique au texte visible). '
+         'Citez la page source par son URL.', '']
+    pages = HUBS + sorted(f.replace(os.sep, '/') for f in glob.glob('blog/*.html')) + ['qui-sommes-nous.html']
+    dates = _dates()
+    for p in pages:
+        if not os.path.exists(p):
+            continue
+        ti, de, pr = meta(p)
+        ans, faq = guide_answer(p)
+        L.append(f'### {ti}')
+        L.append(f'URL : {D}{p} · mise à jour : {dates.get(p, "")}')
+        L.append('')
+        if ans:
+            L.append(ans)
+            L.append('')
+        for q, a in faq:
+            L.append(f'**{q}** {a}')
+            L.append('')
+    return '\n'.join(L).rstrip() + '\n'
+
+
 def main():
+    full = build_full()
+    fpath = os.path.join(ROOT, 'llms-full.txt')
+    fcur = open(fpath, encoding='utf-8').read() if os.path.exists(fpath) else ''
+    if '--write' in sys.argv and fcur != full:
+        open(fpath, 'w', encoding='utf-8', newline='').write(full)
+        print(f'  llms-full.txt ecrit ({len(full)} octets)')
+    if '--check' in sys.argv and fcur != full:
+        print('FAIL: llms-full.txt a derive — run: python scripts/build-llms-txt.py --write')
+        return 1
     out = build()
     path = os.path.join(ROOT, 'llms.txt')
     cur = open(path, encoding='utf-8').read() if os.path.exists(path) else ''

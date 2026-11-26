@@ -1,0 +1,820 @@
+{
+ "source": "https://stp-terrassement.com/tarifs-terrassement-2026.html",
+ "entreprise": "STP Terrassement (SOPHIE TERRASSEMENT PROVENCE), Simiane-Collongue, Bouches-du-Rhône",
+ "annee_tarifaire": 2027,
+ "verification_marche": "novembre 2026",
+ "zone": "Bouches-du-Rhône (pays d'Aix, Marseille)",
+ "base": "Prix indicatifs pour un particulier, toutes taxes comprises sauf mention HT (TVA 10 % pour des travaux sur un logement de plus de deux ans, 20 % sinon). Ne valent pas devis.",
+ "prestations": [
+  {
+   "prestation": "Terrassement terrain plat, sol meuble",
+   "famille": "Terrassement : prix au m³ et au m²",
+   "min": 25.0,
+   "max": 40.0,
+   "unite": "m³",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-terrassement-m2.html"
+  },
+  {
+   "prestation": "Terrassement terrain en pente",
+   "famille": "Terrassement : prix au m³ et au m²",
+   "min": 35.0,
+   "max": 55.0,
+   "unite": "m³",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/terrassement-terrain-en-pente.html"
+  },
+  {
+   "prestation": "Terrassement sol rocheux (BRH)",
+   "famille": "Terrassement : prix au m³ et au m²",
+   "min": 50.0,
+   "max": 90.0,
+   "unite": "m³",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-terrassement-rocheux-brh.html"
+  },
+  {
+   "prestation": "Décaissement / mise à niveau",
+   "famille": "Terrassement : prix au m³ et au m²",
+   "min": 15.0,
+   "max": 30.0,
+   "unite": "m³",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-nivellement-terrain.html"
+  },
+  {
+   "prestation": "Nivellement simple (réglage de surface)",
+   "famille": "Terrassement : prix au m³ et au m²",
+   "min": 3.0,
+   "max": 8.0,
+   "unite": "m²",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-nivellement-terrain.html"
+  },
+  {
+   "prestation": "Décapage de terre végétale (15 à 25 cm)",
+   "famille": "Terrassement : prix au m³ et au m²",
+   "min": 3.0,
+   "max": 6.0,
+   "unite": "m²",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-decapage-terre-vegetale.html"
+  },
+  {
+   "prestation": "Remblai en terre saine, fourni-livré",
+   "famille": "Terrassement : prix au m³ et au m²",
+   "min": 15.0,
+   "max": 35.0,
+   "unite": "m³",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-remblai-terrain.html"
+  },
+  {
+   "prestation": "Tout-venant 0/80, fourni-livré",
+   "famille": "Terrassement : prix au m³ et au m²",
+   "min": 20.0,
+   "max": 40.0,
+   "unite": "m³",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-remblai-terrain.html"
+  },
+  {
+   "prestation": "Semelles filantes de fondation",
+   "famille": "Terrassement : prix au m³ et au m²",
+   "min": 100.0,
+   "max": 200.0,
+   "unite": "ml",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-fondations-maison.html"
+  },
+  {
+   "prestation": "Radier (dalle portée)",
+   "famille": "Terrassement : prix au m³ et au m²",
+   "min": 120.0,
+   "max": 200.0,
+   "unite": "m²",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-fondations-maison.html"
+  },
+  {
+   "prestation": "Micropieux (par micropieu de 6 à 12 m, hors amenée de la foreuse)",
+   "famille": "Terrassement : prix au m³ et au m²",
+   "min": 1000.0,
+   "max": 2000.0,
+   "unite": "u",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/fondations-sol-argileux-micropieux.html"
+  },
+  {
+   "prestation": "Étude de sol G1 (étude préalable)",
+   "famille": "Terrassement : prix au m³ et au m²",
+   "min": 800.0,
+   "max": 1500.0,
+   "unite": "forfait",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/etude-sol-g1-g2.html"
+  },
+  {
+   "prestation": "Étude de sol G2 AVP (avant-projet)",
+   "famille": "Terrassement : prix au m³ et au m²",
+   "min": 1200.0,
+   "max": 2500.0,
+   "unite": "forfait",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/etude-sol-g1-g2.html"
+  },
+  {
+   "prestation": "Étude de sol G2 AVP + PRO (mission complète)",
+   "famille": "Terrassement : prix au m³ et au m²",
+   "min": 1800.0,
+   "max": 3500.0,
+   "unite": "forfait",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/etude-sol-g1-g2.html"
+  },
+  {
+   "prestation": "Terrassement piscine 6x3 m, sol meuble",
+   "famille": "Terrassement : prix au m³ et au m²",
+   "min": 1500.0,
+   "max": 3000.0,
+   "unite": "forfait",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-terrassement-piscine-dimensions.html"
+  },
+  {
+   "prestation": "Terrassement piscine 8x4 m, sol meuble",
+   "famille": "Terrassement : prix au m³ et au m²",
+   "min": 2500.0,
+   "max": 5000.0,
+   "unite": "forfait",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-terrassement-piscine-dimensions.html"
+  },
+  {
+   "prestation": "Terrassement piscine 10x5 m, sol meuble",
+   "famille": "Terrassement : prix au m³ et au m²",
+   "min": 4000.0,
+   "max": 7000.0,
+   "unite": "forfait",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-terrassement-piscine-dimensions.html"
+  },
+  {
+   "prestation": "Excavation sous-sol, sol meuble",
+   "famille": "Terrassement : prix au m³ et au m²",
+   "min": 25.0,
+   "max": 35.0,
+   "unite": "m³",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/terrassement-sous-sol-prix.html"
+  },
+  {
+   "prestation": "Excavation sous-sol, calcaire compact",
+   "famille": "Terrassement : prix au m³ et au m²",
+   "min": 50.0,
+   "max": 75.0,
+   "unite": "m³",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/terrassement-sous-sol-prix.html"
+  },
+  {
+   "prestation": "Vide sanitaire (vs dalle sur terre-plein 50 – 90 €/m²)",
+   "famille": "Terrassement : prix au m³ et au m²",
+   "min": 90.0,
+   "max": 150.0,
+   "unite": "m²",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-vide-sanitaire.html"
+  },
+  {
+   "prestation": "Évacuation de déblais inertes, chargement + transport + ISDI, décharge à moins de 10 km",
+   "famille": "Terrassement : prix au m³ et au m²",
+   "min": 25.0,
+   "max": 35.0,
+   "unite": "m³",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-evacuation-gravats.html"
+  },
+  {
+   "prestation": "Évacuation de déblais inertes, décharge à 10 – 25 km",
+   "famille": "Terrassement : prix au m³ et au m²",
+   "min": 30.0,
+   "max": 45.0,
+   "unite": "m³",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-evacuation-gravats.html"
+  },
+  {
+   "prestation": "Benne 8 m³ posée et enlevée (Aix / Marseille)",
+   "famille": "Terrassement : prix au m³ et au m²",
+   "min": 250.0,
+   "max": 400.0,
+   "unite": "forfait",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-evacuation-gravats.html"
+  },
+  {
+   "prestation": "Tranchée 0,80 m en terre ordinaire",
+   "famille": "VRD, tranchées et raccordements",
+   "min": 25.0,
+   "max": 35.0,
+   "unite": "ml",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-tranchee-ml.html"
+  },
+  {
+   "prestation": "Tranchée 0,80 m en sol calcaire / rocheux (BRH)",
+   "famille": "VRD, tranchées et raccordements",
+   "min": 40.0,
+   "max": 70.0,
+   "unite": "ml",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-tranchee-ml.html"
+  },
+  {
+   "prestation": "Tranchée commune multi-réseaux",
+   "famille": "VRD, tranchées et raccordements",
+   "min": 45.0,
+   "max": 80.0,
+   "unite": "ml",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-tranchee-ml.html"
+  },
+  {
+   "prestation": "Raccordement au tout-à-l'égout, budget complet (partie privée + branchement public + PFAC)",
+   "famille": "VRD, tranchées et raccordements",
+   "min": 6000.0,
+   "max": 16000.0,
+   "unite": "forfait",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/raccordement-tout-egout-prix.html"
+  },
+  {
+   "prestation": "Raccordement au tout-à-l'égout, partie privée seule",
+   "famille": "VRD, tranchées et raccordements",
+   "min": 3000.0,
+   "max": 9000.0,
+   "unite": "forfait",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/raccordement-tout-egout-prix.html"
+  },
+  {
+   "prestation": "Poste de relevage individuel, posé",
+   "famille": "VRD, tranchées et raccordements",
+   "min": 3500.0,
+   "max": 7000.0,
+   "unite": "forfait",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/poste-relevage-prix.html"
+  },
+  {
+   "prestation": "Fosse toutes eaux + épandage (ANC, posé TTC)",
+   "famille": "VRD, tranchées et raccordements",
+   "min": 6000.0,
+   "max": 10000.0,
+   "unite": "forfait",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-assainissement-non-collectif.html"
+  },
+  {
+   "prestation": "Filtre compact (ANC, posé TTC)",
+   "famille": "VRD, tranchées et raccordements",
+   "min": 8000.0,
+   "max": 12000.0,
+   "unite": "forfait",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-assainissement-non-collectif.html"
+  },
+  {
+   "prestation": "Micro-station 5 EH (ANC, posée TTC)",
+   "famille": "VRD, tranchées et raccordements",
+   "min": 7000.0,
+   "max": 11000.0,
+   "unite": "forfait",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/micro-station-epuration-guide.html"
+  },
+  {
+   "prestation": "Filtre à sable vertical (ANC, posé TTC)",
+   "famille": "VRD, tranchées et raccordements",
+   "min": 6000.0,
+   "max": 12000.0,
+   "unite": "forfait",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-assainissement-non-collectif.html"
+  },
+  {
+   "prestation": "Raccordement eau potable, nouveau branchement (budget complet)",
+   "famille": "VRD, tranchées et raccordements",
+   "min": 2000.0,
+   "max": 4500.0,
+   "unite": "forfait",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-raccordement-eau-potable.html"
+  },
+  {
+   "prestation": "Raccordement Enedis, moins de 30 m (facture Enedis 1 903,68 € TTC + travaux privés)",
+   "famille": "VRD, tranchées et raccordements",
+   "min": 2200.0,
+   "max": 3500.0,
+   "unite": "forfait",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-raccordement-enedis.html"
+  },
+  {
+   "prestation": "Raccordement Enedis, 30 à 100 m, sans extension de réseau",
+   "famille": "VRD, tranchées et raccordements",
+   "min": 3500.0,
+   "max": 8000.0,
+   "unite": "forfait",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-raccordement-enedis.html"
+  },
+  {
+   "prestation": "Raccordement Enedis avec extension de réseau",
+   "famille": "VRD, tranchées et raccordements",
+   "min": 7000.0,
+   "max": 16000.0,
+   "unite": "forfait",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-raccordement-enedis.html"
+  },
+  {
+   "prestation": "Puits perdu busé Ø1 m, 2 à 3 m de profondeur",
+   "famille": "VRD, tranchées et raccordements",
+   "min": 1500.0,
+   "max": 3000.0,
+   "unite": "forfait",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-puits-perdu.html"
+  },
+  {
+   "prestation": "Cuve de récupération d'eau de pluie 5 000 l, posée",
+   "famille": "VRD, tranchées et raccordements",
+   "min": 4500.0,
+   "max": 7000.0,
+   "unite": "forfait",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/recuperation-eau-pluie-prix.html"
+  },
+  {
+   "prestation": "Viabilisation complète (eau, électricité, assainissement collectif, télécom), hors PFAC",
+   "famille": "VRD, tranchées et raccordements",
+   "min": 7000.0,
+   "max": 18000.0,
+   "unite": "forfait",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/combien-coute-viabilisation-terrain.html"
+  },
+  {
+   "prestation": "Enrobé à chaud noir, posé (hors préparation)",
+   "famille": "Aménagement extérieur : enrobé, pavés, gravier, béton",
+   "min": 30.0,
+   "max": 55.0,
+   "unite": "m²",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-enrobe-m2.html"
+  },
+  {
+   "prestation": "Enrobé coloré, posé",
+   "famille": "Aménagement extérieur : enrobé, pavés, gravier, béton",
+   "min": 45.0,
+   "max": 75.0,
+   "unite": "m²",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-enrobe-m2.html"
+  },
+  {
+   "prestation": "Enrobé drainant, posé",
+   "famille": "Aménagement extérieur : enrobé, pavés, gravier, béton",
+   "min": 50.0,
+   "max": 75.0,
+   "unite": "m²",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/enrobe-drainant-prix.html"
+  },
+  {
+   "prestation": "Enrobé à froid (petites surfaces, réparations)",
+   "famille": "Aménagement extérieur : enrobé, pavés, gravier, béton",
+   "min": 25.0,
+   "max": 40.0,
+   "unite": "m²",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/enrobe-chaud-vs-froid.html"
+  },
+  {
+   "prestation": "Rabotage + réfection en enrobé",
+   "famille": "Aménagement extérieur : enrobé, pavés, gravier, béton",
+   "min": 45.0,
+   "max": 80.0,
+   "unite": "m²",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/rabotage-enrobe-prix.html"
+  },
+  {
+   "prestation": "Allée de garage 30 m² en enrobé (budget total TTC)",
+   "famille": "Aménagement extérieur : enrobé, pavés, gravier, béton",
+   "min": 1800.0,
+   "max": 3000.0,
+   "unite": "forfait",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-enrobe-m2.html"
+  },
+  {
+   "prestation": "Goudronnage bicouche économique",
+   "famille": "Aménagement extérieur : enrobé, pavés, gravier, béton",
+   "min": 15.0,
+   "max": 30.0,
+   "unite": "m²",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-goudronnage-allee.html"
+  },
+  {
+   "prestation": "Allée goudronnée 100 m² (budget total)",
+   "famille": "Aménagement extérieur : enrobé, pavés, gravier, béton",
+   "min": 4000.0,
+   "max": 10000.0,
+   "unite": "forfait",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-goudronnage-allee.html"
+  },
+  {
+   "prestation": "Pavés béton 6 cm, fournis et posés (hors terrassement)",
+   "famille": "Aménagement extérieur : enrobé, pavés, gravier, béton",
+   "min": 50.0,
+   "max": 90.0,
+   "unite": "m²",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-paves-autobloquants-m2.html"
+  },
+  {
+   "prestation": "Pavés béton 8 cm carrossables, fournis et posés",
+   "famille": "Aménagement extérieur : enrobé, pavés, gravier, béton",
+   "min": 60.0,
+   "max": 110.0,
+   "unite": "m²",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-paves-autobloquants-m2.html"
+  },
+  {
+   "prestation": "Béton désactivé, fourni et posé",
+   "famille": "Aménagement extérieur : enrobé, pavés, gravier, béton",
+   "min": 80.0,
+   "max": 130.0,
+   "unite": "m²",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/plage-piscine-prix-revetement.html"
+  },
+  {
+   "prestation": "Bordures béton P1 / T2, posées",
+   "famille": "Aménagement extérieur : enrobé, pavés, gravier, béton",
+   "min": 25.0,
+   "max": 50.0,
+   "unite": "ml",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-paves-autobloquants-m2.html"
+  },
+  {
+   "prestation": "Gravier sur géotextile, fourni-posé",
+   "famille": "Aménagement extérieur : enrobé, pavés, gravier, béton",
+   "min": 15.0,
+   "max": 35.0,
+   "unite": "m²",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/cour-gravier-empierrement-prix.html"
+  },
+  {
+   "prestation": "Empierrement concassé compacté",
+   "famille": "Aménagement extérieur : enrobé, pavés, gravier, béton",
+   "min": 25.0,
+   "max": 45.0,
+   "unite": "m²",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/cour-gravier-empierrement-prix.html"
+  },
+  {
+   "prestation": "Gravier stabilisé (dalle nid d'abeille)",
+   "famille": "Aménagement extérieur : enrobé, pavés, gravier, béton",
+   "min": 35.0,
+   "max": 70.0,
+   "unite": "m²",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/cour-gravier-empierrement-prix.html"
+  },
+  {
+   "prestation": "Dalle béton fournie et posée",
+   "famille": "Aménagement extérieur : enrobé, pavés, gravier, béton",
+   "min": 55.0,
+   "max": 110.0,
+   "unite": "m²",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-dalle-beton-m2.html"
+  },
+  {
+   "prestation": "Enrochement paysager",
+   "famille": "Aménagement extérieur : enrobé, pavés, gravier, béton",
+   "min": 80.0,
+   "max": 150.0,
+   "unite": "ml",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/enrochement-paysager-guide.html"
+  },
+  {
+   "prestation": "Enrochement de soutènement",
+   "famille": "Aménagement extérieur : enrobé, pavés, gravier, béton",
+   "min": 150.0,
+   "max": 400.0,
+   "unite": "ml",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/enrochement-paysager-guide.html"
+  },
+  {
+   "prestation": "Mur de soutènement (enrochement, gabions, béton banché)",
+   "famille": "Aménagement extérieur : enrobé, pavés, gravier, béton",
+   "min": 150.0,
+   "max": 450.0,
+   "unite": "m²",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/mur-soutenement-guide.html"
+  },
+  {
+   "prestation": "Maison en parpaings de plain-pied",
+   "famille": "Démolition et déconstruction",
+   "min": 80.0,
+   "max": 150.0,
+   "unite": "m²",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/cout-demolition-maison.html"
+  },
+  {
+   "prestation": "Maison en pierre",
+   "famille": "Démolition et déconstruction",
+   "min": 120.0,
+   "max": 220.0,
+   "unite": "m²",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/cout-demolition-maison.html"
+  },
+  {
+   "prestation": "Maison 100 m² (budget total)",
+   "famille": "Démolition et déconstruction",
+   "min": 8000.0,
+   "max": 15000.0,
+   "unite": "forfait",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/cout-demolition-maison.html"
+  },
+  {
+   "prestation": "Dalle béton non armée 8 à 12 cm",
+   "famille": "Démolition et déconstruction",
+   "min": 25.0,
+   "max": 40.0,
+   "unite": "m²",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-demolition-dalle-beton.html"
+  },
+  {
+   "prestation": "Dalle béton armée 15 à 20 cm",
+   "famille": "Démolition et déconstruction",
+   "min": 50.0,
+   "max": 80.0,
+   "unite": "m²",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-demolition-dalle-beton.html"
+  },
+  {
+   "prestation": "Comblement partiel d'une piscine 8x4 m",
+   "famille": "Démolition et déconstruction",
+   "min": 4500.0,
+   "max": 6500.0,
+   "unite": "forfait",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-comblement-piscine.html"
+  },
+  {
+   "prestation": "Démolition complète d'une piscine 8x4 m + évacuation",
+   "famille": "Démolition et déconstruction",
+   "min": 8500.0,
+   "max": 12000.0,
+   "unite": "forfait",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-comblement-piscine.html"
+  },
+  {
+   "prestation": "Débroussaillement manuel (OLD), garrigue dense, évacuation ou broyage compris",
+   "famille": "Démolition et déconstruction",
+   "min": 0.8,
+   "max": 2.5,
+   "unite": "m²",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/debroussaillement-obligatoire-paca.html"
+  },
+  {
+   "prestation": "Débroussaillement mécanique (broyeur forestier)",
+   "famille": "Démolition et déconstruction",
+   "min": 0.3,
+   "max": 1.0,
+   "unite": "m²",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/debroussaillement-obligatoire-paca.html"
+  },
+  {
+   "prestation": "Rognage de souche, Ø 30 à 50 cm",
+   "famille": "Démolition et déconstruction",
+   "min": 150.0,
+   "max": 300.0,
+   "unite": "u",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/dessouchage-prix-souche.html"
+  },
+  {
+   "prestation": "Arrachage de souche à la pelle (engin déjà sur place)",
+   "famille": "Démolition et déconstruction",
+   "min": 100.0,
+   "max": 300.0,
+   "unite": "u",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/dessouchage-prix-souche.html"
+  },
+  {
+   "prestation": "Repérage amiante avant démolition",
+   "famille": "Démolition et déconstruction",
+   "min": 400.0,
+   "max": 1000.0,
+   "unite": "forfait",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/cout-demolition-maison.html"
+  },
+  {
+   "prestation": "Démolition d'un mur de clôture en parpaing, évacuation comprise",
+   "famille": "Démolition et déconstruction",
+   "min": 25.0,
+   "max": 50.0,
+   "unite": "m² de mur",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/prix-demolition-mur.html"
+  },
+  {
+   "prestation": "Mini-pelle 1,5 à 3 t, location nue",
+   "famille": "Location d'engins avec ou sans chauffeur",
+   "min": 200.0,
+   "max": 300.0,
+   "unite": "jour",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/location-minipelle-guide.html"
+  },
+  {
+   "prestation": "Mini-pelle 1,5 à 3 t, avec chauffeur",
+   "famille": "Location d'engins avec ou sans chauffeur",
+   "min": 500.0,
+   "max": 600.0,
+   "unite": "jour",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/location-minipelle-guide.html"
+  },
+  {
+   "prestation": "Mini-pelle 3 à 5 t, location nue",
+   "famille": "Location d'engins avec ou sans chauffeur",
+   "min": 250.0,
+   "max": 400.0,
+   "unite": "jour",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/location-minipelle-guide.html"
+  },
+  {
+   "prestation": "Tractopelle, location nue",
+   "famille": "Location d'engins avec ou sans chauffeur",
+   "min": 250.0,
+   "max": 450.0,
+   "unite": "jour",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/location-tractopelle-prix.html"
+  },
+  {
+   "prestation": "Tractopelle avec chauffeur",
+   "famille": "Location d'engins avec ou sans chauffeur",
+   "min": 60.0,
+   "max": 90.0,
+   "unite": "heure",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/location-tractopelle-prix.html"
+  },
+  {
+   "prestation": "Tractopelle équipé BRH, avec chauffeur",
+   "famille": "Location d'engins avec ou sans chauffeur",
+   "min": 80.0,
+   "max": 110.0,
+   "unite": "heure",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/location-tractopelle-prix.html"
+  },
+  {
+   "prestation": "Chargeuse compacte, location nue",
+   "famille": "Location d'engins avec ou sans chauffeur",
+   "min": 200.0,
+   "max": 320.0,
+   "unite": "jour",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/location-chargeuse-compacte.html"
+  },
+  {
+   "prestation": "Dumper 1 à 3 t, location nue",
+   "famille": "Location d'engins avec ou sans chauffeur",
+   "min": 100.0,
+   "max": 180.0,
+   "unite": "jour",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/location-minipelle-guide.html"
+  },
+  {
+   "prestation": "Transport porte-engin aller-retour, engin jusqu'à 5 t (moins de 30 km)",
+   "famille": "Location d'engins avec ou sans chauffeur",
+   "min": 150.0,
+   "max": 300.0,
+   "unite": "forfait",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/location-minipelle-guide.html"
+  }
+ ]
+}
