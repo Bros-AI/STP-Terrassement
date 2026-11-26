@@ -1,0 +1,41 @@
+name: Synchronisation ERP
+# Recopie chaque jour dans data/erp/ ce que l'ERP publie pour le site : horaires, grille de
+# prix, avis, attestation d'assurance, chantiers publies (voir scripts/fetch-erp-data.py).
+# Ne commit que si quelque chose a change. Si l'ERP ne repond pas, rien n'est touche.
+#
+# 05:45 UTC : une heure apres les taches quotidiennes de l'ERP (04:45 UTC), pour lire le
+# nombre d'avis du jour.
+on:
+  schedule:
+    - cron: '45 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-erp-data
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Lire l'ERP
+        env:
+          ERP_SITE_BASE: ${{ secrets.ERP_SITE_BASE }}
+        run: python scripts/fetch-erp-data.py
+      - name: Enregistrer si quelque chose a change
+        run: |
+          git add -A data/erp images/realisations 2>/dev/null || git add -A data/erp
+          if git diff --cached --quiet; then
+            echo "Rien de nouveau."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Donnees ERP : synchronisation du $(date -u +%Y-%m-%d)"
+          git push

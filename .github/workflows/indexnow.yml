@@ -22,3 +22,10 @@ jobs:
             | sed -E 's|^index\.html$||; s|^(.+\.html)$|https://stp-terrassement.com/\1|; s|^$|https://stp-terrassement.com/|; s|^sitemap\.xml$|https://stp-terrassement.com/sitemap.xml|' \
             | sort -u \
             | python scripts/submit-indexnow.py --stdin
+      # L'ERP tient la file des pages a soumettre a Google (Search Console, a la main) :
+      # une page nouvelle y entre en tete. Sans secrets, ou ERP injoignable : sans effet.
+      - name: Annoncer les pages modifiees a l'ERP
+        env:
+          ERP_SITE_BASE: ${{ secrets.ERP_SITE_BASE }}
+          ERP_DEPLOY_TOKEN: ${{ secrets.ERP_DEPLOY_TOKEN }}
+        run: python scripts/notify-erp.py

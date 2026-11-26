@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "resources": {
+    "business": {
+      "name": "str",
+      "legal_name": "str",
+      "address": { "street": "str", "postal_code": "str", "city": "str", "country": "str" },
+      "phone": "str",
+      "email": "str",
+      "website": "str",
+      "hours": [{ "days": "list", "opens": "str", "closes": "str" }],
+      "hours_text": "str",
+      "service_area": "list",
+      "categories": "list",
+      "short_description": "str",
+      "long_description": "str"
+    },
+    "prices": {
+      "families": "dict",
+      "items": [{
+        "key": "str", "family": "str", "label": "str", "unit": "str",
+        "low": "num", "high": "num", "basis": "str", "tva_rate": "num",
+        "includes": "str", "site_guide": "str", "updated_at": "str"
+      }]
+    },
+    "reviews": {
+      "rating": "num?",
+      "review_count": "int?",
+      "updated_at": "str?",
+      "profile_url": "str",
+      "write_review_url": "str",
+      "testimonials": [{ "author": "str", "month": "str", "job_type": "str", "city": "str", "quote": "str" }]
+    },
+    "compliance": {
+      "documents": [{
+        "type": "str", "insurer": "str", "contract": "str",
+        "valid_from": "str?", "valid_to": "str?", "valid": "bool",
+        "activities": "str", "limits": "str"
+      }]
+    },
+    "realisations": {
+      "projects": [{
+        "slug": "str", "title": "str", "service": "str", "commune": "str", "department": "str",
+        "month": "str", "quantities": "str", "budget_band": "str", "summary": "str", "published_at": "str",
+        "images": [{
+          "id": "int", "alt": "str", "phase": "str", "width": "int", "height": "int",
+          "sources": [{ "url": "str", "width": "int", "height": "int", "format": "str" }]
+        }]
+      }]
+    }
+  }
+}

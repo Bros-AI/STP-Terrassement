@@ -2406,3 +2406,30 @@ immatriculation au RNE le 04/12/2025. Le site publiait le 4 décembre comme date
   FR03994240588. Vérifier auprès du SIE ; tant que ce n'est pas réglé, la mention peut être contestée.
 - **Justacoté** : catégorie « Constructeur » ; demander « Terrassement » ou « Travaux publics ».
 - L'aperçu IA de Google reprend encore « depuis 15 ans » (cache ancien) : se résorbera au recrawl.
+
+## 44e passe — branchement sur l'ERP (2026-11-26)
+
+L'ERP (`Bros-AI/ERP-chantier`, specs `docs/specs/SEO-00` à `09`) publie désormais les faits
+de l'entreprise ; le site commence à les lire. Cette passe pose la tuyauterie, **sans
+modifier une seule page** :
+
+- `scripts/fetch-erp-data.py` + `data/erp/schema.json` + workflow `sync-erp-data.yml`
+  (05:45 UTC) : recopie `business`, `prices`, `reviews`, `compliance`, `realisations` dans
+  `data/erp/`, valide leur format, ne commit que s'il y a du nouveau. ERP en panne : rien
+  n'est touché. Format changé côté ERP : la synchronisation s'arrête (sortie 1).
+- `scripts/notify-erp.py`, appelé par `indexnow.yml` : annonce à l'ERP les pages nouvelles
+  ou modifiées — elles entrent dans sa file d'indexation. Ne bloque jamais une mise en ligne.
+- `js/track.js` : ajoute aux formulaires de devis les champs cachés `landing` (première
+  page de la visite), `ref` (nom d'hôte d'origine, « - » si visite directe) et `utm_*`.
+  Gardés dans l'onglet (`sessionStorage`) : ni cookie, ni identifiant. Web3Forms les
+  transmet dans son e-mail, l'ERP les lit et sait quelles pages amènent des demandes.
+  Vérifié au navigateur : visite arrivée sur un guide par le lien de la fiche Google, puis
+  formulaire de contact → `landing=/blog/…`, `utm_campaign=gbp` ; visite directe → `ref=-`.
+
+Secrets du dépôt à créer (valeurs dans l'ERP › Site web › Accès) : `ERP_SITE_BASE`,
+`ERP_DEPLOY_TOKEN`. Sans eux, les deux scripts ne font rien.
+
+**Reste à faire** — les générateurs qui consomment `data/erp/` : grille de prix, bloc
+assurance (mentions légales, qui-sommes-nous), horaires et `openingHoursSpecification`,
+nombre d'avis et témoignages, pages `realisations/<slug>.html` ; et les contrôles `seo-qa`
+correspondants (un prix, un horaire ou un témoignage qui s'écarte des données ERP).
