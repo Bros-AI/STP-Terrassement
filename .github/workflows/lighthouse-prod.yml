@@ -11,25 +11,33 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: '20' }
+      # 3 runs per page, budgets checked on the median (see scripts/lighthouse-budget.mjs):
+      # a single run on a shared runner flapped on an unchanged site. Every page is
+      # measured even when an earlier one fails, so one report shows the whole picture.
       - name: Lighthouse mobile (home, city page, article)
         run: |
-          set -e
+          status=0
           for page in "" "terrassement-marseille.html" "blog/prix-enrobe-m2.html"; do
             name=$(echo "home_${page}" | tr '/.' '__')
-            npx --yes lighthouse "https://stp-terrassement.com/${page}" \
-              --output=json --output-path="./lh-${name}.json" \
-              --only-categories=performance --quiet \
-              --chrome-flags="--headless --no-sandbox"
-            node scripts/lighthouse-budget.mjs "./lh-${name}.json" mobile
+            for i in 1 2 3; do
+              npx --yes lighthouse "https://stp-terrassement.com/${page}" \
+                --output=json --output-path="./lh-${name}-${i}.json" \
+                --only-categories=performance --quiet \
+                --chrome-flags="--headless --no-sandbox"
+            done
+            echo "== /${page}"
+            node scripts/lighthouse-budget.mjs ./lh-${name}-1.json ./lh-${name}-2.json ./lh-${name}-3.json mobile || status=1
           done
+          exit $status
       - name: Lighthouse desktop (city page)
         run: |
-          set -e
-          npx --yes lighthouse "https://stp-terrassement.com/terrassement-marseille.html" \
-            --preset=desktop --output=json --output-path=./lh-desktop.json \
-            --only-categories=performance --quiet \
-            --chrome-flags="--headless --no-sandbox"
-          node scripts/lighthouse-budget.mjs ./lh-desktop.json desktop
+          for i in 1 2 3; do
+            npx --yes lighthouse "https://stp-terrassement.com/terrassement-marseille.html" \
+              --preset=desktop --output=json --output-path=./lh-desktop-${i}.json \
+              --only-categories=performance --quiet \
+              --chrome-flags="--headless --no-sandbox"
+          done
+          node scripts/lighthouse-budget.mjs ./lh-desktop-1.json ./lh-desktop-2.json ./lh-desktop-3.json desktop
       - name: Upload reports
         if: always()
         uses: actions/upload-artifact@v4

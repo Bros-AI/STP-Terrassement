@@ -118,7 +118,7 @@ HUBS = {'terrassement.html', 'vrd-assainissement.html', 'amenagement-exterieur.h
 FIXED = {'index.html', 'blog.html', 'tarifs-terrassement-2026.html', 'lexique-terrassement.html',
          'realisations.html', 'zones-intervention.html', 'plan-du-site.html',
          'devis-gratuit.html', 'contact.html', 'mentions-legales.html',
-         'politique-confidentialite.html'}
+         'politique-confidentialite.html', 'qui-sommes-nous.html'}
 HEAD = ('<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n'
         '        xmlns:xhtml="http://www.w3.org/1999/xhtml"\n'

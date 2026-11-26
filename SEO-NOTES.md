@@ -11,7 +11,7 @@ annuaires). Source de vérité NAP : voir §0 du spec.
 - **Adresse** : 798 C Chemin de la Roque, 13109 Simiane-Collongue
 - **Téléphone** : 07 45 14 20 49 (+33745142049)
 - **Email** : stp13109@gmail.com
-- **Horaires** : Lun–Sam 07:00–19:00
+- **Horaires** : Lun–Ven 08:00–19:30, Sam 11:00–19:30 (fiche Google ; corrigé le 26/11/2026, `contact.html` et un bloc de l'accueil disaient encore 7h–19h)
 - **Site** : https://stp-terrassement.com
 - **Fiche Google** : CID 13986326121576911507 · Place ID `ChIJIyE_mcKVyRIRk9JbPYFpGcI`
 
@@ -2172,3 +2172,136 @@ les paquets utilisateur&nbsp;; une capture pleine page à DPR 3 semble répéter
 descriptions `seo-qa` sont limitées à 160 caractères échappés, pas 165&nbsp;; une classe d'icône
 définie en CSS ne garantit pas le glyphe dans la police sous-ensemble (vérifié dans la `cmap`
 de `fa-solid-subset.woff2` avant d'utiliser `fa-mountain`).
+
+## 40e passe — audit complet à froid, maillage hub → villes, dates des hubs (2026-11-26)
+
+Demande&nbsp;: «&nbsp;full audit to improve SEO&nbsp;». Tout est mesuré sur le site servi et sur
+le dépôt. Rien n'est commité.
+
+### Sain, mesuré
+
+| Contrôle | Résultat |
+|---|---|
+| `seo-qa --strict`, 6 générateurs `--check` | 187 pages, 0 erreur, 0 avertissement ; tous à 0 |
+| Production ↔ HEAD | 184/184 en 200, **0 écart** une fois les fins de ligne normalisées ; http→https et www→apex en 301 |
+| Lighthouse local, accueil mobile ×3 | perf 0,98-0,99 ; a11y, bonnes pratiques, SEO 1,00 ; TBT 76-120 ms ; LCP 1,9-2,1 s ; CLS 0 |
+| Pages villes (shingles de 6 mots, nom de ville neutralisé) | médiane 60-75 % de texte propre à la page ; au plus 20 % de recouvrement entre deux pages d'une même famille. Pas de profil « doorway » |
+
+### Corrigé
+
+1. **Les hubs ne liaient pas leurs pages villes.** Les 4 hubs de l'ancien gabarit&nbsp;: terrassement
+   1/19, démolition 2/9, VRD 0/8, aménagement extérieur 0/7 ; trois hubs récents en oubliaient 5.
+   45 pages villes n'étaient atteintes que par `zones-intervention.html`. Section «&nbsp;… par
+   commune&nbsp;» ajoutée, même balisage que «&nbsp;Où nous intervenons&nbsp;» d'`enrobe.html` ; le nom
+   de chaque ville vient de l'`areaServed` de la page cible. Vérifié au rendu en Pixel 5 et 1366 px,
+   sans débordement.
+2. **Le hub terrassement n'était régional qu'à moitié.** La 39e passe a changé titre et H1, mais
+   2 H2, 2 H3, l'`aria-label` de la section et deux `<mark>` visaient encore «&nbsp;à
+   Aix-en-Provence&nbsp;». Repris ; le JSON-LD FAQ est régénéré par `build-faq-schema`.
+3. **«&nbsp;Dernière mise à jour : Mars 2026&nbsp;»** était affiché sur 5 hubs dont le `lastmod`
+   disait octobre. `build-dates.py` synchronise désormais ce bandeau. La regex est ancrée sur
+   `fa-calendar-check` : la date de la politique de confidentialité, choisie à la main, reste
+   hors champ.
+4. **Le Lighthouse hebdomadaire criait au loup** : 3 échecs sur 5 lundis sans aucun changement
+   du site (TBT 428 puis 1 092 ms). La trace donne 1,3 s de Style & Layout simulé contre 31 ms de
+   script : c'est le CPU partagé du runner. Le contrôle porte maintenant sur la médiane de
+   3 mesures, et tous les gabarits sont mesurés même si l'un échoue. Prouvé : 2 mesures lentes
+   sur 3 → FAIL, 1 sur 3 → OK.
+
+### Ouvert — décisions du propriétaire
+
+- **Accueil contre page d'Aix.** L'accueil est titré «&nbsp;Terrassement Aix-en-Provence (13)&nbsp;»
+  et porte 4 H2 sur Aix ; `terrassement-aix-en-provence.html` vise le même terme. Avant de
+  trancher, ouvrir dans GSC la requête «&nbsp;terrassement aix en provence&nbsp;» → onglet Pages.
+  Même question pour `demolition.html` («&nbsp;Démolition Aix-en-Provence&nbsp;») face à
+  `demolition-maison-aix-en-provence.html`.
+- **Passage à 2027.** 47 titres, 45 descriptions et 46 H1 contiennent 2026, ainsi que deux URL.
+  GitHub Pages ne fait pas de 301 : garder les URL et changer titres et H1, mi-décembre. Le corps
+  compte 802 mentions, dont 385 «&nbsp;en 2026&nbsp;» ; les dates réglementaires ne bougent pas.
+  Revalider la grille de prix avant.
+- **E-E-A-T.** Il n'y a pas de page «&nbsp;Qui sommes-nous&nbsp;», et les 59 articles sont signés
+  par l'Organization. Aucune photo n'est réelle (toutes générées, légendées honnêtement), et
+  l'`image` du LocalBusiness est l'image générée d'une équipe. Les 3 témoignages de l'accueil
+  (Jean-Marc D., Sophie L., Michel R.) n'ont jamais été comparés aux 3 avis Google. «&nbsp;15
+  ans&nbsp;» figure sur 124 pages et «&nbsp;200 chantiers&nbsp;» sur 44 : à formuler comme
+  l'expérience de l'équipe si la société est plus récente.
+- `tarifs-terrassement-2026.html`, la référence de prix, ne reçoit que 6 liens éditoriaux.
+- Style de l'ancien gabarit : jusqu'à 10,7 `<strong>` pour 100 mots (médiane des guides 2,4),
+  `<mark>` encore sur 4 hubs, 122 H1 écrits en capitales dans le source.
+
+### Pièges
+
+- `git diff --quiet --ignore-cr-at-eol` compare les empreintes et ignore l'option : utiliser
+  `--exit-code >/dev/null`. `git status` marque M des fichiers qui ne diffèrent que par les fins
+  de ligne ; `git diff --name-only` donne la vraie liste.
+- `[^<]*` avale le saut de ligne qui précède `</div>` : écrire `[^<\r\n]*`.
+
+## 41e passe — 2027, trois guides, page « Qui sommes-nous », faux avis retirés, Search Console relue (2026-11-26)
+
+Demande : « improve all SEO, add some blog pages, do update for search console, create MCP,
+use browser extension ». Décisions du propriétaire, prises en début de passe : pousser en
+production, « 15 ans » = expérience de l'équipe (la société date du 4 décembre 2025), passer
+à 2027 tout de suite, créer les fiches d'annuaires dans le navigateur.
+
+### Search Console, 3 mois au 24 novembre (navigateur, compte stp13109 en accès total)
+
+6,1 k clics, 480 k impressions, CTR 1,3 %, position 8,6 — contre ~151 k impressions / 28 j en
+octobre. Ce que les données ont décidé :
+
+- **L'accueil possède « Aix ».** Requêtes contenant « aix » : accueil 415 impressions, position
+  7,6 ; `terrassement-aix-en-provence.html` 43 impressions, position 24 ; hub 87, position 34,7.
+  Le titre de l'accueil n'est donc pas touché.
+- **Le plus gros gisement est une page de deuxième page** : `blog/mur-soutenement-guide.html`,
+  6 213 impressions, position 13,7. Le hub `mur-soutenement.html` n'apparaît pas sur ces requêtes.
+- Grappes en position 10-25 : goudronnage/goudron/bitume (~2 500 imp), « devis + service »
+  (~3 000), tout-à-l'égout (~1 300), location d'engins Marseille (1 837 imp, position 23 —
+  face aux loueurs nationaux, non traité).
+- Les requêtes datées pèsent : « cerfa permis de démolir 2026 » 420 impressions, position 6,8.
+
+### Fait
+
+1. **Passage à 2027** par `scripts/bump-year.py` (nouveau, réutilisable : `2027 2028` l'an
+   prochain). 1 379 libellés de fraîcheur ; laissés : URL (`-2026.html`, pas de 301 possible sur
+   GitHub Pages), dates ISO et écrites, copyright, prépositions réglementaires (« depuis »,
+   « au 1er janvier »…), pages légales. 42 cartes Open Graph portaient « 2026 » dans l'image :
+   bandeau redessiné (Chrome + polices du site, calibré au pixel sur une carte existante).
+   Piège : sans garde de mot entier, « Tractopel**le** », « Liné**aire** », « Per**du** »
+   passaient pour les prépositions « le », « RE », « du ».
+2. **Faux témoignages retirés.** Jean-Marc D., Sophie L. et Michel R. (accueil) ne figuraient
+   pas parmi les 8 avis Google réels. Remplacés par des cartes factuelles (initiale, type de
+   chantier, mois, lien vers la fiche), sans copier le texte des avis. Compteur 3 → 8 avis.
+3. **« Depuis 15 ans »** (188 occurrences sur 65 pages) présentait l'âge de la société. Retiré
+   des phrases ; les badges disent « plus de 15 ans d'expérience ».
+4. **Horaires** : `contact.html` (JSON-LD et deux blocs) et un bloc de l'accueil disaient 7h–19h ;
+   alignés sur la fiche (8h–19h30, samedi 11h–19h30).
+5. **Trois guides neufs**, sujets sans page ni impression (pas de cannibalisation) :
+   `dessouchage-prix-souche`, `terrassement-extension-maison`, `poste-relevage-prix`. Prix
+   repris de la grille ; les fourchettes hors grille sont marquées « indicatives » — **à valider
+   par le propriétaire**. Illustrations en coupe dessinées en SVG (pas d'API d'image dans cette
+   session), cartes OG, liens entrants depuis 3 guides voisins chacun + hub.
+6. **`qui-sommes-nous.html`** (AboutPage) : identité légale, création, assurance SMA et
+   activités garanties, avis, zone, méthode — uniquement des faits publiés ailleurs. Lien dans
+   le pied de page des 188 pages. `FIXED` de `build-sitemap` et `build-llms-txt` mis à jour.
+7. 58 guides reçoivent un lien éditorial vers la grille de tarifs ; `<mark>` retiré partout ;
+   double échappement `&amp;amp;` corrigé dans le plan du site.
+8. **Serveur MCP Search Console** : `d:\Projets\seo-tools\gsc-mcp\` (hors dépôt), déclaré dans
+   `.mcp.json` (ignoré par git). Outils : opportunities, query_pages, page_queries,
+   compare_periods, search_analytics, inspect_url, list/submit_sitemap. Authentification par
+   les identifiants ADC du propriétaire (voir son README) ; aucune API ne permet de
+   « Demander une indexation ».
+
+### Piège : une page neuve non suivie par git prend la date du dernier commit
+
+`content_dates()` ne voit que `git diff HEAD` : un fichier non suivi tombe dans `pending` et
+reçoit la date du dernier commit (19 octobre). En CI, après commit, la date devient celle du
+jour : `--check` aurait échoué. Remède : `git add -N` sur les nouvelles pages avant la chaîne.
+
+### Ouvert — au propriétaire
+
+- **Attestation d'assurance 2027** à publier en janvier (l'actuelle couvre 2026).
+- Étude G2 : 1 500-3 500 € sur la plupart des pages, mais 1 200-2 500, 1 800-4 500 et
+  2 500-3 500 € ailleurs — vérifier s'il s'agit de périmètres différents.
+- « Exemple de chantier réel » (soutènement à Cabriès, raccordement à Simiane) : à confirmer
+  ou retirer, comme les témoignages.
+- Les 8 avis Google sont réels et récents : continuer à en demander, c'est le premier levier
+  du pack local.

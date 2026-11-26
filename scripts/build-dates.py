@@ -13,7 +13,8 @@ une reconstruction de CSS critique ne rend pas un contenu plus frais, et gonfler
 a chaque build detruirait la confiance dans le signal aussi surement que de la laisser
 perimee.
 
-La ligne visible "Mis a jour le …" des guides est alignee sur la meme date.
+La ligne visible "Mis a jour le …" des guides est alignee sur la meme date, ainsi que le
+bandeau "Derniere mise a jour : <Mois> <annee>" des hubs de l'ancien gabarit.
 
 Usage :
   python scripts/build-dates.py            # apercu
@@ -63,6 +64,14 @@ def main():
         human = f'{int(d)} {MOIS[int(mo) - 1]} {y}'
         t = re.sub(r'(fa-calendar"></i>\s*Mis (?:&agrave;|à) jour le )[^<]*',
                    lambda m: m.group(1) + human, t)
+
+        # 3. le bandeau des hubs de l'ancien gabarit ("Dernière mise à jour : Mars 2026") : il
+        # affichait mars sur des pages reecrites en octobre, en contradiction avec le sitemap.
+        # Ancre sur l'icone fa-calendar-check : la date de la politique de confidentialite
+        # (changement de fond, choisie a la main) n'a pas cette icone et reste hors champ.
+        month_year = f'{MOIS[int(mo) - 1].capitalize()} {y}'
+        t = re.sub(r'(fa-calendar-check[^"]*"></i>\s*Derni(?:&egrave;|è)re mise (?:&agrave;|à) jour : )[^<\r\n]*',
+                   lambda m: m.group(1) + month_year, t)
 
         if t != orig:
             old = re.search(r'"dateModified":\s*"([^"]{10})', orig)

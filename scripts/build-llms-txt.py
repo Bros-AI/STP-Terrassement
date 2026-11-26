@@ -32,7 +32,8 @@ HUBS = ['terrassement.html', 'vrd-assainissement.html', 'amenagement-exterieur.h
         'goudronnage.html', 'mur-soutenement.html', 'fondations-maison.html',
         'terrassement-piscine.html']
 FIXED = ['tarifs-terrassement-2026.html', 'lexique-terrassement.html', 'realisations.html',
-         'zones-intervention.html', 'plan-du-site.html', 'devis-gratuit.html', 'contact.html']
+         'zones-intervention.html', 'plan-du-site.html', 'devis-gratuit.html', 'contact.html',
+         'qui-sommes-nous.html']
 
 PRICE_RE = re.compile(r'\b\d[\d  ]{0,6}(?:\s*à\s*\d[\d  ]{0,6})?\s*€\s*(?:/\s*(?:m²|m³|ml|t|jour|an))?')
 
