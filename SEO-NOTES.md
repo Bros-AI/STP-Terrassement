@@ -2406,3 +2406,62 @@ immatriculation au RNE le 04/12/2025. Le site publiait le 4 décembre comme date
   FR03994240588. Vérifier auprès du SIE ; tant que ce n'est pas réglé, la mention peut être contestée.
 - **Justacoté** : catégorie « Constructeur » ; demander « Terrassement » ou « Travaux publics ».
 - L'aperçu IA de Google reprend encore « depuis 15 ans » (cache ancien) : se résorbera au recrawl.
+
+## 44e passe — revue complète : dates sur toutes les pages, trois hubs, deux guides (2026-11-26)
+
+Demande : « full check website, SEO, LLM optimisation, add guides, new pages, find issues and fix,
+be sure all pages are well date optimised for crawler ».
+
+### Dates : 124 pages n'en portaient aucune
+
+Les guides avaient `dateModified` et une ligne « Mis à jour le » ; les pages de service et de ville
+(124 sur 191) n'avaient ni l'un ni l'autre : seul le sitemap disait quand leurs prix avaient été revus.
+
+- `scripts/build-dates.py` pose désormais, sur toute page qui n'en a pas, un nœud JSON-LD `WebPage`
+  (`datePublished` = commit d'ajout, `dateModified` = dernier changement de contenu, `about` → le
+  `Service`) ou complète le nœud `#webpage` existant, et une ligne visible
+  `<p class="page-updated">Page mise à jour le <time datetime>…</time></p>` avant `</main>`.
+  Idempotent ; la date suit ensuite la même règle git que le sitemap.
+- `seo-qa.py` : deux règles nouvelles (date machine, date visible) — une page neuve ne peut plus
+  partir sans.
+
+### Affirmations non étayées
+
+- « Pro Certifié » dans 27 titres et « Certifié & Assuré » au pied des 191 pages : aucune
+  certification n'est documentée. Titres → « Décennale » ; badge → « Devis gratuit sous 24 h ».
+  **Si l'entreprise détient une qualification (Qualibat, etc.), la remettre avec son numéro.**
+
+### Prix
+
+- Bicouche (10-20, 15-25 → **15-30 €/m²**) et enrobé à froid (15-25 → **25-40 €/m²**) alignés sur la
+  grille dans 7 pages enrobé/goudronnage.
+- Grille : deux lignes drainage (drain périphérique neuf 40-80 €/ml, existant 150-300 €/ml), déjà
+  publiées dans le guide et les pages villes → 83 lignes, `tarifs.json` et `llms.txt` suivent.
+- `hasOfferCatalog` des hubs enrobé, goudronnage, enrochement, fondations, mur de soutènement et
+  terrassement piscine : ils déclaraient tous « terrassement maison / piscine / nivellement ».
+  Remplacé par les lignes de la grille qui les concernent (min, max, unité, TVA).
+
+### Pages nouvelles
+
+- Trois hubs pour des familles de pages villes qui n'avaient pas de parent :
+  `viabilisation-terrain.html`, `raccordement-tout-egout.html`, `drainage-terrain.html`. Orientés
+  service (ce que nous faisons, ce que font les concessionnaires, devis), ils renvoient aux guides
+  pour le détail des prix. Liés depuis le pied de toutes les pages, le hub VRD, l'accueil, le plan
+  du site et les neuf pages villes concernées.
+- Deux guides : `blog/bateau-trottoir-prix.html` (permission de voirie, cerfa 14023*01) et
+  `blog/etude-filiere-assainissement-prix.html` (étude de sol ANC, SPANC).
+- Sources officielles vérifiées le 26/11 (service-public.**gouv**.fr : F447, R17000).
+
+### À confirmer par le propriétaire
+
+- Prix du bateau de trottoir et de l'étude de filière : ordres de grandeur de sources publiques,
+  présentés comme tels ; à ajuster sur vos devis réels.
+- FAQ du hub VRD : « raccordement obligatoire si réseau à moins de 10 m » — formulation douteuse,
+  non touchée.
+
+### Pièges
+
+- Encore un heredoc bash qui avale les `\` (regex de `build-dates.py`) : script restauré puis édité
+  avec l'outil de fichier.
+- `integrate.py` échappe le `&nbsp;` du H1 en `&amp;nbsp;` dans `blog.html` et le plan du site : à
+  corriger après chaque intégration.

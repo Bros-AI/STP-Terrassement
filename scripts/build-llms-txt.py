@@ -30,7 +30,8 @@ SKIP = {'404.html', 'avis.html', 'v38cnl93ujw3zgpz916ykx807t2c3v.html'}
 HUBS = ['terrassement.html', 'vrd-assainissement.html', 'amenagement-exterieur.html',
         'demolition.html', 'location-materiel.html', 'enrobe.html', 'enrochement.html',
         'goudronnage.html', 'mur-soutenement.html', 'fondations-maison.html',
-        'terrassement-piscine.html']
+        'terrassement-piscine.html', 'viabilisation-terrain.html',
+        'raccordement-tout-egout.html', 'drainage-terrain.html']
 FIXED = ['tarifs-terrassement-2026.html', 'lexique-terrassement.html', 'realisations.html',
          'zones-intervention.html', 'plan-du-site.html', 'devis-gratuit.html', 'contact.html',
          'qui-sommes-nous.html']

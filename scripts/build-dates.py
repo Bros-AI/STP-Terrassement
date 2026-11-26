@@ -23,7 +23,9 @@ Usage :
 """
 import datetime as dt
 import glob
+import html
 import importlib.util
+import json
 import os
 import re
 import sys
@@ -41,6 +43,49 @@ _bs = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_bs)
 
 
+def first_published(p, fallback):
+    """Date du commit qui a ajoute la page ; a defaut (page pas encore suivie), `fallback`."""
+    out = _bs.git('log', '--diff-filter=A', '--format=%cs', '--', p).split()
+    return out[-1] if out else fallback
+
+
+def ensure_page_dates(p, t, want):
+    """Toute page porte une date lisible par machine ET par un lecteur.
+
+    124 pages de service et de ville n'en avaient aucune : ni dateModified, ni ligne visible -
+    seul le sitemap disait quand leurs prix avaient ete revus. On pose un noeud WebPage (ou on
+    complete le noeud #webpage existant) et une ligne « Page mise a jour le » avant </main>.
+    Idempotent : une page deja equipee n'est pas touchee.
+    """
+    url = 'https://stp-terrassement.com/' + ('' if p == 'index.html' else p)
+    if '"dateModified"' not in t:
+        pub = first_published(p, want)
+        own = re.search(r'^([ \t]*)"@id":\s*"' + re.escape(url) + r'#webpage",[ \t]*$', t, re.M)
+        if own:  # ContactPage, CollectionPage… : le noeud existe, on le complete
+            ind = own.group(1)
+            t = (t[:own.end()] + '\n' + ind + f'"datePublished": "{pub}",' + '\n' + ind
+                 + f'"dateModified": "{want}",' + t[own.end():])
+        else:
+            title = html.unescape(re.search(r'<title>(.*?)</title>', t, re.S).group(1).strip())
+            node = {'@context': 'https://schema.org', '@type': 'WebPage', '@id': url + '#webpage',
+                    'url': url, 'name': title, 'inLanguage': 'fr-FR',
+                    'isPartOf': {'@id': 'https://stp-terrassement.com/#website'}}
+            if f'"{url}#service"' in t:
+                node['about'] = {'@id': url + '#service'}
+            node['datePublished'] = pub
+            node['dateModified'] = want
+            body = json.dumps(node, ensure_ascii=False, indent=2).replace('\n', '\n    ')
+            block = '    <script type="application/ld+json">\n    ' + body + '\n    </script>\n'
+            i = t.find('</head>')
+            t = t[:i] + block + t[i:]
+    if not re.search(r'Mis (?:&agrave;|à) jour le|Derni(?:&egrave;|è)re mise (?:&agrave;|à) jour|page-updated', t):
+        i = t.rfind('</main>')
+        if i > 0:
+            t = (t[:i] + '<p class="page-updated"><i class="fa-solid fa-calendar-check"></i> Page mise à jour le '
+                 + f'<time datetime="{want}">{want}</time></p>' + '\n' + t[i:])
+    return t
+
+
 def main():
     write = '--write' in sys.argv
     os.chdir(ROOT)
@@ -53,6 +98,8 @@ def main():
         want = dates[p]
         t = open(p, encoding='utf-8').read()
         orig = t
+
+        t = ensure_page_dates(p, t, want)
 
         # 1. schema.org dateModified (jamais anterieur a datePublished)
         pub = re.search(r'"datePublished":\s*"([^"]{10})', t)
@@ -72,6 +119,10 @@ def main():
         month_year = f'{MOIS[int(mo) - 1].capitalize()} {y}'
         t = re.sub(r'(fa-calendar-check[^"]*"></i>\s*Derni(?:&egrave;|è)re mise (?:&agrave;|à) jour : )[^<\r\n]*',
                    lambda m: m.group(1) + month_year, t)
+
+        # 4. la ligne de pied de page des pages de service et de ville
+        t = re.sub(r'(<p class="page-updated">.*?<time datetime=")[^"]*(">)[^<]*',
+                   lambda m: m.group(1) + eff + m.group(2) + human, t)
 
         if t != orig:
             old = re.search(r'"dateModified":\s*"([^"]{10})', orig)

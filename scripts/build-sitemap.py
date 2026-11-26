@@ -114,7 +114,8 @@ def content_dates(pages):
 HUBS = {'terrassement.html', 'vrd-assainissement.html', 'amenagement-exterieur.html',
         'demolition.html', 'location-materiel.html', 'enrobe.html', 'enrochement.html',
         'goudronnage.html', 'mur-soutenement.html', 'fondations-maison.html',
-        'terrassement-piscine.html'}
+        'terrassement-piscine.html', 'viabilisation-terrain.html',
+        'raccordement-tout-egout.html', 'drainage-terrain.html'}
 FIXED = {'index.html', 'blog.html', 'tarifs-terrassement-2026.html', 'lexique-terrassement.html',
          'realisations.html', 'zones-intervention.html', 'plan-du-site.html',
          'devis-gratuit.html', 'contact.html', 'mentions-legales.html',

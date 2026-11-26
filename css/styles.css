@@ -2329,3 +2329,7 @@ table caption { caption-side: top; text-align: left; font-size: .9rem; color: va
 /* Le bouton WhatsApp flottant (65 px, a 30 px du bord droit) mordait la fin de la ligne de
    copyright en bureau ; la ligne garde la place du bouton. Sur mobile il est masque. */
 @media (min-width: 769px) { .copyright { padding-right: 110px; } }
+
+/* Date de mise a jour en pied de page (posee par scripts/build-dates.py) */
+.page-updated { margin: 0; padding: 1.25rem 1rem; text-align: center; font-size: 0.875rem; color: var(--text-light); background: var(--white); }
+.page-updated i { margin-right: 0.35rem; }

@@ -69,6 +69,8 @@ Prix indicatifs pour un particulier, TTC sauf mention HT, Bouches-du-Rhône. Sou
 - Raccordement Enedis, 30 à 100 m, sans extension de réseau : 3 500 à 8 000 € (forfait, TTC) — https://stp-terrassement.com/blog/prix-raccordement-enedis.html
 - Raccordement Enedis avec extension de réseau : 7 000 à 16 000 € (forfait, TTC) — https://stp-terrassement.com/blog/prix-raccordement-enedis.html
 - Puits perdu busé Ø1 m, 2 à 3 m de profondeur : 1 500 à 3 000 € (forfait, TTC) — https://stp-terrassement.com/blog/prix-puits-perdu.html
+- Drain périphérique de maison neuve, en fouille ouverte : 40 à 80 € (ml, TTC) — https://stp-terrassement.com/blog/drainage-terrain-guide.html
+- Drain périphérique autour d'une maison existante : 150 à 300 € (ml, TTC) — https://stp-terrassement.com/blog/drainage-terrain-guide.html
 - Cuve de récupération d'eau de pluie 5 000 l, posée : 4 500 à 7 000 € (forfait, TTC) — https://stp-terrassement.com/blog/recuperation-eau-pluie-prix.html
 - Viabilisation complète (eau, électricité, assainissement collectif, télécom), hors PFAC : 7 000 à 18 000 € (forfait, TTC) — https://stp-terrassement.com/blog/combien-coute-viabilisation-terrain.html
 - Enrobé à chaud noir, posé (hors préparation) : 30 à 55 € (m², TTC) — https://stp-terrassement.com/blog/prix-enrobe-m2.html
@@ -126,12 +128,16 @@ Prix indicatifs pour un particulier, TTC sauf mention HT, Bouches-du-Rhône. Sou
 - [Mur de soutènement](https://stp-terrassement.com/mur-soutenement.html) : Mur de soutènement en béton banché, gabion, parpaings ou enrochement : prix au m², règles de hauteur, drainage et autorisations. Devis gratuit…
 - [Fondations maison](https://stp-terrassement.com/fondations-maison.html) : Fondations de maison en Provence : semelles filantes, radier, puits et micropieux. Prix au mètre linéaire et au m², étude de sol et exécution.…
 - [Terrassement piscine](https://stp-terrassement.com/terrassement-piscine.html) : Terrassement de piscine en Provence : implantation, excavation, évacuation des terres et plateforme prête pour le pisciniste. Prix par dimension,…
+- [Viabilisation de terrain](https://stp-terrassement.com/viabilisation-terrain.html) : Viabilisation de terrain dans les Bouches-du-Rhône : eau, électricité, assainissement, télécom. Budget de 7 000 à 18 000 € hors PFAC, tranchée… — repères : 7 000 à 18 000 €
+- [Raccordement au tout-à-l'égout](https://stp-terrassement.com/raccordement-tout-egout.html) : Raccordement au tout-à-l'égout dans les Bouches-du-Rhône : partie privée de 3 000 à 9 000 €, branchement public, PFAC, délai de deux ans,… — repères : 3 000 à 9 000 €
+- [Drainage de terrain](https://stp-terrassement.com/drainage-terrain.html) : Drainage de terrain et de maison en Provence : drain périphérique de 40 à 80 €/ml en neuf, 150 à 300 €/ml sur l'existant, puits perdu, exutoire.… — repères : 40 à 80 €/ml, 150 à 300 €/ml
 
 ## Guides de prix et guides techniques
 
-65 guides, chiffrés pour 2027 sur le marché des Bouches-du-Rhône. Les fourchettes citées sont des prix posés, fourniture comprise, sauf mention contraire dans la page.
+67 guides, chiffrés pour 2027 sur le marché des Bouches-du-Rhône. Les fourchettes citées sont des prix posés, fourniture comprise, sauf mention contraire dans la page.
 
 - [Aménagement d'allée carrossable pour voiture : prix 2027](https://stp-terrassement.com/blog/amenagement-allee-carrossable.html) : Aménager une allée carrossable pour voiture : structure selon le trafic, choix du revêtement, budget au m² et exemples chiffrés en Provence
+- [Bateau de trottoir : prix 2027, autorisation et travaux](https://stp-terrassement.com/blog/bateau-trottoir-prix.html) : Créer un bateau de trottoir en 2027 : 1 000 à 3 500 € selon les travaux, permission de voirie (cerfa 14023*01), qui réalise le chantier, exemple… — repères : 1 000 à 3 500 €
 - [Chemin d'accès carrossable : prix, structure et pente](https://stp-terrassement.com/blog/chemin-acces-carrossable.html) : Prix au mètre linéaire d'un chemin d'accès carrossable, structure et portance selon le trafic, pente maximale, drainage et accès pompiers en PACA
 - [Combien Coûte une Viabilisation de Terrain en 2027 ?](https://stp-terrassement.com/blog/combien-coute-viabilisation-terrain.html) : Coût viabilisation terrain en 2027 : eau, électricité, assainissement, télécom. Prix détaillés et devis gratuit à Aix-en-Provence
 - [Comment Calculer le Volume de Terrassement](https://stp-terrassement.com/blog/comment-calculer-volume-terrassement.html) : Comment calculer le volume de terrassement (cubage) : formules, foisonnement, déblais/remblai, exemples chiffrés. Méthode d'expert à…
@@ -150,6 +156,7 @@ Prix indicatifs pour un particulier, TTC sauf mention HT, Bouches-du-Rhône. Sou
 - [Enrochement paysager : pierre, jardin et prix au m²](https://stp-terrassement.com/blog/enrochement-paysager-guide.html) : Prix d'un enrochement paysager ou de soutènement en 2027 : 150 à 250 €/m² posé, choix de la pierre et drainage. Trois chantiers chiffrés en Provence — repères : 150 à 250 €/m²
 - [Enrochement : quelles pierres et comment le réaliser](https://stp-terrassement.com/blog/enrochement-pierres-mise-en-oeuvre.html) : Quelles pierres pour un enrochement, quel poids de blocs, quel drainage et quelles étapes de mise en œuvre pour un mur qui tient dans le temps
 - [Épaisseur enrobé : allée, parking et cour en 2027](https://stp-terrassement.com/blog/epaisseur-enrobe-allee.html) : Quelle épaisseur d'enrobé pour une allée de garage, un parking ou une cour ? Structure et nombre de centimètres selon le trafic réel, avec les…
+- [Étude de sol assainissement : prix 2027 et rôle du SPANC](https://stp-terrassement.com/blog/etude-filiere-assainissement-prix.html) : Étude de sol et de filière pour un assainissement individuel : 400 à 800 € en 2027, tests de perméabilité, choix de la filière, contrôles du SPANC — repères : 400 à 800 €
 - [Étude de Sol G1 G2 : Obligations, Prix & Déroulement](https://stp-terrassement.com/blog/etude-sol-g1-g2.html) : Tout savoir sur l'étude de sol G1 et G2 : obligations légales (loi ELAN), prix, déroulement et différences. Guide expert pour Aix-en-Provence et le 13
 - [Fondations sur sol argileux : étude G2, micropieux et prix](https://stp-terrassement.com/blog/fondations-sol-argileux-micropieux.html) : Retrait-gonflement des argiles en Provence : étude de sol G2 obligatoire, semelles approfondies, radier, micropieux, reprise en sous-oeuvre et…
 - [Fosse Septique vs Tout-à-l'Égout : Comparatif Complet](https://stp-terrassement.com/blog/fosse-septique-vs-tout-egout.html) : Fosse septique ou tout-à-l'égout ? Comparatif complet : coûts, entretien, avantages et inconvénients. Guide expert assainissement Aix-en-Provence

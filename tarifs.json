@@ -387,6 +387,26 @@
    "guide": "https://stp-terrassement.com/blog/prix-puits-perdu.html"
   },
   {
+   "prestation": "Drain périphérique de maison neuve, en fouille ouverte",
+   "famille": "VRD, tranchées et raccordements",
+   "min": 40.0,
+   "max": 80.0,
+   "unite": "ml",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/drainage-terrain-guide.html"
+  },
+  {
+   "prestation": "Drain périphérique autour d'une maison existante",
+   "famille": "VRD, tranchées et raccordements",
+   "min": 150.0,
+   "max": 300.0,
+   "unite": "ml",
+   "devise": "EUR",
+   "tva": "TTC",
+   "guide": "https://stp-terrassement.com/blog/drainage-terrain-guide.html"
+  },
+  {
    "prestation": "Cuve de récupération d'eau de pluie 5 000 l, posée",
    "famille": "VRD, tranchées et raccordements",
    "min": 4500.0,

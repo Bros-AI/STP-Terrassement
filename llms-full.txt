@@ -69,6 +69,8 @@ Prix indicatifs pour un particulier, TTC sauf mention HT, Bouches-du-Rhône. Sou
 - Raccordement Enedis, 30 à 100 m, sans extension de réseau : 3 500 à 8 000 € (forfait, TTC) — https://stp-terrassement.com/blog/prix-raccordement-enedis.html
 - Raccordement Enedis avec extension de réseau : 7 000 à 16 000 € (forfait, TTC) — https://stp-terrassement.com/blog/prix-raccordement-enedis.html
 - Puits perdu busé Ø1 m, 2 à 3 m de profondeur : 1 500 à 3 000 € (forfait, TTC) — https://stp-terrassement.com/blog/prix-puits-perdu.html
+- Drain périphérique de maison neuve, en fouille ouverte : 40 à 80 € (ml, TTC) — https://stp-terrassement.com/blog/drainage-terrain-guide.html
+- Drain périphérique autour d'une maison existante : 150 à 300 € (ml, TTC) — https://stp-terrassement.com/blog/drainage-terrain-guide.html
 - Cuve de récupération d'eau de pluie 5 000 l, posée : 4 500 à 7 000 € (forfait, TTC) — https://stp-terrassement.com/blog/recuperation-eau-pluie-prix.html
 - Viabilisation complète (eau, électricité, assainissement collectif, télécom), hors PFAC : 7 000 à 18 000 € (forfait, TTC) — https://stp-terrassement.com/blog/combien-coute-viabilisation-terrain.html
 - Enrobé à chaud noir, posé (hors préparation) : 30 à 55 € (m², TTC) — https://stp-terrassement.com/blog/prix-enrobe-m2.html
@@ -143,7 +145,7 @@ STP Terrassement est votre expert en terrassement dans les Bouches-du-Rhône. Le
 ### VRD & Assainissement Aix (13) | Raccordement & Réseaux
 URL : https://stp-terrassement.com/vrd-assainissement.html · mise à jour : 2026-11-26
 
-STP Terrassement, votre entreprise VRD à Aix-en-Provence, réalise tous vos travaux VRD (voirie et réseaux divers). Les travaux de VRD sont indispensables pour viabiliser un terrain et le raccorder aux différents réseaux. De la tranchée technique à la pose des fourreaux et canalisations PVC, nous assurons une installation conforme aux normes NF DTU, garantissant la pérennité de vos installations. Chaque raccordement tout-à-l'égout respecte la pente d'écoulement réglementaire et fait l'objet d'une attestation de conformité. Après le terrassement de votre terrain, nous gérons l'ensemble des raccordements avec conformité SPANC pour l'assainissement non collectif. Une fois les réseaux en place, nous réalisons également vos travaux d'aménagement extérieur et enrobé. Demandez votre devis gratuit pour votre projet VRD sur le Pays d'Aix.
+STP Terrassement, votre entreprise VRD à Aix-en-Provence, réalise tous vos travaux VRD (voirie et réseaux divers). Les travaux de VRD sont indispensables pour viabiliser un terrain et le raccorder aux différents réseaux. De la tranchée technique à la pose des fourreaux et canalisations PVC, nous assurons une installation conforme aux normes NF DTU, garantissant la pérennité de vos installations. Chaque raccordement tout-à-l'égout respecte la pente d'écoulement réglementaire et fait l'objet d'une attestation de conformité. Après le terrassement de votre terrain, nous gérons l'ensemble des raccordements avec conformité SPANC pour l'assainissement non collectif. Une fois les réseaux en place, nous réalisons également vos travaux d'aménagement extérieur et enrobé. Demandez votre devis gratuit pour votre projet VRD sur le Pays d'Aix. Pages dédiées : raccordement au tout-à-l'égout et drainage de terrain.
 
 **Quel est le prix d'un raccordement VRD complet ?** Le prix d'un raccordement VRD complet varie entre 7000€ et 18000€ hors PFAC selon plusieurs critères : distance aux réseaux publics (10m à 50m+), nombre de réseaux à raccorder (eau, élec, tel, égouts), nature du sol (facile à creuser ou rocheux), et profondeur des tranchées. Ce tarif inclut les tranchées, la pose des canalisations et gaines, les branchements facturés par les concessionnaires et la coordination avec eux. La PFAC de l'assainissement collectif s'ajoute (30€/m² de surface de plancher dans la Métropole Aix-Marseille-Provence, soit 3000€ à 4500€ pour 100 à 150 m²). Demandez votre devis gratuit personnalisé.
 
@@ -304,6 +306,45 @@ Implantation reportée depuis son plan, excavation aux cotes, talus dressés, fo
 
 **Faut-il une déclaration pour une piscine ?** Une déclaration préalable est nécessaire au-delà de 10 m² de bassin, et un permis au-delà de 100 m² ou avec un abri de plus de 1,80 m de haut. Le terrassement suit l'autorisation du bassin.
 
+### Viabilisation de terrain : prix 2027, étapes et délais
+URL : https://stp-terrassement.com/viabilisation-terrain.html · mise à jour : 2026-11-26
+
+S'y ajoute la participation pour le financement de l'assainissement collectif (PFAC), due à la collectivité au moment du raccordement : 30 €/m² de surface de plancher sur le territoire de la Métropole Aix-Marseille-Provence, soit 3 600 € pour 120 m². Les barèmes changent : vérifiez le tarif en vigueur auprès de la Métropole avant de boucler votre budget. Le détail de chaque ligne figure dans notre grille de tarifs.
+
+**Quel est le prix pour viabiliser un terrain ?** De 7 000 à 18 000 € TTC hors PFAC pour un terrain isolé raccordé à l'égout dans les Bouches-du-Rhône : eau potable 2 000 à 4 500 €, électricité 2 200 à 8 000 € selon la distance, partie privée de l'égout 3 000 à 9 000 €, télécom 300 à 1 500 €.
+
+**Combien de temps faut-il pour viabiliser un terrain ?** Trois à six mois entre les premières demandes et la pose des compteurs. Les travaux sur la parcelle ne durent que quelques jours : ce sont les délais d'étude et d'intervention des concessionnaires qui font le calendrier.
+
+**Qui paie la viabilisation d'un terrain ?** Le propriétaire du terrain, sauf en lotissement où le lotisseur a déjà amené les réseaux en limite de lot. Une extension du réseau public peut être en partie prise en charge par la collectivité ; le certificat d'urbanisme le précise.
+
+**Peut-on faire la tranchée soi-même ?** Sur votre parcelle, oui, à condition de respecter les profondeurs, les écartements et les grillages avertisseurs : le concessionnaire refuse de poser son compteur sur un génie civil non conforme. Le domaine public reste réservé aux concessionnaires et à leurs entreprises.
+
+### Raccordement au tout-à-l'égout : prix 2027 et étapes
+URL : https://stp-terrassement.com/raccordement-tout-egout.html · mise à jour : 2026-11-26
+
+La partie privée dépend d'abord de la longueur : 3 000 à 5 000 € pour moins de 10 ml de tranchée, 4 500 à 7 000 € de 10 à 20 ml, 6 000 à 9 000 € de 20 à 40 ml. Le tarif de la PFAC évolue : vérifiez celui en vigueur auprès du service d'assainissement avant de boucler votre budget.
+
+**Quel est le prix d'un raccordement au tout-à-l'égout ?** De 6 000 à 16 000 € TTC au total dans les cas courants : 3 000 à 9 000 € pour la partie privée, 1 500 à 4 000 € pour le branchement public sous voirie, plus la PFAC, de 30 €/m² de surface de plancher sur le territoire de la Métropole Aix-Marseille-Provence.
+
+**Le raccordement au tout-à-l'égout est-il obligatoire ?** Oui, dans les deux ans qui suivent la mise en service du réseau public dans la rue, sauf dérogation accordée par la collectivité pour un immeuble difficilement raccordable doté d'une installation individuelle conforme.
+
+**Qui paie le raccordement à l'égout ?** Le propriétaire paie la partie privée, le branchement public que la collectivité fait réaliser, et la PFAC. La collectivité finance le réseau de collecte lui-même.
+
+**Combien de temps durent les travaux ?** Deux à quatre jours sur la parcelle pour une maison individuelle. Le délai global dépend du devis et de l'intervention du service d'assainissement pour le branchement public : comptez un à trois mois.
+
+### Drainage de terrain : techniques, prix au ml et pose
+URL : https://stp-terrassement.com/drainage-terrain.html · mise à jour : 2026-11-26
+
+Un drain est un tuyau perforé posé en fond de tranchée, avec une pente régulière de 3 à 10 mm par mètre vers un exutoire. Il est enrobé de gravier lavé, lui-même enveloppé d'un géotextile qui laisse passer l'eau et retient les fines : sans ce filtre, le drain se colmate en quelques années. Contre un mur enterré, on ajoute une étanchéité et une nappe drainante verticale qui conduit l'eau jusqu'au drain. Autour d'une maison, le drain se pose en pied de fondation et jamais plus bas que la semelle : creuser sous le niveau d'assise déchausse la fondation.
+
+**Quel est le prix d'un drainage de maison ?** De 40 à 80 €/ml en construction neuve et de 150 à 300 €/ml autour d'une maison existante. Pour 40 ml de périmètre : 1 600 à 3 200 € en neuf, 6 000 à 12 000 € sur l'existant, exutoire en sus s'il faut créer un puits perdu (1 500 à 3 000 €).
+
+**Le drainage est-il obligatoire ?** Aucun texte ne l'impose à toutes les maisons. Il devient nécessaire dès qu'un local enterré est habitable, que le terrain est en pente vers la maison ou que l'étude de sol le prescrit : le constructeur doit alors le réaliser.
+
+**À quelle profondeur poser un drain ?** Au niveau du pied de fondation pour un drain périphérique, sans jamais descendre sous la semelle. Dans un jardin, 50 à 80 cm suffisent pour assainir une pelouse.
+
+**Combien de temps dure un drain ?** Plusieurs dizaines d'années s'il est enveloppé d'un géotextile, enrobé de gravier lavé et équipé de regards qui permettent de le curer. Un drain posé nu dans la terre se colmate en quelques années.
+
 ### Aménagement d'allée carrossable pour voiture : prix 2027
 URL : https://stp-terrassement.com/blog/amenagement-allee-carrossable.html · mise à jour : 2026-11-26
 
@@ -324,6 +365,23 @@ L'allée carrossable est bien plus qu'un simple chemin d'accès : c'est la premi
 **Comment gérer les eaux pluviales sur une allée ?** Par pentes de 1,5 à 2 %, grilles caniveau transversales et puisards d'infiltration en pied de pente pour éviter les rejets vers la voirie.
 
 **Puis-je réutiliser l'ancienne fondation ?** Oui si elle est saine, plane et compacte. Sinon, un décaissement complet est plus fiable qu'une superposition fragile.
+
+### Bateau de trottoir : prix 2027, autorisation et travaux
+URL : https://stp-terrassement.com/blog/bateau-trottoir-prix.html · mise à jour : 2026-11-26
+
+Le prix dépend de la largeur de l'accès, de la nature du trottoir et de ce qui se trouve sur son passage. Un candélabre, un coffret ou un avaloir à déplacer pèse souvent plus lourd que les bordures elles-mêmes.
+
+**Combien coûte la création d'un bateau de trottoir ?** De 1 000 à 1 800 € TTC pour un simple abaissement de bordure sur 3 à 4 m, et de 2 500 à 3 500 € quand le trottoir et son revêtement sont à refaire. Le déplacement d'un candélabre ou d'un coffret s'ajoute sur devis.
+
+**Qui paie le bateau devant chez moi ?** Le riverain qui demande l'accès, même si l'ouvrage se trouve sur le domaine public et reste la propriété de la collectivité.
+
+**Faut-il une autorisation pour abaisser un trottoir ?** Oui, une permission de voirie, demandée au gestionnaire de la rue avec le formulaire cerfa n° 14023*01. Sans elle, la collectivité peut faire remettre le trottoir en état à vos frais.
+
+**Peut-on se garer devant son propre bateau ?** Non. Le stationnement devant une entrée carrossable est interdit à tous les véhicules, y compris ceux du riverain.
+
+**Quelle largeur pour un bateau de trottoir ?** En général celle du portail, augmentée des bordures de transition, soit 3 à 5 m pour une maison. La largeur maximale est fixée par le règlement de voirie ou le plan local d'urbanisme de la commune.
+
+**Combien de temps faut-il pour obtenir un bateau ?** Comptez un à deux mois pour l'instruction de la permission de voirie, puis un à deux jours de travaux pour un bateau simple.
 
 ### Chemin d'accès carrossable : prix, structure et pente
 URL : https://stp-terrassement.com/blog/chemin-acces-carrossable.html · mise à jour : 2026-11-26
@@ -730,6 +788,23 @@ L'épaisseur de l'enrobé est un critère déterminant pour garantir la durabili
 **Quelle épaisseur d'enrobé pour un particulier ?** Pour une allée de maison individuelle qui reçoit une voiture, 5 à 6 cm d'enrobé après compactage suffisent, posés sur 15 à 20 cm de grave concassée. C'est le standard résidentiel : monter à 8 cm n'apporte rien si la fondation en dessous n'est pas dimensionnée, alors que descendre à 4 cm fait apparaître des faïençages dès les premiers hivers.
 
 **Quelle épaisseur d'enrobé pour une cour ?** Une cour reçoit des manœuvres, du stationnement prolongé et parfois un utilitaire ou une livraison : comptez 6 à 8 cm d'enrobé sur 20 à 25 cm de fondation. Le point sensible d'une cour n'est pas l'épaisseur mais la pente : 2 % minimum vers un exutoire, sinon l'eau stagne aux points bas et décolle le tapis.
+
+### Étude de sol assainissement : prix 2027 et rôle du SPANC
+URL : https://stp-terrassement.com/blog/etude-filiere-assainissement-prix.html · mise à jour : 2026-11-26
+
+Le prix de l'étude est libre et se négocie avec le bureau d'études ; les redevances du SPANC, elles, sont votées par la collectivité. Les deux s'additionnent.
+
+**Combien coûte une étude de sol pour un assainissement individuel ?** De 400 à 800 € TTC pour une maison individuelle, et jusqu'à 1 200 € sur un terrain très argileux, en forte pente ou avec une nappe proche. Les redevances de contrôle du SPANC s'ajoutent.
+
+**L'étude de filière est-elle obligatoire ?** Pas par un texte national pour une maison individuelle, mais la plupart des règlements de SPANC l'exigent, et le service ne peut pas valider un projet sans données sur le sol.
+
+**Qui réalise l'étude de sol ?** Un bureau d'études indépendant de l'installateur, spécialisé en assainissement non collectif ou en hydrogéologie. Le SPANC ne la réalise pas : il l'examine.
+
+**Qu'est-ce qu'un test de perméabilité ?** Une mesure de la vitesse à laquelle l'eau s'infiltre dans un trou de sondage saturé, exprimée en millimètres par heure. Entre 15 et 500 mm/h, le sol en place peut recevoir un épandage.
+
+**Combien de temps l'étude reste-t-elle valable ?** Aucune durée n'est fixée par la réglementation nationale : elle reste utilisable tant que le projet et le terrain n'ont pas changé. Certains SPANC demandent une étude récente ; vérifiez leur règlement.
+
+**Peut-on choisir sa filière malgré l'étude ?** Seulement parmi celles que le sol permet. Quand plusieurs filières conviennent, le choix vous revient, selon la place disponible, le coût d'entretien et la consommation électrique.
 
 ### Étude de Sol G1 G2 : Obligations, Prix & Déroulement
 URL : https://stp-terrassement.com/blog/etude-sol-g1-g2.html · mise à jour : 2026-11-26

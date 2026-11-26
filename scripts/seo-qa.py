@@ -467,6 +467,13 @@ def main():
         if re.search(r'<meta name="robots" content="[^"]*noindex', t):
             err(f'{fn}: unexpected noindex directive')
 
+        # every indexable page states when it last changed, for machines and for readers:
+        # 124 service and city pages had neither (build-dates.py now adds both)
+        if '"dateModified"' not in t:
+            err(f'{fn}: no schema.org dateModified — run scripts/build-dates.py --write')
+        if not re.search(r'Mis (?:&agrave;|à) jour le|Derni(?:&egrave;|è)re mise (?:&agrave;|à) jour|class="page-updated"', t):
+            err(f'{fn}: no visible update date — run scripts/build-dates.py --write')
+
         # images: dimensions + files exist
         for tag in IMG_RE.findall(t):
             sm = re.search(r'src="([^"]+)"', tag)
