@@ -2514,3 +2514,16 @@ Le trafic vient des guides de prix ; les pages qui vendent sont au-delà de la 1
 - Troisième heredoc bash qui avale les `\` : des renvois de groupe sont devenus des caractères
   de contrôle dans 28 pages. Réparé (`check.py` compare l'équilibre des balises avec HEAD).
   Les scripts à regex s'écrivent avec l'outil de fichier, jamais en heredoc.
+
+## 46e passe (27/11/2026) : points laissés en suspens, tranchés
+
+- « Plus de 200 chantiers » retiré de 44 pages (société créée en novembre 2025) : remplacé par un
+  renvoi aux réalisations.
+- Pages fondations : les étapes de béton (béton de propreté, ferraillage, coulage) portent la mention
+  « par votre maçon » ; cartes de prestations de Marseille, Gardanne et Vitrolles ramenées au
+  terrassement.
+- VRD de lotissement : périmètre « de la division en deux lots au petit lotissement » conservé.
+- Points de droit vérifiés le 27/11 : majorité de l'article 24 pour les travaux obligatoires
+  (service-public.gouv.fr F2137, justice.fr), câbles enterrés à 0,50 m et 0,85 m sous voies
+  (NF C 15-100 § 529.5, fiche Prysmian), qualification IRVE au-delà de 3,7 kW, rubrique 2.1.5.0
+  (déclaration au-delà de 1 ha), délais ANC d'un an après vente et de quatre ans. Rien à corriger.
