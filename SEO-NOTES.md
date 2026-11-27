@@ -2573,3 +2573,12 @@ règles par type de page, ce qui dépend du propriétaire).
 - Aucun assistant IA ne propose de formulaire de soumission : voir `SPECS-SEO-IA.md`, section 8.
 - Bloqué : Gemini (site non autorisé dans l'extension Chrome) ; Bing Webmaster Tools et Apple
   Business demandent une connexion.
+
+## 49e passe (27/11/2026) : illustrations par service
+
+- Huit illustrations générées avec Gemini, une par service, en remplacement des photos génériques
+  réutilisées sur 46 pages villes (enrobé, goudronnage, piscine, enrochement, mur de soutènement,
+  drainage, viabilisation, location, décaissement). Fichiers nommés par leur sujet
+  (`pose-enrobe-allee-maison-provence.webp`, …), en 1280, 800 et 400 px.
+- Mentions légales : ces images sont des illustrations, en partie générées par IA, et ne montrent
+  pas des chantiers de l'entreprise. Elles ne sont pas utilisées sur la page Réalisations.
