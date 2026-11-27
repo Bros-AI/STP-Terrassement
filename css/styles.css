@@ -2461,3 +2461,8 @@ table caption { caption-side: top; text-align: left; font-size: .9rem; color: va
 }
 @media (prefers-reduced-motion: reduce) { .save-sheet { transition: none; } }
 @media print { .float-wa-wrap, .save-sheet, .read-progress, .toc { display: none; } }
+
+/* --- PASS 51: accessibility fixes found by Lighthouse --- */
+.article-content details.toc > summary, .article-content details.toc[open] > summary { color: var(--dark); background: none; border: 0; padding: 0; }
+.cta-local-top span a, .article-content p a, .article-content li a { text-decoration: underline; text-underline-offset: 2px; }
+.article-content .toc li a { text-decoration: none; }

@@ -2596,3 +2596,19 @@ règles par type de page, ce qui dépend du propriétaire).
 - Fenêtre de sortie sur ordinateur : rappel du raccourci des favoris.
 - Accueil : cartes problème / solution plus lisibles, un bouton d'action dessous.
 - Hub enrobé : prix alignés sur la grille (30-55 et 35-60 €/m²).
+
+## 51e passe (27/11/2026) : revue complète
+
+Audit de 206 pages (script `audit51.py`) : liens internes et ancres, identifiants en double, images
+et `srcset`, JSON-LD, balises d'en-tête, plan de site, fichiers machine, 60 liens externes.
+
+- Rien de cassé : 0 lien interne mort, 0 image manquante, 0 JSON-LD invalide, plan de site et
+  dates cohérents, `llms.txt` et flux valides.
+- Corrigé : titres sociaux différents du titre (82 balises), 2 titres d'article, 10 tableaux
+  d'anciens guides encore stylés en ligne, contraste du « Sommaire », liens du bandeau soulignés,
+  libellé du lien e-mail.
+- Lighthouse en production (mobile) : performance 92 à 99, SEO 100, bonnes pratiques 100,
+  accessibilité 93 à 100 avant correctifs. LCP 2,0 à 2,3 s, CLS inférieur à 0,01.
+- Faux positifs : « canonical » sur `/index.html` (l'URL testée n'est pas la canonique), Wikipédia
+  en 429 (limite de débit du contrôle).
+- Lighthouse 13 ne s'installe pas (dépendance npm introuvable) : utiliser `lighthouse@12.2.1`.
