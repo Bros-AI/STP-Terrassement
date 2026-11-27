@@ -125,3 +125,20 @@ Ranked by expected effect.
 | 4 | Request indexing of the nine pages added on 27 November | Search Console, about 10 a day |
 | 5 | Quote pages by trade ("devis démolition", "devis goudronnage"): 350 to 590 impressions each at position 17 to 24 | None |
 | 6 | Re-check prices each quarter and update the grid | None |
+
+## 8. Listings that feed AI assistants (checked 27 November 2026)
+
+No assistant offers a form to submit a business or a website. Each one reads other people's data:
+
+| Assistant | Where it gets local businesses and pages | What to do |
+|---|---|---|
+| ChatGPT | Bing's index and Bing Places; its own crawler OAI-SearchBot (already allowed) | Sign in to Bing Webmaster Tools and Bing Places, claim the listing, submit the sitemap |
+| Copilot | Bing index and Bing Places | Same as above |
+| Google AI Overviews, AI Mode, Gemini | Google index and Google Business Profile | Keep the profile complete: services, photos, weekly posts, reviews |
+| Siri, Apple Maps, Apple Intelligence | Apple Business (ex Business Connect) | Create the place card with an Apple account |
+| Claude | A third-party web index, widely reported to be Brave's, plus ClaudeBot (already allowed) | Nothing to submit: Brave has no webmaster console |
+| Perplexity | Its own crawler PerplexityBot (already allowed) and review sites | Nothing to submit; reviews on Google and Pages Jaunes help |
+
+Present today: Google Business Profile, Bing, Pages Jaunes, Cylex, Infobel, Mappy. Missing: Bing Places
+claimed listing, Apple Business, Yelp (blocked by a captcha on 26 November), Foursquare.
+Name, address and phone must be written identically everywhere.

@@ -2560,3 +2560,16 @@ règles par type de page, ce qui dépend du propriétaire).
 
 - `seo-qa` mesure la largeur du titre en pixels : 64 caractères peuvent dépasser 580 px.
 - Une apostrophe écrite `&#39;` dans `<title>` compte pour cinq caractères.
+
+## 48e passe (27/11/2026) : signature, anciennes pages, annuaires IA
+
+- Guides signés Sophie Perrimont (auteur `Person` dans le JSON-LD, signature visible, section
+  « Qui signe ces pages ») ; mentions légales : représentante légale et directrice de la publication.
+- Bloc « En bref » sous l'en-tête de 125 pages villes et service, tiré de leur FAQ.
+- « Désamiantage certifié SS4 » et « entreprise certifiée » reformulés (8 pages) ; enrobé drainant
+  aligné sur la grille (50-75 €/m²).
+- Search Console : 141 pages indexées, 48 non indexées (33 détectées, 7 explorées) ; quota de
+  demandes d'indexation épuisé le 27/11.
+- Aucun assistant IA ne propose de formulaire de soumission : voir `SPECS-SEO-IA.md`, section 8.
+- Bloqué : Gemini (site non autorisé dans l'extension Chrome) ; Bing Webmaster Tools et Apple
+  Business demandent une connexion.
