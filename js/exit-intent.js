@@ -45,6 +45,7 @@
           '<a class="btn btn-whatsapp" href="https://wa.me/33745142049" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>' +
         '</div>' +
         '<p class="exit-modal__alt"><a href="/devis-gratuit.html">Demander un devis en ligne</a></p>' +
+        '<p class="exit-modal__fav">Pour retrouver cette page&nbsp;: ajoutez-la à vos favoris avec <kbd>' + (/Mac|iPhone|iPad/.test(navigator.platform) ? '⌘' : 'Ctrl') + '</kbd> + <kbd>D</kbd>.</p>' +
         '<p class="exit-modal__follow">Suivez nos chantiers&nbsp;:' +
           '<a href="https://www.instagram.com/stp.terrassement/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>' +
           '<a href="https://www.facebook.com/STPTerrassement" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>' +

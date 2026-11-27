@@ -2582,3 +2582,17 @@ règles par type de page, ce qui dépend du propriétaire).
   (`pose-enrobe-allee-maison-provence.webp`, …), en 1280, 800 et 400 px.
 - Mentions légales : ces images sont des illustrations, en partie générées par IA, et ne montrent
   pas des chantiers de l'entreprise. Elles ne sont pas utilisées sur la page Réalisations.
+
+## 50e passe (27/11/2026) : lecture et contact
+
+- Les 14 pages service bâties sur le gabarit « hub » n'avaient aucun style d'article ni de tableau
+  (les règles vivaient dans un bloc `<style>` propre à chaque guide). Règles déplacées dans
+  `styles.css`, améliorées (colonne de 780 px, titres aérés, tableaux lisibles, listes numérotées),
+  et retirées des 62 guides qui les dupliquaient.
+- Sommaire statique en tête de 78 pages longues, avec ancres sur les titres.
+- `js/engage.js` : bouton « Contact » qui ouvre un menu (devis, WhatsApp, téléphone, prix) sur
+  ordinateur ; troisième bouton « Devis » dans la barre mobile ; carte discrète « Gardez cette page »
+  sur mobile (jamais un plein écran) ; barre de progression de lecture.
+- Fenêtre de sortie sur ordinateur : rappel du raccourci des favoris.
+- Accueil : cartes problème / solution plus lisibles, un bouton d'action dessous.
+- Hub enrobé : prix alignés sur la grille (30-55 et 35-60 €/m²).
