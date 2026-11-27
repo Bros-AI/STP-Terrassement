@@ -2363,3 +2363,7 @@ table caption { caption-side: top; text-align: left; font-size: .9rem; color: va
 .cta-local-brief li { margin: 6px 0; line-height: 1.55; }
 .article-meta a { color: inherit; text-decoration: underline; }
 .page-updated.hub-back a { color: var(--link); font-weight: 600; }
+
+/* --- PASS 48: answer block under the hero of city and service pages --- */
+.brief-section { padding: 34px 0 0; }
+.brief-section .cta-local-brief { max-width: 980px; margin: 0 auto; }

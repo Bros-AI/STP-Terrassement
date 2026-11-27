@@ -191,6 +191,7 @@ def build():
     L.append('')
     for k, v in (('Raison sociale', 'SOPHIE TERRASSEMENT PROVENCE (SAS)'),
                  ('Nom commercial', 'STP Terrassement'),
+                 ('Représentante légale et directrice de la publication', 'Sophie Perrimont'),
                  ('SIRET', '994 240 588 00016'),
                  ('TVA', 'FR03994240588'),
                  ('Code NAF', '4312A — Travaux de terrassement courants et travaux préparatoires'),
