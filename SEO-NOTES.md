@@ -2511,6 +2511,6 @@ Le trafic vient des guides de prix ; les pages qui vendent sont au-delà de la 1
 
 ### Pièges
 
-- Troisième heredoc bash qui avale les `\` : des `` de remplacement sont devenus des caractères
+- Troisième heredoc bash qui avale les `\` : des renvois de groupe sont devenus des caractères
   de contrôle dans 28 pages. Réparé (`check.py` compare l'équilibre des balises avec HEAD).
   Les scripts à regex s'écrivent avec l'outil de fichier, jamais en heredoc.
