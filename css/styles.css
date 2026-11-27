@@ -2355,3 +2355,11 @@ table caption { caption-side: top; text-align: left; font-size: .9rem; color: va
 .calc-out { margin: 16px 0 8px; font-size: 1.05rem; }
 .calc-note { margin: 0; font-size: 0.88rem; color: var(--text-light); }
 .calc-note a { color: var(--link); font-weight: 600; }
+
+/* --- PASS 47: answer block at the top of guides, author link, hub link on city pages --- */
+.cta-local-brief { margin: 0 0 26px; padding: 16px 20px; border: 1px solid #e5e7eb; border-radius: 10px; background: #fafafa; }
+.cta-local-brief p { margin: 0 0 6px; }
+.cta-local-brief ul { margin: 0 0 0 20px; padding: 0; list-style: disc; }
+.cta-local-brief li { margin: 6px 0; line-height: 1.55; }
+.article-meta a { color: inherit; text-decoration: underline; }
+.page-updated.hub-back a { color: var(--link); font-weight: 600; }

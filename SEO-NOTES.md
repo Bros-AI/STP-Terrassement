@@ -2527,3 +2527,36 @@ Le trafic vient des guides de prix ; les pages qui vendent sont au-delà de la 1
   (service-public.gouv.fr F2137, justice.fr), câbles enterrés à 0,50 m et 0,85 m sous voies
   (NF C 15-100 § 529.5, fiche Prysmian), qualification IRVE au-delà de 3,7 kW, rubrique 2.1.5.0
   (déclaration au-delà de 1 ha), délais ANC d'un an après vente et de quatre ans. Rien à corriger.
+
+## 47e passe (27/11/2026) : spécification et audit IA / SEO
+
+Référence : `SPECS-SEO-IA.md` (ce que disent Google et les études de citations, l'état du site, les
+règles par type de page, ce qui dépend du propriétaire).
+
+### Audit (205 pages)
+
+- Pages villes : similarité maximale 0,22 entre deux pages d'une même famille, 17 % de phrases
+  communes en médiane. Ce ne sont pas des pages satellites : aucune fusion nécessaire.
+- 0 guide sur 67 n'avait de bloc de réponse en tête ; 61 ne citaient aucune source officielle.
+- 108 titres au format « Ville (13) | Pro | … », sans prix.
+- « Qui sommes-nous » : 1 lien entrant ; hubs mur de soutènement, enrochement, tout-à-l'égout : 6 à 10.
+- 5 photos réutilisées sur 50 à 69 pages chacune : le point faible restant, à la main du propriétaire.
+
+### Fait
+
+- Bloc « En bref » en tête des 71 guides : les trois premières questions de la FAQ de la page et
+  leur réponse courte (généré, donc toujours conforme au texte visible).
+- Sources officielles sur 66 guides, par famille (Service-Public, Géorisques, portail ANC, guichet
+  DT-DICT) ; toutes les URL vérifiées en 200 le 27/11.
+- Signature des guides liée à « Qui sommes-nous ».
+- 81 titres de pages villes réécrits (42 avec un prix, vérifié présent sur la page) et 9 titres de
+  pages service ; « 200+ Chantiers » retiré du titre des réalisations.
+- Lien de chaque page ville vers sa page service et vers la grille de prix.
+- Quatre guides tirés des requêtes Search Console sans page dédiée : décaissement de terrain
+  (324 impressions, position 17), mise aux normes d'assainissement (437, 18), enrobé beige (449, 14),
+  location de dumper (383, 19).
+
+### Pièges
+
+- `seo-qa` mesure la largeur du titre en pixels : 64 caractères peuvent dépasser 580 px.
+- Une apostrophe écrite `&#39;` dans `<title>` compte pour cinq caractères.
