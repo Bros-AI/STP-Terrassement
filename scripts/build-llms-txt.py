@@ -31,7 +31,12 @@ HUBS = ['terrassement.html', 'vrd-assainissement.html', 'amenagement-exterieur.h
         'demolition.html', 'location-materiel.html', 'enrobe.html', 'enrochement.html',
         'goudronnage.html', 'mur-soutenement.html', 'fondations-maison.html',
         'terrassement-piscine.html', 'viabilisation-terrain.html',
-        'raccordement-tout-egout.html', 'drainage-terrain.html']
+        'raccordement-tout-egout.html', 'drainage-terrain.html',
+        'allee-carrossable.html',
+        'assainissement-non-collectif.html',
+        'raccordement-tout-egout-copropriete.html',
+        'vrd-lotissement.html',
+        'genie-civil-borne-recharge-irve.html']
 FIXED = ['tarifs-terrassement-2026.html', 'lexique-terrassement.html', 'realisations.html',
          'zones-intervention.html', 'plan-du-site.html', 'devis-gratuit.html', 'contact.html',
          'qui-sommes-nous.html']

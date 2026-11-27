@@ -2,9 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    <url>
+        <loc>https://stp-terrassement.com/allee-carrossable.html</loc>
+        <lastmod>2026-11-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
   <url>
     <loc>https://stp-terrassement.com/amenagement-exterieur.html</loc>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -12,9 +18,15 @@
       <image:title>Aménagement extérieur pose pavés Provence</image:title>
     </image:image>
   </url>
+    <url>
+        <loc>https://stp-terrassement.com/assainissement-non-collectif.html</loc>
+        <lastmod>2026-11-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
   <url>
     <loc>https://stp-terrassement.com/blog.html</loc>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
       <image:image>
@@ -24,7 +36,7 @@
   </url>
   <url>
     <loc>https://stp-terrassement.com/contact.html</loc>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
       <image:image>
@@ -34,7 +46,7 @@
   </url>
   <url>
     <loc>https://stp-terrassement.com/demolition.html</loc>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -44,7 +56,7 @@
   </url>
   <url>
     <loc>https://stp-terrassement.com/devis-gratuit.html</loc>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
       <image:image>
@@ -54,13 +66,13 @@
   </url>
     <url>
         <loc>https://stp-terrassement.com/drainage-terrain.html</loc>
-        <lastmod>2026-11-26</lastmod>
+        <lastmod>2026-11-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://stp-terrassement.com/enrobe.html</loc>
-        <lastmod>2026-11-26</lastmod>
+        <lastmod>2026-11-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -70,7 +82,7 @@
     </url>
     <url>
         <loc>https://stp-terrassement.com/enrochement.html</loc>
-        <lastmod>2026-11-26</lastmod>
+        <lastmod>2026-11-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -80,7 +92,7 @@
     </url>
     <url>
         <loc>https://stp-terrassement.com/fondations-maison.html</loc>
-        <lastmod>2026-11-26</lastmod>
+        <lastmod>2026-11-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -89,8 +101,14 @@
         </image:image>
     </url>
     <url>
+        <loc>https://stp-terrassement.com/genie-civil-borne-recharge-irve.html</loc>
+        <lastmod>2026-11-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
         <loc>https://stp-terrassement.com/goudronnage.html</loc>
-        <lastmod>2026-11-26</lastmod>
+        <lastmod>2026-11-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -100,7 +118,7 @@
     </url>
   <url>
     <loc>https://stp-terrassement.com/</loc>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -118,7 +136,7 @@
   </url>
   <url>
     <loc>https://stp-terrassement.com/lexique-terrassement.html</loc>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <image:image>
@@ -128,19 +146,19 @@
   </url>
   <url>
     <loc>https://stp-terrassement.com/location-materiel.html</loc>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://stp-terrassement.com/mentions-legales.html</loc>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
     <url>
         <loc>https://stp-terrassement.com/mur-soutenement.html</loc>
-        <lastmod>2026-11-26</lastmod>
+        <lastmod>2026-11-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -150,37 +168,43 @@
     </url>
     <url>
         <loc>https://stp-terrassement.com/plan-du-site.html</loc>
-        <lastmod>2026-11-26</lastmod>
+        <lastmod>2026-11-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
   <url>
     <loc>https://stp-terrassement.com/politique-confidentialite.html</loc>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
     <url>
         <loc>https://stp-terrassement.com/qui-sommes-nous.html</loc>
-        <lastmod>2026-11-26</lastmod>
+        <lastmod>2026-11-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://stp-terrassement.com/raccordement-tout-egout-copropriete.html</loc>
+        <lastmod>2026-11-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://stp-terrassement.com/raccordement-tout-egout.html</loc>
-        <lastmod>2026-11-26</lastmod>
+        <lastmod>2026-11-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
   <url>
     <loc>https://stp-terrassement.com/realisations.html</loc>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://stp-terrassement.com/tarifs-terrassement-2026.html</loc>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <image:image>
@@ -190,7 +214,7 @@
   </url>
     <url>
         <loc>https://stp-terrassement.com/terrassement-piscine.html</loc>
-        <lastmod>2026-11-26</lastmod>
+        <lastmod>2026-11-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -200,7 +224,7 @@
     </url>
   <url>
     <loc>https://stp-terrassement.com/terrassement.html</loc>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -210,13 +234,13 @@
   </url>
     <url>
         <loc>https://stp-terrassement.com/viabilisation-terrain.html</loc>
-        <lastmod>2026-11-26</lastmod>
+        <lastmod>2026-11-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
   <url>
     <loc>https://stp-terrassement.com/vrd-assainissement.html</loc>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -224,9 +248,15 @@
       <image:title>Raccordement VRD et assainissement Aix-en-Provence</image:title>
     </image:image>
   </url>
+    <url>
+        <loc>https://stp-terrassement.com/vrd-lotissement.html</loc>
+        <lastmod>2026-11-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
   <url>
     <loc>https://stp-terrassement.com/zones-intervention.html</loc>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <image:image>

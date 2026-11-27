@@ -2465,3 +2465,52 @@ Les guides avaient `dateModified` et une ligne « Mis à jour le » ; les pages 
   avec l'outil de fichier.
 - `integrate.py` échappe le `&nbsp;` du H1 en `&amp;nbsp;` dans `blog.html` et le plan du site : à
   corriger après chaque intégration.
+
+## 45e passe (27/11/2026) : plan d'action Search Console
+
+Point de départ (Search Console, 25/08-24/11) : 6 100 clics, 480 000 impressions, CTR 1,3 %, position 8,6.
+Le trafic vient des guides de prix ; les pages qui vendent sont au-delà de la 14e place.
+
+### Fait
+
+- Titres avec prix et année sur les guides à forte impression qui n'en avaient pas : enrochement
+  paysager, goudronnage d'allée, raccordement tout-à-l'égout ; « + simulateur » sur prix enrobé.
+- `blog/prix-enrobe-m2.html` : simulateur (surface, revêtement, préparation), calculé sur les
+  fourchettes du guide (revêtement + 25-45 €/m² de préparation, -10 % au-delà de 150 m²).
+- Bandeau de contact en tête des 67 guides (`.cta-local-top` : devis, téléphone, WhatsApp, lien vers
+  la page service) et encadré de bas d'article sur les 46 guides qui n'en avaient pas.
+- Cinq pages service : `allee-carrossable.html`, `assainissement-non-collectif.html`,
+  `raccordement-tout-egout-copropriete.html`, `vrd-lotissement.html`,
+  `genie-civil-borne-recharge-irve.html`. Prix tirés de la grille uniquement.
+- Menu : entrée « Services » (enrochement, mur de soutènement, enrobé, allée carrossable,
+  tout-à-l'égout, location avec chauffeur), en survol sur ordinateur, à plat sur mobile.
+- Fondations : STP réalise le terrassement et les fouilles, pas le béton. Hub, six pages villes,
+  guide de prix et page Terrassement Marseille reformulés ; catalogue d'offres du hub remplacé par
+  les lignes de terrassement. Le guide garde son titre (il est 6e sur « prix fondations maison »).
+- « 15 ans d'expérience » : attribué partout à l'équipe (la société date de novembre 2025).
+  « Parc machines complet » → « parc matériel adapté ».
+- `location-materiel.html` : H1 aligné sur le titre (location d'engins avec chauffeur).
+
+### Non fait, et pourquoi
+
+- Regrouper les pages villes : GitHub Pages ne sait pas faire de redirection 301. Supprimer des
+  pages perdrait leurs positions sans report. Les pages restent, les guides pointent désormais vers
+  Marseille, Aix et Aubagne en priorité.
+- URL en double : les variantes sans `.html` répondent 200 avec une balise canonique vers la bonne
+  URL ; `www` redirige en 301 ; les URL mal écrites (« alllee », « prix-prix- ») répondent 404 et
+  sortiront de l'index seules. Rien à corriger côté site.
+- Photos de chantiers et avis Google sur les pages : il faut les fichiers du propriétaire.
+
+### À confirmer par le propriétaire
+
+- « Plus de 200 chantiers réussis » (une trentaine de pages) : même risque que « 15 ans » pour une
+  société créée en novembre 2025. Non touché.
+- VRD de lotissement : la page annonce « de la division en deux lots au petit lotissement ».
+- Liens entrants : plan et messages dans `d:\Projets\seo-tools\liens-plan.md` (68 liens, 16 sites,
+  presque tous des annuaires).
+
+### Pièges
+
+- Troisième heredoc bash qui avale les `\` : des `` de remplacement sont devenus des caractères
+  de contrôle dans 28 pages. Réparé (`check.py` compare l'équilibre des balises avec HEAD).
+  Les scripts à regex s'écrivent avec l'outil de fichier, jamais en heredoc.

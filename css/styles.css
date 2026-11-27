@@ -2333,3 +2333,25 @@ table caption { caption-side: top; text-align: left; font-size: .9rem; color: va
 /* Date de mise a jour en pied de page (posee par scripts/build-dates.py) */
 .page-updated { margin: 0; padding: 1.25rem 1rem; text-align: center; font-size: 0.875rem; color: var(--text-light); background: var(--white); }
 .page-updated i { margin-right: 0.35rem; }
+
+/* --- PASS 45: services dropdown, article contact strip, enrobé simulator --- */
+.nav-links .nav-more { position: relative; }
+.nav-links .nav-more > a::after { content: " \25BE"; }
+.nav-links .nav-sub { display: none; position: absolute; top: 100%; left: -16px; min-width: 260px; padding: 8px 0; background: #fff; border-radius: 0 0 10px 10px; box-shadow: var(--shadow-lg); z-index: 1001; }
+.nav-links .nav-more:hover .nav-sub, .nav-links .nav-more:focus-within .nav-sub { display: block; }
+.nav-links .nav-sub a { display: block; min-height: 0; padding: 10px 18px; }
+.nav-links .nav-sub a:hover { transform: none; background: var(--gray); }
+.cta-local-top { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; margin: 0 0 26px; padding: 12px 16px; background: rgba(255, 180, 0, 0.08); border-left: 4px solid var(--primary); border-radius: 10px; font-size: 0.95rem; font-weight: 600; line-height: 1.4; }
+.cta-local-top a { color: var(--link); }
+.cta-local-top a.cta-local-btn { background: var(--primary); color: var(--dark); font-weight: 700; padding: 9px 16px; border-radius: 8px; text-decoration: none; }
+.cta-local-top span { font-weight: 400; }
+@media (max-width: 767px) { .cta-local-top .cta-local-dup { display: none; } }
+.calc-enrobe { margin: 30px 0; padding: 22px 26px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fafafa; }
+.calc-enrobe h3 { margin: 0 0 14px; }
+.calc-row { display: grid; grid-template-columns: auto 1fr; gap: 10px 14px; align-items: center; max-width: 520px; }
+.calc-row input[type="number"], .calc-row select { width: 100%; min-width: 0; box-sizing: border-box; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 8px; font: inherit; min-height: 44px; }
+.calc-row .calc-check { grid-column: 1 / -1; display: flex; gap: 8px; align-items: center; }
+@media (max-width: 767px) { .calc-enrobe { padding: 18px 16px; } .calc-row { grid-template-columns: 1fr; gap: 6px; } }
+.calc-out { margin: 16px 0 8px; font-size: 1.05rem; }
+.calc-note { margin: 0; font-size: 0.88rem; color: var(--text-light); }
+.calc-note a { color: var(--link); font-weight: 600; }
